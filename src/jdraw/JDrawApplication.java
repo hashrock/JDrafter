@@ -131,7 +131,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         //
 
         fileChooser = new JFileChooser();
-        fileChooser.setFileFilter(new FileNameExtensionFilter("JDocumentファイル(*.jdoc)",
+        fileChooser.setFileFilter(new FileNameExtensionFilter(java.util.ResourceBundle.getBundle("main").getString("filter_jdoc"),
                 "jdoc"));
         initComponents();
 
@@ -145,11 +145,11 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         //
         this.setTitle("JDrafter 1.2.4");
         //メニュー構築
-        fileMenu = new JMenu("ファイル(F)");
-        editMenu = new JMenu("編集(E)");
-        objectMenu = new JMenu("オブジェクト(O)");
+        fileMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_file"));
+        editMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_edit"));
+        objectMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_object"));
         typeMenu = new JTypeMenu();
-        viewMenu = new JMenu("表示(V)");
+        viewMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_display"));
         setUpFileMenus();
         setUpEditMenu();
         setUpObjectMenu();
@@ -212,7 +212,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 }
                 stream.close();
             } catch (Exception e) {
-                JOptionPane.showConfirmDialog(this, e.getLocalizedMessage(), "ファイルエラー", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showConfirmDialog(this, e.getLocalizedMessage(), java.util.ResourceBundle.getBundle("main").getString("msg_file_error"), JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
                 return;
             }
             JDocumentFrame frame = new JDocumentFrame();
@@ -288,7 +288,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     private boolean frameClose(JDocumentFrame frame) {
         boolean ret = true;
         if (frame.isChanged()) {
-            switch (JOptionPane.showConfirmDialog(this, frame.getDocument().getName() + "は変更されています.保存しますか?",
+            switch (JOptionPane.showConfirmDialog(this, frame.getDocument().getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_changed_save"),
                     "", JOptionPane.YES_NO_CANCEL_OPTION)) {
                 case JOptionPane.YES_OPTION:
                     if (frame.getFilePath().equals("") || frame.getFilePath() == null) {
@@ -358,7 +358,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         objectMenu.setMnemonic(KeyEvent.VK_O);
         objectAction = new JObjectActions();
         objectMenu.add(objectAction.reshapeAgain);
-        JMenu transform = new JMenu("変形(T)");
+        JMenu transform = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_transform"));
         transform.setMnemonic(KeyEvent.VK_T);
         transform.add(objectAction.translateAction);
         transform.add(objectAction.scaleAction);
@@ -370,14 +370,14 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         objectMenu.add(objectAction.doGroup);
         objectMenu.add(objectAction.unGroup);
         objectMenu.addSeparator();
-        JMenu arrange = new JMenu("重ね順（A)");
+        JMenu arrange = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_arrange"));
         arrange.setMnemonic(KeyEvent.VK_A);
         arrange.add(objectAction.bringToTop);
         arrange.add(objectAction.bringFront);
         arrange.add(objectAction.sendBack);
         arrange.add(objectAction.sendToBottom);
         objectMenu.add(arrange);
-        JMenu sort = new JMenu("整列(S)");
+        JMenu sort = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_align"));
         sort.setMnemonic(KeyEvent.VK_S);
         sort.add(objectAction.alignHCenter);
         sort.add(objectAction.alignTop);
@@ -391,7 +391,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         sort.add(objectAction.hJustify);
         objectMenu.add(sort);
         cagActions = new JCAGCulcActions();
-        JMenu CAGCulc = new JMenu("CAG演算(C)");
+        JMenu CAGCulc = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_cag"));
         CAGCulc.setMnemonic(KeyEvent.VK_C);
         CAGCulc.add(cagActions.addAction);
         CAGCulc.add(cagActions.subAction);
@@ -399,7 +399,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         CAGCulc.add(cagActions.xorAction);
         objectMenu.addSeparator();
         objectMenu.add(CAGCulc);
-        JMenu compoundPath = new JMenu("複合パス(M)");
+        JMenu compoundPath = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_multiple_path"));
         compoundPath.setMnemonic(KeyEvent.VK_M);
         compoundPath.add(cagActions.compoundPathAction);
         compoundPath.add(cagActions.releaseCompoundPathAction);
@@ -408,7 +408,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         objectMenu.add(cagActions.uniformJoinAction);
         objectMenu.add(cagActions.reversePathAction);
         objectMenu.addSeparator();
-        JMenu effectMenu = new JMenu("エフェクト(E)");
+        JMenu effectMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_effects"));
         effectMenu.setMnemonic(KeyEvent.VK_E);
         effectMenu.add(cagActions.releaseEffectAction);
         effectMenu.addSeparator();
@@ -417,7 +417,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         effectMenu.add(cagActions.makeArrowAction);
         objectMenu.add(effectMenu);
         //
-        JMenu outlineMenu = new JMenu("アウトライン(O)");
+        JMenu outlineMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_outlines"));
         outlineMenu.setMnemonic(KeyEvent.VK_O);
         outlineMenu.add(cagActions.outlineTextAction);
         outlineMenu.add(cagActions.strokeOutlineAction);
@@ -426,7 +426,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         objectMenu.addSeparator();
         objectMenu.add(objectAction.makePattern);
         //
-        JMenu trimingMenu=new JMenu("イメージトリミング(I)");
+        JMenu trimingMenu=new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_image_trimming"));
         trimingMenu.setMnemonic(KeyEvent.VK_I);
         trimingMenu.add(objectAction.makeTriming);
         trimingMenu.add(objectAction.releaseTriming);
@@ -451,7 +451,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         viewMenu.add(viewMenus.gridGauge);
         viewMenu.add(viewMenus.gridForeAction);
         viewMenu.addSeparator();
-        JMenu guidMenu = new JMenu("ガイドライン(I)");
+        JMenu guidMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_guidelines"));
         guidMenu.setMnemonic(KeyEvent.VK_I);
         guidMenu.add(viewMenus.sendGuidAction);
         guidMenu.add(viewMenus.releaseGuidAction);
@@ -480,13 +480,13 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         popup.add(objectAction.doGroup);
         popup.add(objectAction.unGroup);
         popup.addSeparator();
-        JMenu itm = new JMenu("重ね順");
+        JMenu itm = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_arrange"));
         itm.add(objectAction.bringToTop);
         itm.add(objectAction.bringFront);
         itm.add(objectAction.sendBack);
         itm.add(objectAction.sendToBottom);
         popup.add(itm);
-        itm = new JMenu("整列");
+        itm = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_align"));
         itm.add(objectAction.alignHCenter);
         itm.add(objectAction.alignTop);
         itm.add(objectAction.alignBottom);
@@ -500,7 +500,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         popup.add(itm);
         popup.addSeparator();
         popup.add(objectAction.reshapeAgain);
-        itm = new JMenu("変形");
+        itm = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_transform"));
         itm.add(objectAction.translateAction);
         itm.add(objectAction.rotateAction);
         itm.add(objectAction.scaleAction);
@@ -548,7 +548,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         if (frame == null) {
             return false;
         }
-        fileChooser.setDialogTitle("名前をつけて保存");
+        fileChooser.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("dialog_save_as"));
         File f = fileChooser.getCurrentDirectory();
         f = new File(f.getPath(), frame.getDocument().getName() + ".jdoc");
         fileChooser.setSelectedFile(f);
@@ -557,7 +557,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
         f = fileChooser.getSelectedFile();
         if (f.exists() &&
-                JOptionPane.showConfirmDialog(this, f.getName() + "は既に存在します.上書きしますか(Y/N)") != JOptionPane.OK_OPTION) {
+                JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_exist_overwrite")) != JOptionPane.OK_OPTION) {
             return false;
         }
         frame.setFilePath(f.getParent());
@@ -581,7 +581,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             ostream.close();
 
         } catch (Exception ex) {
-            JOptionPane.showConfirmDialog(this, ex.getLocalizedMessage(), "ファイルエラー", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showConfirmDialog(this, ex.getLocalizedMessage(), java.util.ResourceBundle.getBundle("main").getString("msg_file_error"), JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
             return false;
         }
         fileMenus.updateStates();
@@ -589,7 +589,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     }
     //ドキュメントを開く
     private boolean openDocument() {
-        fileChooser.setDialogTitle("ドキュメントを開く");
+        fileChooser.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("msg_open_document"));
         if (fileChooser.showOpenDialog(this) != JFileChooser.APPROVE_OPTION) {
             return false;
         }
@@ -628,8 +628,8 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             return;
         }
         JFileChooser chooser = new JFileChooser();
-        chooser.setFileFilter(new FileNameExtensionFilter("PDFファイル", "pdf"));
-        chooser.setDialogTitle("PDFに書き出し");
+        chooser.setFileFilter(new FileNameExtensionFilter(java.util.ResourceBundle.getBundle("main").getString("filter_pdf"), "pdf"));
+        chooser.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("dialog_export_as_pdf"));
         File f = chooser.getCurrentDirectory();
         f = new File(f.getPath(), frame.getDocument().getName() + ".pdf");
         chooser.setSelectedFile(f);
@@ -639,7 +639,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         JDocument doc = frame.getDocument();
         f = chooser.getSelectedFile();
         if (f.exists() &&
-                JOptionPane.showConfirmDialog(this, f.getName() + "は既に存在します.上書きしますか(Y/N)") != JOptionPane.OK_OPTION) {
+                JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_exist_overwrite")) != JOptionPane.OK_OPTION) {
             return;
         }
         frame.getViewer().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -689,8 +689,8 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             return;
         }
         JFileChooser chooser = new JFileChooser();
-        chooser.setFileFilter(new FileNameExtensionFilter("イメージファイル(jpeg,png,gif)", "jpg", "png", "gif"));
-        chooser.setDialogTitle("イメージの配置");
+        chooser.setFileFilter(new FileNameExtensionFilter(java.util.ResourceBundle.getBundle("main").getString("filter_image_files_jpeg_png_gif"), "jpg", "png", "gif"));
+        chooser.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("dialog_deploy_image"));
         if (chooser.showOpenDialog(this) != JFileChooser.APPROVE_OPTION) {
             return;
         }
@@ -699,7 +699,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         try {
             img = new ImageIcon(f.toURI().toURL());
         } catch (Exception ex) {
-            JOptionPane.showConfirmDialog(this, ex.getLocalizedMessage(), "ファイルエラー", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showConfirmDialog(this, ex.getLocalizedMessage(), java.util.ResourceBundle.getBundle("main").getString("msg_file_error"), JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
             return;
         }
         PageFormat pg = frame.getViewer().getCurrentPage().getPageFormat();
@@ -769,7 +769,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class NewDocument extends AbstractAction {
 
             public NewDocument() {
-                putValue(NAME, "新規(N)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_new"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_N);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
                 setEnabled(true);
@@ -806,7 +806,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class OpenDocument extends AbstractAction {
 
             public OpenDocument() {
-                putValue(NAME, "開く(O)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_open"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_O);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
                 setEnabled(true);
@@ -822,7 +822,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class DiployImage extends AbstractAction {
 
             public DiployImage() {
-                putValue(NAME, "イメージの配置(D)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_deploy_image"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_D);
                 setEnabled(false);
             }
@@ -836,7 +836,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class SaveDocument extends AbstractAction {
 
             public SaveDocument() {
-                putValue(NAME, "保存(S)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_save"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_S);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK));
                 setEnabled(false);
@@ -859,7 +859,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class SaveDocumentAs extends AbstractAction {
 
             public SaveDocumentAs() {
-                putValue(NAME, "名前をつけて保存(A)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_save_as"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_A);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
                 setEnabled(false);
@@ -878,7 +878,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class ExportAsPDF extends AbstractAction {
 
             public ExportAsPDF() {
-                putValue(NAME, "PDFに保存(E)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_export_as_pdf"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_E);
                 setEnabled(false);
             }
@@ -895,7 +895,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class ExportAsImage extends AbstractAction {
 
             public ExportAsImage() {
-                putValue(NAME, "イメージに保存(I)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_export_as_image"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_I);
                 setEnabled(false);
             }
@@ -912,7 +912,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class PageSetup extends AbstractAction {
 
             public PageSetup() {
-                putValue(NAME, "ページ設定(U)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_page_properties"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_U);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
                 setEnabled(false);
@@ -940,7 +940,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class Print extends AbstractAction {
 
             public Print() {
-                putValue(NAME, "印刷(P)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_print"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_P);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
                 setEnabled(false);
@@ -968,7 +968,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private class Quit extends AbstractAction {
 
             public Quit() {
-                putValue(NAME, "終了(X)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_exit"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_X);
                 putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));
                 setEnabled(true);
@@ -984,7 +984,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     private class LicenceAction extends AbstractAction {
 
         public LicenceAction() {
-            putValue(NAME, "ライセンス(L)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_license"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_L);
         }
 
@@ -997,7 +997,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     private class AboutAction extends AbstractAction {
 
         public AboutAction() {
-            putValue(NAME, "JDrafterについて(A)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_about_jdrafter"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_A);
         }
 
@@ -1012,7 +1012,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         private URI helpURI = null;
 
         public HelpAction(URI uri) {
-            putValue(NAME, "ヘルプ(F1)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_help"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_F1);
             helpURI = uri;
         }
@@ -1061,7 +1061,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         if (!f.exists() || !f.isDirectory()) {
             return;
         }
-        JMenu menu = new JMenu("プラグイン(P)");
+        JMenu menu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_plugins"));
         menu.setMnemonic('P');
         //
         URL[] urls = new URL[1];
@@ -1104,7 +1104,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     }
     //アバウトメニュー
     private void setUpAbout() {
-        JMenu menu = new JMenu("アバウト(A)");
+        JMenu menu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_about"));
         menu.setMnemonic(KeyEvent.VK_A);
         File f = new File(System.getProperty("user.dir") + File.separator + "help" + File.separator + "index.html");
         if (f.exists()) {

@@ -123,7 +123,7 @@ public class JEditActions implements FlavorListener,ItemListener,CaretListener{
     }
     public class CutAction extends AbstractAction{
         public CutAction(){
-            putValue(NAME,"カット(T)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("menu_edit_cut"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_T);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_X,ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -141,7 +141,7 @@ public class JEditActions implements FlavorListener,ItemListener,CaretListener{
     }
     public class CopyAction extends AbstractAction{
         public CopyAction(){
-            putValue(NAME,"コピー(C)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("menu_edit_copy"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_C);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_C,ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -156,7 +156,7 @@ public class JEditActions implements FlavorListener,ItemListener,CaretListener{
     }
     public class PasteAction extends AbstractAction{
         public PasteAction(){
-            putValue(NAME,"ペースト(P)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("menu_edit_paste"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_P);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_V,ActionEvent.CTRL_MASK));
             if (viewer==null){
@@ -175,7 +175,7 @@ public class JEditActions implements FlavorListener,ItemListener,CaretListener{
     }
     public class ClearAction extends AbstractAction{
         public ClearAction(){
-            putValue(NAME,"削除(D)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("menu_edit_delete"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,0));
             setEnabled(false);
@@ -191,7 +191,7 @@ public class JEditActions implements FlavorListener,ItemListener,CaretListener{
     }
     public class SelectAllAction extends AbstractAction{
         public SelectAllAction(){
-            putValue(NAME,"全てを選択（A)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("menu_edit_select_all"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_A);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_A,ActionEvent.CTRL_MASK));
             setEnabled(true);

@@ -348,7 +348,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class DoGroup extends AbstractAction {
 
         public DoGroup() {
-            putValue(NAME, "グループ化（G)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_group"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_G);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_G, ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -378,7 +378,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class UnGroup extends AbstractAction {
 
         public UnGroup() {
-            putValue(NAME, "グループ解除(U)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_ungroup"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_U);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_G, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
             setEnabled(false);
@@ -397,7 +397,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class BringToTop extends AbstractAction {
 
         public BringToTop() {
-            putValue(NAME, "最前面へ(F)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_move_top"));
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_8, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_F);
             setEnabled(false);
@@ -418,7 +418,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class BringFront extends AbstractAction {
 
         public BringFront() {
-            putValue(NAME, "ひとつ前面へ(B)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_move_forward"));
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_8, ActionEvent.CTRL_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_B);
             setEnabled(false);
@@ -439,7 +439,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class SendToBottom extends AbstractAction {
 
         public SendToBottom() {
-            putValue(NAME, "最背面へ(K)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_move_bottom"));
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_9, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_K);
             setEnabled(false);
@@ -460,7 +460,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class SendBack extends AbstractAction {
 
         public SendBack() {
-            putValue(NAME, "ひとつ背面へ(S)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_move_back"));
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_9, ActionEvent.CTRL_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_S);
             setEnabled(false);
@@ -489,7 +489,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class ReshapeAgain extends AbstractAction {
 
         public ReshapeAgain() {
-            putValue(NAME, "変形の繰り返し(R)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_repeat_transform"));
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             setEnabled(false);
@@ -515,7 +515,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class TranslateAction extends AbstractAction {
 
         public TranslateAction() {
-            putValue(NAME, "平行移動");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_move_horizontally"));
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_D,ActionEvent.CTRL_MASK));
             //putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             setEnabled(false);
@@ -544,7 +544,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class ScaleAction extends AbstractAction {
 
         public ScaleAction() {
-            putValue(NAME, "スケール");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_scale"));
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_D,ActionEvent.CTRL_MASK));
             //putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             setEnabled(false);
@@ -586,7 +586,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class RotateAction extends AbstractAction {
 
         public RotateAction() {
-            putValue(NAME, "回転");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_rotate"));
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_D,ActionEvent.CTRL_MASK));
             //putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             setEnabled(false);
@@ -633,7 +633,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class ReflectAction extends AbstractAction {
 
         public ReflectAction() {
-            putValue(NAME, "対称移動");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_move_mirror"));
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_D,ActionEvent.CTRL_MASK));
             //putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             setEnabled(false);
@@ -684,7 +684,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class ShearAction extends AbstractAction {
 
         public ShearAction() {
-            putValue(NAME, "シアリング");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_shear"));
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_D,ActionEvent.CTRL_MASK));
             //putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             setEnabled(false);
@@ -727,7 +727,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class AlignHCenter extends AbstractAction {
 
         public AlignHCenter() {
-            putValue(NAME, "上下中央に整列(H)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_vertical_center"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_H);
             setEnabled(false);
         }
@@ -764,7 +764,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class AlignTop extends AbstractAction {
 
         public AlignTop() {
-            putValue(NAME, "上端揃え(T)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_top"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_T);
             setEnabled(false);
         }
@@ -801,7 +801,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class AlignBottom extends AbstractAction {
 
         public AlignBottom() {
-            putValue(NAME, "下端揃え(B)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_bottom"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_B);
             setEnabled(false);
         }
@@ -839,7 +839,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class AlignVCenter extends AbstractAction {
 
         public AlignVCenter() {
-            putValue(NAME, "左右中央に整列(V)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_horizontal_center"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_V);
             setEnabled(false);
         }
@@ -876,7 +876,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class AlignLeft extends AbstractAction {
 
         public AlignLeft() {
-            putValue(NAME, "左に整列(L)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_left"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_L);
             setEnabled(false);
         }
@@ -913,7 +913,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class AlignRight extends AbstractAction {
 
         public AlignRight() {
-            putValue(NAME, "右に整列(R)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_right"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             setEnabled(false);
         }
@@ -951,7 +951,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class HJustify extends AbstractAction {
 
         public HJustify() {
-            putValue(NAME, "左右均等に配置(W)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_divide_horizontal"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_W);
             setEnabled(false);
         }
@@ -1000,7 +1000,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class VJustify extends AbstractAction {
 
         public VJustify() {
-            putValue(NAME, "上下均等に配置(D)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_align_divide_vertical"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_D);
             setEnabled(false);
         }
@@ -1049,7 +1049,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class MakePattern extends AbstractAction {
 
         public MakePattern() {
-            putValue(NAME, "オブジェクトをパターンとして記憶(M)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_restore_object_as_pattern"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
             setEnabled(false);
         }
@@ -1113,7 +1113,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class MakeTriming extends AbstractAction {
 
         public MakeTriming() {
-            putValue(NAME, "トリミング作成(M)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_create_trimming"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
         }
 
@@ -1141,7 +1141,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
             }
         }
         private void showErrorMsg() {
-            JOptionPane.showMessageDialog(viewer, "トリミングイメージを作成するには、イメージオブジェクトとトリミングするパスオブジェクトを選択してください.",
+            JOptionPane.showMessageDialog(viewer, java.util.ResourceBundle.getBundle("main").getString("msg_to_create_trimming_trim"),
                     "JDrafter", JOptionPane.WARNING_MESSAGE);
         }
     }
@@ -1149,7 +1149,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class ReleaseTriming extends AbstractAction {
 
         public ReleaseTriming() {
-            putValue(NAME, "トリミング解除(R)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("item_remove_trimming"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
         }
 

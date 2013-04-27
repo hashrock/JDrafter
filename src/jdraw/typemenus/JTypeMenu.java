@@ -48,7 +48,7 @@ public class JTypeMenu extends JMenu implements CaretListener,ActionListener,Ite
     JDocumentViewer viewer=null;
     /** Creates a new instance of JFontMenu */
     public JTypeMenu() {
-        setText("‘®(T)");
+        setText(java.util.ResourceBundle.getBundle("main").getString("menu_text_format"));
         setMnemonic(KeyEvent.VK_T);
         fontMenu=new JFontMenu();
         fontMenu.addActionListener(this);
