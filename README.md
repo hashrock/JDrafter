@@ -10,8 +10,9 @@ JDrafter
 Download
 --------
 
+Jar
 
- [JDrafter Forked version 0.0.1](jdrafter_fork_001.zip)
+ [JDrafter Forked version 0.0.1](http://181dev.github.io/JDrafter/files/jdrafter_fork_001.zip)
 
 
 
