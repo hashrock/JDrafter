@@ -48,7 +48,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="jdragger.JControls.JDIntegerTextField" name="currentPage">
+    <Component class="jtools.jcontrol.JDIntegerTextField" name="currentPage">
       <Properties>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[48, 19]"/>
