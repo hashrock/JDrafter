@@ -1,7 +1,20 @@
 JDrafter
 ========
 
-Illustrator like drawing tool
+某イラレの様なドローアプリケーションです。
+
+保守用のフォークプロジェクトです。オリジナル版は現在ネット上にありません。
+
+![screenshot](http://181dev.github.io/JDrafter/files/sc.png)
+
+Download
+--------
+
+
+![JDrafter Forked version 0.0.1](jdrafter_fork_001.zip)
+
+
+
 
 What's this
 -----------
@@ -15,8 +28,9 @@ TODO
 
 This project is for maintenance, I will not add any big features. I'll do that:
 
- * Change source file encoding. Shift-JIS to UTF-8.
- * i18n. All messages are Japanese now.
+ * i18n
+ * manual
+ * Create page without printer driver
 
-
+http://181dev.github.io/JDrafter/
 
