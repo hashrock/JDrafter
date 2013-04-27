@@ -81,7 +81,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     public static com.lowagie.text.pdf.PdfContentByte pdfContentByte=null;
     public static JFileChooser fileChooser = null;
     //ウィンドウのマージン
-    private static final int MERGIN = 4;
+    private static final int MARGIN = 4;
     //インターナルフレームのマージン
     private static final int FRAME_MERGIN_X = 4;
     //フレームマージン
@@ -140,8 +140,8 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
         Dimension d = toolkit.getScreenSize();
         Insets insets = toolkit.getScreenInsets(gc);
-        this.setBounds(insets.left + MERGIN, insets.top + MERGIN,
-                d.width - insets.left - insets.right - 2 * MERGIN, d.height - insets.top - insets.bottom - 2 * MERGIN);
+        this.setBounds(insets.left + MARGIN, insets.top + MARGIN,
+                d.width - insets.left - insets.right - 2 * MARGIN, d.height - insets.top - insets.bottom - 2 * MARGIN);
         //
         this.setTitle("JDrafter 1.2.4");
         //メニュー構築
