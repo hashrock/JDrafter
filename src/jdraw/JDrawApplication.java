@@ -64,6 +64,8 @@ import jobject.JDocument;
 import jobject.JImageObject;
 import jobject.JLeaf;
 import jobject.JPage;
+import jprinter.JNewPage;
+import jprinter.JNewPageListener;
 import jprinter.JPageFormat;
 import jscreen.JDocumentViewer;
 import jui.JPageNavigator;
@@ -73,12 +75,12 @@ import plugins.AbstractPlugin;
 
 /**
  *
- * @author  takashi
+ * @author takashi
  */
 public class JDrawApplication extends javax.swing.JFrame implements JFrameStateListener {
 
     //PDFドキュメント
-    public static com.lowagie.text.pdf.PdfContentByte pdfContentByte=null;
+    public static com.lowagie.text.pdf.PdfContentByte pdfContentByte = null;
     public static JFileChooser fileChooser = null;
     //ウィンドウのマージン
     private static final int MARGIN = 4;
@@ -119,7 +121,9 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     //プラグイン
     private Vector<AbstractPlugin> plugins = new Vector<AbstractPlugin>();
 
-    /** Creates new form JDrawApplication */
+    /**
+     * Creates new form JDrawApplication
+     */
     @SuppressWarnings("static-access")
     public JDrawApplication() {
 
@@ -135,7 +139,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 "jdoc"));
         initComponents();
 
-        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        //setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         GraphicsConfiguration gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
         Dimension d = toolkit.getScreenSize();
@@ -143,7 +147,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         this.setBounds(insets.left + MARGIN, insets.top + MARGIN,
                 d.width - insets.left - insets.right - 2 * MARGIN, d.height - insets.top - insets.bottom - 2 * MARGIN);
         //
-        this.setTitle("JDrafter 1.2.4");
+        this.setTitle(java.util.ResourceBundle.getBundle("main").getString("title_JDrafter_version"));
         //メニュー構築
         fileMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_file"));
         editMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_edit"));
@@ -171,7 +175,6 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         typeMenu.add(cagActions.outlineTextAction);
         //インターナルフレームアダプタ
         ifAdapter = new InternalFrameAdapter() {
-
             @Override
             public void internalFrameActivated(InternalFrameEvent e) {
                 frameActivated(e);
@@ -184,7 +187,6 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         };
         //クローズ処理
         this.addWindowListener(new WindowAdapter() {
-
             @Override
             public void windowClosing(WindowEvent e) {
                 thisWindowClosing(e);
@@ -229,6 +231,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //このウインドウが閉じるときの処理
+
     private void thisWindowClosing(WindowEvent e) {
         JInternalFrame[] frames = jDesktopPane1.getAllFrames();
         for (int i = 0; i < frames.length; i++) {
@@ -240,12 +243,14 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         this.dispose();
     }
     //フレームがアクティブになるときの処理.
+
     private void frameActivated(InternalFrameEvent e) {
         JDocumentFrame source = (JDocumentFrame) e.getSource();
         setDocumentState(source.getViewer());
         source.getViewer().getDragPane().setComponentPopupMenu(popup);
     }
     //コントロールのドキュメント設定
+
     private void setDocumentState(JDocumentViewer viewer) {
         editActions.setViewer(viewer);
         objectAction.setViewer(viewer);
@@ -280,11 +285,13 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         viewMenus.changeStetes();
     }
     //フレームを閉じる
+
     private void frameClosing(InternalFrameEvent e) {
         JDocumentFrame f = (JDocumentFrame) e.getInternalFrame();
         frameClose(f);
     }
     //フレームクローズ処理
+
     private boolean frameClose(JDocumentFrame frame) {
         boolean ret = true;
         if (frame.isChanged()) {
@@ -319,6 +326,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         return true;
     }
     //ファイルメニュー構築
+
     private void setUpFileMenus() {
         fileMenu.setMnemonic(KeyEvent.VK_F);
         fileMenus = new FileMenus();
@@ -338,6 +346,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         fileMenu.add(fileMenus.quit);
     }
     //エディットメニュー構築
+
     private void setUpEditMenu() {
         editMenu.setMnemonic(KeyEvent.VK_E);
         undoRedoAction = new JUndoRedoAction();
@@ -353,6 +362,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         editMenu.add(editActions.selectAllAction);
     }
     //オブジェクトメニュー構築
+
     @SuppressWarnings({"static-access", "static-access"})
     private void setUpObjectMenu() {
         objectMenu.setMnemonic(KeyEvent.VK_O);
@@ -426,20 +436,21 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         objectMenu.addSeparator();
         objectMenu.add(objectAction.makePattern);
         //
-        JMenu trimingMenu=new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_image_trimming"));
+        JMenu trimingMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_image_trimming"));
         trimingMenu.setMnemonic(KeyEvent.VK_I);
         trimingMenu.add(objectAction.makeTriming);
         trimingMenu.add(objectAction.releaseTriming);
         objectMenu.add(trimingMenu);
         /*
-        JMenu patternMenu=new JMenu("パターン作成(P)");
-        patternMenu.setMnemonic(KeyEvent.VK_P);
-        patternMenu.add(objectAction.makePattern);
-        patternMenu.add(objectAction.makeClipedPattern);
-        objectMenu.add(patternMenu);
+         JMenu patternMenu=new JMenu("パターン作成(P)");
+         patternMenu.setMnemonic(KeyEvent.VK_P);
+         patternMenu.add(objectAction.makePattern);
+         patternMenu.add(objectAction.makeClipedPattern);
+         objectMenu.add(patternMenu);
          */
     }
     //表示メニュー構築
+
     private void setUpViewMenu() {
         viewMenu.setMnemonic(KeyEvent.VK_V);
         viewMenus = new ViewMenus(this);
@@ -467,6 +478,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         jDesktopPane1.addContainerListener(viewMenus);
     }
     //ポップアップメニュー構築
+
     @SuppressWarnings("static-access")
     private void setUpPopupMenu() {
         popup = new JPopupMenu();
@@ -510,6 +522,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
 
     }
     //ツールウインドウ生成
+
     private void setUpToolPanel() {
         toolPanel = new JToolPanel(this);
         Insets inset = this.getInsets();
@@ -518,6 +531,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         f.setLocation(this.getX() + inset.left, y);
     }
     //ページナビゲータ生成
+
     private void setUpPageNavigator() {
         pageNavigator = new JPageNavigator(this, false);
         Insets inset = this.getInsets();
@@ -526,6 +540,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         pageNavigator.setVisible(true);
     }
     //レイヤーブラウザ生成
+
     private void setUpLayerBrowser() {
         layerBrowser = new JLayerBrowser(this, false);
         Insets inset = this.getInsets();
@@ -537,12 +552,14 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
 
     }
     //インターナルフレームの新規サイズ取得
+
     private Rectangle defaultWindowBounds() {
         int width = Math.max(jDesktopPane1.getWidth() - FRAME_MERGIN_X * 2, 800);
         int height = Math.max(jDesktopPane1.getHeight() - FRAME_MERGIN_Y * 2, 600);
         return new Rectangle(FRAME_MERGIN_X, FRAME_MERGIN_Y, width, height);
     }
     //ドキュメントに名前をつけて保存
+
     private boolean saveDocumentAs() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
         if (frame == null) {
@@ -556,8 +573,8 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             return false;
         }
         f = fileChooser.getSelectedFile();
-        if (f.exists() &&
-                JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_exist_overwrite")) != JOptionPane.OK_OPTION) {
+        if (f.exists()
+                && JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_exist_overwrite")) != JOptionPane.OK_OPTION) {
             return false;
         }
         frame.setFilePath(f.getParent());
@@ -570,6 +587,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         return saveDocument();
     }
     //ドキュメントを保存
+
     private boolean saveDocument() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
         File f = new File(frame.getFilePath(), frame.getDocument().getName() + ".jdoc");
@@ -588,6 +606,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         return true;
     }
     //ドキュメントを開く
+
     private boolean openDocument() {
         fileChooser.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("msg_open_document"));
         if (fileChooser.showOpenDialog(this) != JFileChooser.APPROVE_OPTION) {
@@ -622,6 +641,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         return true;
     }
     //PDFに出力
+
     private void saveAsPDF() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
         if (frame == null) {
@@ -638,8 +658,8 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
         JDocument doc = frame.getDocument();
         f = chooser.getSelectedFile();
-        if (f.exists() &&
-                JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_exist_overwrite")) != JOptionPane.OK_OPTION) {
+        if (f.exists()
+                && JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("msg_is_exist_overwrite")) != JOptionPane.OK_OPTION) {
             return;
         }
         frame.getViewer().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -650,7 +670,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             com.lowagie.text.pdf.PdfWriter pwriter = com.lowagie.text.pdf.PdfWriter.getInstance(pDoc, bout);
             pDoc.open();
             FontFactory.registerDirectories();
-            Set set=FontFactory.getRegisteredFonts();
+            Set set = FontFactory.getRegisteredFonts();
 
             for (int i = 0; i < doc.size(); i++) {
                 JPage cPage = doc.get(i);
@@ -662,10 +682,10 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 float bottom = (float) (pFormat.getHeight() - pFormat.getImageableHeight() - top);
                 pDoc.newPage();
 
-                
-                com.lowagie.text.pdf.PdfContentByte cb =pdfContentByte= pwriter.getDirectContent();
+
+                com.lowagie.text.pdf.PdfContentByte cb = pdfContentByte = pwriter.getDirectContent();
                 cb.saveState();
-              
+
                 Graphics2D g2 = (com.lowagie.text.pdf.PdfGraphics2D) cb.createGraphics((float) pFormat.getWidth(), (float) pFormat.getHeight());
 
                 boolean vg = cPage.getGuidLayer().isVisible();
@@ -683,6 +703,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
 
     }
     //イメージを配置
+
     private void diployImage() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
         if (frame == null) {
@@ -713,10 +734,12 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         frame.getViewer().repaint();
     }
     //アプリケーション取得
+
     private JDrawApplication getApplication() {
         return this;
     }
     //ファイルメニューアクション
+
     private class FileMenus {
 
         public NewDocument newDocument;
@@ -781,7 +804,26 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 JDocument doc = new JDocument();
                 getApplication().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 PageFormat pageFormat = doc.getCurrentPage().getPageFormat();
-                PageFormat np = doc.getPrinterJob().pageDialog(pageFormat);
+                
+                //プリンタと画像サイズ選択できる
+                PageFormat np = null;
+                final JNewPage pd = new JNewPage(JDrawApplication.this, true, pageFormat);
+                pd.setVisible(true);
+                pd.addListener(new JNewPageListener() {
+                    @Override
+                    public void jButtonNewActionPerformed(ActionEvent evt) {
+                    }
+
+                    @Override
+                    public void jButtonNewFromPrinterActionPerformed(ActionEvent evt) {
+                    }
+
+                    @Override
+                    public void jButtonCancelActionPerformed(ActionEvent evt) {
+                    }
+                });
+                np = pd.getPageFormat();
+
                 if (np == pageFormat) {
                     getApplication().setCursor(Cursor.getDefaultCursor());
                     return;
@@ -981,6 +1023,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //ライセンス表示
+
     private class LicenceAction extends AbstractAction {
 
         public LicenceAction() {
@@ -994,6 +1037,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //アバウト表示
+
     private class AboutAction extends AbstractAction {
 
         public AboutAction() {
@@ -1007,6 +1051,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //ヘルプ
+
     private class HelpAction extends AbstractAction {
 
         private URI helpURI = null;
@@ -1029,6 +1074,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //新規ドキュメント名称取得
+
     private String getProperName(String prefixer) {
         int index = 0;
         String regex = prefixer + "\\d+$";
@@ -1043,6 +1089,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         return prefixer + String.valueOf(index).trim();
     }
     //フレームの変更
+
     @Override
     public void frameStateChanged(JDocumentFrame f) {
         if (fileMenus != null) {
@@ -1050,6 +1097,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //最近使ったフォントの登録
+
     public void addResentFont(AttributeSet attr) {
         typeMenu.getResetnFonts().addItem(attr);
     }
@@ -1103,6 +1151,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     //アバウトメニュー
+
     private void setUpAbout() {
         JMenu menu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_about"));
         menu.setMnemonic(KeyEvent.VK_A);
@@ -1117,6 +1166,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         this.menuBar.add(menu);
     }
     //ContainerListener
+
     public class InnerContainerListener implements ContainerListener {
 
         @Override
@@ -1134,10 +1184,11 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
     }
     // <editor-fold defaultstate="collapsed" desc=" Generated Code">
-    /** This method is called from within the constructor to
-     * initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is
-     * always regenerated by the Form Editor.
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -1150,7 +1201,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         jPagePanel1 = new jdraw.JPagePanel();
         menuBar = new javax.swing.JMenuBar();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setName("JDraw"); // NOI18N
 
         jPanel1.setMinimumSize(new java.awt.Dimension(20, 22));
@@ -1174,12 +1225,12 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     /**
      * @param args the command line arguments
      */
     public static void main(final String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -1187,9 +1238,6 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             }
         });
     }
-    
-    
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JDesktopPane jDesktopPane1;
     public jdraw.JPagePanel jPagePanel1;
@@ -1200,5 +1248,4 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
     public jdraw.textpalette.TypePanel typePanel;
     // End of variables declaration//GEN-END:variables
     //</editor-fold>
-
 }

@@ -82,8 +82,8 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
     }
 
     private void setCombos() {
-        writeArea.addItem("ドキュメント全体");
-        writeArea.addItem("選択されたオブジェクト");
+        writeArea.addItem(java.util.ResourceBundle.getBundle("main").getString("isd_whole_document"));
+        writeArea.addItem(java.util.ResourceBundle.getBundle("main").getString("isd_selected_object"));
         String[] formats = ImageIO.getWriterFileSuffixes();
         for (int i = 0; i < formats.length; i++) {
             format.addItem(formats[i]);
@@ -164,8 +164,8 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
                 height.setIntValue(0);
             }
         }
-        quality.setEnabled(format.getSelectedItem().equals("jpg") || format.getSelectedItem().equals("jpeg"));
-        boolean isPng = format.getSelectedItem().equals("png") || format.getSelectedItem().equals("PNG");
+        quality.setEnabled(format.getSelectedItem().equals("jpg") || format.getSelectedItem().equals("jpeg")); //NOI18N
+        boolean isPng = format.getSelectedItem().equals("png") || format.getSelectedItem().equals("PNG"); //NOI18N
         transparent.setEnabled(isPng);
 
         jPanel2.repaint();
@@ -497,7 +497,7 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
             r = getSelectionBounds(req);
         }
         int imageType = BufferedImage.TYPE_INT_BGR;
-        if ((sufix.equals("png") || sufix.equals("PNG")) && transparent.isSelected()) {
+        if ((sufix.equals("png") || sufix.equals("PNG")) && transparent.isSelected()) { //NOI18N
             imageType = BufferedImage.TYPE_INT_ARGB;
         }
         double imageWidth = r.getWidth();
@@ -529,7 +529,7 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
         AffineTransform tx = new AffineTransform();
         tx.setToScale(rat, rat);
         tx.translate(-r.getX(), -r.getY());
-        if ((sufix.equals("png") || sufix.equals("PNG")) && transparent.isSelected()) {
+        if ((sufix.equals("png") || sufix.equals("PNG")) && transparent.isSelected()) { //NOI18N
             g.setColor(new Color(255, 255, 255, 0));
         } else {
             g.setColor(Color.WHITE);
@@ -600,7 +600,8 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
         jPanel2 = new InnerPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("イメージとして書出し");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("main_ja"); // NOI18N
+        setTitle(bundle.getString("isd_write_as_image")); // NOI18N
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -610,39 +611,44 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
 
         writeArea.setFocusable(false);
 
-        jLabel2.setText("書き出す範囲");
+        java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("main"); // NOI18N
+        jLabel2.setText(bundle1.getString("isd_output_range")); // NOI18N
 
         format.setFocusable(false);
 
-        jLabel5.setText("フォーマット");
+        jLabel5.setText(bundle1.getString("isd_format")); // NOI18N
 
-        jLabel4.setText("画像解像度");
+        jLabel4.setText(bundle1.getString("isd_resolution")); // NOI18N
 
-        jLabel1.setText("dpi");
+        jLabel1.setText(bundle1.getString("isd_dpi")); // NOI18N
+        java.util.ResourceBundle bundle2 = java.util.ResourceBundle.getBundle("jdraw/Bundle"); // NOI18N
+        jLabel1.setToolTipText(bundle2.getString("ImageSaveDialog.jLabel1.toolTipText")); // NOI18N
 
-        jLabel8.setText("サイズ(X)");
+        jLabel8.setText(bundle1.getString("isd_size_x")); // NOI18N
 
-        jLabel10.setText("pix");
+        jLabel10.setText(bundle1.getString("pixel")); // NOI18N
 
-        jLabel9.setText("pix");
+        jLabel9.setText(bundle1.getString("pixel")); // NOI18N
 
-        jLabel11.setText("サイズ(Y)");
+        jLabel11.setText(bundle1.getString("isd_size_y")); // NOI18N
 
-        jLabel6.setText("画像品質");
+        jLabel6.setText(bundle1.getString("isd_quality")); // NOI18N
 
-        transparent.setText("背景を透明に(png)");
+        transparent.setText(bundle1.getString("isd_transparent_background")); // NOI18N
 
-        jLabel7.setText("%");
+        jLabel7.setText(bundle1.getString("percent")); // NOI18N
 
-        jButton1.setText("イメージ書出し");
+        jButton1.setText(bundle.getString("isd_write_image")); // NOI18N
+        jButton1.setLabel(bundle1.getString("isd_execute_write_as_image")); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("終了");
+        jButton2.setText(bundle.getString("isd_exit")); // NOI18N
         jButton2.setDefaultCapable(false);
+        jButton2.setLabel(bundle1.getString("isd_exit")); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -692,7 +698,7 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
                                 .addComponent(jLabel7))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(129, 129, 129)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE))
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(129, 129, 129)
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -731,15 +737,15 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addComponent(transparent)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addContainerGap())
         );
 
-        jLabel4.getAccessibleContext().setAccessibleName("");
-        jLabel1.getAccessibleContext().setAccessibleName("DPI");
+        jLabel4.getAccessibleContext().setAccessibleName("null");
+        jLabel1.getAccessibleContext().setAccessibleName("null");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setLayout(new java.awt.BorderLayout());
@@ -763,7 +769,7 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -772,7 +778,7 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -789,24 +795,24 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
 // TODO add your handling code here:
     JRequest req = page.getRequest();
     if (req.isEmpty() && writeArea.getSelectedIndex() == 1) {
-        JOptionPane.showConfirmDialog(this, "書き出すものが何もありません.",
-                "イメージ書出し", JOptionPane.NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showConfirmDialog(this, java.util.ResourceBundle.getBundle("main").getString("isd_there_is_nothing_to_write"),
+                java.util.ResourceBundle.getBundle("main").getString("isd_write_image"), JOptionPane.NO_OPTION, JOptionPane.WARNING_MESSAGE);
         return;
     }
     JFileChooser fdlg = new JFileChooser();
     fdlg.setDialogType(JFileChooser.SAVE_DIALOG);
     String fs = format.getSelectedItem().toString();
-    fdlg.setFileFilter(new FileNameExtensionFilter("*." + fs + "ファイル", fs));
-    fdlg.setDialogTitle("イメージに書出し");
+    fdlg.setFileFilter(new FileNameExtensionFilter(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("main").getString("isd_filter_file"), new Object[] {fs}), fs));
+    fdlg.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("isd_write_as_image_title"));
     if (fdlg.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
         File f = fdlg.getSelectedFile();
         String nm = f.getName();
         if (!nm.contains("." + fs)) {
-            nm += "." + fs;
+            nm += "." + fs; //NOI18N //NOI18N //NOI18N //NOI18N //NOI18N //NOI18N
             f = new File(f.getParent() + File.separator + nm);
         }
         if (f.exists()) {
-            if (JOptionPane.showConfirmDialog(this, f.getName() + "は既に存在します.上書きしますか.", "上書きの確認",
+            if (JOptionPane.showConfirmDialog(this, f.getName() + java.util.ResourceBundle.getBundle("main").getString("asd_is_already_exists_confirm_overwrite"), java.util.ResourceBundle.getBundle("main").getString("isd_confirm_overwrite"),
                     JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE) != JOptionPane.YES_OPTION) {
                 return;
             }

@@ -11,11 +11,7 @@ package jdraw;
 
 import jactions.JUndoRedoEvent;
 import jactions.JUndoRedoListener;
-import java.beans.PropertyVetoException;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import jobject.JDocument;
 import jscreen.JDocumentViewer;
@@ -32,13 +28,13 @@ public class JDocumentFrame extends JInternalFrame implements JUndoRedoListener{
     private Vector<JFrameStateListener> listeners;
     /** Creates a new instance of JDocumentWindow */
     public JDocumentFrame() {
-        super("Untitled",true,true,true);
+        super("Untitled",true,true,true); //NOI18N
         initComponent();
         this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         scroller.getViewer().adjustSize();
         scroller.getViewer().getDocument().addUndoRedoListener(this);
         hasChanged=false;
-        filePath="";
+        filePath=""; //NOI18N
         listeners=new Vector<JFrameStateListener>();
         this.setFrameIcon(null);
     }
@@ -66,7 +62,7 @@ public class JDocumentFrame extends JInternalFrame implements JUndoRedoListener{
         scroller.getViewer().adjustSize();
         this.setTitle(doc.getName());
         setChanged(false);
-        filePath="";
+        filePath=""; //NOI18N
     }
     public void setFilePath(String path){
         filePath=path;
