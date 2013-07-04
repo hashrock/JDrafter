@@ -57,7 +57,8 @@ public class AboutDialog extends javax.swing.JDialog {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("JDrafter‚É‚Â‚¢‚Ä");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("main"); // NOI18N
+        setTitle(bundle.getString("about_title_about_jdrafter")); // NOI18N
         setModal(true);
         setResizable(false);
 
@@ -70,7 +71,7 @@ public class AboutDialog extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(jEditorPane1);
 
-        jButton2.setText("•Â‚¶‚é");
+        jButton2.setText(bundle.getString("dialog_close")); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
