@@ -48,9 +48,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
         glidColor.setBackground(env.GRID_COLOR);
         divColor.setBackground(env.DIVIDE_GRID_COLOR);
         if (env.getGuageUnit() == JEnvironment.METRIC_GAUGE) {
-            unitCombo.setSelectedItem("mm");
+            unitCombo.setSelectedItem(java.util.ResourceBundle.getBundle("main").getString("grid_mm"));
         } else {
-            unitCombo.setSelectedItem("point");
+            unitCombo.setSelectedItem(java.util.ResourceBundle.getBundle("main").getString("grid_point"));
         }
         paintAntiareas.setSelected(JEnvironment.PAINT_ANTI_AREASING);
         previewAntiareas.setSelected(JEnvironment.PREVIEW_ANTI_AREASING);
@@ -77,9 +77,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
                 closing();
             }
         });
-        jTabbedPane1.setTitleAt(0, "表示");
-        jTabbedPane1.setTitleAt(1, "グリッド");
-        jTabbedPane1.setTitleAt(2, "ガイドライン");
+        jTabbedPane1.setTitleAt(0, java.util.ResourceBundle.getBundle("main").getString("grid_display"));
+        jTabbedPane1.setTitleAt(1, java.util.ResourceBundle.getBundle("main").getString("grid_grid"));
+        jTabbedPane1.setTitleAt(2, java.util.ResourceBundle.getBundle("main").getString("grid_guideline"));
         ok.requestFocus();
     }
 
@@ -102,18 +102,18 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
     private void stateChange() {
         if (env.getGuageUnit() == env.METRIC_GAUGE) {
-            unit.setText("mm");
+            unit.setText(java.util.ResourceBundle.getBundle("main").getString("grid_mm"));
             interval.setValue(new Double(env.getGridSizeForMil()));
         } else {
             interval.setValue(new Double(env.getGridSize()));
-            unit.setText("point");
+            unit.setText(java.util.ResourceBundle.getBundle("main").getString("grid_point"));
         }
         division.setIntValue(env.getGridDivision());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (unitCombo.getSelectedItem().equals("mm")) {
+        if (unitCombo.getSelectedItem().equals(java.util.ResourceBundle.getBundle("main").getString("grid_mm"))) {
             env.setGuageUnit(env.METRIC_GAUGE);
         } else {
             env.setGuageUnit(env.INCHI_GAUGE);
@@ -173,7 +173,8 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
         backToGuid = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("表示オプション");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("main"); // NOI18N
+        setTitle(bundle.getString("grid_display_option")); // NOI18N
         setLocationByPlatform(true);
         setResizable(false);
 
@@ -192,7 +193,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        resetDefault.setText("デフォルト");
+        resetDefault.setText(bundle.getString("grid_default")); // NOI18N
         resetDefault.setDefaultCapable(false);
         resetDefault.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,25 +203,25 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jTabbedPane1.setFocusable(false);
 
-        paintAntiareas.setText("オブジェクトをアンチエリアス");
+        paintAntiareas.setText(bundle.getString("grid_object_antialias")); //NOI18N
 
-        previewAntiareas.setText("プレビューをアンチエリアス");
+        previewAntiareas.setText(bundle.getString("grid_preview_antialias")); // NOI18N
 
-        jLabel6.setText("アンカーポイントのサイズ:");
+        jLabel6.setText(bundle.getString("grid_anchor_point_size")); // NOI18N
 
-        jLabel7.setText("パス選択の許容範囲:");
+        jLabel7.setText(bundle.getString("grid_path_selection_tolerance")); // NOI18N
 
-        jLabel8.setText("シフトキーの角度制限:");
+        jLabel8.setText(bundle.getString("grid_shift_key_angle_limit")); // NOI18N
 
-        jLabel9.setText("pix");
+        jLabel9.setText(bundle.getString("grid_pix")); // NOI18N
 
-        jLabel10.setText("pix");
+        jLabel10.setText(bundle.getString("grid_pix")); // NOI18N
 
-        jLabel11.setText("°");
+        jLabel11.setText(bundle.getString("grid_degree")); // NOI18N
 
-        jLabel12.setText("ハイライトアンカーサイズ比:");
+        jLabel12.setText(bundle.getString("grid_highlight_anchor_size_ratio")); // NOI18N
 
-        jLabel13.setText("倍");
+        jLabel13.setText(bundle.getString("grid_times")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -241,7 +242,6 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
                             .addComponent(hilightRat, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                             .addComponent(ancurSize, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                             .addComponent(pathAreaSize, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,21 +298,21 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jTabbedPane1.addTab("tab2", jPanel2);
 
-        jLabel1.setText("単位:");
+        jLabel1.setText(bundle.getString("grid_unit")); // NOI18N
 
         unitCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "point" }));
 
-        jLabel2.setText("間隔:");
+        jLabel2.setText(bundle.getString("grid_spacing")); // NOI18N
 
-        unit.setText("mm");
+        unit.setText(bundle.getString("grid_mm")); // NOI18N
 
-        jLabel3.setText("分割数:");
+        jLabel3.setText(bundle.getString("grid_split_number")); // NOI18N
 
-        jLabel4.setText("グリッドの色:");
+        jLabel4.setText(bundle.getString("grid_color")); // NOI18N
 
-        jLabel5.setText("分割線の色:");
+        jLabel5.setText(bundle.getString("grid_parting_line_color")); // NOI18N
 
-        glidColor.setText("　　　");
+        glidColor.setText("　　");
         glidColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         glidColor.setOpaque(true);
         glidColor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -321,7 +321,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        divColor.setText("　　　");
+        divColor.setText("　　");
         divColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         divColor.setOpaque(true);
         divColor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -330,7 +330,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        gridForeground.setText("グリッドを前面に表示");
+        gridForeground.setText(bundle.getString("grid_show_top")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -347,13 +347,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(unitCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(division, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addComponent(interval, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(glidColor)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(division, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(interval, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(glidColor))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(unit)
                 .addGap(79, 79, 79))
@@ -364,7 +360,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gridForeground)
                     .addComponent(divColor))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,9 +393,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jTabbedPane1.addTab("tab1", jPanel1);
 
-        jLabel14.setText("表示色:");
+        jLabel14.setText(bundle.getString("grid_display_color:")); // NOI18N
 
-        jLabel15.setText("ハイライト表示色:");
+        jLabel15.setText(bundle.getString("grid_highlight_color")); // NOI18N
 
         gColor.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
         gColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -419,11 +415,11 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        jLabel18.setText("スタイル:");
+        jLabel18.setText(bundle.getString("grid_style:")); // NOI18N
 
-        lineStyle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "実線", "点線" }));
+        lineStyle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { bundle.getString("grid_line_solid"), bundle.getString("grid_line_dotted") }));
 
-        backToGuid.setText("ガイドを背面に表示");
+        backToGuid.setText(bundle.getString("grid_show_guide_background")); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -474,8 +470,8 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cancel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(ok, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                    .addComponent(cancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(resetDefault, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -484,12 +480,12 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ok)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cancel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(resetDefault)))
                 .addContainerGap())
         );
@@ -500,9 +496,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
     private void glidColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_glidColorMouseClicked
 // TODO add your handling code here:
         JLabel source = (JLabel) evt.getSource();
-        String title = "グリッドカラー";
+        String title = java.util.ResourceBundle.getBundle("main").getString("grid_colorchooser_title");
         if (source == divColor) {
-            title = "分割グリッドカラー";
+            title = java.util.ResourceBundle.getBundle("main").getString("grid_colorchooser_parting_line_color");
         }
         Color c = source.getBackground();
         Color nc = JColorChooser.showDialog(this, title, c);
@@ -517,7 +513,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
     private void resetDefaultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetDefaultActionPerformed
 // TODO add your handling code here
-        unitCombo.setSelectedItem("mm");
+        unitCombo.setSelectedItem(java.util.ResourceBundle.getBundle("main").getString("grid_mm"));
         interval.setDoubleValue(JEnvironment.DEFAULT_GRIDSIZE_BYMIL);
         division.setIntValue(JEnvironment.DEFAULT_GRIDDIVISION_BYMIL);
         glidColor.setBackground(JEnvironment.DEFAULT_GRID_COLOR);
@@ -546,7 +542,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
     private void okActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okActionPerformed
 // TODO add your handling code here:
         int unit = 0;
-        if (unitCombo.getSelectedItem().equals("mm")) {
+        if (unitCombo.getSelectedItem().equals(java.util.ResourceBundle.getBundle("main").getString("grid_mm"))) {
             unit = env.METRIC_GAUGE;
         } else {
             unit = env.INCHI_GAUGE;
@@ -578,9 +574,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 private void guidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guidMouseClicked
 // TODO add your handling code here:
     JLabel source = (JLabel) evt.getSource();
-    String title = "ガイドカラー";
+    String title = java.util.ResourceBundle.getBundle("main").getString("grid_guide_color");
     if (source == gHilight) {
-        title = "ガイドハイライトカラー";
+        title = java.util.ResourceBundle.getBundle("main").getString("grid_guide_highlight_color");
     }
     Color c = source.getBackground();
     Color nc = JColorChooser.showDialog(this, title, c);

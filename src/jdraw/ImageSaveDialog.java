@@ -621,8 +621,6 @@ public class ImageSaveDialog extends javax.swing.JDialog implements ActionListen
         jLabel4.setText(bundle1.getString("isd_resolution")); // NOI18N
 
         jLabel1.setText(bundle1.getString("isd_dpi")); // NOI18N
-        java.util.ResourceBundle bundle2 = java.util.ResourceBundle.getBundle("jdraw/Bundle"); // NOI18N
-        jLabel1.setToolTipText(bundle2.getString("ImageSaveDialog.jLabel1.toolTipText")); // NOI18N
 
         jLabel8.setText(bundle1.getString("isd_size_x")); // NOI18N
 
