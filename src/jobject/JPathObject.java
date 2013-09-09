@@ -49,10 +49,10 @@ import jscreen.JRequest;
 public class JPathObject extends JLeaf<JObject> implements JColorable {
 
     private JComplexPath path;
-    protected transient AffineTransform transform = null;//‰Á‚¦‚ç‚ê‚½ƒgƒ‰ƒ“ƒXƒtƒH[ƒ€
-    protected transient Vector<JSimplePath> transformSimplePath = null;//ƒgƒ‰ƒ“ƒXƒtƒH[ƒ€‚Ì‘ÎÛ‚Æ‚È‚éƒVƒ“ƒvƒ‹ƒpƒX
-    protected transient Vector<JSegment> transformAncur = null;//ƒgƒ‰ƒ“ƒXƒtƒH[ƒ€‚Ì‘ÎÛ‚Æ‚È‚éƒZƒOƒƒ“ƒg
-    protected transient Handle transformHandle = null;//ƒnƒ“ƒhƒ‹ˆÚ“®‚Ì‘ÎÛ‚Æ‚È‚éƒZƒOƒƒ“ƒg;
+    protected transient AffineTransform transform = null;//åŠ ãˆã‚‰ã‚ŒãŸãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ 
+    protected transient Vector<JSimplePath> transformSimplePath = null;//ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ ã®å¯¾è±¡ã¨ãªã‚‹ã‚·ãƒ³ãƒ—ãƒ«ãƒ‘ã‚¹
+    protected transient Vector<JSegment> transformAncur = null;//ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ ã®å¯¾è±¡ã¨ãªã‚‹ã‚»ã‚°ãƒ¡ãƒ³ãƒˆ
+    protected transient Handle transformHandle = null;//ãƒãƒ³ãƒ‰ãƒ«ç§»å‹•ã®å¯¾è±¡ã¨ãªã‚‹ã‚»ã‚°ãƒ¡ãƒ³ãƒˆ;
     private transient boolean isFirstTime = true;
     private transient Shape drawingShape = null;
     //private transient Shape previewShape = null;
@@ -828,8 +828,8 @@ public class JPathObject extends JLeaf<JObject> implements JColorable {
         return "Path";
     }
 
-    /**ƒgƒ‰ƒ“ƒXƒtƒH[ƒ€ˆÈŠO‚ÌƒpƒX•ÒW‚ª”­¶‚µ‚½‚Æ‚«‚ÉŒÄ‚Ño‚³‚ê‚éB
-     *Œp³ƒNƒ‰ƒX—p
+    /**ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ ä»¥å¤–ã®ãƒ‘ã‚¹ç·¨é›†ãŒç™ºç”Ÿã—ãŸã¨ãã«å‘¼ã³å‡ºã•ã‚Œã‚‹ã€‚
+     *ç¶™æ‰¿ã‚¯ãƒ©ã‚¹ç”¨
      */
     @Override
     public void updatePath() {

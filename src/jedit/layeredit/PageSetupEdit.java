@@ -28,7 +28,7 @@ public class PageSetupEdit extends JAbstractEdit{
         this.target=target;
         savedFormat=target.getPageFormat();
         this.newFormat=newFormat;
-        presentationName="ƒy[ƒWİ’è";
+        presentationName="ãƒšãƒ¼ã‚¸è¨­å®š";
         redo();
     }
     public void redo(){

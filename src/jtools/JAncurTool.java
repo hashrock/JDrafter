@@ -46,7 +46,7 @@ public class JAncurTool extends JAbstractTool {
     /** Creates a new instance of JAncurTool */
     public JAncurTool(JDragPane dragpane) {
         super(dragpane);
-        presentationName = "•ûŒü“_‚ÌØ‚è‘Ö‚¦ƒc[ƒ‹";
+        presentationName = "æ–¹å‘ç‚¹ã®åˆ‡ã‚Šæ›¿ãˆãƒ„ãƒ¼ãƒ«";
         wakeup();
     }
 

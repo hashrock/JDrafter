@@ -36,7 +36,7 @@ public class JGroupTool extends JAbstractTool{
     /** Creates a new instance of JGroupTool */
     public JGroupTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="‘I‘ğƒc[ƒ‹";
+        presentationName="é¸æŠãƒ„ãƒ¼ãƒ«";
         wakeup();
     }
     @Override

@@ -31,7 +31,7 @@ public class JLayoutTextTool extends JTextTool{
     /** Creates a new instance of JLayoutTextTool */
     public JLayoutTextTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ƒŒƒCƒAƒEƒgƒeƒLƒXƒg";
+        presentationName="ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ†ã‚­ã‚¹ãƒˆ";
     }
     public void wakeup(){
         JRequest req=getRequest();
@@ -80,7 +80,7 @@ public class JLayoutTextTool extends JTextTool{
         creatingObject.setPath(jp.getPath().clone());
         creatingObject.setTotalRotation(jp.getTotalRotation());
         //replaceObject
-        getViewer().getDocument().fireUndoEvent(new JReplaceObjectEdit(getViewer(),creatingObject,jp,"ƒŒƒCƒAƒEƒgƒeƒLƒXƒg"));
+        getViewer().getDocument().fireUndoEvent(new JReplaceObjectEdit(getViewer(),creatingObject,jp,"ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ†ã‚­ã‚¹ãƒˆ"));
         //
         DefaultStyledDocument doc=creatingObject.getStyledDocument();
         InlineTextPane tPane=getViewer().getTextPane();

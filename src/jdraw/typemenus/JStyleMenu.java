@@ -31,28 +31,28 @@ public class JStyleMenu extends AbstractTypeMenuItem{
     private JCheckBoxMenuItem strikeThrough;
     /** Creates a new instance of JStyleMenu */
     public JStyleMenu() {
-        setText("ƒXƒ^ƒCƒ‹(T)");
+        setText("ã‚¹ã‚¿ã‚¤ãƒ«(T)");
         setMnemonic(KeyEvent.VK_T);
         //
-        italic=new JCheckBoxMenuItem("ƒCƒ^ƒŠƒbƒN(I)");
+        italic=new JCheckBoxMenuItem("ã‚¤ã‚¿ãƒªãƒƒã‚¯(I)");
         italic.setMnemonic(KeyEvent.VK_I);
         italic.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I,ActionEvent.CTRL_MASK));
         italic .addActionListener(this);
         add(italic);
         //
-        bold=new JCheckBoxMenuItem("ƒ{[ƒ‹ƒh(B)");
+        bold=new JCheckBoxMenuItem("ãƒœãƒ¼ãƒ«ãƒ‰(B)");
         bold.setMnemonic(KeyEvent.VK_B);
         bold.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B,ActionEvent.CTRL_MASK));
         bold .addActionListener(this);
         add(bold);
         //
-        underLine=new JCheckBoxMenuItem("ƒAƒ“ƒ_[ƒ‰ƒCƒ“(U)");
+        underLine=new JCheckBoxMenuItem("ã‚¢ãƒ³ãƒ€ãƒ¼ãƒ©ã‚¤ãƒ³(U)");
         underLine.setMnemonic(KeyEvent.VK_U);
         underLine.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U,ActionEvent.CTRL_MASK));
         underLine .addActionListener(this);
         add(underLine);
         //
-        strikeThrough=new JCheckBoxMenuItem("šÁ‚µü(T)");
+        strikeThrough=new JCheckBoxMenuItem("å­—æ¶ˆã—ç·š(T)");
         strikeThrough.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T,ActionEvent.CTRL_MASK));
         strikeThrough.setMnemonic(KeyEvent.VK_T);
         strikeThrough.addActionListener(this);

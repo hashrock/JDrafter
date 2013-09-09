@@ -33,7 +33,7 @@ import jprinter.JPageFormat;
 import jobject.text.InlineTextPane;
 
 /**
- *ƒhƒLƒ…ƒƒ“ƒg‚ğ•\¦‚·‚é‚½‚ß‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚Å‚·B
+ *ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã§ã™ã€‚
  * @author TI
  */
 public class JDocumentViewer extends JLayeredPane implements Scrollable {
@@ -52,7 +52,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     public boolean isDraftMode = false;
 
     /** 
-     * JDocumentViewer‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ\’z‚µ‚Ü‚·.
+     * JDocumentViewerã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æ§‹ç¯‰ã—ã¾ã™.
      */
     public JDocumentViewer() {
         //backBuffer = this.createVolatileImage(800, 600);
@@ -68,14 +68,14 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
         document.addItemListener(transferHandler);
     }
 
-    /**ƒeƒLƒXƒgƒIƒuƒWƒFƒNƒg‚Ì•ÒW‚·‚éInlineTextPane‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ãƒ†ã‚­ã‚¹ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç·¨é›†ã™ã‚‹InlineTextPaneã‚’è¿”ã—ã¾ã™.*/
     public InlineTextPane getTextPane() {
         return textPane;
     }
 
     /**
-     * ‚±‚ÌJDocumentViewer‚ª•\¦‘ÎÛ‚Æ‚·‚éJDocument‚ğİ’è‚µ‚Ü‚·.
-     * @param bk ‚±‚ÌJDocmentViewer‚ª•\¦‘ÎÛ‚Æ‚·‚éJDocument
+     * ã“ã®JDocumentViewerãŒè¡¨ç¤ºå¯¾è±¡ã¨ã™ã‚‹JDocumentã‚’è¨­å®šã—ã¾ã™.
+     * @param bk ã“ã®JDocmentViewerãŒè¡¨ç¤ºå¯¾è±¡ã¨ã™ã‚‹JDocument
      */
     public void setDocument(JDocument bk) {
         if (this.document != null) {
@@ -90,23 +90,23 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * ƒCƒxƒ“ƒg‚Ìæ“¾‹y‚ÑƒCƒxƒ“ƒgó‘Ô‚ğ•`‰æ‚·‚éJDragPane‚ğæ“¾‚µ‚Ü‚·.
-     * @return ƒCƒxƒ“ƒg‚Ìæ“¾‹y‚ÑƒCƒxƒ“ƒgó‘Ô‚ğ•`‰æ‚·‚éJDragPane
+     * ã‚¤ãƒ™ãƒ³ãƒˆã®å–å¾—åŠã³ã‚¤ãƒ™ãƒ³ãƒˆçŠ¶æ…‹ã‚’æç”»ã™ã‚‹JDragPaneã‚’å–å¾—ã—ã¾ã™.
+     * @return ã‚¤ãƒ™ãƒ³ãƒˆã®å–å¾—åŠã³ã‚¤ãƒ™ãƒ³ãƒˆçŠ¶æ…‹ã‚’æç”»ã™ã‚‹JDragPane
      */
     public JDragPane getDragPane() {
         return dragPane;
     }
 
     /**
-     * ‚±‚ÌJDocumentViewer‚Ì•ÒW‹@”\‚ğÀ‘•‚·‚éJTransferHandler‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌJDocumentVier‚Ì•ÒW‹@”\‚ğÀ‘•‚·‚éJTransferHandler
+     * ã“ã®JDocumentViewerã®ç·¨é›†æ©Ÿèƒ½ã‚’å®Ÿè£…ã™ã‚‹JTransferHandlerã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®JDocumentVierã®ç·¨é›†æ©Ÿèƒ½ã‚’å®Ÿè£…ã™ã‚‹JTransferHandler
      */
     public JTransferHandler getJTransferHandler() {
         return transferHandler;
     }
 
     /**
-     * ƒ_ƒCƒAƒƒO‚ğw’è‚µAŒ»İ‚Ìƒy[ƒW‚Ì—p†î•ñ‚ğXV‚µ‚Ü‚·.
+     * ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã‚’æŒ‡å®šã—ã€ç¾åœ¨ã®ãƒšãƒ¼ã‚¸ã®ç”¨ç´™æƒ…å ±ã‚’æ›´æ–°ã—ã¾ã™.
      */
     public void pageSetup() {
         JPage cpage = getCurrentPage();
@@ -121,32 +121,32 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * Œ»İ—LŒø‚ÈJDocument‚ğ•Ô‚µ‚Ü‚·.
-     * @return Œ»İ—LŒø‚ÈJDocument
+     * ç¾åœ¨æœ‰åŠ¹ãªJDocumentã‚’è¿”ã—ã¾ã™.
+     * @return ç¾åœ¨æœ‰åŠ¹ãªJDocument
      */
     public JDocument getDocument() {
         return document;
     }
 
     /**
-     * ‚±‚ÌJDocumentViewer‚ğŠ—L‚·‚éJScroller‚ğİ’è‚µ‚Ü‚·.
-     * @param sc  İ’è‚·‚éJScroller
+     * ã“ã®JDocumentViewerã‚’æ‰€æœ‰ã™ã‚‹JScrollerã‚’è¨­å®šã—ã¾ã™.
+     * @param sc  è¨­å®šã™ã‚‹JScroller
      */
     public void setScroller(JScroller sc) {
         scroller = sc;
     }
 
     /**
-     * ‚±‚ÌJDocumentViewer‚ğŠ—L‚·‚éJScroller‚ğ•Ô‚µ‚Ü‚·B
-     * @return ‚±‚ÌJDocumentViewer‚ğŠ—L‚·‚éJScroller
+     * ã“ã®JDocumentViewerã‚’æ‰€æœ‰ã™ã‚‹JScrollerã‚’è¿”ã—ã¾ã™ã€‚
+     * @return ã“ã®JDocumentViewerã‚’æ‰€æœ‰ã™ã‚‹JScroller
      */
     public JScroller getScroller() {
         return scroller;
     }
 
     /**
-     * —p†‚ÌƒTƒCƒYA•\¦”{—¦‚ª•ÏX‚³‚ê‚é‚È‚ÇA‚±‚ÌJDocumentViewer‚ÌƒTƒCƒY‚Ì•ÏX‚ª•K—v‚Èê‡‚É
-     * ƒpƒ‰ƒ[ƒ^‚ğXV‚µAÅ“K‚È•\¦ƒTƒCƒY‚ğİ’è‚µ‚Ü‚·.
+     * ç”¨ç´™ã®ã‚µã‚¤ã‚ºã€è¡¨ç¤ºå€ç‡ãŒå¤‰æ›´ã•ã‚Œã‚‹ãªã©ã€ã“ã®JDocumentViewerã®ã‚µã‚¤ã‚ºã®å¤‰æ›´ãŒå¿…è¦ãªå ´åˆã«
+     * ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’æ›´æ–°ã—ã€æœ€é©ãªè¡¨ç¤ºã‚µã‚¤ã‚ºã‚’è¨­å®šã—ã¾ã™.
      */
     public void adjustSize() {
         JEnvironment env = document.getEnvironment();
@@ -171,31 +171,31 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * ƒJƒŒƒ“ƒg‚ÌJPage‚ğ•Ô‚µ‚Ü‚·.
-     * @return ƒJƒŒƒ“ƒg‚ÌJPage
+     * ã‚«ãƒ¬ãƒ³ãƒˆã®JPageã‚’è¿”ã—ã¾ã™.
+     * @return ã‚«ãƒ¬ãƒ³ãƒˆã®JPage
      */
     public JPage getCurrentPage() {
         return document.getCurrentPage();
     }
 
     /**
-     * •ÒW‚Ì—Dæ‡ˆÊ‚ª‚à‚Á‚Æ‚à‚‚¢JLayer‚ğ•Ô‚µ‚Ü‚·.
-     * @return •ÒW‚Ì—Dæ‡ˆÊ‚ª‚à‚Á‚Æ‚à‚‚¢JLayer
+     * ç·¨é›†ã®å„ªå…ˆé †ä½ãŒã‚‚ã£ã¨ã‚‚é«˜ã„JLayerã‚’è¿”ã—ã¾ã™.
+     * @return ç·¨é›†ã®å„ªå…ˆé †ä½ãŒã‚‚ã£ã¨ã‚‚é«˜ã„JLayer
      */
     public JLayer getAvailableLayer() {
         return getCurrentPage().getAvilableLayer();
     }
 
     /**
-     * •`‰æƒIƒuƒWƒFƒNƒg‚Ì‘I‘ğó‘Ô‚ğ¦‚·—LŒø‚ÈJRequest‚ğ•Ô‚µ‚Ü‚·.
-     * @return •`‰æƒIƒuƒWƒFƒNƒg‚Ì‘I‘ğó‘Ô‚ğ¦‚·JRequest
+     * æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é¸æŠçŠ¶æ…‹ã‚’ç¤ºã™æœ‰åŠ¹ãªJRequestã‚’è¿”ã—ã¾ã™.
+     * @return æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é¸æŠçŠ¶æ…‹ã‚’ç¤ºã™JRequest
      */
     public JRequest getCurrentRequest() {
         return dragPane.getCurrentRequest();
     }
 
     /**
-     * Œ»İ‚Ì•\¦ŠÂ‹«‚ğ•Û‚·‚éJEnvironment‚ğ•Ô‚µ‚Ü‚·.
+     * ç¾åœ¨ã®è¡¨ç¤ºç’°å¢ƒã‚’ä¿æŒã™ã‚‹JEnvironmentã‚’è¿”ã—ã¾ã™.
      * @return
      */
     public JEnvironment getEnvironment() {
@@ -203,8 +203,8 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * ‘OŒã‚ÌView‚©‚çƒy[ƒp[¶ã’[‚ÌˆÚ“®—Ê‚ğƒXƒNƒŠ[ƒ“À•W’PˆÊ‚ÅZo‚µ‚Ü‚·.
-     *@return ƒy[ƒp[¶ã’[‚©‚ç‚ÌˆÚ“®—Ê
+     * å‰å¾Œã®Viewã‹ã‚‰ãƒšãƒ¼ãƒ‘ãƒ¼å·¦ä¸Šç«¯ã®ç§»å‹•é‡ã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™å˜ä½ã§ç®—å‡ºã—ã¾ã™.
+     *@return ãƒšãƒ¼ãƒ‘ãƒ¼å·¦ä¸Šç«¯ã‹ã‚‰ã®ç§»å‹•é‡
      */
     private Point culcOffset() {
         JEnvironment env = getEnvironment();
@@ -224,13 +224,13 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * ‚±‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌÄ•`‰æ‚ª•K—v‚È•”•ª‚ğ•`‰æ‚µ‚Ü‚·B
-     * @param g ƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
+     * ã“ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å†æç”»ãŒå¿…è¦ãªéƒ¨åˆ†ã‚’æç”»ã—ã¾ã™ã€‚
+     * @param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     @Override
     public synchronized void paintComponent(Graphics g) {
         Rectangle view = scroller.getViewport().getViewRect();
-        //<editor-fold defaultstate="collapsed" desc="Å‰‚Ì•`‰æ">
+        //<editor-fold defaultstate="collapsed" desc="æœ€åˆã®æç”»">
         //if (backBuffer == null || oldView == null || backBuffer.contentsLost()) {
         if (backBuffer == null || oldView == null ) {
             int w = 800;
@@ -256,7 +256,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
             oldOffset = culcOffset();
         }
         //</editor-fold>
-        //<editor-fold defaultstate="collapsed" desc="ƒŠƒTƒCƒY">
+        //<editor-fold defaultstate="collapsed" desc="ãƒªã‚µã‚¤ã‚º">
         if (oldView.width != view.width || oldView.height != view.height) {
             int w = backBuffer.getWidth();
             int h = backBuffer.getHeight();
@@ -331,7 +331,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
             gb.dispose();
         } else {
             //</editor-fold>
-            //<editor-fold defaultstate="collapsed" desc="ƒXƒNƒ[ƒ‹">
+            //<editor-fold defaultstate="collapsed" desc="ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«">
             if (view.y != oldView.y || view.x != oldView.x) {
                 int dx = view.x - oldView.x;
                 int dy = view.y - oldView.y;
@@ -393,8 +393,8 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * ‚±‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‘S‚Ä‚Ì—v‘f‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param g ƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
+     * ã“ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆå…¨ã¦ã®è¦ç´ ã‚’æç”»ã—ã¾ã™.
+     * @param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     private void paintAll(Graphics2D g) {
         Rectangle paintHere = g.getClipBounds();
@@ -408,10 +408,10 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
         Shape paperOut = str.createStrokedShape(paper);
         Rectangle img = af.createTransformedShape(env.getImageRect()).getBounds();
         Shape imgOut = str.createStrokedShape(img);
-        //”wŒi
+        //èƒŒæ™¯
         g.setColor(BACKCOLOR);
         g.fill(paintHere);
-        //‰e
+        //å½±
         Rectangle shadowRect = new Rectangle(paper.x + 4, paper.y + 4, paper.width, paper.height);
         JBlurPaint bp = new JBlurPaint(shadowRect, 4f, Color.BLACK, 0.8f);
         Rectangle insec = new Rectangle(paper.x + paper.width, paper.y, 8, paper.height + 8);
@@ -426,7 +426,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
             g.setPaint(bp);
             g.fill(insec);
         }
-        //†
+        //ç´™
         insec = paper.intersection(paintHere);
         if (!insec.isEmpty()) {
             g.setColor(Color.WHITE);
@@ -439,7 +439,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
                 g.setColor(Color.BLACK);
                 g.draw(paper);
             }
-            //ƒCƒ[ƒWƒGƒŠƒA
+            //ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚¨ãƒªã‚¢
             if (imgOut.intersects(paintHere)) {
                 g.setColor(IMAGEAREA_COLOR);
                 g.draw(img);
@@ -463,7 +463,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
                 g.setColor(Color.BLACK);
                 g.draw(paper);
             }
-            //ƒCƒ[ƒWƒGƒŠƒA
+            //ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚¨ãƒªã‚¢
             if (imgOut.intersects(paintHere)) {
                 g.setColor(IMAGEAREA_COLOR);
                 g.draw(img);
@@ -472,8 +472,8 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
     }
 
     /**
-     * ƒOƒŠƒbƒh‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param g ƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg.
+     * ã‚°ãƒªãƒƒãƒ‰ã‚’æç”»ã—ã¾ã™.
+     * @param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ.
      */
     private void paintGrid(Graphics2D g) {
         JEnvironment env = getEnvironment();
@@ -494,18 +494,18 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
         //
         }
         double ratio = env.getToScreenRatio();
-        //ƒQ[ƒWŒ´“_‚ÌƒXƒNƒŠ[ƒ“À•W
+        //ã‚²ãƒ¼ã‚¸åŸç‚¹ã®ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™
         double offsX = env.getOffsetByScreen().x + env.getGaugeOffset().getX() * ratio;
         double offsY = env.getOffsetByScreen().y + env.getGaugeOffset().getY() * ratio;
-        //¬ƒQ[ƒWŠÔ‚ÌŠÔŠuiƒXƒNƒŠ[ƒ“À•W)
+        //å°ã‚²ãƒ¼ã‚¸é–“ã®é–“éš”ï¼ˆã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™)
         double sGridIval = ratio * env.getGridSize() / env.getGridDivision();
-        //¬ƒQ[ƒW‚ğ•\¦‚·‚éŠÔŠu(ŠÔŠu3ƒsƒNƒZƒ‹ˆÈ“à‚È‚ç”ò‚Î‚·)
+        //å°ã‚²ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹é–“éš”(é–“éš”3ãƒ”ã‚¯ã‚»ãƒ«ä»¥å†…ãªã‚‰é£›ã°ã™)
         int sIval = 1;
         while (sGridIval < 4) {
             sIval *= 2;
             sGridIval *= 2;
         }
-        //ŠJnˆÊ’u‚ÌƒQ[ƒWƒJƒEƒ“ƒg
+        //é–‹å§‹ä½ç½®ã®ã‚²ãƒ¼ã‚¸ã‚«ã‚¦ãƒ³ãƒˆ
         int start = (int) Math.round((paintHere.x - offsX) / sGridIval);
         int end = (int) Math.round((paintHere.x + paintHere.width - offsX) / sGridIval);
         g.setStroke(JEnvironment.GUAGE_STROKE);
@@ -533,7 +533,7 @@ public class JDocumentViewer extends JLayeredPane implements Scrollable {
         }
 
     }
-// <editor-fold defaultstate="collapsed" desc="Scrollable‚ÌÀ‘•ƒƒ\ƒbƒh">
+// <editor-fold defaultstate="collapsed" desc="Scrollableã®å®Ÿè£…ãƒ¡ã‚½ãƒƒãƒ‰">
     @Override
     public Dimension getPreferredScrollableViewportSize() {
         return new Dimension(1000, 200);

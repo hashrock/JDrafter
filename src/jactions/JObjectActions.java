@@ -484,7 +484,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
         }
         return getRootWindow(c.getParent());
     }
-    //ˆÚ“®‚ÌŒJ‚è•Ô‚µ
+    //ç§»å‹•ã®ç¹°ã‚Šè¿”ã—
 
     public class ReshapeAgain extends AbstractAction {
 
@@ -510,7 +510,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
             }
         }
     }
-    //•ÏŒ`
+    //å¤‰å½¢
 
     public class TranslateAction extends AbstractAction {
 
@@ -722,7 +722,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
             }
         }
     }
-    //®—ñ
+    //æ•´åˆ—
 
     public class AlignHCenter extends AbstractAction {
 
@@ -1108,7 +1108,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
             }
         }
     }
-    //ƒgƒŠƒ~ƒ“ƒO
+    //ãƒˆãƒªãƒŸãƒ³ã‚°
 
     public class MakeTriming extends AbstractAction {
 
@@ -1176,7 +1176,7 @@ public class JObjectActions implements ItemListener, JUndoRedoListener {
     public class MakeClipedPattern extends AbstractAction {
 
     public MakeClipedPattern() {
-    putValue(NAME, "Å”w–ÊƒIƒuƒWƒFƒNƒg‚ÅƒNƒŠƒbƒv(C)");
+    putValue(NAME, "æœ€èƒŒé¢ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§ã‚¯ãƒªãƒƒãƒ—(C)");
     putValue(MNEMONIC_KEY, KeyEvent.VK_C);
     setEnabled(false);
     }

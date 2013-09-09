@@ -41,7 +41,7 @@ public class JCAGAddEdit extends JAbstractEdit{
             parents.add(parent);
             indexes.add(parent.indexOf(targets.get(i)));
         }
-        presentationName="˜a(Œ‹‡)";
+        presentationName="å’Œ(çµåˆ)";
         createdObject=createObject(targets);
         redo();
         

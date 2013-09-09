@@ -22,7 +22,7 @@ import jscreen.JEnvironment;
 import jscreen.JRequest;
 
 /**
- *�I�u�W�F�N�g�̕ҏW���s���S�Ẵh���b�K�[�̃X�[�p�[�N���X
+ *オブジェクトの編集を行う全てのドラッガーのスーパークラス
  * @author i002060
  */
 public abstract class JAbstractTool implements JUndoRedoListener {
@@ -78,9 +78,9 @@ public abstract class JAbstractTool implements JUndoRedoListener {
                 Point2D.Float p=new Point2D.Float();
                 getEnvironment().getToScreenTransform().transform(snapPoint, p);
                 if (snapPlace==JRequest.HIT_ANCUR)
-                    g.drawString("�A���J�[", p.x, p.y);
+                    g.drawString("アンカー", p.x, p.y);
                 else if (snapPlace==JRequest.HIT_PATH)
-                    g.drawString("�p�X", p.x,p.y);
+                    g.drawString("パス", p.x,p.y);
             }
             snapPlace=JRequest.HIT_NON;
             snapPoint=null;

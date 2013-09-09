@@ -26,7 +26,7 @@ public class JStarTool extends JShapeTool{
     /** Creates a new instance of JStarTool */
     public JStarTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="¯Œ^ƒc[ƒ‹";
+        presentationName="æ˜Ÿå‹ãƒ„ãƒ¼ãƒ«";
     }
     
     @Override

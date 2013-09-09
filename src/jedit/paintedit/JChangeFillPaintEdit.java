@@ -37,7 +37,7 @@ public class JChangeFillPaintEdit extends JAbstractEdit{
         this.target=target;
         this.newPaint=newPaint;
         savedPaint=target.getFillPaint();
-        presentationName="�h��̕ύX";
+        presentationName="塗りの変更";
         redo();
     }
     public void redo(){

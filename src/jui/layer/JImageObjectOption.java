@@ -38,7 +38,7 @@ public class JImageObjectOption extends javax.swing.JDialog implements ChangeLis
     public void showDialog(JImageObject lf,JPage parent){
         this.parent=parent;
         this.leaf=lf;
-        this.setTitle("ƒCƒ[ƒWƒIƒvƒVƒ‡ƒ“");
+        this.setTitle("ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         text.setText(leaf.getName());
         locked.setSelected(leaf.isLocked());
         visible.setSelected(leaf.isVisible());
@@ -69,7 +69,7 @@ public class JImageObjectOption extends javax.swing.JDialog implements ChangeLis
         setLocationByPlatform(true);
         setResizable(false);
 
-        jLabel1.setText("–¼Ì:");
+        jLabel1.setText("åç§°:");
 
         ok.setText("OK");
         ok.addActionListener(new java.awt.event.ActionListener() {
@@ -86,15 +86,15 @@ public class JImageObjectOption extends javax.swing.JDialog implements ChangeLis
             }
         });
 
-        locked.setText("ƒƒbƒN");
+        locked.setText("ãƒ­ãƒƒã‚¯");
         locked.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         locked.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
-        visible.setText("‰Â‹");
+        visible.setText("å¯è¦–");
         visible.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         visible.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
-        jLabel2.setText("ƒAƒ‹ƒtƒ@:");
+        jLabel2.setText("ã‚¢ãƒ«ãƒ•ã‚¡:");
 
         alpha.setFormat("%.2f");
 
@@ -166,7 +166,7 @@ public class JImageObjectOption extends javax.swing.JDialog implements ChangeLis
         if (!text.getText().equals(leaf.getName())){
             SortedMap map=leaf.getPage().getNameTable();
             if (map.containsKey(text.getText())){
-                JOptionPane.showMessageDialog(this,"“ü—Í‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚Ì–¼Ì‚ÍA‘¼‚Åg—p‚³‚ê‚Ä‚¢‚Ü‚·.");
+                JOptionPane.showMessageDialog(this,"å…¥åŠ›ã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åç§°ã¯ã€ä»–ã§ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã™.");
                 text.setText(leaf.getName());
                 text.requestFocus();
                 return;

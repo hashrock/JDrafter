@@ -24,7 +24,7 @@ public class JShearTool extends JScaleTool{
     /** Creates a new instance of JShearTool */
     public JShearTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="シアリングツール";
+        presentationName="繧ｷ繧｢繝ｪ繝ｳ繧ｰ繝�繝ｼ繝ｫ";
     }
     protected AffineTransform createTransform(Point2D center,Point2D start ,Point2D end,boolean isShiftDown){
         if (center.equals(start)) return null;

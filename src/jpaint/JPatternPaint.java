@@ -93,7 +93,7 @@ public class JPatternPaint implements Paint {
         @Override
         public Raster getRaster(int x, int y, int w, int h) {
             BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-            //ユーザー座標の原点
+            //繝ｦ繝ｼ繧ｶ繝ｼ蠎ｧ讓吶�ｮ蜴溽せ
             Point2D origin = new Point2D.Float(0, 0);
             tx.transform(origin, origin);
             //

@@ -326,7 +326,7 @@ public class JTransferHandler implements ItemListener,FlavorListener,ClipboardOw
     }
     public class CutAction extends AbstractAction{
         public CutAction(){
-            putValue(NAME,"ÉJÉbÉg(T)");
+            putValue(NAME,"„Ç´„ÉÉ„Éà(T)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_T);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_X,ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -338,7 +338,7 @@ public class JTransferHandler implements ItemListener,FlavorListener,ClipboardOw
     }
     public class CopyAction extends AbstractAction{
         public CopyAction(){
-            putValue(NAME,"ÉRÉsÅ[(C)");
+            putValue(NAME,"„Ç≥„Éî„Éº(C)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_C);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_C,ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -350,7 +350,7 @@ public class JTransferHandler implements ItemListener,FlavorListener,ClipboardOw
     }
     public class PasteAction extends AbstractAction{
         public PasteAction(){
-            putValue(NAME,"ÉyÅ[ÉXÉg(P)");
+            putValue(NAME,"„Éö„Éº„Çπ„Éà(P)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_P);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_V,ActionEvent.CTRL_MASK));
             setEnabled(canImport(clipboard.getAvailableDataFlavors()));
@@ -363,7 +363,7 @@ public class JTransferHandler implements ItemListener,FlavorListener,ClipboardOw
     }
     public class ClearAction extends AbstractAction{
         public ClearAction(){
-            putValue(NAME,"çÌèú(D)");
+            putValue(NAME,"ÂâäÈô§(D)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,0));
             setEnabled(false);
@@ -375,7 +375,7 @@ public class JTransferHandler implements ItemListener,FlavorListener,ClipboardOw
     }
     public class SelectAllAction extends AbstractAction{
         public SelectAllAction(){
-            putValue(NAME,"ëSÇƒÇëIëÅiA)");
+            putValue(NAME,"ÂÖ®„Å¶„ÇíÈÅ∏ÊäûÔºàA)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_A);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_A,ActionEvent.CTRL_MASK));
             setEnabled(true);

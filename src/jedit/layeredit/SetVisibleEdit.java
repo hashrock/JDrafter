@@ -30,9 +30,9 @@ public class SetVisibleEdit extends JAbstractEdit{
         this.target=target;
         this.visible=visible;
         if (visible){
-            presentationName="オブジェクの表示";
+            presentationName="繧ｪ繝悶ず繧ｧ繧ｯ縺ｮ陦ｨ遉ｺ";
         }else{
-            presentationName="オブジェクトの非表示";
+            presentationName="繧ｪ繝悶ず繧ｧ繧ｯ繝医�ｮ髱櫁｡ｨ遉ｺ";
         }
         redo();
     }

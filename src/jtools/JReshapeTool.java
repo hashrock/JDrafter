@@ -47,7 +47,7 @@ public class JReshapeTool extends JGroupTool {
      */
     public JReshapeTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName = "‘I‘ğƒc[ƒ‹";
+        presentationName = "é¸æŠãƒ„ãƒ¼ãƒ«";
         reshapeHandle = new Point2D[8];
         JEnvironment env = getEnvironment();
         for (int i = 0; i < 8; i++) {

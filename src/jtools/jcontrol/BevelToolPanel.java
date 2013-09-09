@@ -44,7 +44,7 @@ public class BevelToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         //
         width.setValue(JEnvironment.DEFAULT_WIDTH);
         height.setValue(JEnvironment.DEFAULT_HEIGHT);
@@ -83,7 +83,7 @@ public class BevelToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,11 +91,11 @@ public class BevelToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("•:");
+        jLabel1.setText("å¹…:");
 
-        jLabel2.setText("‚‚³:");
+        jLabel2.setText("é«˜ã•:");
 
-        jLabel3.setText("Šp‚Ì”¼Œa:");
+        jLabel3.setText("è§’ã®åŠå¾„:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

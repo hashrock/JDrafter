@@ -21,7 +21,7 @@ import jscreen.JRequest;
 import org.omg.PortableServer.AdapterActivator;
 
 /**
- * �p�X,�Z�O�����g�폜�y�э폜�ɂ��I�u�W�F�N�g�̍쐬���J�v�Z�������܂��B
+ * パス,セグメント削除及び削除によるオブジェクトの作成をカプセル化します。
  * @author i002060
  */
 public class JPathDeleteSet {

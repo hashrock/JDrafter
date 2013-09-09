@@ -15,7 +15,7 @@ import jgeom.JSegment;
 import jgeom.JSimplePath;
 import jgeom.JSolution;
 /**
- * 1Ÿ‹y‚Ñ‚RŸ‚Ìƒpƒ‰ƒƒgƒŠƒbƒN‹Èü‚Æ’¼ü‚ÌŒğ“_‚ğ•Ô‚·ƒƒ\ƒbƒh‚ğ’ñ‹Ÿ‚µ‚Ü‚·.
+ * 1æ¬¡åŠã³ï¼“æ¬¡ã®ãƒ‘ãƒ©ãƒ¡ãƒˆãƒªãƒƒã‚¯æ›²ç·šã¨ç›´ç·šã®äº¤ç‚¹ã‚’è¿”ã™ãƒ¡ã‚½ãƒƒãƒ‰ã‚’æä¾›ã—ã¾ã™.
  * @author TK
  */
 public  class JIntersect {
@@ -23,12 +23,12 @@ public  class JIntersect {
     /** Creates a new instance of JDInterSection */
     public JIntersect() {
     }
-    /**“ñ‚Â‚Ì’¼ü‚ÌŒğ“_‚ğ•Ô‚µ‚Ü‚·.
-     *@param p1 ˆê‚Â–Ú‚Ì’¼ü‚Ìn“_<BR>
-     *@param p2 ˆê‚Â–Ú‚Ì’¼ü‚ÌI“_<BR>
-     *@param p3 “ñ‚Â–Ú‚Ì’¼ü‚Ìn“_<BR>
-     *@param P4 “ñ‚Â–Ú‚Ì’¼ü‚ÌI“_<BR>
-     *@return Œğ“_‚ÌÀ•WŒğ“_‚ª‚È‚¢ê‡‚Ínull;*/
+    /**äºŒã¤ã®ç›´ç·šã®äº¤ç‚¹ã‚’è¿”ã—ã¾ã™.
+     *@param p1 ä¸€ã¤ç›®ã®ç›´ç·šã®å§‹ç‚¹<BR>
+     *@param p2 ä¸€ã¤ç›®ã®ç›´ç·šã®çµ‚ç‚¹<BR>
+     *@param p3 äºŒã¤ç›®ã®ç›´ç·šã®å§‹ç‚¹<BR>
+     *@param P4 äºŒã¤ç›®ã®ç›´ç·šã®çµ‚ç‚¹<BR>
+     *@return äº¤ç‚¹ã®åº§æ¨™äº¤ç‚¹ãŒãªã„å ´åˆã¯null;*/
     public static Point2D lineIntersection(Point2D p1,Point2D p2,Point2D p3,Point2D p4){
         if (!Line2D.linesIntersect(p1.getX(),p1.getY(),p2.getX(),p2.getY(),p3.getX(),p3.getY(),p4.getX(),p4.getY())){
             return null;
@@ -61,10 +61,10 @@ public  class JIntersect {
         }
         return (new Point2D.Double(x,y));
     }
-    /**’¼ü‚Ì‚Æ‚RŸƒpƒ‰ƒƒgƒŠƒbƒN‹Èü‚ÌŒğ“_‚Ì‰ğ‚ğ•Ô‚µ‚Ü‚·B
-     *@param p0 ’¼ü‚Ìn“_<BR>
-     *p1 ’¼ü‚ÌI“_<BR>
-     *p ƒpƒ‰ƒƒgƒŠƒbƒN‹Èü‚ÌƒRƒ“ƒgƒ[ƒ‹ƒ|ƒCƒ“ƒg*/
+    /**ç›´ç·šã®ã¨ï¼“æ¬¡ãƒ‘ãƒ©ãƒ¡ãƒˆãƒªãƒƒã‚¯æ›²ç·šã®äº¤ç‚¹ã®è§£ã‚’è¿”ã—ã¾ã™ã€‚
+     *@param p0 ç›´ç·šã®å§‹ç‚¹<BR>
+     *p1 ç›´ç·šã®çµ‚ç‚¹<BR>
+     *p ãƒ‘ãƒ©ãƒ¡ãƒˆãƒªãƒƒã‚¯æ›²ç·šã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚¤ãƒ³ãƒˆ*/
     public static JSolution[] cubicIntersection(Point2D p0,Point2D p1,Point2D[] p){
         int n,i;
         Line2D ln=new Line2D.Double(p0,p1);
@@ -123,7 +123,7 @@ public  class JIntersect {
         }
         return retArray;
     }
-    /**’¼ü‚ÆƒpƒX‚ªŒğ·‚·‚éê‡Œğ“_‚ÉƒRƒ“ƒgƒ[ƒ‹ƒ|ƒCƒ“ƒg‚ğ’Ç‰Á‚µ‚Ü‚·.
+    /**ç›´ç·šã¨ãƒ‘ã‚¹ãŒäº¤å·®ã™ã‚‹å ´åˆäº¤ç‚¹ã«ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚¤ãƒ³ãƒˆã‚’è¿½åŠ ã—ã¾ã™.
      */
     public static int addPath(Point2D p0,Point2D p1,JSimplePath sourcePath){
         JSimplePath ret;
@@ -211,7 +211,7 @@ public  class JIntersect {
         }
         return -1;
     }
-    /**’¼ü‚ÆƒpƒX‚ªŒğ·‚·‚éê‡ƒpƒX‚ğ•ªŠ„‚µA•ªŠ„Œ‹‰Ê‚ğ•Ô‚µ‚Ü‚·.
+    /**ç›´ç·šã¨ãƒ‘ã‚¹ãŒäº¤å·®ã™ã‚‹å ´åˆãƒ‘ã‚¹ã‚’åˆ†å‰²ã—ã€åˆ†å‰²çµæœã‚’è¿”ã—ã¾ã™.
      *
      */
     public static Vector<JSimplePath> cutPath(Point2D p0,Point2D p1,JSimplePath sourcePath){
@@ -235,7 +235,7 @@ public  class JIntersect {
             }else{
                 next=r.get(i+1);
             }
-            //‰ğ‚ğ’T‚·.
+            //è§£ã‚’æ¢ã™.
             if ((current.getControl2()== null || current.getAncur().equals(current.getControl2()))
             && (next.getControl1()==null || next.getAncur().equals(next.getControl1()))){
                 Point2D pi=lineIntersection(p0,p1,current.getAncur(),next.getAncur());

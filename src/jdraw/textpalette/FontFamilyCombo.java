@@ -38,7 +38,7 @@ public class FontFamilyCombo extends JComboBox implements JTypeMenuItem {
 
     public FontFamilyCombo() {
         this.setRenderer(new MyCellRenderer());
-        this.setToolTipText("ƒtƒHƒ“ƒg");
+        this.setToolTipText("ãƒ•ã‚©ãƒ³ãƒˆ");
         String[] fonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
         for (int i = 0; i < fonts.length; i++) {
             this.addItem(fonts[i]);

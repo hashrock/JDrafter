@@ -37,7 +37,7 @@ public class JTransformSegmentsEdit extends JAbstractEdit{
         this.segments =(Vector<JSegment>)segments.clone();
         this.target=target;
         this.af=(AffineTransform)af.clone();
-        presentationName="ƒZƒOƒƒ“ƒgˆÚ“®";
+        presentationName="ã‚»ã‚°ãƒ¡ãƒ³ãƒˆç§»å‹•";
         redo();
     }
     public void redo() throws CannotRedoException{

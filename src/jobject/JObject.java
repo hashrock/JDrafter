@@ -18,7 +18,7 @@ import java.util.Vector;
 import javax.swing.tree.TreeNode;
 
 /**
- *子をもつオブジェクトの基本クラス.
+ *蟄舌ｒ繧ゅ▽繧ｪ繝悶ず繧ｧ繧ｯ繝医�ｮ蝓ｺ譛ｬ繧ｯ繝ｩ繧ｹ.
  * @author TI
  */
 public abstract class JObject<P extends JObject,C extends JLeaf> extends JLeaf<P> implements Cloneable{
@@ -129,7 +129,7 @@ public abstract class JObject<P extends JObject,C extends JLeaf> extends JLeaf<P
     }
     //
     
-    //オブジェクトが所有する末端オブジェクトを要素とするVector;
+    //繧ｪ繝悶ず繧ｧ繧ｯ繝医′謇譛峨☆繧区忰遶ｯ繧ｪ繝悶ず繧ｧ繧ｯ繝医ｒ隕∫ｴ縺ｨ縺吶ｋVector;
     public Vector<JLeaf> getLeafs(){
         Vector<JLeaf> ret=new Vector<JLeaf>();
         for (int i=0;i<size();i++){

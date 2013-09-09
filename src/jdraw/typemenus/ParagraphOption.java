@@ -40,7 +40,7 @@ public class ParagraphOption extends javax.swing.JDialog implements FocusListene
         rightIndent.addFocusListener(this);
         lineSpacing.addFocusListener(this);
          */
-        setTitle("’i—ƒIƒvƒVƒ‡ƒ“");
+        setTitle("æ®µè½ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
     }
     private static Frame getFrame(Component c){
         if (c instanceof Frame) return (Frame)c;
@@ -174,22 +174,22 @@ public class ParagraphOption extends javax.swing.JDialog implements FocusListene
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("s‘µ‚¦")));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder("è¡Œæƒãˆ")));
 
         buttonGroup.add(alignLeft);
-        alignLeft.setText("¶");
+        alignLeft.setText("å·¦");
         alignLeft.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         alignLeft.setFocusable(false);
         alignLeft.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
         buttonGroup.add(alignCenter);
-        alignCenter.setText("’†‰›");
+        alignCenter.setText("ä¸­å¤®");
         alignCenter.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         alignCenter.setFocusable(false);
         alignCenter.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
         buttonGroup.add(alignRight);
-        alignRight.setText("‰E");
+        alignRight.setText("å³");
         alignRight.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         alignRight.setFocusable(false);
         alignRight.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -214,13 +214,13 @@ public class ParagraphOption extends javax.swing.JDialog implements FocusListene
                 .addComponent(alignCenter))
         );
 
-        jLabel1.setText("1s–ÚƒCƒ“ƒfƒ“ƒg:");
+        jLabel1.setText("1è¡Œç›®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ:");
 
-        jLabel2.setText("¶ƒCƒ“ƒfƒ“ƒg:");
+        jLabel2.setText("å·¦ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ:");
 
-        jLabel3.setText("‰EƒCƒ“ƒfƒ“ƒg:");
+        jLabel3.setText("å³ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆ:");
 
-        jLabel4.setText("sŠÔŠu:");
+        jLabel4.setText("è¡Œé–“éš”:");
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
@@ -229,7 +229,7 @@ public class ParagraphOption extends javax.swing.JDialog implements FocusListene
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,7 +247,7 @@ public class ParagraphOption extends javax.swing.JDialog implements FocusListene
 
         jLabel9.setText("pt");
 
-        jLabel10.setText("ƒ^ƒuƒXƒy[ƒX:");
+        jLabel10.setText("ã‚¿ãƒ–ã‚¹ãƒšãƒ¼ã‚¹:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

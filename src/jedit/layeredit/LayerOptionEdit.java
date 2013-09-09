@@ -43,7 +43,7 @@ public class LayerOptionEdit extends JAbstractEdit{
         oldColor=target.getPreviewColor();
         this.newName=newName;
         this.oldName=target.getName();
-        presentationName="レイヤーオプション";
+        presentationName="繝ｬ繧､繝､繝ｼ繧ｪ繝励す繝ｧ繝ｳ";
         redo();
     }
     public void redo(){

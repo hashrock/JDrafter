@@ -26,7 +26,7 @@ public class JRoundRectTool extends JShapeTool{
     /** Creates a new instance of JRoundRectTool */
     public JRoundRectTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ŠpŠÛ‹éŒ`ƒc[ƒ‹";
+        presentationName="è§’ä¸¸çŸ©å½¢ãƒ„ãƒ¼ãƒ«";
     }
     
     protected Shape createShape(Point2D start, Point2D end, boolean isAltDown,boolean isShiftDown) {

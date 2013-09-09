@@ -36,7 +36,7 @@ public class JReflectTool extends JScaleTool{
      */
     public JReflectTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="‘ÎÌˆÚ“®ƒc[ƒ‹";
+        presentationName="å¯¾ç§°ç§»å‹•ãƒ„ãƒ¼ãƒ«";
     }
     public void paint(Graphics2D g){
         super.paint(g);

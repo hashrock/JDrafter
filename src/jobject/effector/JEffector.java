@@ -19,36 +19,36 @@ import jpaint.JPaint;
 import jpaint.JStroke;
 
 /**
- * •`‰æƒIƒuƒWƒFƒNƒg‚ÌƒGƒtƒFƒNƒg‚Ìƒ|ƒŠƒV[‚ğ‚ ‚ç‚í‚µ‚Ü‚·B
+ * æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®ãƒãƒªã‚·ãƒ¼ã‚’ã‚ã‚‰ã‚ã—ã¾ã™ã€‚
  * @author takashi
  */
 public interface JEffector extends Cloneable, Serializable {
     /**
-     * w’è‚ÌShape‚ğ•`‰æ‚µ‚Ü‚·B
-     * @param g ƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
-     * @param s •`‰æ‚·‚éShape
-     * @param fillPaint “h‚è‚Â‚Ô‚µ‚Ì‚ğs‚¤Paint
-     * @param border ‹«ŠE‚ğ•`‰æ‚·‚éPaint
-     * @param stroke ‹«ŠE‚Ìüí
+     * æŒ‡å®šã®Shapeã‚’æç”»ã—ã¾ã™ã€‚
+     * @param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
+     * @param s æç”»ã™ã‚‹Shape
+     * @param fillPaint å¡—ã‚Šã¤ã¶ã—ã®ã‚’è¡Œã†Paint
+     * @param border å¢ƒç•Œã‚’æç”»ã™ã‚‹Paint
+     * @param stroke å¢ƒç•Œã®ç·šç¨®
      */
     public void paint(Graphics2D g, Shape s, JPaint fillPaint, JPaint border, JStroke stroke);
      /**
-     * w’è‚ÌTextObject‚ğ•`‰æ‚µ‚Ü‚·B
-     * @param g ƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
-     * @param s •`‰æ‚·‚éShape
-     * @param fillPaint “h‚è‚Â‚Ô‚µ‚Ì‚ğs‚¤Paint
-     * @param border ‹«ŠE‚ğ•`‰æ‚·‚éPaint
-     * @param stroke ‹«ŠE‚Ìüí
+     * æŒ‡å®šã®TextObjectã‚’æç”»ã—ã¾ã™ã€‚
+     * @param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
+     * @param s æç”»ã™ã‚‹Shape
+     * @param fillPaint å¡—ã‚Šã¤ã¶ã—ã®ã‚’è¡Œã†Paint
+     * @param border å¢ƒç•Œã‚’æç”»ã™ã‚‹Paint
+     * @param stroke å¢ƒç•Œã®ç·šç¨®
      */   
     public void paintText(Graphics2D g,TextLocater locater,AffineTransform tx,JPaint fillPaint,JPaint border,JStroke stroke);
     /**
-     * w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ‚ğŠg’£‚µA‚±‚ÌJEffector‚Ì•`‰æ—Ìˆæ‚Ü‚ÅŠg’£‚µ‚Ü‚·B
-     * @param r w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ
-     * @return ‚±‚ÌJEffector‚É‚æ‚èŠg’£‚³‚ê‚½•`‰æ—Ìˆæ
+     * æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸã‚’æ‹¡å¼µã—ã€ã“ã®JEffectorã®æç”»é ˜åŸŸã¾ã§æ‹¡å¼µã—ã¾ã™ã€‚
+     * @param r æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸ
+     * @return ã“ã®JEffectorã«ã‚ˆã‚Šæ‹¡å¼µã•ã‚ŒãŸæç”»é ˜åŸŸ
      */
     public Rectangle2D culcBounds(Rectangle2D r,JLeaf jl);
    /**
-    * ‚±‚ÌJEffector‚Ì•¡»‚ğì¬‚µ‚Ü‚·.
+    * ã“ã®JEffectorã®è¤‡è£½ã‚’ä½œæˆã—ã¾ã™.
     * @return
     */
     public JEffector clone();

@@ -48,7 +48,7 @@ public class InnerShapeTextLocater extends TextLocater{
         float verticalPos=0;
         int charPos=0;
         while (text !=null){
-            //行スタイル
+            //陦後せ繧ｿ繧､繝ｫ
             AttributeSet attribute=pi.getParagraphAttributeSet();
             float leftIndent=StyleConstants.getLeftIndent(attribute);
             float firstIndent=StyleConstants.getFirstLineIndent(attribute);
@@ -57,14 +57,14 @@ public class InnerShapeTextLocater extends TextLocater{
             int alignment=StyleConstants.getAlignment(attribute);
             TabSet tabset=StyleConstants.getTabSet(attribute);
             if (tabset==null) tabset=DEFAULT_TABSET;
-            //タブポジション
+            //繧ｿ繝悶�昴ず繧ｷ繝ｧ繝ｳ
             Vector<Integer> tabPosition=new Vector<Integer>();
             for (char c=text.first();c!=text.DONE;c=text.next()){
                 if (c=='\t')
                     tabPosition.add(text.getIndex());
             }
             tabPosition.add(text.getEndIndex());
-            //フォントメトリクス
+            //繝輔か繝ｳ繝医Γ繝医Μ繧ｯ繧ｹ
             Font font=document.getFont(attribute);
             LineMetrics metrics=font.getLineMetrics(" ",frc);
             float tabSpace=(new TextLayout("    ",font,frc)).getAdvance();

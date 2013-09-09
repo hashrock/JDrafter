@@ -16,13 +16,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JViewport;
 
 /**
- *JDrawViewerê—p‚ÌScrollPaneƒTƒuƒNƒ‰ƒX‚Å‚·B
+ *JDrawViewerå°‚ç”¨ã®ScrollPaneã‚µãƒ–ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
  * @author TI
  */
 public class JScroller extends JScrollPane{
     JDocumentViewer viewer=null;
     JRuler vertical=null,horizontal=null;
-    /** ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^[*/
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼*/
     public JScroller() {
         setViewer(new JDocumentViewer());
         vertical=new JRuler(JRuler.VERTICAL,this);
@@ -37,26 +37,26 @@ public class JScroller extends JScrollPane{
         horizontal.setPreferredWidth(viewer.getPreferredSize().width);
         this.getViewport().setScrollMode(JViewport.BACKINGSTORE_SCROLL_MODE);
     }
-    /**JScroller‚ÉJDocumentViwer‚ğİ’è‚µ‚Ü‚·.*/
+    /**JScrollerã«JDocumentViwerã‚’è¨­å®šã—ã¾ã™.*/
     public void setViewer(JDocumentViewer vw){
         viewer=vw;
         this.setViewportView(vw);
         vw.setScroller(this);
     }
-    /**‚±‚ÌJScroller‚ª•\¦‚·‚éJDrawViewer‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ã“ã®JScrollerãŒè¡¨ç¤ºã™ã‚‹JDrawViewerã‚’è¿”ã—ã¾ã™.*/
     public JDocumentViewer getViewer(){
         return viewer;
     }
-    /**•\¦ƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ•Ô‚µ‚Ü‚·.*/
+    /**è¡¨ç¤ºã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’è¿”ã—ã¾ã™.*/
     public JEnvironment getEnvironment(){
         return getViewer().getEnvironment();
     }
-    /**ƒ‹[ƒ‰[ƒTƒCƒY‚ğ’²®‚µ‚Ü‚·.*/
+    /**ãƒ«ãƒ¼ãƒ©ãƒ¼ã‚µã‚¤ã‚ºã‚’èª¿æ•´ã—ã¾ã™.*/
     public void adjustSize(){
         vertical.setPreferredHeight(viewer.getPreferredSize().height);
         horizontal.setPreferredWidth(viewer.getPreferredSize().width);       
     }
-    /**ƒRƒ“ƒ|[ƒlƒ“ƒgƒAƒ_ƒvƒ^‚ğÀ‘•‚·‚éƒTƒuƒNƒ‰ƒX‚Å‚·.*/
+    /**ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚¢ãƒ€ãƒ—ã‚¿ã‚’å®Ÿè£…ã™ã‚‹ã‚µãƒ–ã‚¯ãƒ©ã‚¹ã§ã™.*/
     public class cListener extends ComponentAdapter{
        public void componentResized(ComponentEvent e){
             viewer.adjustSize();

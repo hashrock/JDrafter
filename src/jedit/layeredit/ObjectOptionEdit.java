@@ -40,7 +40,7 @@ public class ObjectOptionEdit extends JAbstractEdit{
         oldlocked=target.isLocked();
         this.newName=newName;
         this.oldName=target.getName();
-        presentationName="オブジェクトオプション";
+        presentationName="繧ｪ繝悶ず繧ｧ繧ｯ繝医が繝励す繝ｧ繝ｳ";
         redo();
     }
     public void redo(){

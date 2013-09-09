@@ -30,7 +30,7 @@ public class FreeHandToolPanel extends javax.swing.JDialog implements ChangeList
         slider.setMinValue(0);
         slider.addChangeListener(this);
         tolerance.addChangeListener(this);
-        this.setTitle("フリーハンドツールオプション");
+        this.setTitle("繝輔Μ繝ｼ繝上Φ繝峨ヤ繝ｼ繝ｫ繧ｪ繝励す繝ｧ繝ｳ");
         jButton1.requestFocus();
     }
     public static int showAsDialog(Component c,int tlr){
@@ -90,7 +90,7 @@ public class FreeHandToolPanel extends javax.swing.JDialog implements ChangeList
             }
         });
 
-        jLabel1.setText("許容誤差");
+        jLabel1.setText("險ｱ螳ｹ隱､蟾ｮ");
 
         jLabel2.setText("pix");
 
@@ -101,7 +101,7 @@ public class FreeHandToolPanel extends javax.swing.JDialog implements ChangeList
             }
         });
 
-        jButton2.setText("キャンセル");
+        jButton2.setText("繧ｭ繝｣繝ｳ繧ｻ繝ｫ");
         jButton2.setDefaultCapable(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

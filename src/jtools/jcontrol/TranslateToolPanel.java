@@ -44,7 +44,7 @@ public class TranslateToolPanel extends javax.swing.JPanel implements ChangeList
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle("•½sˆÚ“®");
+        dialog.setTitle("å¹³è¡Œç§»å‹•");
         //
         double dx=JEnvironment.DEFAULT_TRANSLATE_X;
         double dy=JEnvironment.DEFAULT_TRANSLATE_Y;
@@ -72,7 +72,7 @@ public class TranslateToolPanel extends javax.swing.JPanel implements ChangeList
     public TranslateToolPanel(JAbstractTool dragger) {
         this(getRootWindow(dragger.getViewer().getRootPane().getParent()));
         this.dragger=dragger;
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
     }
     public boolean isCanceled(){
         return cancel;
@@ -111,7 +111,7 @@ public class TranslateToolPanel extends javax.swing.JPanel implements ChangeList
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,13 +119,13 @@ public class TranslateToolPanel extends javax.swing.JPanel implements ChangeList
             }
         });
 
-        copy.setText("ƒRƒs[");
+        copy.setText("ã‚³ãƒ”ãƒ¼");
         copy.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         copy.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
-        jLabel2.setText("Y•ûŒü:");
+        jLabel2.setText("Yæ–¹å‘:");
 
-        jLabel1.setText("X•ûŒü:");
+        jLabel1.setText("Xæ–¹å‘:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,11 +156,11 @@ public class TranslateToolPanel extends javax.swing.JPanel implements ChangeList
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("ˆÚ“®‹——£", jPanel1);
+        jTabbedPane1.addTab("ç§»å‹•è·é›¢", jPanel1);
 
-        jLabel3.setText("Šp“x");
+        jLabel3.setText("è§’åº¦");
 
-        jLabel4.setText("ˆÚ“®‹——£");
+        jLabel4.setText("ç§»å‹•è·é›¢");
 
         javax.swing.GroupLayout angleSlider1Layout = new javax.swing.GroupLayout(angleSlider1);
         angleSlider1.setLayout(angleSlider1Layout);
@@ -211,7 +211,7 @@ public class TranslateToolPanel extends javax.swing.JPanel implements ChangeList
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Šp“x‚Æ‹——£", jPanel2);
+        jTabbedPane1.addTab("è§’åº¦ã¨è·é›¢", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

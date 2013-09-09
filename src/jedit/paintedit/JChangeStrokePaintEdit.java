@@ -36,7 +36,7 @@ public class JChangeStrokePaintEdit extends JAbstractEdit{
         this.target=target;
         this.newPaint=newPaint;
         saved=target.getStrokePaint();
-        presentationName="ü‚ÌF";
+        presentationName="ç·šã®è‰²";
         redo();
     }
     public void redo(){

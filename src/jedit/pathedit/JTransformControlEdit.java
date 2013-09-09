@@ -46,7 +46,7 @@ public class JTransformControlEdit extends JAbstractEdit{
         cCtl2=newSeg.getControl2();
         oldJoin=target.isJoined();
         newJoin=newSeg.isJoined();
-        presentationName="�p�X�̕ҏW";
+        presentationName="パスの編集";
         redo();
     }
     public void redo() throws CannotRedoException{

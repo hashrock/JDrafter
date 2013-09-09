@@ -44,7 +44,7 @@ public class JCompoundPathEdit extends JAbstractEdit{
                 addingPath.add(targets.get(i).getPath().get(j).clone());
             }
         }
-        presentationName="•¡‡ƒpƒXì¬";
+        presentationName="è¤‡åˆãƒ‘ã‚¹ä½œæˆ";
         redo();
     }
     public void redo(){

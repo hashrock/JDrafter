@@ -100,7 +100,7 @@ public class FontSizeOption extends javax.swing.JDialog implements ChangeListene
             }
         });
 
-        jLabel1.setText("フォントサイズ");
+        jLabel1.setText("繝輔か繝ｳ繝医し繧､繧ｺ");
 
         fontSlider.setMaxValue(100);
 
@@ -111,7 +111,7 @@ public class FontSizeOption extends javax.swing.JDialog implements ChangeListene
             }
         });
 
-        cancel.setText("キャンセル");
+        cancel.setText("繧ｭ繝｣繝ｳ繧ｻ繝ｫ");
         cancel.setDefaultCapable(false);
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

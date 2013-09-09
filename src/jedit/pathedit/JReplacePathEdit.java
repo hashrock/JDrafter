@@ -35,7 +35,7 @@ public class JReplacePathEdit extends JAbstractEdit {
         parent=target.getParent();
         pathIndex=target.getPath().indexOf(removePath);
         this.newPath=newPath;
-        presentationName="ƒpƒX•ÒW";
+        presentationName="ãƒ‘ã‚¹ç·¨é›†";
         redo();
     }
     public void redo(){

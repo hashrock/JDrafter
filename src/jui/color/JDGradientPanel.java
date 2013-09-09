@@ -211,8 +211,8 @@ public class JDGradientPanel extends javax.swing.JPanel implements ChangeListene
             }
         });
 
-        combobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "üŒ`", "•úËó" }));
-        combobox.setToolTipText("ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌŒ`®");
+        combobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ç·šå½¢", "æ”¾å°„çŠ¶" }));
+        combobox.setToolTipText("ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®å½¢å¼");
         combobox.setFocusable(false);
         combobox.setInheritsPopupMenu(true);
         combobox.addItemListener(new java.awt.event.ItemListener() {
@@ -221,14 +221,14 @@ public class JDGradientPanel extends javax.swing.JPanel implements ChangeListene
             }
         });
 
-        jLabel1.setText("ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌŒ`ó");
+        jLabel1.setText("ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®å½¢çŠ¶");
 
         okButton.setText("jButton1");
 
         cancelButton.setText("jButton1");
 
         preview.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        preview.setToolTipText("•ÏXŒã(ƒNƒŠƒbƒN‚µ‚ÄŒˆ’è)");
+        preview.setToolTipText("å¤‰æ›´å¾Œ(ã‚¯ãƒªãƒƒã‚¯ã—ã¦æ±ºå®š)");
         preview.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 previewMousePressed(evt);
@@ -247,7 +247,7 @@ public class JDGradientPanel extends javax.swing.JPanel implements ChangeListene
         );
 
         cancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        cancel.setToolTipText("•ÏX‘O(ƒNƒŠƒbƒN‚µ‚ÄŒˆ’è)");
+        cancel.setToolTipText("å¤‰æ›´å‰(ã‚¯ãƒªãƒƒã‚¯ã—ã¦æ±ºå®š)");
         cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 cancelMousePressed(evt);

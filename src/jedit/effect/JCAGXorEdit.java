@@ -24,7 +24,7 @@ public class JCAGXorEdit extends JCAGAddEdit{
     /** Creates a new instance of JCAGXorEdit */
     public JCAGXorEdit(JDocumentViewer viewer,Vector<JPathObject> targets) {
         super(viewer,targets);
-        presentationName="”r‘¼˜_—˜aiXOR)";
+        presentationName="æ’ä»–è«–ç†å’Œï¼ˆXOR)";
     }
     protected JPathObject createObject(Vector<JPathObject>objs){
         JPathObject ret=objs.get(0).clone();

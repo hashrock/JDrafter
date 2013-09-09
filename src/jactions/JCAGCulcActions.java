@@ -273,7 +273,7 @@ public class JCAGCulcActions implements ItemListener {
     public class AddAction extends AbstractAction {
 
         public AddAction() {
-            putValue(NAME, "˜a(A)");
+            putValue(NAME, "å’Œ(A)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_A);
             setEnabled(false);
         }
@@ -294,7 +294,7 @@ public class JCAGCulcActions implements ItemListener {
     public class SubAction extends AbstractAction {
 
         public SubAction() {
-            putValue(NAME, "·(S)");
+            putValue(NAME, "å·®(S)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_S);
             setEnabled(false);
         }
@@ -315,7 +315,7 @@ public class JCAGCulcActions implements ItemListener {
     public class XorAction extends AbstractAction {
 
         public XorAction() {
-            putValue(NAME, "”r‘¼“I˜_—˜a(X)");
+            putValue(NAME, "æ’ä»–çš„è«–ç†å’Œ(X)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_X);
             setEnabled(false);
         }
@@ -336,7 +336,7 @@ public class JCAGCulcActions implements ItemListener {
     public class MultAction extends AbstractAction {
 
         public MultAction() {
-            putValue(NAME, "Ï(M)");
+            putValue(NAME, "ç©(M)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
             setEnabled(false);
         }
@@ -357,7 +357,7 @@ public class JCAGCulcActions implements ItemListener {
     public class ReleaseCompoundPathAction extends AbstractAction {
 
         public ReleaseCompoundPathAction() {
-            putValue(NAME, "•¡‡ƒpƒX‰ğœ(R)");
+            putValue(NAME, "è¤‡åˆãƒ‘ã‚¹è§£é™¤(R)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
             setEnabled(false);
@@ -390,7 +390,7 @@ public class JCAGCulcActions implements ItemListener {
     public class CompoundPathAction extends AbstractAction {
 
         public CompoundPathAction() {
-            putValue(NAME, "•¡‡ƒpƒXì¬(P)");
+            putValue(NAME, "è¤‡åˆãƒ‘ã‚¹ä½œæˆ(P)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_P);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_1, ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -414,7 +414,7 @@ public class JCAGCulcActions implements ItemListener {
     public class JoinPathAction extends AbstractAction {
 
         public JoinPathAction() {
-            putValue(NAME, "ƒpƒX‚Ì˜AŒ‹(J)");
+            putValue(NAME, "ãƒ‘ã‚¹ã®é€£çµ(J)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_J);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_J, ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -427,7 +427,7 @@ public class JCAGCulcActions implements ItemListener {
             Vector<JSegment> tSeg = new Vector<JSegment>();
             if (!getSelectedSegments(tObj, tPath, tSeg)) {
                 JOptionPane pane = new JOptionPane();
-                JOptionPane.showMessageDialog(viewer.getScroller(), "ƒpƒX‚ğ˜AŒ‹‚·‚é‚½‚ß‚É‚ÍA˜AŒ‹‚·‚é“ñ‚Â‚Ì’[“_‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢.", "ƒpƒX‚Ì˜AŒ‹", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(viewer.getScroller(), "ãƒ‘ã‚¹ã‚’é€£çµã™ã‚‹ãŸã‚ã«ã¯ã€é€£çµã™ã‚‹äºŒã¤ã®ç«¯ç‚¹ã‚’é¸æŠã—ã¦ãã ã•ã„.", "ãƒ‘ã‚¹ã®é€£çµ", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
             UndoableEdit anEdit = new JJoinPathEdit(viewer, tObj.get(0), tSeg.get(0), tObj.get(1), tSeg.get(1));
@@ -439,7 +439,7 @@ public class JCAGCulcActions implements ItemListener {
     public class UniformJoinPathAction extends AbstractAction {
 
         public UniformJoinPathAction() {
-            putValue(NAME, "ƒpƒX‚ğ•½‹Ï‰»‚µ‚Ä˜AŒ‹(A)");
+            putValue(NAME, "ãƒ‘ã‚¹ã‚’å¹³å‡åŒ–ã—ã¦é€£çµ(A)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_A);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_J, ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
             setEnabled(false);
@@ -452,7 +452,7 @@ public class JCAGCulcActions implements ItemListener {
             Vector<JSegment> tSeg = new Vector<JSegment>();
             if (!getSelectedSegments(tObj, tPath, tSeg)) {
                 JOptionPane pane = new JOptionPane();
-                JOptionPane.showMessageDialog(viewer.getScroller(), "ƒpƒX‚ğ˜AŒ‹‚·‚é‚½‚ß‚É‚ÍA˜AŒ‹‚·‚é“ñ‚Â‚Ì’[“_‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢.", "ƒpƒX‚Ì˜AŒ‹", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(viewer.getScroller(), "ãƒ‘ã‚¹ã‚’é€£çµã™ã‚‹ãŸã‚ã«ã¯ã€é€£çµã™ã‚‹äºŒã¤ã®ç«¯ç‚¹ã‚’é¸æŠã—ã¦ãã ã•ã„.", "ãƒ‘ã‚¹ã®é€£çµ", JOptionPane.INFORMATION_MESSAGE);
                 return;
             }
             UndoableEdit anEdit = new JUniformJoinEdit(viewer, tObj.get(0), tSeg.get(0), tObj.get(1), tSeg.get(1));
@@ -464,7 +464,7 @@ public class JCAGCulcActions implements ItemListener {
     public class ReversePathAction extends AbstractAction {
 
         public ReversePathAction() {
-            putValue(NAME, "ƒpƒX‚Ì‹t“](R)");
+            putValue(NAME, "ãƒ‘ã‚¹ã®é€†è»¢(R)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             setEnabled(false);
         }
@@ -594,7 +594,7 @@ public class JCAGCulcActions implements ItemListener {
     public class ReleaseEffectAction extends AbstractAction {
 
         public ReleaseEffectAction() {
-            putValue(NAME, "ƒGƒtƒFƒNƒg‰ğœ(R)");
+            putValue(NAME, "ã‚¨ãƒ•ã‚§ã‚¯ãƒˆè§£é™¤(R)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             setEnabled(false);
         }
@@ -613,7 +613,7 @@ public class JCAGCulcActions implements ItemListener {
                     if (cEdit == null) {
                         cEdit = new CompoundEdit();
                     }
-                    cEdit.addEdit(new JSetEffectEdit(viewer, lf, jfe, "ƒGƒtƒFƒNƒg‰ğœ"));
+                    cEdit.addEdit(new JSetEffectEdit(viewer, lf, jfe, "ã‚¨ãƒ•ã‚§ã‚¯ãƒˆè§£é™¤"));
                 }
             }
             if (cEdit != null) {
@@ -628,7 +628,7 @@ public class JCAGCulcActions implements ItemListener {
     public class MakeBlurAction extends AbstractAction {
 
         public MakeBlurAction() {
-            putValue(NAME, "‚Ú‚©‚µ(B)");
+            putValue(NAME, "ã¼ã‹ã—(B)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_B);
             setEnabled(false);
         }
@@ -644,7 +644,7 @@ public class JCAGCulcActions implements ItemListener {
                 CompoundEdit cEdit = new CompoundEdit();
                 for (int i = 0; i < leafs.size(); i++) {
                     JBlurEffector effect = new JBlurEffector(panel.getValue());
-                    cEdit.addEdit(new JSetEffectEdit(viewer, leafs.get(i), effect, "‚Ú‚©‚µ"));
+                    cEdit.addEdit(new JSetEffectEdit(viewer, leafs.get(i), effect, "ã¼ã‹ã—"));
                 }
                 cEdit.end();
                 viewer.getDocument().fireUndoEvent(cEdit);
@@ -657,7 +657,7 @@ public class JCAGCulcActions implements ItemListener {
     public class DropShadowAction extends AbstractAction {
 
         public DropShadowAction() {
-            putValue(NAME, "ƒhƒƒbƒvƒVƒƒƒhƒE(D)");
+            putValue(NAME, "ãƒ‰ãƒ­ãƒƒãƒ—ã‚·ãƒ£ãƒ‰ã‚¦(D)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_D);
             setEnabled(false);
         }
@@ -674,7 +674,7 @@ public class JCAGCulcActions implements ItemListener {
                 CompoundEdit cEdit = new CompoundEdit();
                 for (int i = 0; i < leafs.size(); i++) {
                     JDropShadowEffector effect = panel.getEffector();
-                    cEdit.addEdit(new JSetEffectEdit(viewer, leafs.get(i), effect, "ƒhƒƒbƒvƒVƒƒƒhƒE"));
+                    cEdit.addEdit(new JSetEffectEdit(viewer, leafs.get(i), effect, "ãƒ‰ãƒ­ãƒƒãƒ—ã‚·ãƒ£ãƒ‰ã‚¦"));
                 }
                 cEdit.end();
                 viewer.getDocument().fireUndoEvent(cEdit);
@@ -688,7 +688,7 @@ public class JCAGCulcActions implements ItemListener {
     public class MakeArrowAction extends AbstractAction {
 
         public MakeArrowAction() {
-            putValue(NAME, "–îˆó‚ğì¬(A)");
+            putValue(NAME, "çŸ¢å°ã‚’ä½œæˆ(A)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_A);
             setEnabled(false);
         }
@@ -712,12 +712,12 @@ public class JCAGCulcActions implements ItemListener {
                         if (cEdit == null) {
                             cEdit = new CompoundEdit();
                         }
-                        cEdit.addEdit(new JSetEffectEdit(viewer, jl, newEffect, "–îˆó‚É‚·‚é"));
+                        cEdit.addEdit(new JSetEffectEdit(viewer, jl, newEffect, "çŸ¢å°ã«ã™ã‚‹"));
                     } else if (jl.getEffector() instanceof JArrowEffect) {
                         if (cEdit == null) {
                             cEdit = new CompoundEdit();
                         }
-                        cEdit.addEdit(new JSetEffectEdit(viewer,jl,new JDefaultEffector(),"ƒGƒtƒFƒNƒg‰ğœ"));
+                        cEdit.addEdit(new JSetEffectEdit(viewer,jl,new JDefaultEffector(),"ã‚¨ãƒ•ã‚§ã‚¯ãƒˆè§£é™¤"));
                     }
                 }
                 if (cEdit != null) {
@@ -733,7 +733,7 @@ public class JCAGCulcActions implements ItemListener {
     public class OutlineTextAction extends AbstractAction {
 
         public OutlineTextAction() {
-            putValue(NAME, "ƒeƒLƒXƒgƒAƒEƒgƒ‰ƒCƒ“(T)");
+            putValue(NAME, "ãƒ†ã‚­ã‚¹ãƒˆã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³(T)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_T);
             setEnabled(false);
         }
@@ -766,7 +766,7 @@ public class JCAGCulcActions implements ItemListener {
     public class OutlineStrokeAction extends AbstractAction {
 
         public OutlineStrokeAction() {
-            putValue(NAME, "ƒXƒgƒ[ƒNƒAƒEƒgƒ‰ƒCƒ“(S)");
+            putValue(NAME, "ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³(S)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_S);
             setEnabled(false);
         }

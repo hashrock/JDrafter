@@ -18,7 +18,7 @@ import jobject.JPathObject;
 import jscreen.JRequest;
 
 /**
- *  �R�s�[����ɂ��I�u�W�F�N�g�̍쐬���J�v�Z�������܂��B
+ *  コピー動作によるオブジェクトの作成をカプセル化します。
  * @author i002060
  */
 public class JPathCopySet {

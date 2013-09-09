@@ -55,15 +55,15 @@ import jui.JStrokeChanger;
 import jobject.JText;
 
 /**
- *ƒIƒuƒWƒFƒNƒg‚Ì“h‚èAƒXƒgƒ[ƒN‚ğ•ÏX‚·‚é‚½‚ß‚ÌƒRƒ“ƒgƒ[ƒ‹‚Å‚·.
+ *ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å¡—ã‚Šã€ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã‚’å¤‰æ›´ã™ã‚‹ãŸã‚ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã§ã™.
  *
  * @author i002060
  */
 public class JColorChanger extends JPanel implements ItemListener, ChangeListener, JUndoRedoListener {
 
-    /**“h‚è‚ğİ’è‚·‚éƒ‚[ƒh‚Å‚·BDrawObject‚Ì“h‚è‚ğXV‚µ‚Ü‚·. */
+    /**å¡—ã‚Šã‚’è¨­å®šã™ã‚‹ãƒ¢ãƒ¼ãƒ‰ã§ã™ã€‚DrawObjectã®å¡—ã‚Šã‚’æ›´æ–°ã—ã¾ã™. */
     public static final int FILLMODE = 0;
-    /**ƒXƒgƒ[ƒN‚ÌF‚ğİ’è‚·‚éƒ‚[ƒh‚Å‚·*/
+    /**ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã®è‰²ã‚’è¨­å®šã™ã‚‹ãƒ¢ãƒ¼ãƒ‰ã§ã™*/
     public static final int STROKEMODE = 1;
     private int mode = FILLMODE;
     /**v*/
@@ -177,7 +177,7 @@ public class JColorChanger extends JPanel implements ItemListener, ChangeListene
         }
     }
 
-    /**‘I‘ğƒIƒuƒWƒFƒNƒg‚©‚ç‹¤’Ê‚Ì“h‚è‚ğ’Šo‚µAƒJƒŒƒ“ƒg‚Ì“h‚è‚ğİ’è‚µ‚Ü‚·.*/
+    /**é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰å…±é€šã®å¡—ã‚Šã‚’æŠ½å‡ºã—ã€ã‚«ãƒ¬ãƒ³ãƒˆã®å¡—ã‚Šã‚’è¨­å®šã—ã¾ã™.*/
     public void setupPaints() {
         if (viewer == null) {
             return;
@@ -433,19 +433,19 @@ public class JColorChanger extends JPanel implements ItemListener, ChangeListene
         Point p = e.getPoint();
         String cm = null;
         if (defaultRect.contains(p)) {
-            cm = "ƒfƒtƒHƒ‹ƒg‚Ì“h‚è‚Æü";
+            cm = "ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å¡—ã‚Šã¨ç·š";
         }
         if (mode == FILLMODE) {
             if (fillRect.contains(p)) {
-                cm = "“h‚è(ƒNƒŠƒbƒN‚µ‚Ä•ÒW)";
+                cm = "å¡—ã‚Š(ã‚¯ãƒªãƒƒã‚¯ã—ã¦ç·¨é›†)";
             } else if (strokeRect.contains(p)) {
-                cm = "ü‚ÌF(ƒNƒŠƒbƒN‚µ‚ÄƒAƒNƒeƒBƒu)";
+                cm = "ç·šã®è‰²(ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã‚¢ã‚¯ãƒ†ã‚£ãƒ–)";
             }
         } else {
             if (strokeRect.contains(p)) {
-                cm = "ü‚ÌF(ƒNƒŠƒbƒN‚µ‚Ä•ÒW)";
+                cm = "ç·šã®è‰²(ã‚¯ãƒªãƒƒã‚¯ã—ã¦ç·¨é›†)";
             } else if (fillRect.contains(p)) {
-                cm = "“h‚è(ƒNƒŠƒbƒN‚µ‚ÄƒAƒNƒeƒBƒu)";
+                cm = "å¡—ã‚Š(ã‚¯ãƒªãƒƒã‚¯ã—ã¦ã‚¢ã‚¯ãƒ†ã‚£ãƒ–)";
             }
         }
         if (cm != null) {
@@ -660,7 +660,7 @@ public class JColorChanger extends JPanel implements ItemListener, ChangeListene
             this.setPreferredSize(d);
             this.setMaximumSize(d);
             this.setMinimumSize(d);
-            this.setToolTipText("ƒOƒ‰ƒf[ƒVƒ‡ƒ“");
+            this.setToolTipText("ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³");
             shine.moveTo(0, 11);
             shine.lineTo(0, 0);
             shine.lineTo(11, 0);
@@ -843,7 +843,7 @@ public class JColorChanger extends JPanel implements ItemListener, ChangeListene
         private JPaint strokePaint = JEnvironment.DEFAULT_BORDER;
 
         public colorControl() {
-            this.setToolTipText("ƒJƒ‰[");
+            this.setToolTipText("ã‚«ãƒ©ãƒ¼");
         }
 
         public void stateChanged(ChangeEvent e) {
@@ -896,7 +896,7 @@ public class JColorChanger extends JPanel implements ItemListener, ChangeListene
         private JPaint strokePaint = JEnvironment.DEFAULT_BORDER;
 
         public nullControl() {
-            this.setToolTipText("“h‚è/üF‚È‚µ");
+            this.setToolTipText("å¡—ã‚Š/ç·šè‰²ãªã—");
         }
 
         public void stateChanged(ChangeEvent e) {
@@ -937,7 +937,7 @@ public class JColorChanger extends JPanel implements ItemListener, ChangeListene
         JPaint tPaint = null;
 
         public textureControl() {
-            this.setToolTipText("ƒpƒ^[ƒ“");
+            this.setToolTipText("ãƒ‘ã‚¿ãƒ¼ãƒ³");
             setEnabled(false);
         }
 

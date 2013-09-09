@@ -28,7 +28,7 @@ import jscreen.JEnvironment;
 import jscreen.JRequest;
 
 /**
- * JDocument上の全てのオブジェクトの基本クラス.
+ * JDocument荳翫�ｮ蜈ｨ縺ｦ縺ｮ繧ｪ繝悶ず繧ｧ繧ｯ繝医�ｮ蝓ｺ譛ｬ繧ｯ繝ｩ繧ｹ.
  *
  * @author TI
  */
@@ -205,11 +205,11 @@ public abstract class  JLeaf<P extends JObject> implements Serializable,TreeNode
         if (parent !=null) return parent.getLayer();
         return null;
     }
-    //セレクション領域
+    //繧ｻ繝ｬ繧ｯ繧ｷ繝ｧ繝ｳ鬆伜沺
     public abstract Rectangle2D getSelectionBounds();
-    //オブジェクトが収まるBounds
+    //繧ｪ繝悶ず繧ｧ繧ｯ繝医′蜿弱∪繧毅ounds
     public abstract Rectangle2D getBounds();
-    /**回転移動前のセレクション領域*/
+    /**蝗櫁ｻ｢遘ｻ蜍募燕縺ｮ繧ｻ繝ｬ繧ｯ繧ｷ繝ｧ繝ｳ鬆伜沺*/
     public abstract Rectangle2D getOriginalSelectionBounds(double x,double y);
     @Override
     public abstract Object clone() throws CloneNotSupportedException;

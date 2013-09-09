@@ -82,11 +82,11 @@ public class StyleTest extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 // TODO add your handling code here:
         try {
-            // SAXƒp[ƒT[ƒtƒ@ƒNƒgƒŠ‚ğ¶¬
+            // SAXãƒ‘ãƒ¼ã‚µãƒ¼ãƒ•ã‚¡ã‚¯ãƒˆãƒªã‚’ç”Ÿæˆ
             SAXParserFactory spfactory = SAXParserFactory.newInstance();
-            // SAXƒp[ƒT[‚ğ¶¬
+            // SAXãƒ‘ãƒ¼ã‚µãƒ¼ã‚’ç”Ÿæˆ
             SAXParser parser = spfactory.newSAXParser();
-            // XMLƒtƒ@ƒCƒ‹‚ğw’è‚³‚ê‚½ƒfƒtƒHƒ‹ƒgƒnƒ“ƒhƒ‰[‚Åˆ—‚µ‚Ü‚·
+            // XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®šã•ã‚ŒãŸãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã§å‡¦ç†ã—ã¾ã™
             StringReader reader=new StringReader(jTextArea1.getText());
             StyleTestHandler handler=new StyleTestHandler(jTextArea2);
             parser.parse(new InputSource(reader),handler);

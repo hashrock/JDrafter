@@ -39,7 +39,7 @@ public class JScaleTool extends JAbstractTool{
     /** Creates a new instance of JScaleTool */
     public JScaleTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="スケールツール";
+        presentationName="繧ｹ繧ｱ繝ｼ繝ｫ繝�繝ｼ繝ｫ";
         wakeup();
     }
     public void paint(Graphics2D g){

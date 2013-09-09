@@ -14,30 +14,30 @@ import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.*;
 /**
- *JDrawScroller‚ÌClumnHeader–”‚ÍRowHeader‚É–Ú·‚ğ•\¦‚µ‚Ü‚·.
+ *JDrawScrollerã®ClumnHeaderåˆã¯RowHeaderã«ç›®ç››ã‚’è¡¨ç¤ºã—ã¾ã™.
  * @author TK
  */
 public class JRuler extends JComponent{
     /**
-     *ColumnHeader‚É•\¦‚·‚é…•½–Ú·‚ğ•\‚µ‚Ü‚·.
+     *ColumnHeaderã«è¡¨ç¤ºã™ã‚‹æ°´å¹³ç›®ç››ã‚’è¡¨ã—ã¾ã™.
      */
     public static final int HORIZONTAL=0;
     /**
-     *RowHeader‚É•\¦‚·‚é‚’¼–Ú·‚ğ•\‚µ‚Ü‚·.
+     *RowHeaderã«è¡¨ç¤ºã™ã‚‹å‚ç›´ç›®ç››ã‚’è¡¨ã—ã¾ã™.
      */
     public static final int VERTICAL=1;
     /**
-     *JDrawRuler‚Ì‚‚³–”‚Í•<br>
-     *orientation‚ªHOLIZONTAL‚Ìê‡‚Í‚‚³AVERTICAL‚Ìê‡‚Í•‚ğ•\‚µ‚Ü‚·B
+     *JDrawRulerã®é«˜ã•åˆã¯å¹…<br>
+     *orientationãŒHOLIZONTALã®å ´åˆã¯é«˜ã•ã€VERTICALã®å ´åˆã¯å¹…ã‚’è¡¨ã—ã¾ã™ã€‚
      */
     public static final int SIZE=20;
-    /**Inch’PˆÊ‚Ìê‡‚Ì¬–Ú·ŠÔŠu*/
+    /**Inchå˜ä½ã®å ´åˆã®å°ç›®ç››é–“éš”*/
     private static final int[] unitIntervalM={1, 2, 5,10, 20,50,100,200,400};
-    /**Inch’PˆÊ‚Ìê‡‚Ì‘å–Ú·ŠÔŠu*/
+    /**Inchå˜ä½ã®å ´åˆã®å¤§ç›®ç››é–“éš”*/
     private static final int[] gaugeIntervalM={5,10,20,50,100,200,500,1000,2000};
-    /**mm’PˆÊ‚Ìê‡‚Ì¬–Ú·ŠÔŠu*/
+    /**mmå˜ä½ã®å ´åˆã®å°ç›®ç››é–“éš”*/
     private static final int[] unitIntervalI={1,2,3,4,6,12,36,36,72,144,288,576,1152};
-    /**mm’PˆÊ‚Ìê‡‚Ì‘å–Ú·ŠÔŠu*/
+    /**mmå˜ä½ã®å ´åˆã®å¤§ç›®ç››é–“éš”*/
     private static final int[] gaugeIntervalI={6,12,24,36,72,72,72,144,288,576,1152};
     
     private MyGlassPane glassPane;
@@ -49,9 +49,9 @@ public class JRuler extends JComponent{
     private JScroller scroller;
 //    private double gridOffsetByMetric,gridOffsetByPoint;
     /**
-     *JDrawRuler‚ğ\’z‚µ‚Ü‚·.
-     *@param orientation Ruler‚Ì•ûŒü HORIZONTAL …•½Ruler,VERTICAL ‚’¼Ruler<br>
-     *scroller Ruler‚ğŠ—L‚·‚éJDrawScroller
+     *JDrawRulerã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param orientation Rulerã®æ–¹å‘ HORIZONTAL æ°´å¹³Ruler,VERTICAL å‚ç›´Ruler<br>
+     *scroller Rulerã‚’æ‰€æœ‰ã™ã‚‹JDrawScroller
      */
     public JRuler(int orientation,JScroller scroller){
         this.scroller=scroller;
@@ -62,8 +62,8 @@ public class JRuler extends JComponent{
         this.add(glassPane);       
         setIncrementAndUnits();
     }
-    /**Ruler‚Ì•‚ğİ’è‚µ‚Ü‚·B
-     *@param ph İ’u‚·‚é•.
+    /**Rulerã®å¹…ã‚’è¨­å®šã—ã¾ã™ã€‚
+     *@param ph è¨­ç½®ã™ã‚‹å¹….
      */
     public void setPreferredWidth(int ph){
         Dimension d=new Dimension(ph,SIZE);
@@ -72,8 +72,8 @@ public class JRuler extends JComponent{
         setIncrementAndUnits();
         this.validate();
     }
-    /**Ruler‚Ì‚‚³‚ğİ’è‚µ‚Ü‚·.
-     *@param ph İ’è‚·‚é‚‚³.
+    /**Rulerã®é«˜ã•ã‚’è¨­å®šã—ã¾ã™.
+     *@param ph è¨­å®šã™ã‚‹é«˜ã•.
      */
     public void setPreferredHeight(int ph){
         Dimension d=new Dimension(SIZE,ph);
@@ -82,8 +82,8 @@ public class JRuler extends JComponent{
         setIncrementAndUnits();
         this.validate();
     }
-    /**Rulerã‚ÌƒJ[ƒ\ƒ‹‚ÌˆÊ’u‚ğİ’è‚µ‚Ü‚·.
-     *@param p ƒJ[ƒ\ƒ‹‚ÌˆÊ’u
+    /**Rulerä¸Šã®ã‚«ãƒ¼ã‚½ãƒ«ã®ä½ç½®ã‚’è¨­å®šã—ã¾ã™.
+     *@param p ã‚«ãƒ¼ã‚½ãƒ«ã®ä½ç½®
      */
     public void setCursor(Point2D p){
         if (orientation==HORIZONTAL){
@@ -93,8 +93,8 @@ public class JRuler extends JComponent{
         }
     }
     /**
-     *RulerŒ´“_ˆÊ’u‚Ì—p†¶ã’[‚©‚ç‚Ì‹——£‚ğ1/72ƒCƒ“ƒ`’PˆÊ‚Åw’è‚µ‚Ü‚·.
-     *@param offset w’è‚·‚éÀ•W‚ÌˆÊ’n
+     *RuleråŸç‚¹ä½ç½®ã®ç”¨ç´™å·¦ä¸Šç«¯ã‹ã‚‰ã®è·é›¢ã‚’1/72ã‚¤ãƒ³ãƒå˜ä½ã§æŒ‡å®šã—ã¾ã™.
+     *@param offset æŒ‡å®šã™ã‚‹åº§æ¨™ã®ä½åœ°
      */
     public void setGridOffset(double offset){
         if (this.orientation==HORIZONTAL)
@@ -102,8 +102,8 @@ public class JRuler extends JComponent{
         else
             scroller.getEnvironment().setGaougeOffsetY(offset);
     }
-    /**Œ»İ‚ÌRulerŒ´“_ˆÊ’u‚Ì—p†¶ã’[‚©‚ç‚Ì‹——£‚ğ1/72ƒCƒ“ƒ`’PˆÊæ“¾‚µ‚Ü‚·.
-     *@return ƒ‹[ƒ‰‚ÌŒ´“_ˆÊ’n‚Ì—p†¶ã’[‚©‚ç‚ÌˆÊ’n
+    /**ç¾åœ¨ã®RuleråŸç‚¹ä½ç½®ã®ç”¨ç´™å·¦ä¸Šç«¯ã‹ã‚‰ã®è·é›¢ã‚’1/72ã‚¤ãƒ³ãƒå˜ä½å–å¾—ã—ã¾ã™.
+     *@return ãƒ«ãƒ¼ãƒ©ã®åŸç‚¹ä½åœ°ã®ç”¨ç´™å·¦ä¸Šç«¯ã‹ã‚‰ã®ä½åœ°
      */
     public double getGridOffset(){
         if (this.orientation==HORIZONTAL)
@@ -112,7 +112,7 @@ public class JRuler extends JComponent{
             return scroller.getEnvironment().getGaugeOffset().getY();
     }
     /**
-     *Œ»İ‚Ì•\¦’PˆÊA•\¦”{—¦‚ğŒ³‚ÉŠeƒpƒ‰ƒ[ƒ^‚ğİ’è‚µ‚Ü‚·B
+     *ç¾åœ¨ã®è¡¨ç¤ºå˜ä½ã€è¡¨ç¤ºå€ç‡ã‚’å…ƒã«å„ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã—ã¾ã™ã€‚
      */
     private void setIncrementAndUnits(){
         JDocumentViewer viewer=scroller.getViewer();
@@ -151,14 +151,14 @@ public class JRuler extends JComponent{
         }
     }
     /**
-     *‚±‚ÌRuler‚ğŠ—L‚·‚éScroller‚ğ•Ô‚µ‚Ü‚·.
-     *@return ‚±‚ÌRuler‚ğŠ—L‚·‚éScroller.
+     *ã“ã®Rulerã‚’æ‰€æœ‰ã™ã‚‹Scrollerã‚’è¿”ã—ã¾ã™.
+     *@return ã“ã®Rulerã‚’æ‰€æœ‰ã™ã‚‹Scroller.
      */
     public JScroller getScroller(){
         return scroller;       
     }
-    /**Ruler‚ğ•`‰æ‚µ‚Ü‚·.
-     *@param g ƒOƒ‰ƒtƒBƒbƒNƒRƒ“ƒeƒLƒXƒg
+    /**Rulerã‚’æç”»ã—ã¾ã™.
+     *@param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     @Override
     public void paintComponent(Graphics g){
@@ -230,7 +230,7 @@ public class JRuler extends JComponent{
             }
         }        
     }
-    /**Ruler‚É•`‰æ‚·‚éƒJ[ƒ\ƒ‹‚ğ•\‚µ‚Ü‚·.*/
+    /**Rulerã«æç”»ã™ã‚‹ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¡¨ã—ã¾ã™.*/
     public class MyGlassPane extends JComponent{
         private BasicStroke stroke=new BasicStroke(1f);       
         public void paintComponent(Graphics g){

@@ -45,7 +45,7 @@ public class JUniformJoinEdit extends JAbstractEdit{
         this.sourcePath=sourceObj.getPath().getOwnerPath(sourceSeg);
         this.sourceSeg=sourceSeg;
         createdPath=makePath();
-        presentationName="•½‹Ï‰»‚µ‚Ä˜AŒ‹";
+        presentationName="å¹³å‡åŒ–ã—ã¦é€£çµ";
         redo();
         
     }

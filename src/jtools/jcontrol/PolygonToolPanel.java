@@ -45,7 +45,7 @@ public class PolygonToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle(dragger.presentationName() +"ÉIÉvÉVÉáÉì");
+        dialog.setTitle(dragger.presentationName() +"„Ç™„Éó„Ç∑„Éß„É≥");
         //
         vertexes.setModel(new SpinnerNumberModel(6,3,100,1));
         radius.setValue(JEnvironment.DEFAULT_RADIUS);
@@ -82,7 +82,7 @@ public class PolygonToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("ÉLÉÉÉìÉZÉã");
+        cancelButton.setText("„Ç≠„É£„É≥„Çª„É´");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,9 +90,9 @@ public class PolygonToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("îºåa:");
+        jLabel1.setText("ÂçäÂæÑ:");
 
-        jLabel2.setText("í∏ì_êî:");
+        jLabel2.setText("È†ÇÁÇπÊï∞:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

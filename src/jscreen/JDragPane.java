@@ -73,7 +73,7 @@ import jobject.JLeaf;
 import jui.JIcons;
 
 /**
- * ƒhƒ‰ƒbƒO‘w‚Ì•\¦‹y‚Ñƒhƒ‰ƒbƒK[‚ğ‘I‘ğ‚µ‚Ü‚·.
+ * ãƒ‰ãƒ©ãƒƒã‚°å±¤ã®è¡¨ç¤ºåŠã³ãƒ‰ãƒ©ãƒƒã‚¬ãƒ¼ã‚’é¸æŠã—ã¾ã™.
  * @author i002060
  */
 public class JDragPane extends JComponent implements MouseListener,MouseMotionListener,KeyListener{

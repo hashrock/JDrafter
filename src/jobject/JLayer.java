@@ -21,7 +21,7 @@ import jscreen.JEnvironment;
 import jscreen.JRequest;
 
 /**
- * Documentã‚Ì•`‰æŠK‘w
+ * Documentä¸Šã®æç”»éšå±¤
  * @author i002060
  */
 public class JLayer extends JObject<JPage,JLeaf> {

@@ -83,7 +83,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
         showGuidAction = new ShowGuidAction();
         clearGuidAction=new ClearGuidAction();
         snapAncurMenu=new SnapAncurMenu();
-        gridGauge = new JMenu("ƒOƒŠƒbƒh‚Ì’PˆÊ(U)");
+        gridGauge = new JMenu("ã‚°ãƒªãƒƒãƒ‰ã®å˜ä½(U)");
         gridGauge.setMnemonic(KeyEvent.VK_U);
         milGrid = new JRadioButtonMenuItem(new MilGridAction());
         inchGrid = new JRadioButtonMenuItem(new InchGridAction());
@@ -226,7 +226,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         private LayerVisibleAction() {
             super();
-            putValue(NAME, "ƒŒƒCƒ„[ƒuƒ‰ƒEƒU(L)");
+            putValue(NAME, "ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ–ãƒ©ã‚¦ã‚¶(L)");
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_L);
 
@@ -244,7 +244,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         private PageVisibleAction() {
             super();
-            putValue(NAME, "ƒy[ƒWƒuƒ‰ƒEƒU(B)");
+            putValue(NAME, "ãƒšãƒ¼ã‚¸ãƒ–ãƒ©ã‚¦ã‚¶(B)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_B);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_B, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             setEnabled(true);
@@ -261,7 +261,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public GridVisibleAction() {
             super();
-            putValue(NAME, "ƒOƒŠƒbƒh•\¦(G)");
+            putValue(NAME, "ã‚°ãƒªãƒƒãƒ‰è¡¨ç¤º(G)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_G);
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_G,ActionEvent.CTRL_MASK|ActionEvent.ALT_MASK));
             setEnabled(false);
@@ -283,7 +283,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public MilGridAction() {
             super();
-            putValue(NAME, "ƒ~ƒŠƒ[ƒgƒ‹(M)");
+            putValue(NAME, "ãƒŸãƒªãƒ¡ãƒ¼ãƒˆãƒ«(M)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
 
@@ -309,7 +309,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public InchGridAction() {
             super();
-            putValue(NAME, "ƒ|ƒCƒ“ƒg(P)");
+            putValue(NAME, "ãƒã‚¤ãƒ³ãƒˆ(P)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_P);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             setEnabled(true);
@@ -331,7 +331,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     }
     private class SnapAncurMenu extends JCheckBoxMenuItem implements ActionListener{
         public SnapAncurMenu(){
-            this.setText("ƒAƒ“ƒJ[‚É‹z’…(A)");
+            this.setText("ã‚¢ãƒ³ã‚«ãƒ¼ã«å¸ç€(A)");
             this.setMnemonic(KeyEvent.VK_A);
             this.setSelected(JEnvironment.SNAP_TO_ANCUR);
             this.setEnabled(false);
@@ -346,7 +346,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public SnapGridAction() {
             super();
-            putValue(NAME, "ƒOƒŠƒbƒh‹z’…iS)");
+            putValue(NAME, "ã‚°ãƒªãƒƒãƒ‰å¸ç€ï¼ˆS)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_S);
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_S,ActionEvent.CTRL_MASK|ActionEvent.ALT_MASK));
             setEnabled(false);
@@ -364,8 +364,8 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
     private class GridForeAction extends AbstractAction {
 
-        private String gridFore = "ƒOƒŠƒbƒh‚ğ‘O–Ê‚É(F)";
-        private String gridBack = "ƒOƒŠƒbƒh‚ğ”w–Ê‚É(F)";
+        private String gridFore = "ã‚°ãƒªãƒƒãƒ‰ã‚’å‰é¢ã«(F)";
+        private String gridBack = "ã‚°ãƒªãƒƒãƒ‰ã‚’èƒŒé¢ã«(F)";
 
         public GridForeAction() {
             super();
@@ -399,7 +399,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public GridOptionAction() {
             super();
-            putValue(NAME, "ƒIƒvƒVƒ‡ƒ“(O)");
+            putValue(NAME, "ã‚ªãƒ—ã‚·ãƒ§ãƒ³(O)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_O);
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_O,ActionEvent.CTRL_MASK|ActionEvent.ALT_MASK));
             setEnabled(false);
@@ -422,7 +422,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class SendGuidAction extends AbstractAction {
 
         public SendGuidAction() {
-            putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“ì¬(M)");
+            putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ä½œæˆ(M)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
             //putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
@@ -465,10 +465,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
                 for (int i = 0; i < leafs.size(); i++) {
                     JLeaf jl = leafs.get(i);
                     if (cEdit == null) {
-                        cEdit = new NamableCompoundEdit("ƒKƒCƒhƒ‰ƒCƒ“ì¬");
+                        cEdit = new NamableCompoundEdit("ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ä½œæˆ");
                     }
-                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, "ƒKƒCƒhƒ‰ƒCƒ“ì¬"));
-                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getGuidLayer(), "ƒKƒCƒhƒ‰ƒCƒ“ì¬"));
+                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ä½œæˆ"));
+                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getGuidLayer(), "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ä½œæˆ"));
                 }
                 if (cEdit != null) {
                     cEdit.end();
@@ -481,7 +481,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class ReleaseGuidAction extends AbstractAction {
 
         public ReleaseGuidAction() {
-            putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‰ğœ(R)");
+            putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³è§£é™¤(R)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
         }
@@ -527,10 +527,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
                 for (int i = 0; i < leafs.size(); i++) {
                     JLeaf jl = leafs.get(i);
                     if (cEdit == null) {
-                        cEdit = new NamableCompoundEdit("ƒKƒCƒhƒ‰ƒCƒ“‰ğœ");
+                        cEdit = new NamableCompoundEdit("ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³è§£é™¤");
                     }
-                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, "ƒKƒCƒhƒ‰ƒCƒ“‰ğœ"));
-                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getCurrentLayer(), "ƒKƒCƒhƒ‰ƒCƒ“‰ğœ"));
+                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³è§£é™¤"));
+                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getCurrentLayer(), "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³è§£é™¤"));
                 }
                 if (cEdit != null) {
                     cEdit.end();
@@ -546,7 +546,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class LockGuidAction extends AbstractAction {
 
         public LockGuidAction() {
-            putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‚ÌƒƒbƒN‰ğœ(N)");
+            putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã®ãƒ­ãƒƒã‚¯è§£é™¤(N)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_N);
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
         }
@@ -559,10 +559,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
             this.setEnabled(true);
             JPage pg = frame.getViewer().getCurrentPage();
             if (!pg.getGuidLayer().isLocked()) {
-                putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‚ğƒƒbƒN(O)");
+                putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’ãƒ­ãƒƒã‚¯(O)");
                 putValue(MNEMONIC_KEY, KeyEvent.VK_O);
             } else {
-                putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‚ÌƒƒbƒN‰ğœ(N)");
+                putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã®ãƒ­ãƒƒã‚¯è§£é™¤(N)");
                 putValue(MNEMONIC_KEY, KeyEvent.VK_N);
             }
 
@@ -599,7 +599,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class ShowGuidAction extends AbstractAction {
 
         public ShowGuidAction() {
-            putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‚ğ‰B‚·(H)");
+            putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’éš ã™(H)");
             putValue(MNEMONIC_KEY, KeyEvent.VK_H);
         }
 
@@ -611,10 +611,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
             this.setEnabled(true);
             JPage pg = frame.getViewer().getCurrentPage();
             if (pg.getGuidLayer().isVisible()) {
-                putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‚ğ‰B‚·(H)");
+                putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’éš ã™(H)");
                 putValue(MNEMONIC_KEY, KeyEvent.VK_H);
             } else {
-                putValue(NAME, "ƒKƒCƒhƒ‰ƒCƒ“‚ğ•\¦(V)");
+                putValue(NAME, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’è¡¨ç¤º(V)");
                 putValue(MNEMONIC_KEY, KeyEvent.VK_V);
             }
         }
@@ -642,7 +642,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     }
     private class ClearGuidAction extends AbstractAction{
         public ClearGuidAction(){
-            putValue(NAME,"ƒKƒCƒhƒ‰ƒCƒ“‚ğƒNƒŠƒA(C)");
+            putValue(NAME,"ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’ã‚¯ãƒªã‚¢(C)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_C);
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
         }
@@ -663,9 +663,9 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
                 for (int i=0;i<layer.size();i++){
                     JLeaf jl=layer.get(i--);
                     if (cEdit==null){
-                        cEdit=new NamableCompoundEdit("ƒKƒCƒhƒ‰ƒCƒ“‚ğƒNƒŠƒA");
+                        cEdit=new NamableCompoundEdit("ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’ã‚¯ãƒªã‚¢");
                     }
-                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(),jl,"ƒKƒCƒhƒ‰ƒCƒ“‚ğƒNƒŠƒA"));
+                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(),jl,"ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³ã‚’ã‚¯ãƒªã‚¢"));
                 }
                 if (cEdit !=null){
                     cEdit.end();

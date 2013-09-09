@@ -27,19 +27,19 @@ import jobject.JLeaf;
 import jobject.JPathObject;
 
 /**
- *JPaintƒNƒ‰ƒX‚ÍA’Pˆê‚ÌFAüŒ`‰»‚³‚ê‚½ƒOƒ‰ƒf[ƒVƒ‡ƒ“–”‚Í•úËó‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“
- * ‚Å“h‚è‚Â‚Ô‚·è’i‚ğ’ñ‹Ÿ‚µ‚Ü‚·B
+ *JPaintã‚¯ãƒ©ã‚¹ã¯ã€å˜ä¸€ã®è‰²ã€ç·šå½¢åŒ–ã•ã‚ŒãŸã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³åˆã¯æ”¾å°„çŠ¶ã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³
+ * ã§å¡—ã‚Šã¤ã¶ã™æ‰‹æ®µã‚’æä¾›ã—ã¾ã™ã€‚
  * @author TI
  */
 public class JPaint implements Serializable, Paint, Cloneable {
 
-    /**’PˆêF‚É‚æ‚é“h‚è‚ğ•\‚µ‚Ü‚·.*/
+    /**å˜ä¸€è‰²ã«ã‚ˆã‚‹å¡—ã‚Šã‚’è¡¨ã—ã¾ã™.*/
     public static final int COLOR_MODE = 0;
-    /**üŒ`ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚É‚æ‚é“h‚è‚ğ•\‚µ‚Ü‚·B*/
+    /**ç·šå½¢ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã«ã‚ˆã‚‹å¡—ã‚Šã‚’è¡¨ã—ã¾ã™ã€‚*/
     public static final int LINEAR_GRADIENT_MODE = 1;
-    /**•úËóƒOƒ‰ƒf[ƒVƒ‡ƒ“‚É‚æ‚é“h‚è‚ğ•\‚µ‚Ü‚·.*/
+    /**æ”¾å°„çŠ¶ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã«ã‚ˆã‚‹å¡—ã‚Šã‚’è¡¨ã—ã¾ã™.*/
     public static final int RADIAL_GRADIENT_MODE = 2;
-    /**ƒpƒ^[ƒ“‚É‚æ‚é“h‚è‚ğ•\‚µ‚Ü‚·.*/    
+    /**ãƒ‘ã‚¿ãƒ¼ãƒ³ã«ã‚ˆã‚‹å¡—ã‚Šã‚’è¡¨ã—ã¾ã™.*/    
     public static final int PATTERN_MODE = 3;
     private int paintMode = COLOR_MODE;
     private Color color = null;
@@ -52,21 +52,21 @@ public class JPaint implements Serializable, Paint, Cloneable {
     private Vector<JLeaf> patternObjects = null;
     private static final long serialVersionUID = 110l;
 
-    /**ƒJƒ‰[ƒyƒCƒ“ƒgƒ‚[ƒhA“h‚èFWhite‚ÅJPaint‚ğ\’z‚µ‚Ü‚·B
+    /**ã‚«ãƒ©ãƒ¼ãƒšã‚¤ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰ã€å¡—ã‚Šè‰²Whiteã§JPaintã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚
      */
     public JPaint() {
         this(Color.WHITE);
     }
 
-    /**w’è‚µ‚½Color‚©‚çJPaint‚ğ\’z‚µ‚Ü‚·.
-     *@param c w’è‚·‚éColor;
+    /**æŒ‡å®šã—ãŸColorã‹ã‚‰JPaintã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param c æŒ‡å®šã™ã‚‹Color;
      */
     public JPaint(Color c) {
         setPaintColor(c);
     }
 
-    /**w’è‚µ‚½MultipleGradientPaint‚©‚çJPaint‚ğ\’z‚µ‚Ü‚·.
-     *@param mg w’è‚·‚éMultipleGradientPaint*/
+    /**æŒ‡å®šã—ãŸMultipleGradientPaintã‹ã‚‰JPaintã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param mg æŒ‡å®šã™ã‚‹MultipleGradientPaint*/
     public JPaint(MultipleGradientPaint mg) throws Exception {
         float sx, sy, ex, ey;
         if (mg instanceof LinearGradientPaint) {
@@ -85,14 +85,14 @@ public class JPaint implements Serializable, Paint, Cloneable {
         
     }
 
-    /**w’è‚µ‚½ƒpƒ‰ƒ[ƒ^‚ÅLinear–”‚ÍRadial‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ğ•Ô‚·JPaint‚ğ\’z‚µ‚Ü‚·B
-     *@param pMode LINEAR_GRADIENT_MODE–”‚ÍRADIAL_GRADIENT_MODE
-     *@param sX ŠJn“_‚ÌXÀ•W
-     *@param sY ŠJn“_‚ÌYÀ•W
-     *@param eX I—¹“_‚ÌXÀ•W
-     *@param eY I—¹“X‚ÌYÀ•W
-     *@param fracs 0.0 ? 1.0 ‚Ì”ÍˆÍ‚Ì”’lB ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚Å‚ÌF•ª•z‚ğw’è‚·‚é
-     *@param cols Še¬”’l‚É‘Î‰‚·‚éF‚Ì”z—ñ
+    /**æŒ‡å®šã—ãŸãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§Linearåˆã¯Radialã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’è¿”ã™JPaintã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚
+     *@param pMode LINEAR_GRADIENT_MODEåˆã¯RADIAL_GRADIENT_MODE
+     *@param sX é–‹å§‹ç‚¹ã®Xåº§æ¨™
+     *@param sY é–‹å§‹ç‚¹ã®Yåº§æ¨™
+     *@param eX çµ‚äº†ç‚¹ã®Xåº§æ¨™
+     *@param eY çµ‚äº†åº—ã®Yåº§æ¨™
+     *@param fracs 0.0 ? 1.0 ã®ç¯„å›²ã®æ•°å€¤ã€‚ ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã§ã®è‰²åˆ†å¸ƒã‚’æŒ‡å®šã™ã‚‹
+     *@param cols å„å°æ•°å€¤ã«å¯¾å¿œã™ã‚‹è‰²ã®é…åˆ—
      */
     public JPaint(int pMode,
             float sX,
@@ -105,9 +105,9 @@ public class JPaint implements Serializable, Paint, Cloneable {
     }
 
     /**
-     * w’è‚µ‚½ƒNƒŠƒbƒv‹y‚Ñƒpƒ^[ƒ“‚Åƒpƒ^ƒ“‚Ì“h‚è‚ğ•Ô‚·JPaintƒIƒuƒWƒFƒNƒg‚ğ\’z‚µ‚Ü‚·B
-     * @param clip ƒNƒŠƒbƒvƒGƒŠƒA‚ğ¦‚·JPathObject;
-     * @param pattern “h‚è‚Ìƒpƒ^[ƒ“
+     * æŒ‡å®šã—ãŸã‚¯ãƒªãƒƒãƒ—åŠã³ãƒ‘ã‚¿ãƒ¼ãƒ³ã§ãƒ‘ã‚¿ãƒ³ã®å¡—ã‚Šã‚’è¿”ã™JPaintã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚
+     * @param clip ã‚¯ãƒªãƒƒãƒ—ã‚¨ãƒªã‚¢ã‚’ç¤ºã™JPathObject;
+     * @param pattern å¡—ã‚Šã®ãƒ‘ã‚¿ãƒ¼ãƒ³
      */    
     public JPaint(Rectangle2D clip, Vector<JLeaf> pt) {
         setPattern(clip, pt);
@@ -144,22 +144,22 @@ public class JPaint implements Serializable, Paint, Cloneable {
         return patternPaint;
     }
 
-    /**w’è‚µ‚½Color‚ğ“h‚èF‚Éİ’è‚µ‚Ü‚·B
-     *@param c w’è‚·‚é“h‚èF
+    /**æŒ‡å®šã—ãŸColorã‚’å¡—ã‚Šè‰²ã«è¨­å®šã—ã¾ã™ã€‚
+     *@param c æŒ‡å®šã™ã‚‹å¡—ã‚Šè‰²
      */
     public void setPaintColor(Color c) {
         color = c;
         paintMode = COLOR_MODE;
     }
 
-    /**w’è‚µ‚½ƒpƒ‰ƒ[ƒ^‚ÅLinear–”‚ÍRadial‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ğJPaint‚Éİ’è‚µ‚Ü‚·B
-     *@param pMode LINEAR_GRADIENT_MODE–”‚ÍRADIAL_GRADIENT_MODE
-     *@param sX ŠJn“_‚ÌXÀ•W
-     *@param sY ŠJn“_‚ÌYÀ•W
-     *@param eX I—¹“_‚ÌXÀ•W
-     *@param eY I—¹“X‚ÌYÀ•W
-     *@param fracs 0.0 ~ 1.0 ‚Ì”ÍˆÍ‚Ì”’lB ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚Å‚ÌF•ª•z‚ğw’è‚·‚é
-     *@param cols Še¬”’l‚É‘Î‰‚·‚éF‚Ì”z—ñ
+    /**æŒ‡å®šã—ãŸãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§Linearåˆã¯Radialã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’JPaintã«è¨­å®šã—ã¾ã™ã€‚
+     *@param pMode LINEAR_GRADIENT_MODEåˆã¯RADIAL_GRADIENT_MODE
+     *@param sX é–‹å§‹ç‚¹ã®Xåº§æ¨™
+     *@param sY é–‹å§‹ç‚¹ã®Yåº§æ¨™
+     *@param eX çµ‚äº†ç‚¹ã®Xåº§æ¨™
+     *@param eY çµ‚äº†åº—ã®Yåº§æ¨™
+     *@param fracs 0.0 ~ 1.0 ã®ç¯„å›²ã®æ•°å€¤ã€‚ ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã§ã®è‰²åˆ†å¸ƒã‚’æŒ‡å®šã™ã‚‹
+     *@param cols å„å°æ•°å€¤ã«å¯¾å¿œã™ã‚‹è‰²ã®é…åˆ—
      */
     public void setGradient(
             int pMode,
@@ -191,8 +191,8 @@ public class JPaint implements Serializable, Paint, Cloneable {
         this.color = null;
     }
 
-    /**ƒOƒ‰ƒf[ƒVƒ‡ƒ“§ŒäˆÊ’u‚ğ—v‘f‚Æ‚·‚é”z—ñ‚ÌƒRƒs[‚ğ•Ô‚µ‚Ü‚·
-     *@return ƒOƒ‰ƒf[ƒVƒ‡ƒ“§ŒäˆÊ’u‚ğ—v‘f‚Æ‚·‚é”z—ñ
+    /**ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³åˆ¶å¾¡ä½ç½®ã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—ã®ã‚³ãƒ”ãƒ¼ã‚’è¿”ã—ã¾ã™
+     *@return ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³åˆ¶å¾¡ä½ç½®ã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—
      */
     public float[] getFracs() {
         float[] ret = new float[fractions.length];
@@ -202,8 +202,8 @@ public class JPaint implements Serializable, Paint, Cloneable {
         return ret;
     }
 
-    /**§ŒäˆÊ’uã‚ÌƒJƒ‰[‚ğ•\‚·”z—ñ‚ÌƒRƒs[‚ğ•Ô‚µ‚Ü‚·.
-     *@return §ŒäˆÊ’uã‚ÌƒJƒ‰[‚ğ—v‘f‚Æ‚·‚é”z—ñ
+    /**åˆ¶å¾¡ä½ç½®ä¸Šã®ã‚«ãƒ©ãƒ¼ã‚’è¡¨ã™é…åˆ—ã®ã‚³ãƒ”ãƒ¼ã‚’è¿”ã—ã¾ã™.
+     *@return åˆ¶å¾¡ä½ç½®ä¸Šã®ã‚«ãƒ©ãƒ¼ã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—
      */
     public Color[] getColors() {
         Color[] ret = new Color[colors.length];
@@ -213,28 +213,28 @@ public class JPaint implements Serializable, Paint, Cloneable {
         return ret;
     }
 
-    /**Œ»İ‚Ì“h‚èF‚ğ•Ô‚µ‚Ü‚·.
-     *@return Œ»İ‚Ì“h‚èF
+    /**ç¾åœ¨ã®å¡—ã‚Šè‰²ã‚’è¿”ã—ã¾ã™.
+     *@return ç¾åœ¨ã®å¡—ã‚Šè‰²
      */
     public Color getColor() {
         return color;
     }
 
     /**
-     * ‚±‚ÌJPaint‚ªƒOƒ‰ƒf[ƒVƒ‡ƒ“‚Ìê‡A—LŒø‚ÈMultipleGradientPaint‚ğ•Ô‚µ‚Ü‚·B
-     * @return@—LŒø‚ÈMultipleGradientPaint,—LŒø‚ÈGradientPaint‚ª‚È‚¢ê‡null
+     * ã“ã®JPaintãŒã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®å ´åˆã€æœ‰åŠ¹ãªMultipleGradientPaintã‚’è¿”ã—ã¾ã™ã€‚
+     * @returnã€€æœ‰åŠ¹ãªMultipleGradientPaint,æœ‰åŠ¹ãªGradientPaintãŒãªã„å ´åˆnull
      */
     public MultipleGradientPaint getGradient() {
         return gradient;
     }
 
-    /**ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌŠJnˆÊ’u‚¨‚æ‚ÑI—¹ˆÊ’u‚ÌÀ•W‚ğ—v‘f‚Æ‚·‚é”z—ñ‚ğ•Ô‚µ‚Ü‚·B
-     *@return ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌŠJnˆÊ’u‹y‚ÑI—¹ˆÊ’u‚ğ—v‘f‚Æ‚·‚é”z—ñ
-     * ”z—ñ—v‘f‚Ì“à—e‚ÍŸ‚Ì‚Æ‚¨‚è‚Å‚·B<br>
-     *[0] ŠJnˆÊ’u‚ÌXÀ•W<br>
-     *[1] ŠJnˆÊ’u‚ÌYÀ•W<br>
-     *[2] I—¹ˆÊ’u‚ÌXÀ•W<br>
-     *[3] I—¹ˆÊ’u‚ÌYÀ•W
+    /**ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®é–‹å§‹ä½ç½®ãŠã‚ˆã³çµ‚äº†ä½ç½®ã®åº§æ¨™ã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—ã‚’è¿”ã—ã¾ã™ã€‚
+     *@return ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®é–‹å§‹ä½ç½®åŠã³çµ‚äº†ä½ç½®ã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—
+     * é…åˆ—è¦ç´ ã®å†…å®¹ã¯æ¬¡ã®ã¨ãŠã‚Šã§ã™ã€‚<br>
+     *[0] é–‹å§‹ä½ç½®ã®Xåº§æ¨™<br>
+     *[1] é–‹å§‹ä½ç½®ã®Yåº§æ¨™<br>
+     *[2] çµ‚äº†ä½ç½®ã®Xåº§æ¨™<br>
+     *[3] çµ‚äº†ä½ç½®ã®Yåº§æ¨™
      */
     public float[] gradientPoints() {
         return new float[]{
@@ -242,8 +242,8 @@ public class JPaint implements Serializable, Paint, Cloneable {
                 };
     }
 
-    /**Œ»İ‚ÌƒyƒCƒ“ƒgƒ‚[ƒh‚ğ•Ô‚µ‚Ü‚·
-     *@return Œ»İ‚ÌƒyƒCƒ“ƒgƒ‚[ƒh.LINEAR_GRADIENT_MODE–”‚ÍRADIAL_GRADIENT_MODE
+    /**ç¾åœ¨ã®ãƒšã‚¤ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰ã‚’è¿”ã—ã¾ã™
+     *@return ç¾åœ¨ã®ãƒšã‚¤ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰.LINEAR_GRADIENT_MODEåˆã¯RADIAL_GRADIENT_MODE
      */
     public int getPaintMode() {
         return paintMode;
@@ -290,9 +290,9 @@ public class JPaint implements Serializable, Paint, Cloneable {
     }
 
     /**
-     * w’è‚³‚ê‚½JPaint‚ª‚±‚ÌJPaint‚Æ“™‚µ‚¢ê‡‚Étrue‚ğ•Ô‚µ‚Ü‚·.
-     * @param jp w’è‚·‚éJPaint
-     * @return w’è‚³‚ê‚½JPaint‚Æ‚±‚ÌJPaint‚ª“™‚µ‚¢ê‡true,‚»‚êˆÈŠOfalse;
+     * æŒ‡å®šã•ã‚ŒãŸJPaintãŒã“ã®JPaintã¨ç­‰ã—ã„å ´åˆã«trueã‚’è¿”ã—ã¾ã™.
+     * @param jp æŒ‡å®šã™ã‚‹JPaint
+     * @return æŒ‡å®šã•ã‚ŒãŸJPaintã¨ã“ã®JPaintãŒç­‰ã—ã„å ´åˆtrue,ãã‚Œä»¥å¤–false;
      */
     public boolean equals(JPaint jp) {
         if (jp == null) {
@@ -338,8 +338,8 @@ public class JPaint implements Serializable, Paint, Cloneable {
     }
 
     /**
-     * JPaint‚Éw’è‚·‚éAffine•ÏŠ·‚ğ‰Á‚¦‚Ü‚·B
-     * @param tx w’è‚·‚éAffineTransform
+     * JPaintã«æŒ‡å®šã™ã‚‹Affineå¤‰æ›ã‚’åŠ ãˆã¾ã™ã€‚
+     * @param tx æŒ‡å®šã™ã‚‹AffineTransform
      */
     public void transform(AffineTransform tx) {
         if (paintMode == COLOR_MODE || paintMode==PATTERN_MODE) {
@@ -356,16 +356,16 @@ public class JPaint implements Serializable, Paint, Cloneable {
     }
 
     /**
-     * ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌŠJnˆÊ’u‚ğ•Ô‚µ‚Ü‚·.
-     * @return ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌŠJnˆÊ’u
+     * ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®é–‹å§‹ä½ç½®ã‚’è¿”ã—ã¾ã™.
+     * @return ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®é–‹å§‹ä½ç½®
      */
     public Point2D.Float getP1() {
         return new Point2D.Float(startX, startY);
     }
 
     /**
-     * ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌI—¹ˆÊ’u‚ğ•Ô‚µ‚Ü‚·.
-     * @return ƒOƒ‰ƒf[ƒVƒ‡ƒ“‚ÌI—¹ˆÊ’u
+     * ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®çµ‚äº†ä½ç½®ã‚’è¿”ã—ã¾ã™.
+     * @return ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ã®çµ‚äº†ä½ç½®
      */
     public Point2D.Float getP2() {
         return new Point2D.Float(endX, endY);

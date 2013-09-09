@@ -40,7 +40,7 @@ public class RectangleToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle(dragger.presentationName() +"オプション");
+        dialog.setTitle(dragger.presentationName() +"繧ｪ繝励す繝ｧ繝ｳ");
         //
         width.setValue(JEnvironment.DEFAULT_WIDTH);
         height.setValue(JEnvironment.DEFAULT_HEIGHT);
@@ -80,7 +80,7 @@ public class RectangleToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("キャンセル");
+        cancelButton.setText("繧ｭ繝｣繝ｳ繧ｻ繝ｫ");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,9 +88,9 @@ public class RectangleToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("幅:");
+        jLabel1.setText("蟷�:");
 
-        jLabel2.setText("高さ:");
+        jLabel2.setText("鬮倥＆:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

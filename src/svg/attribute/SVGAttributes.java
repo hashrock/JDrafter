@@ -23,7 +23,7 @@ import svg.oject.SVGObject;
  * @author takashi
  */
 public class SVGAttributes implements Cloneable{
-    // <editor-fold defaultstate="collapsed" desc="ƒJƒ‰[’è‹`">
+    // <editor-fold defaultstate="collapsed" desc="ã‚«ãƒ©ãƒ¼å®šç¾©">
     public static final Color ALICEBLUE = new Color(240, 248, 255);
     public static final Color ANTIQUEWHITE = new Color(250, 235, 215);
     public static final Color AQUA = new Color(0, 255, 255);
@@ -325,8 +325,8 @@ public class SVGAttributes implements Cloneable{
         return result;
     }
     //</editor-fold>
-    //transform ‘®«
-    //‘®«key
+    //transform å±æ€§
+    //å±æ€§key
     public static final String STROKE = "stroke";
     public static final String STROKE_WIDTH = "stroke-width";
     public static final String STROKE_LINECAP = "stroke-linecap";

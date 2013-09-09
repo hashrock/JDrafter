@@ -33,7 +33,7 @@ public class JRoundCornerTool extends JCutCornerTool{
     /** Creates a new instance of JRoundCornerTool */
     public JRoundCornerTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ŠpŠÛ‚ßƒc[ƒ‹";
+        presentationName="è§’ä¸¸ã‚ãƒ„ãƒ¼ãƒ«";
     }
     protected void update(Vector<corner> vc){
         double defaultRadius=getEnvironment().DEFAULT_CUTCORNER_RADIUS;
@@ -68,7 +68,7 @@ public class JRoundCornerTool extends JCutCornerTool{
                 cp.setLocation(length*Math.cos(aTheta)+dx,length*Math.sin(aTheta)+dy);
                 if (!include.contains(cp)){
                     JOptionPane.showMessageDialog(getViewer().getScroller(),
-                            "•Ó‚Ì’·‚³‚É”ä‚×”¼Œa‚Ì’l‚ª‘å‚«‚·‚¬‚Ü‚·.","JDraw",JOptionPane.YES_OPTION);
+                            "è¾ºã®é•·ã•ã«æ¯”ã¹åŠå¾„ã®å€¤ãŒå¤§ãã™ãã¾ã™.","JDraw",JOptionPane.YES_OPTION);
                     return;
                 }
                 aflag=true;

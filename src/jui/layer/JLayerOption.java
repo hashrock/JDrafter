@@ -47,7 +47,7 @@ public class JLayerOption extends javax.swing.JDialog {
     }
     private void colorClicked(MouseEvent e){
         if (e.getClickCount()==1) return;
-        Color nc=JColorChooser.showDialog(this,"ƒŒƒCƒ„[‚ÌF",color.getBackground());
+        Color nc=JColorChooser.showDialog(this,"ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è‰²",color.getBackground());
         if (nc !=null){
             color.setBackground(nc);
         }
@@ -58,10 +58,10 @@ public class JLayerOption extends javax.swing.JDialog {
     public void showDialog(JLayer layer,JPage parent){
         this.parent=parent;
         this.layer=layer;
-        this.setTitle("ƒŒƒCƒ„[ƒIƒvƒVƒ‡ƒ“");
+        this.setTitle("ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         newLayer=false;
         if (layer==null){
-            this.setTitle("V‹KƒŒƒCƒ„[");
+            this.setTitle("æ–°è¦ãƒ¬ã‚¤ãƒ¤ãƒ¼");
             newLayer=true;
             this.layer=new JLayer();
             this.layer.setName(parent.getProperName(this.layer.getPrefixer()));
@@ -201,7 +201,7 @@ public class JLayerOption extends javax.swing.JDialog {
             SortedMap map=parent.getPage().getNameTable();
             //SortedMap map=layer.getPage().getNameTable();
             if (map.containsKey(text.getText())){
-                JOptionPane.showMessageDialog(this,"“ü—Í‚³‚ê‚½ƒŒƒCƒ„[‚Ì–¼Ì‚ÍA‘¼‚Åg—p‚³‚ê‚Ä‚¢‚Ü‚·.");
+                JOptionPane.showMessageDialog(this,"å…¥åŠ›ã•ã‚ŒãŸãƒ¬ã‚¤ãƒ¤ãƒ¼ã®åç§°ã¯ã€ä»–ã§ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã™.");
                 text.setText(layer.getName());
                 text.requestFocus();
                 return;

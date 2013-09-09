@@ -37,7 +37,7 @@ public class JFreeHandTool extends JAbstractTool{
     /** Creates a new instance of JShapeDragger */
     public JFreeHandTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="フリーハンドツール";
+        presentationName="繝輔Μ繝ｼ繝上Φ繝峨ヤ繝ｼ繝ｫ";
     }
     @Override
     public void paint(Graphics2D g){

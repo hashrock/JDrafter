@@ -43,7 +43,7 @@ public class JReleaceCompoundPathEdit extends JAbstractEdit{
             createdObject.add(cObject);
         }
         savedPath=new Vector<JSimplePath>();
-        presentationName="•¡‡ƒpƒX‰ğœ";
+        presentationName="è¤‡åˆãƒ‘ã‚¹è§£é™¤";
         redo();
     }
     public void redo(){

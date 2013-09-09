@@ -13,11 +13,11 @@ import java.util.Vector;
  * @author takashi
  */
 public class BezzierSpline {
-    //‹ß—‚ğÀs‚·‚éÅ‘å‰ñ”
+    //è¿‘ä¼¼ã‚’å®Ÿè¡Œã™ã‚‹æœ€å¤§å›æ•°
     private int maxIterations = 3;
-    //Å‘åŒë·
+    //æœ€å¤§èª¤å·®
     private double tolerance = 1;
-    //Œë·‚ª‹–—e”ÍˆÍ‚ğ’´‚¦‚é“_
+    //èª¤å·®ãŒè¨±å®¹ç¯„å›²ã‚’è¶…ãˆã‚‹ç‚¹
     private int splitPoint = 0;
     //
     public BezzierSpline() {
@@ -80,7 +80,7 @@ public class BezzierSpline {
         }
         return result;
     }
-    //ƒpƒ‰ƒ[ƒ^ƒ|ƒCƒ“ƒg‚ª‚QŒÂ‚Ìê‡
+    //ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒã‚¤ãƒ³ãƒˆãŒï¼’å€‹ã®å ´åˆ
     public Point2D[] fromTwoPoints(Point2D[] points, Point2D startTangent, Point2D endTangent) {
         Point2D[] bezier = new Point2D[4];
         bezier[0] = points[0];
@@ -106,7 +106,7 @@ public class BezzierSpline {
         }
         return bezier;
     }
-    //ƒxƒWƒFƒpƒX‚Ìì¬;
+    //ãƒ™ã‚¸ã‚§ãƒ‘ã‚¹ã®ä½œæˆ;
     private Point2D[] generateBezier(Point2D[] points, Point2D startTangent, Point2D endTangent) {
         double[] params = setParamsByLength(points);
         Point2D[] bezier = setAssumptBezier(points, startTangent, endTangent, params);
@@ -135,7 +135,7 @@ public class BezzierSpline {
         }
         return null;
     }
-    //‰¼ƒpƒX‚Ìì¬
+    //ä»®ãƒ‘ã‚¹ã®ä½œæˆ
     private Point2D[] setAssumptBezier(Point2D[] points, Point2D startTangent, Point2D endTangent, double[] params) {
         Point2D start = ptIsZero(startTangent) ? estimateStartTangent(points) : startTangent;
         Point2D end = ptIsZero(endTangent) ? estimateEndTangent(points) : endTangent;
@@ -246,7 +246,7 @@ public class BezzierSpline {
         bezier[ei] = result;
     }
 
-    //’¼ü•âŠ®‚©‚çƒpƒ‰ƒƒ^‚Ìİ’è;
+    //ç›´ç·šè£œå®Œã‹ã‚‰ãƒ‘ãƒ©ãƒ¡ã‚¿ã®è¨­å®š;
     private double[] setParamsByLength(Point2D[] points) {
         double[] result = new double[points.length];
         result[0] = 0;
@@ -260,7 +260,7 @@ public class BezzierSpline {
         }
         return result;
     }
-    //‹Èü‚©‚ç‚Ìƒpƒ‰ƒƒ^İ’è
+    //æ›²ç·šã‹ã‚‰ã®ãƒ‘ãƒ©ãƒ¡ã‚¿è¨­å®š
     private double[] reparameterize(Point2D[] points, Point2D[] bezier, double[] params) {
         for (int i = 0; i < points.length - 1; i++) {
             params[i] = newtonRaphsonRootFind(bezier, points[i], params[i]);
@@ -268,7 +268,7 @@ public class BezzierSpline {
         return params;
     }
 
-    //ƒjƒ…[ƒgƒ“ƒ‰ƒvƒ\ƒ“–@‚É‚æ‚é‰ğ
+    //ãƒ‹ãƒ¥ãƒ¼ãƒˆãƒ³ãƒ©ãƒ—ã‚½ãƒ³æ³•ã«ã‚ˆã‚‹è§£
     private double newtonRaphsonRootFind(Point2D[] bezier, Point2D point, double param) {
         Point2D[] dbezier = pointDifference(bezier);
         Point2D[] ddbezier = pointDifference(dbezier);
@@ -315,7 +315,7 @@ public class BezzierSpline {
         }
         return improvedParam;
     }
-    //Å‘å‰““_‚Æ‹Èü‚Æ‚Ì‘Š‘Î‹——£‚Æ‚»‚ÌˆÊ’u(splitPoint‚ÉŠi”[)‚ğ‹‚ß‚éB
+    //æœ€å¤§é ç‚¹ã¨æ›²ç·šã¨ã®ç›¸å¯¾è·é›¢ã¨ãã®ä½ç½®(splitPointã«æ ¼ç´)ã‚’æ±‚ã‚ã‚‹ã€‚
     private double maxError(Point2D[] data, Point2D[] bezier, double[] fractions) {
         double toleranceMore = tolerance;
         double maxDistanceSquare = 0,  maxHook = 0;
@@ -348,7 +348,7 @@ public class BezzierSpline {
         }
 
     }
-    //t(0<=t<=1)‚É‚¨‚¯‚éƒxƒWƒF‹Èüã‚Ì“_
+    //t(0<=t<=1)ã«ãŠã‘ã‚‹ãƒ™ã‚¸ã‚§æ›²ç·šä¸Šã®ç‚¹
     private Point2D bezierPt(Point2D[] b, double t) {
         double[][] pascal = new double[][]{{1, 0, 0, 0}, {1, 1, 0, 0}, {1, 2, 1, 0}, {1, 3, 3, 1}};
         double s = 1 - t;

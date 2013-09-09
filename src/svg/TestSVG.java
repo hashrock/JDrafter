@@ -88,11 +88,11 @@ public class TestSVG extends javax.swing.JFrame {
 // TODO add your handling code here:
         String regex="(svg)\\s+(PUBLIC)\\s+\"[^\"]+\"\\s+\"[^\"]+\"";
         try {
-            // SAXƒp[ƒT[ƒtƒ@ƒNƒgƒŠ‚ğ¶¬
+            // SAXãƒ‘ãƒ¼ã‚µãƒ¼ãƒ•ã‚¡ã‚¯ãƒˆãƒªã‚’ç”Ÿæˆ
             SAXParserFactory spfactory = SAXParserFactory.newInstance();
-            // SAXƒp[ƒT[‚ğ¶¬
+            // SAXãƒ‘ãƒ¼ã‚µãƒ¼ã‚’ç”Ÿæˆ
             SAXParser parser = spfactory.newSAXParser();
-            // XMLƒtƒ@ƒCƒ‹‚ğw’è‚³‚ê‚½ƒfƒtƒHƒ‹ƒgƒnƒ“ƒhƒ‰[‚Åˆ—‚µ‚Ü‚·
+            // XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’æŒ‡å®šã•ã‚ŒãŸãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã§å‡¦ç†ã—ã¾ã™
             String xml=jTextArea1.getText();
             xml=xml.replaceFirst(regex,"svg");
             StringReader reader=new StringReader(xml);

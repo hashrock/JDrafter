@@ -37,13 +37,13 @@ import jscreen.JEnvironment;
 import jscreen.JRequest;
 
 /**
- *‘S‚Ä‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚Ìƒ‹[ƒg‚Æ‚È‚é•`‰æƒIƒuƒWƒFƒNƒg‚Å‚·B
- * •¡”ƒy[ƒW‚ğŠ—L‚·‚éƒhƒLƒ…ƒƒ“ƒg‚ğ¦‚µ‚Ü‚·.
+ *å…¨ã¦ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ«ãƒ¼ãƒˆã¨ãªã‚‹æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§ã™ã€‚
+ * è¤‡æ•°ãƒšãƒ¼ã‚¸ã‚’æ‰€æœ‰ã™ã‚‹ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’ç¤ºã—ã¾ã™.
  * @author i002060
  */
 public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,Pageable,ChangeListener{
     /**
-     * ƒJƒŒƒ“ƒg‚ÌƒvƒŠƒ“ƒ^[ƒWƒ‡ƒu‚ğ•Û‚µ‚Ü‚·.
+     * ã‚«ãƒ¬ãƒ³ãƒˆã®ãƒ—ãƒªãƒ³ã‚¿ãƒ¼ã‚¸ãƒ§ãƒ–ã‚’ä¿æŒã—ã¾ã™.
      */
     public static  final PrinterJob printerJob=PrinterJob.getPrinterJob();
     private transient Vector<UndoableEditListener> undoListener;
@@ -55,15 +55,15 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
     private static final long serialVersionUID=110l;
     //
     private transient JDocumentViewer viewer=null;
-    /** ƒfƒtƒHƒ‹ƒg‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^[‚Å‚·B
-     * ˆê‚Â‚Ì‹ó”’‚Ìƒy[ƒW‚ğ•Û‚·‚éJDocument‚ğ\’z‚µ‚Ü‚·.
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼ã§ã™ã€‚
+     * ä¸€ã¤ã®ç©ºç™½ã®ãƒšãƒ¼ã‚¸ã‚’ä¿æŒã™ã‚‹JDocumentã‚’æ§‹ç¯‰ã—ã¾ã™.
      */
     public JDocument() {
         this(new JPage());
     }
     /**
-     * w’è‚·‚éƒy[ƒW‚ğ•Û‚·‚éJDocument‚ğ\’z‚µ‚Ü‚·.
-     * @param page w’è‚·‚éƒy[ƒW.
+     * æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸ã‚’ä¿æŒã™ã‚‹JDocumentã‚’æ§‹ç¯‰ã—ã¾ã™.
+     * @param page æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸.
      */
     public JDocument(JPage page){
         //printerJob=PrinterJob.getPrinterJob();
@@ -75,40 +75,40 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         viewer=null;
     }
     /**
-     * ‚±‚ÌJDocument‚ğ•\¦‚·‚éJDocumentViewer‚ğw’è‚µ‚Ü‚·.
-     * @param v ‚±‚ÌJDocument‚ğ•\¦‚·‚éJDocumentViewer
+     * ã“ã®JDocumentã‚’è¡¨ç¤ºã™ã‚‹JDocumentViewerã‚’æŒ‡å®šã—ã¾ã™.
+     * @param v ã“ã®JDocumentã‚’è¡¨ç¤ºã™ã‚‹JDocumentViewer
      */
     public void setViewer(JDocumentViewer v){
         viewer=v;
     }
     /**
-     * ‚±‚ÌJDocument‚ğ•\¦‚·‚éJDocumentViewer‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®JDocumentã‚’è¡¨ç¤ºã™ã‚‹JDocumentViewerã‚’è¿”ã—ã¾ã™.
      * @return
      */
     public JDocumentViewer getViewer(){
         return viewer;
     }
     /**
-     * ‚±‚ÌJDocument‚Éæ‚èÁ‚µ‰Â”\‚È•ÏX‚ª‰Á‚¦‚ç‚ê‚½Û‚ÉUndoableEditEvent‚ğó‚¯æ‚é‚½‚ß‚ÉAw’è‚³‚ê‚½
-     * UndobaleEditListener‚ğ’Ç‰Á‚µ‚Ü‚·.
-     * @param u w’è‚·‚éUndoableEditListener
+     * ã“ã®JDocumentã«å–ã‚Šæ¶ˆã—å¯èƒ½ãªå¤‰æ›´ãŒåŠ ãˆã‚‰ã‚ŒãŸéš›ã«UndoableEditEventã‚’å—ã‘å–ã‚‹ãŸã‚ã«ã€æŒ‡å®šã•ã‚ŒãŸ
+     * UndobaleEditListenerã‚’è¿½åŠ ã—ã¾ã™.
+     * @param u æŒ‡å®šã™ã‚‹UndoableEditListener
      */
     public void addUndoableEditListener(UndoableEditListener u){
         if (undoListener.contains(u)) return;
         undoListener.add(u);
     }
     /**
-     * ‚±‚ÌJDocument‚©‚çUndoableEditEvent‚ğó‚¯æ‚ç‚È‚¢‚æ‚¤‚ÉAw’è‚³‚ê‚½
-     * UnodoableEditListener‚ğíœ‚µ‚Ü‚·.
-     * @param u íœ‚·‚éUndoableEditListener
+     * ã“ã®JDocumentã‹ã‚‰UndoableEditEventã‚’å—ã‘å–ã‚‰ãªã„ã‚ˆã†ã«ã€æŒ‡å®šã•ã‚ŒãŸ
+     * UnodoableEditListenerã‚’å‰Šé™¤ã—ã¾ã™.
+     * @param u å‰Šé™¤ã™ã‚‹UndoableEditListener
      */
     public void removeUndoableEditListener(UndoableEditListener u){
         undoListener.remove(u);
     }
     /**
-     * ‚±‚ÌJDocument‚Éæ‚èÁ‚µ‰Â”\‚È•ÏX–”‚Í•ÏX‚ÌæÁ‚µ‚ª‰Á‚¦‚ç‚ê‚½Û‚ÉJUndoRedoEvent‚ğó‚¯æ‚é‚½‚ß‚ÉA
-     * JUndoRedoListener‚ğ’Ç‰Á‚µ‚Ü‚·.
-     * @param l ’Ç‰Á‚·‚éJUndoRedoListener
+     * ã“ã®JDocumentã«å–ã‚Šæ¶ˆã—å¯èƒ½ãªå¤‰æ›´åˆã¯å¤‰æ›´ã®å–æ¶ˆã—ãŒåŠ ãˆã‚‰ã‚ŒãŸéš›ã«JUndoRedoEventã‚’å—ã‘å–ã‚‹ãŸã‚ã«ã€
+     * JUndoRedoListenerã‚’è¿½åŠ ã—ã¾ã™.
+     * @param l è¿½åŠ ã™ã‚‹JUndoRedoListener
      */
     public void addUndoRedoListener(JUndoRedoListener l){
         if (undoRedoListeners.contains(l)) return;
@@ -116,16 +116,16 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         
     }
     /**
-     * ‚±‚ÌJDocument‚Éæ‚èÁ‚µ‰Â”\‚È•ÏX–”‚Í•ÏX‚ÌæÁ‚µ‚ª‰Á‚¦‚ç‚ê‚½Û‚ÉJUndoRedoEvent‚ğó‚¯æ‚ç‚È‚¢‚æ‚¤‚É
-     * JUndoRedoListener‚ğíœ‚µ‚Ü‚·.
+     * ã“ã®JDocumentã«å–ã‚Šæ¶ˆã—å¯èƒ½ãªå¤‰æ›´åˆã¯å¤‰æ›´ã®å–æ¶ˆã—ãŒåŠ ãˆã‚‰ã‚ŒãŸéš›ã«JUndoRedoEventã‚’å—ã‘å–ã‚‰ãªã„ã‚ˆã†ã«
+     * JUndoRedoListenerã‚’å‰Šé™¤ã—ã¾ã™.
      * @param l
      */
     public void removeUndoRedoListener(JUndoRedoListener l){
         undoRedoListeners.remove(l);
     }
     /**
-     * UndoableEditEvent‚ğ’Ê’m‚µ‚Ü‚·.
-     * @param e ‰Á‚¦‚ç‚ê‚½•ÏX‚ğ•Û‚·‚éUndoableEdit
+     * UndoableEditEventã‚’é€šçŸ¥ã—ã¾ã™.
+     * @param e åŠ ãˆã‚‰ã‚ŒãŸå¤‰æ›´ã‚’ä¿æŒã™ã‚‹UndoableEdit
      */
     public void fireUndoEvent(UndoableEdit e){
         JPage p=getCurrentPage();
@@ -140,8 +140,8 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         
     }
     /**
-     * UnodoRedoEvent‚ğ’Ê’m‚µ‚Ü‚·.
-     * @param e ‰Á‚¦‚ç‚ê‚½•ÏX–”‚Íæ‚èÁ‚³‚ê‚½•ÏX‚ğ•Û‚·‚éJUndoRedoEvent
+     * UnodoRedoEventã‚’é€šçŸ¥ã—ã¾ã™.
+     * @param e åŠ ãˆã‚‰ã‚ŒãŸå¤‰æ›´åˆã¯å–ã‚Šæ¶ˆã•ã‚ŒãŸå¤‰æ›´ã‚’ä¿æŒã™ã‚‹JUndoRedoEvent
      */
     public void fireUndoRedoEvent(JUndoRedoEvent e){
         if (undoRedoListeners==null) return;
@@ -150,25 +150,25 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         }
     }
     /**
-     * Œ»İ‚Ì•`‰æŠÂ‹«‚ª•ÏX‚³‚ê‚½Û‚ÉChangeEvent‚ğó‚¯æ‚é‚½‚ß‚ÉChangeListener‚ğ
-     * ’Ç‰Á‚µ‚Ü‚·.
-     * @param ls ’Ç‰Á‚·‚éChangeListener
+     * ç¾åœ¨ã®æç”»ç’°å¢ƒãŒå¤‰æ›´ã•ã‚ŒãŸéš›ã«ChangeEventã‚’å—ã‘å–ã‚‹ãŸã‚ã«ChangeListenerã‚’
+     * è¿½åŠ ã—ã¾ã™.
+     * @param ls è¿½åŠ ã™ã‚‹ChangeListener
      */
     public void addenvironmentChangeListener(ChangeListener ls){
         if (ls !=null && !environmentChangeListener.contains(ls))
             environmentChangeListener.add(ls);
     }
     /**
-     * Œ»İ‚Ì•`‰æŠÂ‹«‚ª•ÏX‚³‚ê‚½Û‚ÉChangeEvent‚ğó‚¯æ‚ç‚È‚¢‚æ‚¤‚ÉChangeListener‚ğ
-     * íœ‚µ‚Ü‚·B
-     * @param ls íœ‚·‚éChangeLIstener
+     * ç¾åœ¨ã®æç”»ç’°å¢ƒãŒå¤‰æ›´ã•ã‚ŒãŸéš›ã«ChangeEventã‚’å—ã‘å–ã‚‰ãªã„ã‚ˆã†ã«ChangeListenerã‚’
+     * å‰Šé™¤ã—ã¾ã™ã€‚
+     * @param ls å‰Šé™¤ã™ã‚‹ChangeLIstener
      */
     public void removeenvironmentChangeListener(ChangeListener ls){
         environmentChangeListener.remove(ls);
     }
     /**
-     * •`‰æŠÂ‹«‚ª•ÏX‚³‚ê‚½‚±‚Æ‚ğ’Ê’m‚µ‚Ü‚·.
-     * @param e •`‰æŠÂ‹«‚Ì•ÏX‚ğ•Û‚·‚éChangeEvent
+     * æç”»ç’°å¢ƒãŒå¤‰æ›´ã•ã‚ŒãŸã“ã¨ã‚’é€šçŸ¥ã—ã¾ã™.
+     * @param e æç”»ç’°å¢ƒã®å¤‰æ›´ã‚’ä¿æŒã™ã‚‹ChangeEvent
      */
     public void fireEnvironmentChange(ChangeEvent e){
         Iterator<ChangeListener> it=environmentChangeListener.iterator();
@@ -176,15 +176,15 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
             it.next().stateChanged(e);
     }
     /**
-     * Œ»İ‚Ì—LŒø‚ÈprinterJobj‚ğ•Ô‚µ‚Ü‚·.
+     * ç¾åœ¨ã®æœ‰åŠ¹ãªprinterJobjã‚’è¿”ã—ã¾ã™.
      * @return
      */
     public PrinterJob getPrinterJob(){
         return printerJob;
     }
     /**
-     * ƒJƒŒƒ“ƒg‚Ìƒy[ƒWƒCƒ“ƒfƒbƒNƒX‚ğİ’è‚µ‚Ü‚·B
-     * @param index@ƒJƒŒƒ“ƒg‚Éİ’è‚·‚éƒy[ƒWƒCƒ“ƒfƒbƒNƒX.
+     * ã‚«ãƒ¬ãƒ³ãƒˆã®ãƒšãƒ¼ã‚¸ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’è¨­å®šã—ã¾ã™ã€‚
+     * @param indexã€€ã‚«ãƒ¬ãƒ³ãƒˆã«è¨­å®šã™ã‚‹ãƒšãƒ¼ã‚¸ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹.
      */
     public void setPageIndex(int index){
         if (index>=0 && index<size() && indexOf(getCurrentPage()) !=index){
@@ -193,15 +193,15 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return;
     }
     /**
-     * ƒJƒŒƒ“ƒg‚Ìƒy[ƒWƒCƒ“ƒfƒbƒNƒX‚ğ•Ô‚µ‚Ü‚·.
-     * @return ƒJƒŒƒ“ƒg‚Ìƒy[ƒWƒCƒ“ƒfƒbƒNƒX.
+     * ã‚«ãƒ¬ãƒ³ãƒˆã®ãƒšãƒ¼ã‚¸ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’è¿”ã—ã¾ã™.
+     * @return ã‚«ãƒ¬ãƒ³ãƒˆã®ãƒšãƒ¼ã‚¸ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹.
      */
     public int getPageIndex(){
         return indexOf(getCurrentPage());
     }
     /**
-     * w’è‚·‚éƒy[ƒW‚ğƒJƒŒƒ“ƒgƒy[ƒW‚Éİ’è‚µ‚Ü‚·.
-     * @param page ƒJƒŒƒ“ƒg‚Éw’è‚·‚éƒy[ƒW
+     * æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸ã‚’ã‚«ãƒ¬ãƒ³ãƒˆãƒšãƒ¼ã‚¸ã«è¨­å®šã—ã¾ã™.
+     * @param page ã‚«ãƒ¬ãƒ³ãƒˆã«æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸
      */
     public void setCurrentPage(JPage page){
         if (contains(page) && currentPage !=page){
@@ -211,8 +211,8 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         }
     }
     /**
-     * ƒJƒŒƒ“ƒgƒy[ƒW‚ğæ“¾‚µ‚Ü‚·B
-     * @return@ƒJƒŒƒ“ƒgƒy[ƒW.
+     * ã‚«ãƒ¬ãƒ³ãƒˆãƒšãƒ¼ã‚¸ã‚’å–å¾—ã—ã¾ã™ã€‚
+     * @returnã€€ã‚«ãƒ¬ãƒ³ãƒˆãƒšãƒ¼ã‚¸.
      */
     public JPage getCurrentPage(){
         if (currentPage==null)
@@ -220,16 +220,16 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return currentPage;
     }
     /**
-     * Œ»İ‚Ì•`‰æŠÂ‹«‚ğæ“¾‚µ‚Ü‚·.
-     * @return Œ»İ‚Ì•`‰æŠÂ‹«
+     * ç¾åœ¨ã®æç”»ç’°å¢ƒã‚’å–å¾—ã—ã¾ã™.
+     * @return ç¾åœ¨ã®æç”»ç’°å¢ƒ
      */
     public JEnvironment getEnvironment(){
         if (getCurrentPage()==null) return null;
         return getCurrentPage().getEnvironment();
     }
     /**
-     * ƒhƒLƒ…ƒƒ“ƒg‚Ì––”ö‚Éw’è‚·‚éƒy[ƒW‚ğ’Ç‰Á‚µ‚Ü‚·B
-     * @param p ’Ç‰Á‚·‚éJPage
+     * ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã®æœ«å°¾ã«æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸ã‚’è¿½åŠ ã—ã¾ã™ã€‚
+     * @param p è¿½åŠ ã™ã‚‹JPage
      */
     @Override
     public void add(JPage p){
@@ -240,9 +240,9 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         p.getEnvironment().addChangeListener(this);
     }
     /**
-     * w’è‚·‚éˆÊ’u‚Éƒy[ƒW‚ğ’Ç‰Á‚µ‚Ü‚·.
-     * @param index ’Ç‰Áw’èˆÊ’u.
-     * @param p ’Ç‰Á‚·‚éƒy[ƒW
+     * æŒ‡å®šã™ã‚‹ä½ç½®ã«ãƒšãƒ¼ã‚¸ã‚’è¿½åŠ ã—ã¾ã™.
+     * @param index è¿½åŠ æŒ‡å®šä½ç½®.
+     * @param p è¿½åŠ ã™ã‚‹ãƒšãƒ¼ã‚¸
      */
     @Override
     public void add(int index,JPage p){
@@ -253,8 +253,8 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         p.getEnvironment().addChangeListener(this);
     }
     /**
-     * w’è‚·‚éƒy[ƒW‚ğ‚±‚ÌƒhƒLƒ…ƒƒ“ƒg‚©‚çíœ‚µ‚Ü‚·.
-     * @param p íœ‚·‚éƒy[ƒW
+     * æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸ã‚’ã“ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‹ã‚‰å‰Šé™¤ã—ã¾ã™.
+     * @param p å‰Šé™¤ã™ã‚‹ãƒšãƒ¼ã‚¸
      */
     @Override
     public void remove(JPage p){
@@ -271,9 +271,9 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         p.getEnvironment().removeChangeListener(this);
     }
     /**
-     * w’èƒCƒ“ƒfƒbƒNƒX‚É‚ ‚éƒy[ƒW‚ğíœ‚µ‚Ü‚·.
-     * @param idx w’è‚·‚éƒCƒ“ƒfƒbƒNƒX.
-     * @return íœ‚³‚ê‚½ƒy[ƒW
+     * æŒ‡å®šã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã«ã‚ã‚‹ãƒšãƒ¼ã‚¸ã‚’å‰Šé™¤ã—ã¾ã™.
+     * @param idx æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹.
+     * @return å‰Šé™¤ã•ã‚ŒãŸãƒšãƒ¼ã‚¸
      */
     @Override
     public JPage remove(int idx){
@@ -287,24 +287,24 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return ret;
     }
     /**
-     * ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ğ•Û‚·‚éJDocument‚ğ
-     * •Ô‚µ‚Ü‚·.
-     * @return ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ğ•Û‚·‚éJDocument
+     * ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä¿æŒã™ã‚‹JDocumentã‚’
+     * è¿”ã—ã¾ã™.
+     * @return ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä¿æŒã™ã‚‹JDocument
      */
     @Override
     public JDocument getDocument(){
         return this;
     }
     /**
-     * ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ğ•Û‚·‚éJpage
-     * @return@í‚Énull‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ä¿æŒã™ã‚‹Jpage
+     * @returnã€€å¸¸ã«nullã‚’è¿”ã—ã¾ã™.
      */
     @Override
     public JPage getPage(){
         return null;
     }
     /**
-     * Œp³‚Ì‚½‚ß‚ÌÀ‘•‚Å‚·B‰½‚à•ÏX‚µ‚Ü‚¹‚ñB
+     * ç¶™æ‰¿ã®ãŸã‚ã®å®Ÿè£…ã§ã™ã€‚ä½•ã‚‚å¤‰æ›´ã—ã¾ã›ã‚“ã€‚
      * 
      * @param tr 
      * @param req
@@ -319,11 +319,11 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         //DO Nothing
     }
     /**
-     * w’è‚·‚é“_‚ÉPoint2D‚Éƒqƒbƒg‚·‚éƒIƒuƒWƒFƒNƒg‚ğ’Tõ‚µAƒqƒbƒg‚µ‚½ƒIƒuƒWƒFƒNƒg‚ğJRequest‚ÉŠi”[‚µ‚Ü‚·B
-     * @param env •`‰æŠÂ‹«‚ğ•Û‚·‚éJevironment
-     * @param req Œ»İ‚Ì‘I‘ğ“à—e‹y‚Ñƒqƒbƒg‚µ‚½ƒIƒuƒWƒFƒNƒg‚ğŠi”[‚·‚éJRequest
-     * @param point ƒqƒbƒg‚ğ”»’è‚·‚éPoint2D
-     * @return ’TõŒ‹‰Ê JRequest.HIT_NON,JRequest.HIT_OBJECT,JRequew.HIT_PATH,JRequest.HIT_ANCUR,JRequest.HIT_LCONTROL,JRequest.HIT_RCONTROL
+     * æŒ‡å®šã™ã‚‹ç‚¹ã«Point2Dã«ãƒ’ãƒƒãƒˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¢ç´¢ã—ã€ãƒ’ãƒƒãƒˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’JRequestã«æ ¼ç´ã—ã¾ã™ã€‚
+     * @param env æç”»ç’°å¢ƒã‚’ä¿æŒã™ã‚‹Jevironment
+     * @param req ç¾åœ¨ã®é¸æŠå†…å®¹åŠã³ãƒ’ãƒƒãƒˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ ¼ç´ã™ã‚‹JRequest
+     * @param point ãƒ’ãƒƒãƒˆã‚’åˆ¤å®šã™ã‚‹Point2D
+     * @return æ¢ç´¢çµæœ JRequest.HIT_NON,JRequest.HIT_OBJECT,JRequew.HIT_PATH,JRequest.HIT_ANCUR,JRequest.HIT_LCONTROL,JRequest.HIT_RCONTROL
      */
     @Override
     public int hitByPoint(JEnvironment env, JRequest req, Point2D point) {
@@ -333,10 +333,10 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
             return req.HIT_NON;
     }
     /**
-     * w’è‚·‚é“_‚ÉRectangle2D‚Éƒqƒbƒg‚·‚éƒIƒuƒWƒFƒNƒg‚ğ’Tõ‚µAƒqƒbƒg‚µ‚½ƒIƒuƒWƒFƒNƒg‚ğJRequest‚ÉŠi”[‚µ‚Ü‚·B
-     * @param env •`‰æŠÂ‹«‚ğ•Û‚·‚éJevironment
-     * @param req Œ»İ‚Ì‘I‘ğ“à—e‹y‚Ñƒqƒbƒg‚µ‚½ƒIƒuƒWƒFƒNƒg‚ğŠi”[‚·‚éJRequest
-     * @param rect ƒqƒbƒg‚ğ”»’è‚·‚éRectangle2D
+     * æŒ‡å®šã™ã‚‹ç‚¹ã«Rectangle2Dã«ãƒ’ãƒƒãƒˆã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¢ç´¢ã—ã€ãƒ’ãƒƒãƒˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’JRequestã«æ ¼ç´ã—ã¾ã™ã€‚
+     * @param env æç”»ç’°å¢ƒã‚’ä¿æŒã™ã‚‹Jevironment
+     * @param req ç¾åœ¨ã®é¸æŠå†…å®¹åŠã³ãƒ’ãƒƒãƒˆã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ ¼ç´ã™ã‚‹JRequest
+     * @param rect ãƒ’ãƒƒãƒˆã‚’åˆ¤å®šã™ã‚‹Rectangle2D
      */    
     @Override
     public void hitByRect(JEnvironment env, JRequest req, Rectangle2D rect) {
@@ -344,7 +344,7 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
             getCurrentPage().hitByRect(env,req,rect);
     }
     /**
-     * Œp³‚Ì‚½‚ß‚ÌÀ‘•‚Å‚·.‰½‚à‚µ‚Ü‚¹‚ñB
+     * ç¶™æ‰¿ã®ãŸã‚ã®å®Ÿè£…ã§ã™.ä½•ã‚‚ã—ã¾ã›ã‚“ã€‚
      * @param env
      * @return
      */
@@ -354,7 +354,7 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return null;
     }
     /**
-    * Œp³‚Ì‚½‚ß‚ÌÀ‘•‚Å‚·‰½‚à‚µ‚Ü‚¹‚ñB
+    * ç¶™æ‰¿ã®ãŸã‚ã®å®Ÿè£…ã§ã™ä½•ã‚‚ã—ã¾ã›ã‚“ã€‚
     * @param env
     * @param rotation
     * @return
@@ -364,26 +364,26 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return null;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param clip@•`‰æ‚ÌƒNƒŠƒbƒv‚Ì‚½‚ß‚ÌƒoƒEƒ“ƒfƒBƒ“ƒOƒ{ƒbƒNƒX
-     * @param g@ƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æç”»ã—ã¾ã™.
+     * @param clipã€€æç”»ã®ã‚¯ãƒªãƒƒãƒ—ã®ãŸã‚ã®ãƒã‚¦ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ãƒœãƒƒã‚¯ã‚¹
+     * @param gã€€ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     @Override
     public void paintThis(Rectangle2D clip, Graphics2D g) {
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒrƒ…[‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param env •`‰æŠÂ‹«‚ğ•Û‚·‚éJEnvironment
-     * @param req ‘I‘ğ“à—e‚ğ•Û‚·‚éJRequest
-     * @param g ƒOƒ‰ƒtƒBƒbƒNƒRƒ“ƒeƒLƒXƒg
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’æç”»ã—ã¾ã™.
+     * @param env æç”»ç’°å¢ƒã‚’ä¿æŒã™ã‚‹JEnvironment
+     * @param req é¸æŠå†…å®¹ã‚’ä¿æŒã™ã‚‹JRequest
+     * @param g ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     @Override
     public void paintPreview(JEnvironment env, JRequest req, Graphics2D g) {
         //Do Nothing;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì•¡»‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì•¡».
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è¤‡è£½ã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è¤‡è£½.
      * @throws java.lang.CloneNotSupportedException
      */
     @Override
@@ -391,43 +391,43 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         throw new CloneNotSupportedException();
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì—LŒø‚È‘I‘ğ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRectangle2D‚ğ•Ô‚µ‚Ü‚·B
-     * @return@‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì—LŒø‚È‘I‘ğ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRectangle2D
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æœ‰åŠ¹ãªé¸æŠç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Rectangle2Dã‚’è¿”ã—ã¾ã™ã€‚
+     * @returnã€€ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æœ‰åŠ¹ãªé¸æŠç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Rectangle2D
      */
     @Override
     public Rectangle2D getSelectionBounds() {
         return null;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì—İÏ‚³‚ê‚½‰ñ“]•ÏŠ·‚ª‚È‚©‚Á‚½ê‡‚Ì‘I‘ğ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚Ì
-     * Rectangle2D‚ğ•Ô‚µ‚Ü‚·B
-     * @param x —İÏ‚³‚ê‚½‰ñ“]‚ğƒŠƒZƒbƒg‚·‚éÛ‚Ì’†S‚ÌXÀ•W
-     * @param y —İÏ‚³‚ê‚½‰ñ“]‚ğƒŠƒZƒbƒg‚·‚éÛ‚Ì’†S‚ÌYÀ•W
-     * @return —İÏ‚³‚ê‚½‰ñ“]•ÏŠ·‚ª‚È‚©‚Á‚½ê‡‚Ì‘I‘ğ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRectangle2D
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç´¯ç©ã•ã‚ŒãŸå›è»¢å¤‰æ›ãŒãªã‹ã£ãŸå ´åˆã®é¸æŠç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®
+     * Rectangle2Dã‚’è¿”ã—ã¾ã™ã€‚
+     * @param x ç´¯ç©ã•ã‚ŒãŸå›è»¢ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹éš›ã®ä¸­å¿ƒã®Xåº§æ¨™
+     * @param y ç´¯ç©ã•ã‚ŒãŸå›è»¢ã‚’ãƒªã‚»ãƒƒãƒˆã™ã‚‹éš›ã®ä¸­å¿ƒã®Yåº§æ¨™
+     * @return ç´¯ç©ã•ã‚ŒãŸå›è»¢å¤‰æ›ãŒãªã‹ã£ãŸå ´åˆã®é¸æŠç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Rectangle2D
      */
     @Override
     public Rectangle2D getOriginalSelectionBounds(double x,double y) {
         return null;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ©“®–½–¼‚·‚éÛ‚ÌŠ¥Œ‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ©“®–½–¼‚·‚éÛ‚ÌŠ¥Œ.
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è‡ªå‹•å‘½åã™ã‚‹éš›ã®å† è©ã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è‡ªå‹•å‘½åã™ã‚‹éš›ã®å† è©.
      */
     @Override
     public String getPrefixer(){
         return "Document";
     }
     /**
-     * ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚Ì•`‰æ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRectangle2D‚ğ•Ô‚µ‚Ü‚·B
-     * @return ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚Ì•`‰æ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRectangle2D
+     * ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»ç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Rectangle2Dã‚’è¿”ã—ã¾ã™ã€‚
+     * @return ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»ç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Rectangle2D
      */
     @Override
     public Rectangle2D getBounds() {
         return null;
     }
     /**
-     *  ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ÉŠÜ‚Ü‚ê‚é‘I‘ğ‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğ—v‘f‚Æ‚·‚é”z—ñ‚ğ•Ô‚µ‚Ü‚·B
-     * @return@‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ÉŠÜ‚Ü‚ê‚é‘I‘ğ‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ğ—v‘f‚Æ‚·‚é”z—ñ.
+     *  ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å«ã¾ã‚Œã‚‹é¸æŠã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—ã‚’è¿”ã—ã¾ã™ã€‚
+     * @returnã€€ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å«ã¾ã‚Œã‚‹é¸æŠã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¦ç´ ã¨ã™ã‚‹é…åˆ—.
      */
     @Override
     public Object[] getSelectedObjects() {
@@ -435,9 +435,9 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return req.getSelectedVector().toArray();
     }
     /**
-     * ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ÉŠÜ‚Ü‚ê‚é•`‰æƒIƒuƒWƒFƒNƒg‚Ì‘I‘ğ‚ª•ÏX‚³‚ê‚½ê‡‚ÉAItemEvent‚ğó‚¯æ‚é‚½‚ß‚É
-     * w’è‚³‚ê‚½ItemListener‚ğ’Ç‰Á‚µ‚Ü‚·.
-     * @param l ’Ç‰Á‚·‚éItemListener
+     * ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å«ã¾ã‚Œã‚‹æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é¸æŠãŒå¤‰æ›´ã•ã‚ŒãŸå ´åˆã«ã€ItemEventã‚’å—ã‘å–ã‚‹ãŸã‚ã«
+     * æŒ‡å®šã•ã‚ŒãŸItemListenerã‚’è¿½åŠ ã—ã¾ã™.
+     * @param l è¿½åŠ ã™ã‚‹ItemListener
      */
     @Override
     public void addItemListener(ItemListener l) {
@@ -445,18 +445,18 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
             itemListeners.add(l);
     }
     /**
-     * ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ÉŠÜ‚Ü‚ê‚é•`‰æƒIƒuƒWƒFƒNƒg‚Ì‘I‘ğ‚ª•ÏX‚³‚ê‚½ê‡‚ÉAItemEvent‚ğó‚¯æ‚ç‚È‚¢‚æ‚¤‚É‚·‚é‚½‚ß‚É
-     * w’è‚³‚ê‚½ItemListener‚ğíœ‚µ‚Ü‚·B
-     * @param l íœ‚·‚éItemListener
+     * ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å«ã¾ã‚Œã‚‹æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é¸æŠãŒå¤‰æ›´ã•ã‚ŒãŸå ´åˆã«ã€ItemEventã‚’å—ã‘å–ã‚‰ãªã„ã‚ˆã†ã«ã™ã‚‹ãŸã‚ã«
+     * æŒ‡å®šã•ã‚ŒãŸItemListenerã‚’å‰Šé™¤ã—ã¾ã™ã€‚
+     * @param l å‰Šé™¤ã™ã‚‹ItemListener
      */    
     @Override
     public void removeItemListener(ItemListener l) {
         itemListeners.remove(l);
     }
     /**
-     * ItemListener‚ÉItemEvent‚ğ’Ê’m‚µ‚Ü‚·.
-     * @param o ItemEvent‚ª”­¶‚µ‚½ƒIƒuƒWƒFƒNƒg
-     * @param stateChange ƒCƒxƒ“ƒg‚Ìí—Ş.
+     * ItemListenerã«ItemEventã‚’é€šçŸ¥ã—ã¾ã™.
+     * @param o ItemEventãŒç™ºç”Ÿã—ãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param stateChange ã‚¤ãƒ™ãƒ³ãƒˆã®ç¨®é¡.
      */
     public void fireItemEvent(Object o,int stateChange){
         if (itemListeners==null) return;
@@ -466,7 +466,7 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         }
     }
     /**
-     * ‚±‚Ì•`‰æƒIƒuƒWƒFƒNƒg‚ª•`‰æ‚·‚éShape‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæç”»ã™ã‚‹Shapeã‚’è¿”ã—ã¾ã™.
      * @return
      */
     @Override
@@ -490,17 +490,17 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         }
     }
     /**
-     * ‚±‚ÌJDocument‚ª•Û‚·‚éƒy[ƒW‚Ì”‚ğ•Ô‚µ‚Ü‚·B
-     * @return@‚±‚ÌJDocument‚ª•Û‚·‚éƒy[ƒW‚Ì”
+     * ã“ã®JDocumentãŒä¿æŒã™ã‚‹ãƒšãƒ¼ã‚¸ã®æ•°ã‚’è¿”ã—ã¾ã™ã€‚
+     * @returnã€€ã“ã®JDocumentãŒä¿æŒã™ã‚‹ãƒšãƒ¼ã‚¸ã®æ•°
      */
     @Override
     public int getNumberOfPages() {
         return size();
     }
     /**
-     * ‚±‚ÌJDocument‚Ìw’èˆÊ’u‚Ìƒy[ƒW‚ÉPageFormat‚ğ•Ô‚µ‚Ü‚·.
-     * @param pageIndex w’è‚·‚éƒy[ƒW.
-     * @return w’èƒy[ƒW‚ÌPageFormat
+     * ã“ã®JDocumentã®æŒ‡å®šä½ç½®ã®ãƒšãƒ¼ã‚¸ã«PageFormatã‚’è¿”ã—ã¾ã™.
+     * @param pageIndex æŒ‡å®šã™ã‚‹ãƒšãƒ¼ã‚¸.
+     * @return æŒ‡å®šãƒšãƒ¼ã‚¸ã®PageFormat
      * @throws java.lang.IndexOutOfBoundsException
      */
     @Override
@@ -508,9 +508,9 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return get(pageIndex).getPageFormat();
     }
     /**
-     * w’è‚·‚éƒCƒ“ƒfƒbƒNƒX‚Ìƒy[ƒW‚ÌPrintableƒIƒuƒWƒFƒNƒg‚ğ•Ô‚µ‚Ü‚·.
-     * @param pageIndex w’è‚·‚éƒCƒ“ƒfƒbƒNƒX.
-     * @return w’è‚·‚éƒCƒ“ƒfƒbƒNƒX‚Ìƒy[ƒW‚ÌPrintableƒIƒuƒWƒFƒNƒg
+     * æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒšãƒ¼ã‚¸ã®Printableã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™.
+     * @param pageIndex æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹.
+     * @return æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®ãƒšãƒ¼ã‚¸ã®Printableã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
      * @throws java.lang.IndexOutOfBoundsException
      */
     @Override
@@ -518,7 +518,7 @@ public class JDocument extends JObject<JObject,JPage>implements ItemSelectable,P
         return get(pageIndex);
     }
     /**
-     * •\¦”{—¦‚ª•ÏX‚³‚ê‚½Û‚ÉJEnvironmentƒIƒuƒWƒFƒNƒg‚©‚çŒÄ‚Ño‚³‚ê‚Ü‚·.
+     * è¡¨ç¤ºå€ç‡ãŒå¤‰æ›´ã•ã‚ŒãŸéš›ã«JEnvironmentã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰å‘¼ã³å‡ºã•ã‚Œã¾ã™.
      * @param e
      */
     @Override

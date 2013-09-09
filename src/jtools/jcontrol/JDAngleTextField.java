@@ -14,9 +14,9 @@ import javax.swing.*;
 import java.util.*;
 import java.util.regex.*;
 /**
- *Šp“x“ü—Í‚Ì‚½‚ß‚ÌFormattedTextField‚ÌƒTƒuƒNƒ‰ƒX‚Å‚·.
- *“ü—Í‚³‚ê‚½”’l‹y‚Ñ’PˆÊ‚ÌƒyƒA‚ğRadian‚É•ÏŠ·‚µValue‚ÉŠi”[‚µ‚Ü‚·.
- *•\¦‚Íunit‚Ìw’è‚ğ‚à‚Æ‚É“xA–”‚ÍRadiann‚Ås‚¢‚Ü‚·.
+ *è§’åº¦å…¥åŠ›ã®ãŸã‚ã®FormattedTextFieldã®ã‚µãƒ–ã‚¯ãƒ©ã‚¹ã§ã™.
+ *å…¥åŠ›ã•ã‚ŒãŸæ•°å€¤åŠã³å˜ä½ã®ãƒšã‚¢ã‚’Radianã«å¤‰æ›ã—Valueã«æ ¼ç´ã—ã¾ã™.
+ *è¡¨ç¤ºã¯unitã®æŒ‡å®šã‚’ã‚‚ã¨ã«åº¦ã€åˆã¯Radiannã§è¡Œã„ã¾ã™.
  * @author i002060
  */
 public class JDAngleTextField extends JFormattedTextField{
@@ -76,7 +76,7 @@ public class JDAngleTextField extends JFormattedTextField{
             String c=text.trim();
             Number returnValue=null;
             if (c.equals("")) c="0";
-            if ((returnValue=getDouble(c,"‹"))!=null){
+            if ((returnValue=getDouble(c,"Â°"))!=null){
                 return new Double(returnValue.doubleValue()*Math.PI/180);
             }
             if ((returnValue=getDouble(c,"rad"))!=null){
@@ -106,7 +106,7 @@ public class JDAngleTextField extends JFormattedTextField{
                 throw new ParseException("NumelicError",0);
             Double vl=(Double)value;
             if (unit==DEGREE){
-                return String.format("%4.2f",(vl.doubleValue()/Math.PI*180))+"‹";
+                return String.format("%4.2f",(vl.doubleValue()/Math.PI*180))+"Â°";
             }
             return String.format("%g",vl.doubleValue())+"rad";
         }

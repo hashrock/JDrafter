@@ -13,17 +13,17 @@ import java.awt.geom.*;
 import java.awt.image.*;
 
 /**
- *H,S,B‚¢‚¸‚ê‚©‚Ì—v‘f‚ª‘JˆÚ‚·‚éPAINT‚Å‚·.
- *---------------------------------------------„
- *0‹@@@@@@@@@@@@@@@@@@@@@360‹
+ *H,S,Bã„ãšã‚Œã‹ã®è¦ç´ ãŒé·ç§»ã™ã‚‹PAINTã§ã™.
+ *---------------------------------------------ï¼
+ *0Â°ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€360Â°
  * @author i002060
  */
 public class JDHSV1Paint implements Paint{  
-    /**‰¡•ûŒü‚É‘JˆÚ‚·‚éPaint‚ğ•\‚µ‚Ü‚·.*/
+    /**æ¨ªæ–¹å‘ã«é·ç§»ã™ã‚‹Paintã‚’è¡¨ã—ã¾ã™.*/
     public static final int VERTICAL=0;
-    /**c•ûŒü‚É‘JˆÚ‚·‚éPaint‚ğ•\‚µ‚Ü‚·B*/
+    /**ç¸¦æ–¹å‘ã«é·ç§»ã™ã‚‹Paintã‚’è¡¨ã—ã¾ã™ã€‚*/
     public static final int HOLIZONTAL=1;
-    /**‘JˆÚ‚·‚é—v‘f‚ğ•\‚µ‚Ü‚·*/
+    /**é·ç§»ã™ã‚‹è¦ç´ ã‚’è¡¨ã—ã¾ã™*/
     public static final int H=0;
     public static final int S=1;
     public static final int V=2;

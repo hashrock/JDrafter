@@ -49,7 +49,7 @@ public class JTextTool extends JRectangleTool implements DocumentListener,ItemLi
     protected UEListener uEListener=new UEListener();
     public JTextTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ƒeƒLƒXƒg";
+        presentationName="ãƒ†ã‚­ã‚¹ãƒˆ";
         getViewer().getDocument().addItemListener(this);
         
     }

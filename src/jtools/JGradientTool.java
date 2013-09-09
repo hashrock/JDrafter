@@ -40,7 +40,7 @@ public class JGradientTool extends JAbstractTool {
     /** Creates a new instance of JGradientTool */
     public JGradientTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="グラデーションの方向と位置";
+        presentationName="繧ｰ繝ｩ繝�繝ｼ繧ｷ繝ｧ繝ｳ縺ｮ譁ｹ蜷代→菴咲ｽｮ";
     }
     
     @Override

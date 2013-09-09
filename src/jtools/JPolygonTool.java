@@ -26,7 +26,7 @@ public class JPolygonTool extends JShapeTool{
     /** Creates a new instance of JPolygonTool */
     public JPolygonTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="‘½ŠpŒ`ƒc[ƒ‹";
+        presentationName="å¤šè§’å½¢ãƒ„ãƒ¼ãƒ«";
     }
 
     @Override

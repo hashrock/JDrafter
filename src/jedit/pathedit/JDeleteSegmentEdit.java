@@ -28,7 +28,7 @@ public class JDeleteSegmentEdit extends JAbstractEdit {
     /** Creates a new instance of JDeleteSegmentEdit */
     public JDeleteSegmentEdit(JDocumentViewer view,Vector<JPathDeleteSet> e) {
         super(view);
-        presentationName="�폜";
+        presentationName="削除";
         jEdits=e;
         redo();
     }

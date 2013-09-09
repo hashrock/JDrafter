@@ -41,7 +41,7 @@ public class JCutterTool extends JAbstractTool{
     public JCutterTool(JDragPane dpane) {
         super(dpane);
         dragPane.setPaintRect(false);
-        presentationName="カッターツール";
+        presentationName="繧ｫ繝�繧ｿ繝ｼ繝�繝ｼ繝ｫ";
         getRequest().setSelectionMode(JRequest.DIRECT_MODE);
         line=null;
     }

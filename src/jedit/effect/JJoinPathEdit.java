@@ -46,7 +46,7 @@ public class JJoinPathEdit extends JAbstractEdit{
         this.sourceObj=sourceObj;
         this.sourcePath=sourceObj.getPath().getOwnerPath(sourceSeg);
         this.sourceSeg=sourceSeg;
-        presentationName="ƒpƒX‚Ì˜AŒ‹";
+        presentationName="ãƒ‘ã‚¹ã®é€£çµ";
         redo();
     }
     public void redo(){

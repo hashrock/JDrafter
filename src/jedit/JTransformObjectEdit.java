@@ -32,9 +32,9 @@ public class JTransformObjectEdit extends JAbstractEdit{
         this.target=target;
         this.transform=(AffineTransform)transform.clone();
         if (transform.getType()==transform.TYPE_TRANSLATION){
-            presentationName="ƒIƒuƒWƒFƒNƒg‚ÌˆÚ“®";
+            presentationName="ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç§»å‹•";
         }else{
-            presentationName="ƒIƒuƒWƒFƒNƒg‚Ì•ÏŒ`";
+            presentationName="ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å¤‰å½¢";
         }
         redo();
     }

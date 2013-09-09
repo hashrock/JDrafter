@@ -32,9 +32,9 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
     private HashMap<Integer, AlignmentMenu> itemMap=new HashMap<Integer, AlignmentMenu>();
     /** Creates a new instance of JStyleMenu */
     public JAlignmentMenu() {
-        setText("çsëµÇ¶(A)");
+        setText("Ë°åÊèÉ„Åà(A)");
         setMnemonic(KeyEvent.VK_S);
-        AlignmentMenu sb=new AlignmentMenu(StyleConstants.ALIGN_LEFT,"ç∂äÒÇπ(L)");
+        AlignmentMenu sb=new AlignmentMenu(StyleConstants.ALIGN_LEFT,"Â∑¶ÂØÑ„Åõ(L)");
         sb.setMnemonic(KeyEvent.VK_L);
         sb.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L,ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
         add(sb);
@@ -42,7 +42,7 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
         sb.addActionListener(this);
         itemMap.put(StyleConstants.ALIGN_LEFT,sb);
         //
-        sb=new AlignmentMenu(StyleConstants.ALIGN_CENTER,"ÉZÉìÉ^ÉäÉìÉO(C)");
+        sb=new AlignmentMenu(StyleConstants.ALIGN_CENTER,"„Çª„É≥„Çø„É™„É≥„Ç∞(C)");
         sb.setMnemonic(KeyEvent.VK_C);
         sb.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,ActionEvent.CTRL_MASK|ActionEvent.SHIFT_MASK));
         add(sb);
@@ -50,7 +50,7 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
         sb.addActionListener(this);
         itemMap.put(StyleConstants.ALIGN_CENTER,sb);
         //
-        sb=new AlignmentMenu(StyleConstants.ALIGN_RIGHT,"âEäÒÇπ(R)");
+        sb=new AlignmentMenu(StyleConstants.ALIGN_RIGHT,"Âè≥ÂØÑ„Åõ(R)");
         sb.setMnemonic(KeyEvent.VK_R);
         sb.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R,ActionEvent.CTRL_MASK|ActionEvent.SHIFT_MASK));
         add(sb);

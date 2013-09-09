@@ -25,7 +25,7 @@ public class JEllipseTool extends JShapeTool{
     /** Creates a new instance of JEllipseTool */
     public JEllipseTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="‘È‰~ƒc[ƒ‹";
+        presentationName="æ¥•å††ãƒ„ãƒ¼ãƒ«";
     }
     
     protected Shape createShape(Point2D start, Point2D end, boolean isAltDown,boolean isShiftDown) {

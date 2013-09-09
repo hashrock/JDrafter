@@ -74,7 +74,7 @@ public class TextLocater {
         float verticalPos = 0;
         int charPos = 0;
         while (atIterator != null) {
-            //行スタイル
+            //陦後せ繧ｿ繧､繝ｫ
             AttributeSet attribute = pi.getParagraphAttributeSet();
             float leftIndent = StyleConstants.getLeftIndent(attribute);
             float firstIndent = StyleConstants.getFirstLineIndent(attribute);
@@ -84,7 +84,7 @@ public class TextLocater {
             TabSet tabset = StyleConstants.getTabSet(attribute);
             if (tabset == null) {
                 tabset = DEFAULT_TABSET;
-            //タブポジション
+            //繧ｿ繝悶�昴ず繧ｷ繝ｧ繝ｳ
             }
             Vector<Integer> tabPosition = new Vector<Integer>();
             for (char c = atIterator.first(); c != atIterator.DONE; c = atIterator.next()) {
@@ -93,7 +93,7 @@ public class TextLocater {
                 }
             }
             tabPosition.add(atIterator.getEndIndex());
-            //フォントメトリクス
+            //繝輔か繝ｳ繝医Γ繝医Μ繧ｯ繧ｹ
             Font font = document.getFont(attribute);
             //LineMetrics metrics=font.getLineMetrics(" ",frc);
             float tabSpace = (new TextLayout("    ", font, frc)).getAdvance();
@@ -104,7 +104,7 @@ public class TextLocater {
             //
             LineBreakMeasurer measurer = new LineBreakMeasurer(atIterator, frc);
 
-            //1行抽出
+            //1陦梧歓蜃ｺ
             while (!paragraphEnd) {
                 boolean lineContainsText = false;
                 boolean lineEnd = false;

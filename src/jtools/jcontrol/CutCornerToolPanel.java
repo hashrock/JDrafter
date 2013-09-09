@@ -53,7 +53,7 @@ public class CutCornerToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(dialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         //
         radius.setValue(env.DEFAULT_CUTCORNER_RADIUS);
         dialog.pack();
@@ -85,7 +85,7 @@ public class CutCornerToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class CutCornerToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("Šp‚Ì”¼Œa");
+        jLabel1.setText("è§’ã®åŠå¾„");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

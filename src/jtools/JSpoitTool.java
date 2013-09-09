@@ -40,7 +40,7 @@ public class JSpoitTool extends JAbstractTool{
      */
     public JSpoitTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="スポイトツール";
+        presentationName="繧ｹ繝昴う繝医ヤ繝ｼ繝ｫ";
         
     }
     public void changeCursor() {

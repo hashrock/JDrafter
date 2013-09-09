@@ -36,10 +36,10 @@ public class BringObjectEdit extends JAbstractEdit{
         this.type=type;
         this.savedIndex=target.getParent().indexOf(target);
         switch (type){
-            case BRING_TO_TOP:presentationName="�őO�ʂɈړ�";break;
-            case BRING_FRONT:presentationName="�ЂƂO�ʂ�";break;
-            case SEND_TO_BOTTOM:presentationName="�Ŕw�ʂɈړ�";break;
-            case SEND_BACK:presentationName="�ЂƂw�ʂ�";break;
+            case BRING_TO_TOP:presentationName="最前面に移動";break;
+            case BRING_FRONT:presentationName="ひとつ前面に";break;
+            case SEND_TO_BOTTOM:presentationName="最背面に移動";break;
+            case SEND_BACK:presentationName="ひとつ背面に";break;
         }
         redo();
     }

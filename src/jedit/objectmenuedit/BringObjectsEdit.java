@@ -30,10 +30,10 @@ public class BringObjectsEdit extends JAbstractEdit{
         this.mode=mode;
         this.targets=targets;
         switch (mode){
-            case BringObjectEdit.BRING_TO_TOP:presentationName="�őO�ʂɈړ�";break;
-            case BringObjectEdit.BRING_FRONT:presentationName="�ЂƂO�ʂ�";break;
-            case BringObjectEdit.SEND_TO_BOTTOM:presentationName="�Ŕw�ʂɈړ�";break;
-            case BringObjectEdit.SEND_BACK:presentationName="�ЂƂw�ʂ�";break;
+            case BringObjectEdit.BRING_TO_TOP:presentationName="最前面に移動";break;
+            case BringObjectEdit.BRING_FRONT:presentationName="ひとつ前面に";break;
+            case BringObjectEdit.SEND_TO_BOTTOM:presentationName="最背面に移動";break;
+            case BringObjectEdit.SEND_BACK:presentationName="ひとつ背面に";break;
         }
         redo();
     }

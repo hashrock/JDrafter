@@ -22,7 +22,7 @@ import jpaint.JPaint;
 import jpaint.JStroke;
 
 /**
- *ƒfƒtƒHƒ‹ƒg‚Ì“h‚è‹y‚Ñü‚ğ•`‰æ‚·‚éƒGƒtƒFƒNƒg‚Å‚·B
+ *ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å¡—ã‚ŠåŠã³ç·šã‚’æç”»ã™ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã§ã™ã€‚
  * @author takashi
  */
 public class JDefaultEffector implements Serializable, JEffector {
@@ -30,7 +30,7 @@ public class JDefaultEffector implements Serializable, JEffector {
     private static final long serialVersionUID = 110l;
 
     /**
-     *JDefaultEffecter‚ğ\’z‚µ‚Ü‚·.
+     *JDefaultEffecterã‚’æ§‹ç¯‰ã—ã¾ã™.
      */
     @Override
     public void paint(Graphics2D g, Shape s, JPaint fillPaint, JPaint border, JStroke stroke) {
@@ -46,9 +46,9 @@ public class JDefaultEffector implements Serializable, JEffector {
     }
 
     /**
-     * w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ‚ğA‚±‚ÌJEffector‚Ì•`‰æ—Ìˆæ‚Ü‚ÅŠg’£‚µ‚Ü‚·B
-     * @param r w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ
-     * @return ‚±‚ÌJEffector‚É‚æ‚èŠg’£‚³‚ê‚½•`‰æ—Ìˆæ
+     * æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸã‚’ã€ã“ã®JEffectorã®æç”»é ˜åŸŸã¾ã§æ‹¡å¼µã—ã¾ã™ã€‚
+     * @param r æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸ
+     * @return ã“ã®JEffectorã«ã‚ˆã‚Šæ‹¡å¼µã•ã‚ŒãŸæç”»é ˜åŸŸ
      */
     @Override
     public Rectangle2D culcBounds(Rectangle2D r,JLeaf jl) {
@@ -56,7 +56,7 @@ public class JDefaultEffector implements Serializable, JEffector {
     }
 
     /**
-     * ‚±‚ÌJEffector‚Ì•¡»‚ğì¬‚µ‚Ü‚·.
+     * ã“ã®JEffectorã®è¤‡è£½ã‚’ä½œæˆã—ã¾ã™.
      * @return
      */
     @Override

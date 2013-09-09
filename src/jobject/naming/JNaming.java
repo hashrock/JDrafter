@@ -12,7 +12,7 @@ package jobject.naming;
 import java.util.regex.Pattern;
 
 /**
- *©“®–½–¼ƒƒJƒjƒYƒ€‚É‚æ‚é‡˜•t‚¯‚ğİ’è‚µ‚Ü‚·.
+ *è‡ªå‹•å‘½åãƒ¡ã‚«ãƒ‹ã‚ºãƒ ã«ã‚ˆã‚‹é †åºä»˜ã‘ã‚’è¨­å®šã—ã¾ã™.
  * @author takashi
  */
 public class JNaming implements Comparable<JNaming>{
@@ -21,8 +21,8 @@ public class JNaming implements Comparable<JNaming>{
     private static final String regex=".*\\D\\d{1,8}\\z";
     private static final String indexer="\\d{1,8}\\z"; 
     /**
-     * Š¥Œ‚ğw’è‚µAJNamingƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ\’z‚µ‚Ü‚·.
-     * @param name w’è‚·‚éŠ¥Œ. 
+     * å† è©ã‚’æŒ‡å®šã—ã€JNamingã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æ§‹ç¯‰ã—ã¾ã™.
+     * @param name æŒ‡å®šã™ã‚‹å† è©. 
      */
     public JNaming(String name) {
         if (Pattern.matches(regex,name)){
@@ -34,46 +34,46 @@ public class JNaming implements Comparable<JNaming>{
         }        
     }
     /**
-     * Š¥Œ‹y‚ÑAˆê˜A”Ô†‚ğw’è‚µAJNaminƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ\’z‚µ‚Ü‚·.
-     * @param prefixer w’è‚·‚éŠ¥Œ.
-     * @param index w’è‚·‚éˆê˜A”Ô†.
+     * å† è©åŠã³ã€ä¸€é€£ç•ªå·ã‚’æŒ‡å®šã—ã€JNaminã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æ§‹ç¯‰ã—ã¾ã™.
+     * @param prefixer æŒ‡å®šã™ã‚‹å† è©.
+     * @param index æŒ‡å®šã™ã‚‹ä¸€é€£ç•ªå·.
      */
     public JNaming(String prefixer,int index){
         this.prefixer=prefixer;
         this.index=index;
     }
     /**
-     * ‚±‚ÌJNaming‚Åw’è‰Â”\‚È–¼Ì‚Ì‚¤‚¿Å¬‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®JNamingã§æŒ‡å®šå¯èƒ½ãªåç§°ã®ã†ã¡æœ€å°ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã—ã¾ã™.
      * @return
      */
     public JNaming minimumName(){
         return new JNaming(prefixer,-1);
     }
     /**
-     * ‚±‚ÌJNaming‚Åw’è‰Â”\‚È–¼Ì‚Ì‚¤‚¿Å‘å‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚µ‚Ü‚·B
+     * ã“ã®JNamingã§æŒ‡å®šå¯èƒ½ãªåç§°ã®ã†ã¡æœ€å¤§ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã—ã¾ã™ã€‚
      * @return
      */
     public JNaming maximumName(){
         return new JNaming(prefixer,Integer.MAX_VALUE);
     }
     /**
-     * ‚±‚ÌJNaming‚ÌŠ¥Œ‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®JNamingã®å† è©ã‚’è¿”ã—ã¾ã™.
      * @return
      */
     public String getPrefixer(){
         return prefixer;
     }
     /**
-     * ‚±‚ÌJNaming‚Ìˆê˜A”Ô†‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®JNamingã®ä¸€é€£ç•ªå·ã‚’è¿”ã—ã¾ã™.
      * @return
      */
     public int getIndex(){
         return index;
     }
     /**
-     * w’è‚³‚ê‚½JNaming‚Æ‚±‚ÌJNaming©g‚Ì‡˜•t‚¯‚Ì”äŠr‚ğs‚¢‚Ü‚·.
-     * @param o ”äŠr‘ÎÛ‚ÌJNaming
-     * @return ‡˜•t‚¯‚Ì”äŠrŒ‹‰Ê
+     * æŒ‡å®šã•ã‚ŒãŸJNamingã¨ã“ã®JNamingè‡ªèº«ã®é †åºä»˜ã‘ã®æ¯”è¼ƒã‚’è¡Œã„ã¾ã™.
+     * @param o æ¯”è¼ƒå¯¾è±¡ã®JNaming
+     * @return é †åºä»˜ã‘ã®æ¯”è¼ƒçµæœ
      */
     @Override
     public int compareTo(JNaming o) {
@@ -82,7 +82,7 @@ public class JNaming implements Comparable<JNaming>{
         return (int)Math.signum(index-o.index); 
     }
     /**
-     * ‚±‚ÌJNaming‚Ì–¼Ì‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®JNamingã®åç§°ã‚’è¿”ã—ã¾ã™.
      * @return
      */
     @Override

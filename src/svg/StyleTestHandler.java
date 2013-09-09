@@ -25,7 +25,7 @@ import svg.oject.SVGObject;
 public class StyleTestHandler extends DefaultHandler {
     JTextArea jt=null;
     /**
-     * —v‘f‚ÌŠJnƒ^ƒO“Ç‚İ‚İ
+     * è¦ç´ ã®é–‹å§‹ã‚¿ã‚°èª­ã¿è¾¼ã¿æ™‚
      */
     public StyleTestHandler(){
     }
@@ -44,7 +44,7 @@ public class StyleTestHandler extends DefaultHandler {
     }
     
     /**
-     * ƒeƒLƒXƒgƒf[ƒ^“Ç‚İ‚İ
+     * ãƒ†ã‚­ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿æ™‚
      */
     @Override
     public void characters(char[] ch, int offset, int length) {
@@ -66,7 +66,7 @@ public class StyleTestHandler extends DefaultHandler {
     }
     
     /**
-     * —v‘f‚ÌI—¹ƒ^ƒO“Ç‚İ‚İ
+     * è¦ç´ ã®çµ‚äº†ã‚¿ã‚°èª­ã¿è¾¼ã¿æ™‚
      */
     @Override
     public void endElement(String uri, String localName, String qName) {
@@ -74,7 +74,7 @@ public class StyleTestHandler extends DefaultHandler {
     }
     
     /**
-     * ƒhƒLƒ…ƒƒ“ƒgI—¹
+     * ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆçµ‚äº†æ™‚
      */
     @Override
     public void endDocument() {

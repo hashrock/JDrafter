@@ -131,10 +131,10 @@ public class JPagePanel extends javax.swing.JPanel {
         pageOf.setText("/");
 
         prevPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jui/uipicture/lefttriangle.png"))); // NOI18N
-        prevPage.setToolTipText("�O�̃y�[�W");
+        prevPage.setToolTipText("前のページ");
 
         nextPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/jui/uipicture/righttriangle.png"))); // NOI18N
-        nextPage.setToolTipText("���̃y�[�W");
+        nextPage.setToolTipText("次のページ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

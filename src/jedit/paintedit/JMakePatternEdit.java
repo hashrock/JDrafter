@@ -21,7 +21,7 @@ public class JMakePatternEdit extends JAbstractEdit {
     public JMakePatternEdit(JDocumentViewer viewer, JPaint p) {
         super(viewer);
         this.paint = p;
-        presentationName = "ƒpƒ^[ƒ“ì¬";
+        presentationName = "ãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ";
         redo();
     }
 

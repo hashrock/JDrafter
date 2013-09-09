@@ -30,42 +30,42 @@ import jpaint.JStroke;
 import jobject.text.OnPathTextLocater;
 import jobject.text.TextLocater;
 /**
- *ƒpƒX‚É‰ˆ‚Á‚½ƒeƒLƒXƒg‚ÌƒŒƒCƒAƒEƒgA•\¦‚ğÀs‚·‚éƒIƒuƒWƒFƒNƒg‚Å‚·.
- *‚±‚ÌƒIƒuƒWƒFƒNƒg‚Í’PˆêƒpƒXƒIƒuƒWƒFƒNƒg‚Ì‚İ‚É‘Î‰‚µ‚Ä‚¢‚Ü‚·.
+ *ãƒ‘ã‚¹ã«æ²¿ã£ãŸãƒ†ã‚­ã‚¹ãƒˆã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã€è¡¨ç¤ºã‚’å®Ÿè¡Œã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã§ã™.
+ *ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã¯å˜ä¸€ãƒ‘ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã¿ã«å¯¾å¿œã—ã¦ã„ã¾ã™.
  * @author T-IKITA
  */
 public class JPathTextObject extends JPathObject implements JText,JColorable {
-    /**ƒeƒLƒXƒg‚Ì‘®«‹y‚Ñ•¶š‚ğ•Û‚·‚éDefaultStyledDocument*/
+    /**ãƒ†ã‚­ã‚¹ãƒˆã®å±æ€§åŠã³æ–‡å­—ã‚’ä¿æŒã™ã‚‹DefaultStyledDocument*/
     private DefaultStyledDocument document;
-    /**ƒeƒLƒXƒg‚Ì•`‰æŠJn“_‚ÌˆÊ’u‚ğ•\‚µ‚Ü‚·.*/
+    /**ãƒ†ã‚­ã‚¹ãƒˆã®æç”»é–‹å§‹ç‚¹ã®ä½ç½®ã‚’è¡¨ã—ã¾ã™.*/
     private float startPosition=0;
     private float previewPosition=0;
     private static final long serialVersionUID=110l;
-    /**•¶š‚ÌŠJn“_‚ğ§Œä‚·‚éƒRƒ“ƒgƒ[ƒ‹ƒ|ƒCƒ“ƒg‚Å‚·B
-     *        control1<br>
-     *       „ <br>
-     *-------„ TEXT<br>
-     *        control2<br>
+    /**æ–‡å­—ã®é–‹å§‹ç‚¹ã‚’åˆ¶å¾¡ã™ã‚‹ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚¤ãƒ³ãƒˆã§ã™ã€‚
+     *       â–¡control1<br>
+     *       â”‚<br>
+     *-------â”‚TEXT<br>
+     *       â–¡control2<br>
      */
     private transient JSegment control1=null,control2=null;
     private transient GeneralPath lineShape=null;
     private transient GeneralPath previewShape=null;
     
-    /** ƒfƒtƒHƒ‹ƒg‚Ì‘®«‚ÅJPathTextObject‚ğ\’z‚µ‚Ü‚·. */
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å±æ€§ã§JPathTextObjectã‚’æ§‹ç¯‰ã—ã¾ã™. */
     public JPathTextObject() {
         super(JEnvironment.currentTextFill,JEnvironment.currentTextBorder,JEnvironment.currentTextStroke);
         document=new DefaultStyledDocument();
     }
-    /**w’è‚µ‚½“h‚èAüí‹y‚ÑüF‚É‚æ‚èJPathTextObject‚ğ\’z‚µ‚Ü‚·.
-     *@param fillpaint “h‚è‚Ìpaint
-     *@param strokepaint ü‚ÌF
-     *@param stroke üí
+    /**æŒ‡å®šã—ãŸå¡—ã‚Šã€ç·šç¨®åŠã³ç·šè‰²ã«ã‚ˆã‚ŠJPathTextObjectã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param fillpaint å¡—ã‚Šã®paint
+     *@param strokepaint ç·šã®è‰²
+     *@param stroke ç·šç¨®
      */
     public JPathTextObject(JPaint fillpaint,JPaint strokepaint,JStroke stroke){
         super(fillpaint,strokepaint,stroke);
         document=new DefaultStyledDocument();
     }
-    /***ƒfƒoƒbƒO—p‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^[‚Å‚·*/
+    /***ãƒ‡ãƒãƒƒã‚°ç”¨ã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼ã§ã™*/
     public JPathTextObject(String t){
         this();
         JPathIterator it=new JPathIterator(new Ellipse2D.Double(100,100,100,100).getPathIterator(null));
@@ -76,10 +76,10 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         }catch(Exception ex){}
         setStartPosition(0.2f);
     }
-    /**ƒpƒX‚Ì’·‚³‚Ì‹ß—’l‚ğ•Ô‚µ‚Ü‚·.
-     *@param path ’·‚³‚ğ‘ª’è‚·‚éJSimplePath
-     *@param flatness ƒpƒX‚Ì•½ŠŠ‰»ŒW”
-     *@return path‚Ì’·‚³
+    /**ãƒ‘ã‚¹ã®é•·ã•ã®è¿‘ä¼¼å€¤ã‚’è¿”ã—ã¾ã™.
+     *@param path é•·ã•ã‚’æ¸¬å®šã™ã‚‹JSimplePath
+     *@param flatness ãƒ‘ã‚¹ã®å¹³æ»‘åŒ–ä¿‚æ•°
+     *@return pathã®é•·ã•
      */
     public static float getPathLength(JSimplePath path,float flatness){
         float ret=0f;
@@ -110,11 +110,11 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         }
         return ret;
     }
-    /**ƒpƒX‚ğw’è‚µ‚½‘Š‘ÎˆÊ’u‚Å•ªŠ„‚µAŒ‹‰Ê‚ğ’¸“_‚ğ—v‘f‚Æ‚·‚éVector‚ğ•Ô‚µ‚Ü‚·.
-     *@param path •ªŠ„‚·‚éPath
-     *@param rpos  •ªŠ„‘Š‘ÎˆÊ’u
-     *@param flatness ƒpƒX‚Ì•½ŠŠ‰»ŒW”
-     *@return •ªŠ„Œ‹‰Ê‚ÌƒpƒX‚Ì’¸“_‚ğ—v‘f‚Æ‚·‚éVector
+    /**ãƒ‘ã‚¹ã‚’æŒ‡å®šã—ãŸç›¸å¯¾ä½ç½®ã§åˆ†å‰²ã—ã€çµæœã‚’é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vectorã‚’è¿”ã—ã¾ã™.
+     *@param path åˆ†å‰²ã™ã‚‹Path
+     *@param rpos  åˆ†å‰²ç›¸å¯¾ä½ç½®
+     *@param flatness ãƒ‘ã‚¹ã®å¹³æ»‘åŒ–ä¿‚æ•°
+     *@return åˆ†å‰²çµæœã®ãƒ‘ã‚¹ã®é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vector
      */
     public static Vector<Point2D> dividePathRelatively(JSimplePath path,float rpos,float flatness){
         float pos=getPathLength(path,flatness)*rpos;
@@ -122,11 +122,11 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         
     }
     
-    /**ƒpƒX‚ğw’èˆÊ’u‚Å•ªŠ„‚µAŒ‹‰Ê‚ğ’¸“_‚ğ—v‘f‚Æ‚·‚éVector‚Å•Ô‚µ‚Ü‚·.
-     *@param path@•ªŠ„‚·‚éƒpƒX
-     *@param pos •ªŠ„‚·‚éƒpƒX‚Ìn“_‚©‚ç‚Ìâ‘ÎˆÊ’u
-     *@param flatness ƒpƒX‚Ì•½ŠŠ‰»ŒW”.
-     *@return •ªŠ„Œ‹‰Ê‚ÌƒpƒX‚Ì’¸“_‚ğ—v‘f‚Æ‚·‚éVector
+    /**ãƒ‘ã‚¹ã‚’æŒ‡å®šä½ç½®ã§åˆ†å‰²ã—ã€çµæœã‚’é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vectorã§è¿”ã—ã¾ã™.
+     *@param pathã€€åˆ†å‰²ã™ã‚‹ãƒ‘ã‚¹
+     *@param pos åˆ†å‰²ã™ã‚‹ãƒ‘ã‚¹ã®å§‹ç‚¹ã‹ã‚‰ã®çµ¶å¯¾ä½ç½®
+     *@param flatness ãƒ‘ã‚¹ã®å¹³æ»‘åŒ–ä¿‚æ•°.
+     *@return åˆ†å‰²çµæœã®ãƒ‘ã‚¹ã®é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vector
      */
     public static Vector<Point2D> dividePath(JSimplePath path,float pos,float flatness){
         Vector<Point2D> result=new Vector<Point2D>(1);
@@ -203,9 +203,9 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         }
         return result;
     }
-    /**‘½ŠpŒ`‚Ì’¸“_‚ğ—v‘f‚Æ‚·‚éVector‚©‚çƒeƒLƒXƒgn“_ˆÚ“®—p‚ÌƒRƒ“ƒgƒ[ƒ‹‚ÌˆÊ’u‚ğŒˆ’è‚µ‚Ü‚·.
-     *@param poly ‘½ŠpŒ`‚Ì’¸“_‚ğ—v‘f‚Æ‚·‚éVector
-     *@retrurn ˆÊ’uŒˆ’è¬Œ÷‚Ìê‡true,‚»‚êˆÈŠO‚Ífalse
+    /**å¤šè§’å½¢ã®é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vectorã‹ã‚‰ãƒ†ã‚­ã‚¹ãƒˆå§‹ç‚¹ç§»å‹•ç”¨ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ä½ç½®ã‚’æ±ºå®šã—ã¾ã™.
+     *@param poly å¤šè§’å½¢ã®é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vector
+     *@retrurn ä½ç½®æ±ºå®šæˆåŠŸã®å ´åˆtrue,ãã‚Œä»¥å¤–ã¯false
      */
     private boolean setConrolPos(Vector<Point2D> poly,FontRenderContext frc){
         if (poly.size()<2) return false;
@@ -229,13 +229,13 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         control2.setAncur(sp.getX()-dy*fm.getDescent()/dst,sp.getY()+dx*fm.getDescent()/dst);
         return true;
     }
-    /**w’è‚·‚é“_‚ÉÅ‚à‹ß‚¢Pathã‚Ì“_‚ğ’Tõ‚µA“–ŠYƒpƒXã‚Ì“_‚ÌƒpƒXn“_‚©‚ç‚Ì‘Š‘Î‹——£‚ğ•Ô‚µ‚Ü‚·.
+    /**æŒ‡å®šã™ã‚‹ç‚¹ã«æœ€ã‚‚è¿‘ã„Pathä¸Šã®ç‚¹ã‚’æ¢ç´¢ã—ã€å½“è©²ãƒ‘ã‚¹ä¸Šã®ç‚¹ã®ãƒ‘ã‚¹å§‹ç‚¹ã‹ã‚‰ã®ç›¸å¯¾è·é›¢ã‚’è¿”ã—ã¾ã™.
      *
-     *@param path •ªŠ„‘ÎÛ‚Æ‚È‚éPath
-     *@param x w’è“_‚ÌXÀ•W
-     *@param y w’è“_‚ÌYÀ•W
-     *@param flatness ƒpƒX‚Ì•½ŠŠ‰»ŒW”
-     *@return ƒpƒX•ªŠ„“_‚ÌƒpƒXn“_‚©‚ç‚Ì‹——£
+     *@param path åˆ†å‰²å¯¾è±¡ã¨ãªã‚‹Path
+     *@param x æŒ‡å®šç‚¹ã®Xåº§æ¨™
+     *@param y æŒ‡å®šç‚¹ã®Yåº§æ¨™
+     *@param flatness ãƒ‘ã‚¹ã®å¹³æ»‘åŒ–ä¿‚æ•°
+     *@return ãƒ‘ã‚¹åˆ†å‰²ç‚¹ã®ãƒ‘ã‚¹å§‹ç‚¹ã‹ã‚‰ã®è·é›¢
      */
     public static float dividePathPt(JSimplePath path,float x,float y,float flatness){
         float minLen=Float.MAX_VALUE;
@@ -276,20 +276,20 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         if (totalDist==0) return 0;
         return (cDist/totalDist);
     }
-    /**ü•ª‚Æw’è‚µ‚½“_‚ğ’Ê‚é‚ü‚ÌŒğ“_‚ÌÀ•W‚ğ•Ô‚µ‚Ü‚·BŒğ“_‚ªü•ªã‚É‚È‚¢ê‡‚ÍA’¼‹ß‚Ìü•ª‚Ìn“_
-     *‚Ü‚½‚ÍAI“_‚ÌÀ•W‚ğ•Ô‚µ‚Ü‚·.
-     *@param x0 ü•ª‚Ìn“_‚ÌXÀ•W
-     *@param y0 ü•ª‚Ìn“_‚ÌyÀ•W
-     *@param x1 ü•ª‚ÌI“_‚ÌxÀ•W
-     *@param y1 ü•ª‚ÌI“_‚ÌyÀ•W
-     *@param x ‚ü‚ª’Ê‚é“_‚ÌxÀ•W
-     *@param y ‚ü‚ª’Ê‚é“_‚ÌyÀ•W
-     *@return Œğ“_‚ÌÀ•W
+    /**ç·šåˆ†ã¨æŒ‡å®šã—ãŸç‚¹ã‚’é€šã‚‹å‚ç·šã®äº¤ç‚¹ã®åº§æ¨™ã‚’è¿”ã—ã¾ã™ã€‚äº¤ç‚¹ãŒç·šåˆ†ä¸Šã«ãªã„å ´åˆã¯ã€ç›´è¿‘ã®ç·šåˆ†ã®å§‹ç‚¹
+     *ã¾ãŸã¯ã€çµ‚ç‚¹ã®åº§æ¨™ã‚’è¿”ã—ã¾ã™.
+     *@param x0 ç·šåˆ†ã®å§‹ç‚¹ã®Xåº§æ¨™
+     *@param y0 ç·šåˆ†ã®å§‹ç‚¹ã®yåº§æ¨™
+     *@param x1 ç·šåˆ†ã®çµ‚ç‚¹ã®xåº§æ¨™
+     *@param y1 ç·šåˆ†ã®çµ‚ç‚¹ã®yåº§æ¨™
+     *@param x å‚ç·šãŒé€šã‚‹ç‚¹ã®xåº§æ¨™
+     *@param y å‚ç·šãŒé€šã‚‹ç‚¹ã®yåº§æ¨™
+     *@return äº¤ç‚¹ã®åº§æ¨™
      */
     public static Point2D perpendIntersection(float x0,float y0,float x1,float y1,float x,float y){
         float dx=x1-x0,dy=y1-y0,dx1=x-x0,dy1=y-y0;
-        float dst=dx*dx+dy*dy;//‹——£^2
-        float inp=dx*dx1+dy*dy1;//“àÏ
+        float dst=dx*dx+dy*dy;//è·é›¢^2
+        float inp=dx*dx1+dy*dy1;//å†…ç©
         float px=dx*inp/dst;
         float py=dy*inp/dst;
         float di=(px*dx+py*dy)/dst;
@@ -303,22 +303,22 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
                 (float)p1.getX(),(float)p1.getY(),
                 (float)p.getX(),(float)p.getY());
     }
-    /**2“_ŠÔ‚Ì‹——£‚ğ•Ô‚µ‚Ü‚·.
-     *@param x0 “_0‚ÌxÀ•W
-     *@param y0 “_0‚ÌyÀ•W
-     *@param x1 “_1‚ÌxÀ•W
-     *@param y1 “_1‚Ì‚™À•W
-     *@return 2“_ŠÔ‚Ì‹——£
+    /**2ç‚¹é–“ã®è·é›¢ã‚’è¿”ã—ã¾ã™.
+     *@param x0 ç‚¹0ã®xåº§æ¨™
+     *@param y0 ç‚¹0ã®yåº§æ¨™
+     *@param x1 ç‚¹1ã®xåº§æ¨™
+     *@param y1 ç‚¹1ã®ï½™åº§æ¨™
+     *@return 2ç‚¹é–“ã®è·é›¢
      */
     public static float getDistance(float x0,float y0,float x1,float y1){
         float dx=x1-x0,dy=y1-y0;
         return (float)Math.sqrt(dx*dx+dy*dy);
     }
     /**
-     * w’è‚·‚é2“_ŠÔ‚Ì‹——£‚ğ•Ô‚µ‚Ü‚·.
-     * @param p0 w’è‚·‚é1”Ô–Ú‚ÌPoint2D
-     * @param p1 w’è‚·‚é
-     * @return 2“_ŠÔ‚Ì‹——£
+     * æŒ‡å®šã™ã‚‹2ç‚¹é–“ã®è·é›¢ã‚’è¿”ã—ã¾ã™.
+     * @param p0 æŒ‡å®šã™ã‚‹1ç•ªç›®ã®Point2D
+     * @param p1 æŒ‡å®šã™ã‚‹
+     * @return 2ç‚¹é–“ã®è·é›¢
      */
     public static float getDistance(Point2D p0,Point2D p1){
         return getDistance(
@@ -326,17 +326,17 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
                 (float)p1.getX(),(float)p1.getY());
         
     }
-    /**ü•ª‚Æw’è“_‚ğ’Ê‚é‚ü‚ÌŒğ“_‚Ìü•ª‚Ìn“_‚©‚ç‚Ì‹——£‚ğ•Ô‚µ‚Ü‚·.
+    /**ç·šåˆ†ã¨æŒ‡å®šç‚¹ã‚’é€šã‚‹å‚ç·šã®äº¤ç‚¹ã®ç·šåˆ†ã®å§‹ç‚¹ã‹ã‚‰ã®è·é›¢ã‚’è¿”ã—ã¾ã™.
      */
     private static float perpendDistance(float x0,float y0,float x1,float y1,float x,float y){
         Point2D p=perpendIntersection(x0,y0,x1,y1,x,y);
         return getDistance(x0,y0,(float)p.getX(),(float)p.getY());
     }
-    /**‘®«•t‚«ƒeƒLƒXƒg‚ğƒpƒXã‚É”z’u‚µAŒ‹‰Ê‚ÌƒeƒLƒXƒgƒAƒEƒgƒ‰ƒCƒ“‚ğGeneralPath‚Æ‚µ‚Ä•Ô‚µ‚Ü‚·.
-     *@param poly ”z’u‚·‚éƒpƒX‚ÌŠe’¸“_‚ğ—v‘f‚Æ‚·‚éVector
-     *@param doc ”z’u‚·‚é‘®«•tƒeƒLƒXƒg‚ªŠi”[‚³‚ê‚½DefaultStyledDocument
-     *@param frc •`‰æ‚Ì‚½‚ß‚ÌFontRenderContext
-     *@return ƒeƒLƒXƒg‚Ì”z’uŒ‹‰Ê‚ªŠi”[‚³‚ê‚½StyledDocument;
+    /**å±æ€§ä»˜ããƒ†ã‚­ã‚¹ãƒˆã‚’ãƒ‘ã‚¹ä¸Šã«é…ç½®ã—ã€çµæœã®ãƒ†ã‚­ã‚¹ãƒˆã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã‚’GeneralPathã¨ã—ã¦è¿”ã—ã¾ã™.
+     *@param poly é…ç½®ã™ã‚‹ãƒ‘ã‚¹ã®å„é ‚ç‚¹ã‚’è¦ç´ ã¨ã™ã‚‹Vector
+     *@param doc é…ç½®ã™ã‚‹å±æ€§ä»˜ãƒ†ã‚­ã‚¹ãƒˆãŒæ ¼ç´ã•ã‚ŒãŸDefaultStyledDocument
+     *@param frc æç”»ã®ãŸã‚ã®FontRenderContext
+     *@return ãƒ†ã‚­ã‚¹ãƒˆã®é…ç½®çµæœãŒæ ¼ç´ã•ã‚ŒãŸStyledDocument;
      */
     public GeneralPath createLineShape(Vector<Point2D> poly,DefaultStyledDocument doc,FontRenderContext frc){
         GeneralPath ret=new GeneralPath();        
@@ -387,8 +387,8 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         }
         return ret;
     }
-    /**ƒeƒLƒXƒg‚ÌƒXƒ^[ƒgƒ|ƒWƒVƒ‡ƒ“‚Ì‘Š‘ÎˆÊ’u‚ğw’è‚µ‚Ü‚·B
-     * @param sp w’è‚·‚éƒeƒLƒXƒgŠJnˆÊ’u‚Ì‘Š‘ÎˆÊ’u(0f‚©‚ç1f)
+    /**ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¹ã‚¿ãƒ¼ãƒˆãƒã‚¸ã‚·ãƒ§ãƒ³ã®ç›¸å¯¾ä½ç½®ã‚’æŒ‡å®šã—ã¾ã™ã€‚
+     * @param sp æŒ‡å®šã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆé–‹å§‹ä½ç½®ã®ç›¸å¯¾ä½ç½®(0fã‹ã‚‰1f)
      */
     public void setStartPosition(float sp){
         startPosition=previewPosition=sp;
@@ -396,18 +396,18 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         lineShape=null;
     }
     /**
-     * Œ»İ‚ÌƒeƒLƒXƒg‚ÌƒXƒ^[ƒgƒ|ƒWƒVƒ‡ƒ“‚ÌˆÊ’u‚ğ•Ô‚µ‚Ü‚·B
-     * @return Œ»İ‚ÌƒeƒLƒXƒg‚ÌŠJnˆÊ’u(0f‚©‚ç1f)
+     * ç¾åœ¨ã®ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¹ã‚¿ãƒ¼ãƒˆãƒã‚¸ã‚·ãƒ§ãƒ³ã®ä½ç½®ã‚’è¿”ã—ã¾ã™ã€‚
+     * @return ç¾åœ¨ã®ãƒ†ã‚­ã‚¹ãƒˆã®é–‹å§‹ä½ç½®(0fã‹ã‚‰1f)
      */
     public float getStartPosition(){
         return startPosition;
     }
     /**
-     * Point2D‚Åw’è‚·‚éˆÊ’u‚Éƒqƒbƒg‚·‚éA‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì•”•ª‚ğ•Ô‚µ‚Ü‚·.
-     * @param env —LŒø‚ÈŠÂ‹«‚ğŠi”[‚·‚éJEnvironmentƒIƒuƒWƒFƒNƒg
-     * @param req Œ»İ‚Ì‘I‘ğó‘Ô‚ğŠi”[‚·‚éJRequestƒIƒuƒWƒFƒNƒg
-     * @param p ƒqƒbƒg‚ğŒŸ¸‚·‚éˆÊ’u.
-     * @return ŒŸØŒ‹‰Ê‚ğ¦‚·int(JRequest.HIT_NON,JRequest.HIT_OBJECT–”‚ÍJRequest.HIT_ANCUR)
+     * Point2Dã§æŒ‡å®šã™ã‚‹ä½ç½®ã«ãƒ’ãƒƒãƒˆã™ã‚‹ã€ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®éƒ¨åˆ†ã‚’è¿”ã—ã¾ã™.
+     * @param env æœ‰åŠ¹ãªç’°å¢ƒã‚’æ ¼ç´ã™ã‚‹JEnvironmentã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param req ç¾åœ¨ã®é¸æŠçŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹JRequestã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param p ãƒ’ãƒƒãƒˆã‚’æ¤œæŸ»ã™ã‚‹ä½ç½®.
+     * @return æ¤œè¨¼çµæœã‚’ç¤ºã™int(JRequest.HIT_NON,JRequest.HIT_OBJECTåˆã¯JRequest.HIT_ANCUR)
      */
     @Override
     public int hitByPoint(JEnvironment env,JRequest req,Point2D p){
@@ -442,11 +442,11 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         return ret;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ªw’è‚·‚éRectangle2D‚ÉŒğ·‚·‚éê‡‚ÍAŒğ·‚·‚é‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì•”•ª‚ğ
-     * w’è‚·‚éJRequest‚ÉŠi”[‚µ‚Ü‚·.
-     * @param env —LŒø‚ÈŠÂ‹«‚ğŠi”[‚·‚éJEnvironmentƒIƒuƒWƒFƒNƒg
-     * @param req Œ»İ‚Ì‘I‘ğó‘Ô‹y‚ÑŒğ·”»’èŒ‹‰Ê‚ğŠi”[‚·‚éJRequestƒIƒuƒWƒFƒNƒg.
-     * @param rect Œğ·”»’è‚ğs‚¤Rectangle2D
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒæŒ‡å®šã™ã‚‹Rectangle2Dã«äº¤å·®ã™ã‚‹å ´åˆã¯ã€äº¤å·®ã™ã‚‹ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®éƒ¨åˆ†ã‚’
+     * æŒ‡å®šã™ã‚‹JRequestã«æ ¼ç´ã—ã¾ã™.
+     * @param env æœ‰åŠ¹ãªç’°å¢ƒã‚’æ ¼ç´ã™ã‚‹JEnvironmentã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param req ç¾åœ¨ã®é¸æŠçŠ¶æ…‹åŠã³äº¤å·®åˆ¤å®šçµæœã‚’æ ¼ç´ã™ã‚‹JRequestã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ.
+     * @param rect äº¤å·®åˆ¤å®šã‚’è¡Œã†Rectangle2D
      */
     @Override
     public void hitByRect(JEnvironment env, JRequest req, Rectangle2D rect) {
@@ -484,9 +484,9 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param clip •`‰æ‚ÌƒNƒŠƒbƒsƒ“ƒOƒoƒEƒ“ƒfƒBƒ“ƒOƒ{ƒbƒNƒX
-     * @param g •`‰æ‚ÌƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æç”»ã—ã¾ã™.
+     * @param clip æç”»ã®ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°ãƒã‚¦ãƒ³ãƒ‡ã‚£ãƒ³ã‚°ãƒœãƒƒã‚¯ã‚¹
+     * @param g æç”»ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     @Override
     public void paintThis(Rectangle2D clip,Graphics2D g){
@@ -501,10 +501,10 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         //effector.paint(g,lineShape,fillPaint,strokePaint,stroke);
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒrƒ…[‚ğ•`‰æ‚µ‚Ü‚·B
-     * @param env Œ»İ‚Ì•`‰æŠÂ‹«‚ğ¦‚·JEnvionment
-     * @param req ‘I‘ğó‘Ô‚ğŠi”[‚·‚éJRequest
-     * @param g •`‰æ‚ÌƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’æç”»ã—ã¾ã™ã€‚
+     * @param env ç¾åœ¨ã®æç”»ç’°å¢ƒã‚’ç¤ºã™JEnvionment
+     * @param req é¸æŠçŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹JRequest
+     * @param g æç”»ã®ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
      */
     @Override
     public void paintPreview(JEnvironment env,JRequest req,Graphics2D g){
@@ -534,9 +534,9 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         g.fill(fr);
     }
     /**
-     * ‰Á‚¦‚ç‚ê‚½ƒAƒtƒBƒ“•ÏŠ·‚ğƒIƒuƒWƒFƒNƒg‚É“K—p‚µA•ÏŠ·“®ì‚ğ¦‚·UndoaleEdit‚ğ•Ô‚µ‚Ü‚·.
-     * @param env Œ»İ‚Ì•`‰æŠÂ‹«‚ğ¦‚·JEnvironment
-     * @return ‰Á‚¦‚ç‚ê‚½•ÏŠ·“®ì‚ğ¦‚·UndoableEdit
+     * åŠ ãˆã‚‰ã‚ŒãŸã‚¢ãƒ•ã‚£ãƒ³å¤‰æ›ã‚’ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«é©ç”¨ã—ã€å¤‰æ›å‹•ä½œã‚’ç¤ºã™UndoaleEditã‚’è¿”ã—ã¾ã™.
+     * @param env ç¾åœ¨ã®æç”»ç’°å¢ƒã‚’ç¤ºã™JEnvironment
+     * @return åŠ ãˆã‚‰ã‚ŒãŸå¤‰æ›å‹•ä½œã‚’ç¤ºã™UndoableEdit
      */
     @Override
     public UndoableEdit updateTransform(JEnvironment env){
@@ -554,10 +554,10 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         
     }
     /**
-     * ‰Á‚¦‚ç‚ê‚½‰ñ“]•ÏŠ·‚ğŠÜ‚ŞƒAƒtƒBƒ“•ÏŠ·‚ğ‚±‚ÌƒIƒuƒWƒFƒNƒg‚É“K—p‚µA•ÏŠ·“®ì‚ğ¦‚·UndoableEdit‚ğ•Ô‚µ‚Ü‚·.
-     * @param env Œ»İ‚Ì•`‰æŠÂ‹«‚ğ¦‚·JEnvironment
-     * @param rotation ‰Á‚¦‚ç‚ê‚½ƒAƒtƒBƒ“•ÏŠ·‚Ì‰ñ“]ˆÚ“®—v‘f‚Ì‰ñ“]Šp
-     * @return ‰Á‚¦‚ç‚ê‚½•ÏŠ·“®ì‚ğ¦‚·UndoableEdit
+     * åŠ ãˆã‚‰ã‚ŒãŸå›è»¢å¤‰æ›ã‚’å«ã‚€ã‚¢ãƒ•ã‚£ãƒ³å¤‰æ›ã‚’ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«é©ç”¨ã—ã€å¤‰æ›å‹•ä½œã‚’ç¤ºã™UndoableEditã‚’è¿”ã—ã¾ã™.
+     * @param env ç¾åœ¨ã®æç”»ç’°å¢ƒã‚’ç¤ºã™JEnvironment
+     * @param rotation åŠ ãˆã‚‰ã‚ŒãŸã‚¢ãƒ•ã‚£ãƒ³å¤‰æ›ã®å›è»¢ç§»å‹•è¦ç´ ã®å›è»¢è§’
+     * @return åŠ ãˆã‚‰ã‚ŒãŸå¤‰æ›å‹•ä½œã‚’ç¤ºã™UndoableEdit
      */
     @Override
     public UndoableEdit updateRotate(JEnvironment env,double rotation){
@@ -570,10 +570,10 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Éw’è‚·‚éAffine•ÏŠ·‚ğ“K—p‚µAƒvƒŒƒrƒ…[ó‘Ô‚ğXV‚µ‚Ü‚·.
-     * @param tr ‚±‚ÌƒIƒuƒWƒFƒNƒg‚É‰Á‚¦‚éƒAƒtƒBƒ“•ÏŠ·
-     * @param req Œ»İ‚Ì‘I‘ğó‘Ô‚ğŠi”[‚·‚éJRequestƒIƒuƒWƒFƒNƒg
-     * @param mp •ÏŠ·‚ÌŠî€“_
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«æŒ‡å®šã™ã‚‹Affineå¤‰æ›ã‚’é©ç”¨ã—ã€ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼çŠ¶æ…‹ã‚’æ›´æ–°ã—ã¾ã™.
+     * @param tr ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«åŠ ãˆã‚‹ã‚¢ãƒ•ã‚£ãƒ³å¤‰æ›
+     * @param req ç¾åœ¨ã®é¸æŠçŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹JRequestã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param mp å¤‰æ›ã®åŸºæº–ç‚¹
      */
     @Override
     public void transform(AffineTransform tr,JRequest req,Point  mp) {
@@ -588,8 +588,8 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         }
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì•`‰æ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRecntangle2D‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì•`‰æ”ÍˆÍ‚ğ•ïŠÜ‚·‚éÅ¬‚ÌRectangle2D
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»ç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Recntangle2Dã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»ç¯„å›²ã‚’åŒ…å«ã™ã‚‹æœ€å°ã®Rectangle2D
      */
     @Override
     public Rectangle2D getBounds(){
@@ -610,8 +610,8 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         return effector.culcBounds(ret,this);
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ•¡»‚µ‚Ü‚·.
-     * @return •¡»‚µ‚½JPathTextObject
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¤‡è£½ã—ã¾ã™.
+     * @return è¤‡è£½ã—ãŸJPathTextObject
      */
     @Override
     public JPathTextObject clone(){
@@ -629,31 +629,31 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         return ret;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì‘®•tƒeƒLƒXƒg‚ğ•Û‚·‚éStyledDocument‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì‘®•tƒeƒLƒXƒg‚ğ•Û‚·‚éStyledDocument
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ›¸å¼ä»˜ãƒ†ã‚­ã‚¹ãƒˆã‚’ä¿æŒã™ã‚‹StyledDocumentã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ›¸å¼ä»˜ãƒ†ã‚­ã‚¹ãƒˆã‚’ä¿æŒã™ã‚‹StyledDocument
      */
     @Override
     public DefaultStyledDocument getStyledDocument() {
         return document;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì‘®•tƒeƒLƒXƒg‚ğ•Û‚·‚éStyledDocument‚Ì•¡»‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì‘®•tƒeƒLƒXƒg‚Ì•¡».
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ›¸å¼ä»˜ãƒ†ã‚­ã‚¹ãƒˆã‚’ä¿æŒã™ã‚‹StyledDocumentã®è¤‡è£½ã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ›¸å¼ä»˜ãƒ†ã‚­ã‚¹ãƒˆã®è¤‡è£½.
      */
     @Override
     public DefaultStyledDocument getCloneStyledDocument() {
         return JTextObject.cloneDocument(document);
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì‘®•tƒeƒLƒXƒg‚ğ•Û‚·‚éStyledDocument‚ğİ’è‚µ‚Ü‚·B
-     * @param doc@w’è‚·‚éStyledDocument
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ›¸å¼ä»˜ãƒ†ã‚­ã‚¹ãƒˆã‚’ä¿æŒã™ã‚‹StyledDocumentã‚’è¨­å®šã—ã¾ã™ã€‚
+     * @param docã€€æŒ‡å®šã™ã‚‹StyledDocument
      */
     @Override
     public void setStyledDocument(DefaultStyledDocument doc) {
         this.document=doc;
     }
     /**
-     * •ÏX‚ğXV‚·‚é‚½‚ßA‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒeƒLƒXƒg‚ÌƒAƒEƒgƒ‰ƒCƒ“‚ğ•Û‚·‚éShape‚ğXV‚µ‚Ü‚·B
+     * å¤‰æ›´ã‚’æ›´æ–°ã™ã‚‹ãŸã‚ã€ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã‚’ä¿æŒã™ã‚‹Shapeã‚’æ›´æ–°ã—ã¾ã™ã€‚
      */
     @Override
     public void updatePath(){
@@ -663,8 +663,8 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
     }
 
     /**
-   * ƒeƒLƒXƒg‚Ì•ÏX‚ğXV‚·‚é‚½‚ßA‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ•`‰æƒNƒŠƒbƒv‚É‰Á‚¦‚Ü‚·.
-   * @param env Œ»İ‚Ì•`‰æŠÂ‹«‚ğŠi”[‚·‚é JEnvironment
+   * ãƒ†ã‚­ã‚¹ãƒˆã®å¤‰æ›´ã‚’æ›´æ–°ã™ã‚‹ãŸã‚ã€ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æç”»ã‚¯ãƒªãƒƒãƒ—ã«åŠ ãˆã¾ã™.
+   * @param env ç¾åœ¨ã®æç”»ç’°å¢ƒã‚’æ ¼ç´ã™ã‚‹ JEnvironment
    */
     @Override
     public void textUpdate(JEnvironment env) {
@@ -673,24 +673,24 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         env.addClip(getBounds());
     }
     /**
-     * ‚±‚ÌƒeƒLƒXƒg‚ÌƒAƒEƒgƒ‰ƒCƒ“‚ğ•Û‚·‚éShapeƒIƒuƒWƒFƒNƒg‚ğ•Ô‚µ‚Ü‚·.
-     * @return ƒeƒLƒXƒg‚ÌƒAƒEƒgƒ‰ƒCƒ“‚ğ•Û‚·‚éShapeƒIƒuƒWƒFƒNƒg
+     * ã“ã®ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã‚’ä¿æŒã™ã‚‹Shapeã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™.
+     * @return ãƒ†ã‚­ã‚¹ãƒˆã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã‚’ä¿æŒã™ã‚‹Shapeã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
      */
     @Override
     public Shape getShape(){
         return lineShape;
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚É—İÏ‚³‚ê‚½ƒAƒtƒBƒ“•ÏŠ·‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚É—İÏ‚³‚ê‚½ƒAƒtƒBƒ“•ÏŠ·
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ç´¯ç©ã•ã‚ŒãŸã‚¢ãƒ•ã‚£ãƒ³å¤‰æ›ã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ç´¯ç©ã•ã‚ŒãŸã‚¢ãƒ•ã‚£ãƒ³å¤‰æ›
      */
     @Override
     public AffineTransform getTotalTransform() {
         return new AffineTransform();
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒŒƒCƒAƒEƒgƒ|ƒŠƒV[‚ğ•Û‚·‚éTextLocaterƒIƒuƒWƒFƒNƒg‚ğ•Ô‚µ‚Ü‚·B
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒŒƒCƒAƒEƒgƒ|ƒŠƒV[‚ğ•Û‚·‚éTextLocater
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒãƒªã‚·ãƒ¼ã‚’ä¿æŒã™ã‚‹TextLocaterã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™ã€‚
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒãƒªã‚·ãƒ¼ã‚’ä¿æŒã™ã‚‹TextLocater
      */
     @Override
     public TextLocater createLocater(FontRenderContext frc) {
@@ -700,16 +700,16 @@ public class JPathTextObject extends JPathObject implements JText,JColorable {
         return new OnPathTextLocater(getStyledDocument(),this,frc);
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒŒƒCƒAƒEƒg‚ÌŠî€‚Æ‚È‚éShapeƒIƒuƒWƒFƒNƒg‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‚±‚ÌƒIƒuƒWƒFƒNƒg‚ÌƒŒƒCƒAƒEƒg‚ÌŠî€‚Æ‚È‚éShapeƒIƒuƒWƒFƒNƒg
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®åŸºæº–ã¨ãªã‚‹Shapeã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™.
+     * @return ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆã®åŸºæº–ã¨ãªã‚‹Shapeã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
      */
     @Override
     public Shape getLayoutShape() {
         return this.getPath().getShape();
     }
     /**
-     * ‚±‚ÌƒIƒuƒWƒFƒNƒg‚Ì©“®–½–¼š‚ÌŠ¥Œ‚ğ•Ô‚µ‚Ü‚·B
-     * @return@‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ©“®–½–¼‚·‚éÛ‚ÌŠ¥Œ
+     * ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®è‡ªå‹•å‘½åå­—ã®å† è©ã‚’è¿”ã—ã¾ã™ã€‚
+     * @returnã€€ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è‡ªå‹•å‘½åã™ã‚‹éš›ã®å† è©
      */
     @Override
     public String getPrefixer(){

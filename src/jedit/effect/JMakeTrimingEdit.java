@@ -26,7 +26,7 @@ public class JMakeTrimingEdit extends JAbstractEdit {
         super(viewer);
         imageObject = img;
         clipObject = new JClippedImageObject(img, img.getOriginalPoint(), path.getShape());
-        presentationName="ƒgƒŠƒ~ƒ“ƒOì¬";
+        presentationName="ãƒˆãƒªãƒŸãƒ³ã‚°ä½œæˆ";
         redo();
     }
 

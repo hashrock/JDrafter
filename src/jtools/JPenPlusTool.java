@@ -50,7 +50,7 @@ public class JPenPlusTool extends JAbstractTool {
     /** Creates a new instance of JPenPlusTool */
     public JPenPlusTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName = "§Œä“_’Ç‰Áƒc[ƒ‹";
+        presentationName = "åˆ¶å¾¡ç‚¹è¿½åŠ ãƒ„ãƒ¼ãƒ«";
         dragPane.getCurrentRequest().setSelectionMode(JRequest.DIRECT_MODE);
         dragPane.setPaintRect(false);
         tObj = null;

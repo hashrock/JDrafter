@@ -30,7 +30,7 @@ public class JUnGroupEdit extends JAbstractEdit{
         saved=go;
         parent=go.getParent();
         indexat=parent.indexOf(go);
-        presentationName="ƒOƒ‹[ƒv‰ğœ";
+        presentationName="ã‚°ãƒ«ãƒ¼ãƒ—è§£é™¤";
         redo();
     }
     public void redo(){

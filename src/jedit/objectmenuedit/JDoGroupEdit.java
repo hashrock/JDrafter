@@ -46,7 +46,7 @@ public class JDoGroupEdit extends JAbstractEdit{
             parents[i]=objects.get(i).getParent();
             
         }
-        presentationName="ƒOƒ‹[ƒv‰»";
+        presentationName="ã‚°ãƒ«ãƒ¼ãƒ—åŒ–";
         redo();
     }
     public void redo(){

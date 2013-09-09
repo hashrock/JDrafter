@@ -37,7 +37,7 @@ public class JPenMinusTool extends JAbstractTool {
     /** Creates a new instance of JPenMinusTool */
     public JPenMinusTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName = "§Œä“_íœƒc[ƒ‹";
+        presentationName = "åˆ¶å¾¡ç‚¹å‰Šé™¤ãƒ„ãƒ¼ãƒ«";
         getRequest().setSelectionMode(JRequest.DIRECT_MODE);
         dragPane.setPaintRect(false);
         tObj = null;

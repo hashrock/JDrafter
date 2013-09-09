@@ -43,7 +43,7 @@ public class ReflectToolPanel extends javax.swing.JPanel implements ChangeListen
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(dialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle("‘ÎÌˆÚ“®");
+        dialog.setTitle("å¯¾ç§°ç§»å‹•");
         angle.addChangeListener(this);
         angleSlider.addChangeListener(this);
         angle.setValue(JEnvironment.DEFAULT_REFLECT_AXIS);
@@ -58,7 +58,7 @@ public class ReflectToolPanel extends javax.swing.JPanel implements ChangeListen
     public ReflectToolPanel(JAbstractTool dragger) {
         this(getRootWindow(dragger.getViewer().getRootPane().getParent()));
         this.dragger=dragger;
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
     }
     public boolean isCanceled(){
         return cancel;
@@ -81,7 +81,7 @@ public class ReflectToolPanel extends javax.swing.JPanel implements ChangeListen
         angleSlider = new jtools.jcontrol.AngleSlider();
         angle = new jtools.jcontrol.JDAngleTextField();
 
-        copy.setText("ƒRƒs[");
+        copy.setText("ã‚³ãƒ”ãƒ¼");
         copy.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         copy.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
@@ -92,7 +92,7 @@ public class ReflectToolPanel extends javax.swing.JPanel implements ChangeListen
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +100,7 @@ public class ReflectToolPanel extends javax.swing.JPanel implements ChangeListen
             }
         });
 
-        jLabel1.setText("‘ÎÌ²‚ÌŠp“x");
+        jLabel1.setText("å¯¾ç§°è»¸ã®è§’åº¦");
 
         javax.swing.GroupLayout angleSliderLayout = new javax.swing.GroupLayout(angleSlider);
         angleSlider.setLayout(angleSliderLayout);

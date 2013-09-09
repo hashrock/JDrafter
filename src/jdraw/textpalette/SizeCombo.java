@@ -30,7 +30,7 @@ import jdraw.typemenus.JTypeMenuItem;
  */
 public class SizeCombo extends JComboBox implements JTypeMenuItem{
     private boolean activeEvent=true;
-    private static String other="ÇªÇÃëº";
+    private static String other="„Åù„ÅÆ‰ªñ";
     private AttributeSet attr=null;
     /** Creates a new instance of SizeCombo */
     public SizeCombo() {
@@ -43,7 +43,7 @@ public class SizeCombo extends JComboBox implements JTypeMenuItem{
         setMaximumRowCount(20);
         setEditable(true);
         setFocusable(false);
-        setToolTipText("ÉtÉHÉìÉgÉTÉCÉY");
+        setToolTipText("„Éï„Ç©„É≥„Éà„Çµ„Ç§„Ç∫");
         this.addActionListener(this);
     }
     public void actionPerformed(ActionEvent e){

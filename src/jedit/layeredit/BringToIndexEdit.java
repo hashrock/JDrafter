@@ -38,7 +38,7 @@ public class BringToIndexEdit extends JAbstractEdit{
         if (savedParent==newParent && newIndex>savedIndex){
             this.newIndex--;
         }
-        presentationName="�K�w�̕ύX";
+        presentationName="階層の変更";
         savedAnscester=getSavedAnscester(target,newParent);
         if (savedAnscester !=null){
             savedAnscesterIndex=savedAnscester.getParent().indexOf(savedAnscester);

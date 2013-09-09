@@ -37,7 +37,7 @@ import java.util.logging.Logger;
 import jdraw.JDrawApplication;
 
 /**
- * •\¦ŠJnˆÊ’u‚ğ‚à‚ÂTextLayout’PŒê‚ğ•\‚µ‚Ü‚·.
+ * è¡¨ç¤ºé–‹å§‹ä½ç½®ã‚’ã‚‚ã¤TextLayoutå˜èªã‚’è¡¨ã—ã¾ã™.
  * @author i002060
  */
 public class LocatedTextLayout implements Serializable {
@@ -47,7 +47,7 @@ public class LocatedTextLayout implements Serializable {
     private TextLayout textLayout = null;
     private TextRow textRow = null;
 
-    /**  ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^[*/
+    /**  ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼*/
     public LocatedTextLayout() {
     }
 

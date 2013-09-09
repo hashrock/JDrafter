@@ -31,7 +31,7 @@ public class JRotateImageObjectEdit extends JAbstractEdit {
         this.target=target;
         this.transform=transform;
         rotation=rot;
-        presentationName="オブジェクトの回転";
+        presentationName="繧ｪ繝悶ず繧ｧ繧ｯ繝医�ｮ蝗櫁ｻ｢";
         redo();
     }
     public void redo(){

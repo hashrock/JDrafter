@@ -34,7 +34,7 @@ public class JChangeGradientDirectionEdit extends JAbstractEdit {
         savedEp=cp.getP2();
         newSp=new Point2D.Float();newEp=new Point2D.Float();
         newSp.setLocation(sp);newEp.setLocation(ep);
-        presentationName="グラデーションの方向と位置";
+        presentationName="繧ｰ繝ｩ繝�繝ｼ繧ｷ繝ｧ繝ｳ縺ｮ譁ｹ蜷代→菴咲ｽｮ";
         redo();
     }
     public void redo() throws CannotRedoException{

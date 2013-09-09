@@ -24,7 +24,7 @@ import svg.svgtext.SVGText;
 public class SVGHandler extends DefaultHandler {
     
     /**
-     * —v‘f‚ÌŠJnƒ^ƒO“Ç‚İ‚İ
+     * è¦ç´ ã®é–‹å§‹ã‚¿ã‚°èª­ã¿è¾¼ã¿æ™‚
      */
     private Stack<SVGElement> stack=new Stack<SVGElement>();
     private SVGObject currentParent=null;
@@ -58,7 +58,7 @@ public class SVGHandler extends DefaultHandler {
     }
     
     /**
-     * ƒeƒLƒXƒgƒf[ƒ^“Ç‚İ‚İ
+     * ãƒ†ã‚­ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿æ™‚
      */
     @Override
     public void characters(char[] ch, int offset, int length) {
@@ -73,7 +73,7 @@ public class SVGHandler extends DefaultHandler {
     
     
     /**
-     * —v‘f‚ÌI—¹ƒ^ƒO“Ç‚İ‚İ
+     * è¦ç´ ã®çµ‚äº†ã‚¿ã‚°èª­ã¿è¾¼ã¿æ™‚
      */
     @Override
     public void endElement(String uri, String localName, String qName) {
@@ -90,7 +90,7 @@ public class SVGHandler extends DefaultHandler {
     }
     
     /**
-     * ƒhƒLƒ…ƒƒ“ƒgI—¹
+     * ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆçµ‚äº†æ™‚
      */
     @Override
     public void endDocument() {

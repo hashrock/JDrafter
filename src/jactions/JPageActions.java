@@ -94,7 +94,7 @@ public class JPageActions implements ItemListener{
     }
     public class NewPageAction extends AbstractAction{
         public NewPageAction(){
-            putValue(NAME,"V‹Kƒy[ƒW(N)");
+            putValue(NAME,"æ–°è¦ãƒšãƒ¼ã‚¸(N)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_N);
         }
         public void actionPerformed(ActionEvent e){
@@ -110,7 +110,7 @@ public class JPageActions implements ItemListener{
     }
     public class InsertPageAction extends AbstractAction{
         public InsertPageAction(){
-            putValue(NAME,"ƒy[ƒW‘}“ü");
+            putValue(NAME,"ãƒšãƒ¼ã‚¸æŒ¿å…¥");
         }
         public void actionPerformed(ActionEvent e){
             JPage page=new JPage();
@@ -126,7 +126,7 @@ public class JPageActions implements ItemListener{
     }
     public class CopyPageAction extends AbstractAction{
         public CopyPageAction(){
-            putValue(NAME,"ƒy[ƒWƒRƒs[");
+            putValue(NAME,"ãƒšãƒ¼ã‚¸ã‚³ãƒ”ãƒ¼");
         }
         public void actionPerformed(ActionEvent e) {
             try {
@@ -139,7 +139,7 @@ public class JPageActions implements ItemListener{
     }
     public class PastePageAction extends AbstractAction{
         public PastePageAction(){
-            putValue(NAME,"ƒy[ƒWƒy[ƒXƒg");
+            putValue(NAME,"ãƒšãƒ¼ã‚¸ãƒšãƒ¼ã‚¹ãƒˆ");
         }
         public void actionPerformed(ActionEvent e) {
             try {
@@ -152,7 +152,7 @@ public class JPageActions implements ItemListener{
     }
     public class CutPageAction extends AbstractAction{
         public CutPageAction(){
-            putValue(NAME,"ƒy[ƒWƒJƒbƒg");
+            putValue(NAME,"ãƒšãƒ¼ã‚¸ã‚«ãƒƒãƒˆ");
         }
         public void actionPerformed(ActionEvent e) {
             try {
@@ -166,11 +166,11 @@ public class JPageActions implements ItemListener{
     }
     public class DeletePageAction extends AbstractAction{
         public DeletePageAction(){
-            putValue(NAME,"ƒy[ƒWíœ");
+            putValue(NAME,"ãƒšãƒ¼ã‚¸å‰Šé™¤");
             
         }
         public void actionPerformed(ActionEvent e) {
-            if (JOptionPane.YES_OPTION==JOptionPane.showConfirmDialog((Component)e.getSource(),"‘I‘ğ‚µ‚½ƒy[ƒW‚Í‘S‚Äíœ‚³‚ê‚Ü‚·Díœ‚µ‚Ü‚·‚©?",
+            if (JOptionPane.YES_OPTION==JOptionPane.showConfirmDialog((Component)e.getSource(),"é¸æŠã—ãŸãƒšãƒ¼ã‚¸ã¯å…¨ã¦å‰Šé™¤ã•ã‚Œã¾ã™ï¼å‰Šé™¤ã—ã¾ã™ã‹?",
                     "JDraw",JOptionPane.YES_NO_OPTION)){
                 document.remove(document.getCurrentPage());
                 setupActions();

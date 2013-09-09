@@ -46,7 +46,7 @@ public class ScaleToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(dialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle("ƒXƒP[ƒ‹");
+        dialog.setTitle("ã‚¹ã‚±ãƒ¼ãƒ«");
         //
         xratio.setMinValue(JEnvironment.MINIMUM_SCALE_RATIO);
         yratio.setMinValue(JEnvironment.MINIMUM_SCALE_RATIO);
@@ -64,7 +64,7 @@ public class ScaleToolPanel extends javax.swing.JPanel{
     public ScaleToolPanel(JAbstractTool dragger) {
         this(getRootWindow(dragger.getViewer().getRootPane().getParent()));
         this.dragger=dragger;
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
     }
     private static Window getRootWindow(Container c){
         if (c instanceof Window) return (Window)c;
@@ -94,7 +94,7 @@ public class ScaleToolPanel extends javax.swing.JPanel{
         xratio = new jtools.jcontrol.JDNumericTextField();
         yratio = new jtools.jcontrol.JDNumericTextField();
 
-        copy.setText("ƒRƒs[");
+        copy.setText("ã‚³ãƒ”ãƒ¼");
         copy.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         copy.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
@@ -105,7 +105,7 @@ public class ScaleToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +113,9 @@ public class ScaleToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("X²•ûŒü”{—¦:");
+        jLabel1.setText("Xè»¸æ–¹å‘å€ç‡:");
 
-        jLabel2.setText("Y²•ûŒü”{—¦:");
+        jLabel2.setText("Yè»¸æ–¹å‘å€ç‡:");
 
         jLabel3.setText("%");
 

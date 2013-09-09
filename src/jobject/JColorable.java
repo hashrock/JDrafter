@@ -10,7 +10,7 @@
 package jobject;
 
 /**
- *  塗りの有効性を識別するためのインターフェースです。
+ *  蝪励ｊ縺ｮ譛牙柑諤ｧ繧定ｭ伜挨縺吶ｋ縺溘ａ縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ縺ｧ縺吶�
  * @author T_IKITa
  */
 public interface JColorable {

@@ -18,7 +18,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 /**
- *ƒJƒ‰[ƒpƒlƒ‹‚Å‚·.
+ *ã‚«ãƒ©ãƒ¼ãƒ‘ãƒãƒ«ã§ã™.
  * @author  i002060
  */
 public class JDColorPanel extends javax.swing.JPanel implements ChangeListener {
@@ -464,11 +464,11 @@ public class JDColorPanel extends javax.swing.JPanel implements ChangeListener {
         jLabel2.setBounds(10, 30, 7, 13);
         jLabel2.getAccessibleContext().setAccessibleName("");
 
-        jLabel3.setText("‚u");
+        jLabel3.setText("ï¼¶");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(10, 50, 8, 13);
 
-        jLabel5.setText("‹");
+        jLabel5.setText("Â°");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(220, 10, 12, 20);
 
@@ -540,7 +540,7 @@ public class JDColorPanel extends javax.swing.JPanel implements ChangeListener {
         jTabbedPane1.addTab("tab2", jPanel2);
 
         preview1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        preview1.setToolTipText("•ÏXŒã(ƒNƒŠƒbƒN‚µ‚ÄŒˆ’è)");
+        preview1.setToolTipText("å¤‰æ›´å¾Œ(ã‚¯ãƒªãƒƒã‚¯ã—ã¦æ±ºå®š)");
 
         javax.swing.GroupLayout preview1Layout = new javax.swing.GroupLayout(preview1);
         preview1.setLayout(preview1Layout);
@@ -554,7 +554,7 @@ public class JDColorPanel extends javax.swing.JPanel implements ChangeListener {
         );
 
         preview3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        preview3.setToolTipText("“h‚è‚È‚µ");
+        preview3.setToolTipText("å¡—ã‚Šãªã—");
 
         javax.swing.GroupLayout preview3Layout = new javax.swing.GroupLayout(preview3);
         preview3.setLayout(preview3Layout);
@@ -568,7 +568,7 @@ public class JDColorPanel extends javax.swing.JPanel implements ChangeListener {
         );
 
         preview2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        preview2.setToolTipText("•ÏX‘O(ƒNƒŠƒbƒN‚µ‚ÄŒˆ’è)");
+        preview2.setToolTipText("å¤‰æ›´å‰(ã‚¯ãƒªãƒƒã‚¯ã—ã¦æ±ºå®š)");
 
         javax.swing.GroupLayout preview2Layout = new javax.swing.GroupLayout(preview2);
         preview2.setLayout(preview2Layout);

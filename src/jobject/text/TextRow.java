@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentSkipListMap;
 import javax.swing.text.StyleConstants;
 
 /**
- *ˆês‚ÌTextLayout‚ğ•\‚µ‚Ü‚·.
+ *ä¸€è¡Œã®TextLayoutã‚’è¡¨ã—ã¾ã™.
  * @author i002060
  */
 public class TextRow {

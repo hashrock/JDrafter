@@ -201,7 +201,7 @@ public class JTypeMenu extends JMenu implements CaretListener,ActionListener,Ite
     public void itemStateChanged(ItemEvent e) {
         stateChanged();
     }
-    //viewer��̃R���|�[�l���g���ύX���ꂽ�Ƃ��̏���.
+    //viewer上のコンポーネントが変更されたときの処理.
     @Override
     public void componentResized(ComponentEvent e) {
     }

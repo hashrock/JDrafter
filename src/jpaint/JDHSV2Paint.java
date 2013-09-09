@@ -13,22 +13,22 @@ import java.awt.geom.*;
 import java.awt.image.*;
 
 /**
- *Saturation(Ê“xj@Brightness(–¾“x)@‘I‘ğ—p‚ÌPaint‚Å‚·B
- *O100%
- *|–¾
- *|“x
+ *Saturation(å½©åº¦ï¼‰ã€€Brightness(æ˜åº¦)ã€€é¸æŠç”¨ã®Paintã§ã™ã€‚
+ *ï¼¾100%
+ *|æ˜
+ *|åº¦
  *|
- *|@@@@@@@@Ê“x
- *-----------------------------------„
- *0‹@@@@@@@@@@@@@@@@ 100%
+ *|ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€å½©åº¦
+ *-----------------------------------ï¼
+ *0Â°ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ 100%
  * @author i002060
  */
 public class JDHSV2Paint implements Paint{
-    /**‰¡²‚ÉÊ“xAc²‚É–¾“x‚ğƒvƒƒbƒg‚·‚éPaint‚Å‚·*/
+    /**æ¨ªè»¸ã«å½©åº¦ã€ç¸¦è»¸ã«æ˜åº¦ã‚’ãƒ—ãƒ­ãƒƒãƒˆã™ã‚‹Paintã§ã™*/
     public static final int SB_MODE=0;
-    /**‰¡²‚ÉF‘ŠAc²‚É–¾“x‚ğƒvƒƒbƒg‚µ‚Ü‚·.*/
+    /**æ¨ªè»¸ã«è‰²ç›¸ã€ç¸¦è»¸ã«æ˜åº¦ã‚’ãƒ—ãƒ­ãƒƒãƒˆã—ã¾ã™.*/
     public static final int HB_MODE=1;
-    /**‰¡²‚ÉF‘ŠAc²‚ÉÊ“x‚ğƒvƒƒbƒg‚µ‚Ü‚·.*/
+    /**æ¨ªè»¸ã«è‰²ç›¸ã€ç¸¦è»¸ã«å½©åº¦ã‚’ãƒ—ãƒ­ãƒƒãƒˆã—ã¾ã™.*/
     public static final int HS_MODE=3;
     private Rectangle2D rect;
     private Color baseColor;

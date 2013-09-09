@@ -37,77 +37,77 @@ import jtools.JAbstractTool;
 import jui.JIcons;
 
 /**
- *ƒXƒNƒŠ[ƒ“‚ÆƒIƒuƒWƒFƒNƒg‚Ì•`‰æ‚É•K—v‚Èî•ñ‚ğ’ñ‹Ÿ‚·‚é‚½‚ß‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ’ñ‹Ÿ‚µ‚Ü‚·.
+ *ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»ã«å¿…è¦ãªæƒ…å ±ã‚’æä¾›ã™ã‚‹ãŸã‚ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’æä¾›ã—ã¾ã™.
  * @author TI
  */
 public class JEnvironment implements Serializable, Cloneable {
     //
     private static final long serialVersionUID = 110l;
-    /**ƒ}ƒEƒXƒJ[ƒ\ƒ‹‚Å‚·*/
+    /**ãƒã‚¦ã‚¹ã‚«ãƒ¼ã‚½ãƒ«ã§ã™*/
     public static final JCursor MOUSE_CURSOR = new JCursor();
-    /**ƒAƒCƒRƒ“‚Å‚·*/
+    /**ã‚¢ã‚¤ã‚³ãƒ³ã§ã™*/
     public static final JIcons ICONS = new JIcons();
-    /** mm(ƒ~ƒŠƒ[ƒgƒ‹j‚Ì•\¦’PˆÊ‚ğ•\‚µ‚Ü‚·.*/
+    /** mm(ãƒŸãƒªãƒ¡ãƒ¼ãƒˆãƒ«ï¼‰ã®è¡¨ç¤ºå˜ä½ã‚’è¡¨ã—ã¾ã™.*/
     public static final int METRIC_GAUGE = 0;
-    /** Point(1/72ƒCƒ“ƒ`)‚Ì•\¦’PˆÊ‚ğ•\‚µ‚Ü‚·.*/
+    /** Point(1/72ã‚¤ãƒ³ãƒ)ã®è¡¨ç¤ºå˜ä½ã‚’è¡¨ã—ã¾ã™.*/
     public static final int INCHI_GAUGE = 1;
-    /**Point‚ğmm‚ÉŠ·Z‚·‚é‚½‚ß‚ÌŒW”‚Å‚·.*/
+    /**Pointã‚’mmã«æ›ç®—ã™ã‚‹ãŸã‚ã®ä¿‚æ•°ã§ã™.*/
     public static final double MIL_PER_POINT = 25.4d / 72d;
-    /**mm‚ğƒ|ƒCƒ“ƒg‚ÉŠ·Z‚·‚é‚½‚ß‚ÌŒW”‚Å‚·.*/
+    /**mmã‚’ãƒã‚¤ãƒ³ãƒˆã«æ›ç®—ã™ã‚‹ãŸã‚ã®ä¿‚æ•°ã§ã™.*/
     public static final double MIL_PER_INCH = 25.4d;
-    /**ƒpƒX‚ğ¦‚·³•ûŒ`‚Ìˆê•Ó‚Ì’·‚³‚Å‚·B*/
+    /**ãƒ‘ã‚¹ã‚’ç¤ºã™æ­£æ–¹å½¢ã®ä¸€è¾ºã®é•·ã•ã§ã™ã€‚*/
     public static final float DEFAULT_PATH_SELECTOR_SIZE = 4;
     public static float PATH_SELECTOR_SIZE = DEFAULT_PATH_SELECTOR_SIZE;
-    /**ƒnƒCƒ‰ƒCƒgƒAƒ“ƒJ[‚Ì•\¦”ä—¦*/
+    /**ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚¢ãƒ³ã‚«ãƒ¼ã®è¡¨ç¤ºæ¯”ç‡*/
     public static final float DEFAULT_HILIGHT_RATIO = 1.5f;
     public static float HILIGHT_RATIO = DEFAULT_HILIGHT_RATIO;
-    /*ƒtƒŠ[ƒtƒH[ƒ€ƒZƒŒƒNƒ^‚ÌƒRƒ“ƒgƒ[ƒ‹‚Ì³•ûŒ`‚Ìˆê•Ó‚Ì’·‚³‚Å‚·.*/
+    /*ãƒ•ãƒªãƒ¼ãƒ•ã‚©ãƒ¼ãƒ ã‚»ãƒ¬ã‚¯ã‚¿ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®æ­£æ–¹å½¢ã®ä¸€è¾ºã®é•·ã•ã§ã™.*/
     //public static  float OBJECT_SELECTOR_SIZE=4;
     //
-    /** ƒfƒtƒHƒ‹ƒg‚ÌƒKƒCƒh‚ÌF‚Å‚·*/
+    /** ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¬ã‚¤ãƒ‰ã®è‰²ã§ã™*/
     public static final Color DEFAULT_GUID_COLOR = Color.BLUE;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌƒKƒCƒh‚ÌƒvƒŒƒrƒ…[F‚Å‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¬ã‚¤ãƒ‰ã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼è‰²ã§ã™.*/
     public static final Color DEFAULT_GUID_PREVIEW_COLOR = Color.CYAN;
-    /**ƒyƒCƒ“ƒg‚ÌƒAƒ“ƒ`ƒGƒŠƒAƒtƒ‰ƒO*/
+    /**ãƒšã‚¤ãƒ³ãƒˆæ™‚ã®ã‚¢ãƒ³ãƒã‚¨ãƒªã‚¢ãƒ•ãƒ©ã‚°*/
     public static final boolean DEFAULT_PAINT_ANTI_AREASING = true;
     public static boolean PAINT_ANTI_AREASING = DEFAULT_PAINT_ANTI_AREASING;
-    /**ƒvƒŒƒrƒ…[‚ÌƒAƒ“ƒ`ƒGƒŠƒAƒtƒ‰ƒO*/
+    /**ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼æ™‚ã®ã‚¢ãƒ³ãƒã‚¨ãƒªã‚¢ãƒ•ãƒ©ã‚°*/
     public static final boolean DEFAULT_PREVIEW_ANTI_AREASING = false;
     public static boolean PREVIEW_ANTI_AREASING = DEFAULT_PREVIEW_ANTI_AREASING;
-    /**ü‚ğ‘I‘ğ‚·‚é‚½‚ß‚Ì‹–—eŒë·‚Å‚·B*/
+    /**ç·šã‚’é¸æŠã™ã‚‹ãŸã‚ã®è¨±å®¹èª¤å·®ã§ã™ã€‚*/
     public static final float DEFAULT_SELECTION_STROKE_SIZE = 3f;
     public static float SELECTION_STROKE_SIZE = DEFAULT_SELECTION_STROKE_SIZE;
-    /**ü‚ğ‘I‘ğ‚·‚é‚½‚ß‚ÌStroke‚Å‚·B*/
+    /**ç·šã‚’é¸æŠã™ã‚‹ãŸã‚ã®Strokeã§ã™ã€‚*/
     public static Stroke SELECTION_STROKE = new BasicStroke(SELECTION_STROKE_SIZE);
-    /**ƒ|ƒCƒ“ƒgƒXƒiƒbƒvƒtƒ‰ƒO*/
+    /**ãƒã‚¤ãƒ³ãƒˆã‚¹ãƒŠãƒƒãƒ—ãƒ•ãƒ©ã‚°*/
     public static boolean SNAP_TO_ANCUR = true;
-    /**ƒfƒtƒHƒ‹ƒg‚Ì“h‚è‚Å‚·B*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å¡—ã‚Šã§ã™ã€‚*/
     public static final JPaint DEFAULT_FILL = new JPaint(Color.WHITE);
-    /**ƒfƒtƒHƒ‹ƒg‚ÌüF‚Å‚·B*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ç·šè‰²ã§ã™ã€‚*/
     public static final JPaint DEFAULT_BORDER = new JPaint(Color.BLACK);
-    /**ƒfƒtƒHƒ‹ƒg‚Ìüí‚Å‚·*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ç·šç¨®ã§ã™*/
     public static final JStroke DEFAULT_STROKE = new JStroke(new BasicStroke(1f));
-    /**ƒfƒtƒHƒ‹ƒg‚ÌƒeƒLƒXƒgF‚Å‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ†ã‚­ã‚¹ãƒˆè‰²ã§ã™.*/
     public static final JPaint DEFAULT_TEXT_FILL = new JPaint(Color.BLACK);
-    /**ƒfƒtƒHƒ‹ƒg‚ÌƒeƒLƒXƒgƒAƒEƒgƒ‰ƒCƒ“F‚Å‚·*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ†ã‚­ã‚¹ãƒˆã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³è‰²ã§ã™*/
     public static final JPaint DEFAULT_TEXT_BORDER = null;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌƒeƒLƒXƒgüí‚Å‚·*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ†ã‚­ã‚¹ãƒˆç·šç¨®ã§ã™*/
     public static final JStroke DEFAULT_TEXT_STROKE = new JStroke(new BasicStroke(1f));
-    /**ƒJƒŒƒ“ƒg‚Ì“h‚è‚Å‚·B*/
+    /**ã‚«ãƒ¬ãƒ³ãƒˆã®å¡—ã‚Šã§ã™ã€‚*/
     public static JPaint currentFill = DEFAULT_FILL;
-    /**ƒJƒŒƒ“ƒg‚Ìü‚Ì“h‚è‚Å‚·.*/
+    /**ã‚«ãƒ¬ãƒ³ãƒˆã®ç·šã®å¡—ã‚Šã§ã™.*/
     public static JPaint currentBorder = DEFAULT_BORDER;
-    /**ƒJƒŒƒ“ƒg‚Ìü‚Å‚·.*/
+    /**ã‚«ãƒ¬ãƒ³ãƒˆã®ç·šã§ã™.*/
     public static JStroke currentStroke = DEFAULT_STROKE;
-    /**ƒeƒLƒXƒgƒIƒuƒWƒFƒNƒg‚ÌƒJƒŒƒ“ƒg‚Ì“h‚è‚Å‚·.*/
+    /**ãƒ†ã‚­ã‚¹ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚«ãƒ¬ãƒ³ãƒˆã®å¡—ã‚Šã§ã™.*/
     public static JPaint currentTextFill = DEFAULT_TEXT_FILL;
-    /**ƒeƒLƒXƒgƒIƒuƒWƒFƒNƒg‚ÌƒJƒŒƒ“ƒg‚Ìüí‚Å‚·B*/
+    /**ãƒ†ã‚­ã‚¹ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚«ãƒ¬ãƒ³ãƒˆã®ç·šç¨®ã§ã™ã€‚*/
     public static JStroke currentTextStroke = DEFAULT_TEXT_STROKE;
-    /**ƒeƒLƒXƒgƒIƒuƒWƒFƒNƒg‚ÌƒJƒŒƒ“ƒg‚ÌüF‚Å‚·B*/
+    /**ãƒ†ã‚­ã‚¹ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚«ãƒ¬ãƒ³ãƒˆã®ç·šè‰²ã§ã™ã€‚*/
     public static JPaint currentTextBorder = DEFAULT_TEXT_BORDER;
-    /**ƒvƒŒƒrƒ…[‚ÌF‚Å‚·B*/
+    /**ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã®è‰²ã§ã™ã€‚*/
     public static Color PREVIEW_COLOR = new Color(0f, 0.8f, 0.8f);
-    /**ƒfƒtƒHƒ‹ƒg‚ÌƒvƒŒƒrƒ…[F‚ğ¦‚µ‚Ü‚·*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼è‰²ã‚’ç¤ºã—ã¾ã™*/
     public static final Color[] PREVIEW_COLORS = new Color[]{
         new Color(50, 100, 255),
         new Color(255, 0, 0),
@@ -142,114 +142,114 @@ public class JEnvironment implements Serializable, Cloneable {
         new Color(204, 255, 204),
         new Color(204, 204, 0)
     };
-    /**ƒhƒ‰ƒbƒO‚ÌƒZƒŒƒNƒVƒ‡ƒ“ƒŒƒNƒg‚ÌƒvƒŒƒrƒ…[F‚Å‚·B*/
+    /**ãƒ‰ãƒ©ãƒƒã‚°æ™‚ã®ã‚»ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ãƒ¬ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼è‰²ã§ã™ã€‚*/
     public static Color DRAG_AREA_COLOR = Color.BLACK;
-    /**ƒhƒ‰ƒbƒO‚ÌƒZƒŒƒNƒVƒ‡ƒ“ƒvƒŒƒrƒ…[‚Ìü‚Å‚·.*/
+    /**ãƒ‰ãƒ©ãƒƒã‚°æ™‚ã®ã‚»ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã®ç·šã§ã™.*/
     public static Stroke DRAG_AREA_STROKE = new BasicStroke(0f, BasicStroke.CAP_BUTT,
             BasicStroke.JOIN_MITER, 10f, new float[]{1f, 1f}, 0f);
-    /**ƒOƒŠƒbƒhü‚Ìüí‚ğ¦‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰ç·šã®ç·šç¨®ã‚’ç¤ºã—ã¾ã™.*/
     public static Stroke GUAGE_STROKE = new BasicStroke(0f);
-    /**ƒOƒŠƒbƒhü‚ÌF‚ğ¦‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰ç·šã®è‰²ã‚’ç¤ºã—ã¾ã™.*/
     public static final Color DEFAULT_GRID_COLOR = new Color(0.85f, 0.85f, 0.85f);
     public Color GRID_COLOR = DEFAULT_GRID_COLOR;
-    /**•ªŠ„ƒOƒŠƒbƒhü‚ÌF‚ğ¦‚µ‚Ü‚·.*/
+    /**åˆ†å‰²ã‚°ãƒªãƒƒãƒ‰ç·šã®è‰²ã‚’ç¤ºã—ã¾ã™.*/
     public static final Color DEFAULT_DIVIDE_GRID_COLOR = new Color(0.95f, 0.95f, 0.95f);
     public Color DIVIDE_GRID_COLOR = DEFAULT_DIVIDE_GRID_COLOR;
-    /**ƒOƒŠƒbƒh‚Ì‘O–Ê•\¦ƒtƒ‰ƒO‚Å‚·B*/
+    /**ã‚°ãƒªãƒƒãƒ‰ã®å‰é¢è¡¨ç¤ºãƒ•ãƒ©ã‚°ã§ã™ã€‚*/
     public static boolean GRID_FOREGROUND = false;
-    /**ƒXƒP[ƒŠƒ“ƒO‚ÌÅ¬ƒXƒP[ƒŠƒ“ƒOŒW”‚Å‚·B*/
+    /**ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°æ™‚ã®æœ€å°ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ä¿‚æ•°ã§ã™ã€‚*/
     public static final double MINIMUM_SCALE_RATIO = 0.0001;
-    /**ƒZƒŒƒNƒVƒ‡ƒ“ƒŒƒNƒg‚ÌÅ¬’l‚ğ¦‚µ‚Ü‚·.*/
+    /**ã‚»ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³ãƒ¬ã‚¯ãƒˆã®æœ€å°å€¤ã‚’ç¤ºã—ã¾ã™.*/
     public static final double MINIMUM_SELECT_SIZE = 18d;
-    /**ƒIƒuƒWƒFƒNƒg‚ÌƒfƒtƒHƒ‹ƒg‚Ì”¼Œa‚ğ¦‚µ‚Ü‚·*/
+    /**ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®åŠå¾„ã‚’ç¤ºã—ã¾ã™*/
     public static double DEFAULT_RADIUS = 72d;
-    /**ƒIƒuƒWƒFƒNƒg‚Ì‚ÅƒfƒtƒHƒ‹ƒg‚Ì•‚ğ¦‚µ‚Ü‚·.*/
+    /**ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã§ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å¹…ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_WIDTH = 72d;
-    /**ƒIƒuƒWƒFƒNƒg‚ÌƒfƒtƒHƒ‹ƒg‚Ì‚‚³‚ğ¦‚µ‚Ü‚·.*/
+    /**ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®é«˜ã•ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_HEIGHT = 72d;
-    /**Šp“xƒc[ƒ‹‚ÌƒfƒtƒHƒ‹ƒg‚ÌŠp“x‚ğ¦‚µ‚Ü‚·*/
+    /**è§’åº¦ãƒ„ãƒ¼ãƒ«ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è§’åº¦ã‚’ç¤ºã—ã¾ã™*/
     public static double DEFAULT_ANGLE = Math.PI / 2;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌŠp‚ÌŠÛ‚ß”¼Œa‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®è§’ã®ä¸¸ã‚åŠå¾„ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_ROUNDRECT_RADIUS = 16d;
-    /**ƒfƒtƒHƒ‹ƒg‚Ì‚×ƒxƒ‹‚Ì”¼Œa‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã¹ãƒ™ãƒ«ã®åŠå¾„ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_BEVEL_RADIUS = 12d;
-    /**ƒfƒtƒHƒ‹ƒg‚Ì‘½ŠpŒ`‚Ì’¸“_”‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å¤šè§’å½¢ã®é ‚ç‚¹æ•°ã‚’ç¤ºã—ã¾ã™.*/
     public static int DEFAULT_POLYGON_VERTEX = 6;
-    /**ƒfƒtƒHƒ‹ƒg‚Ì¯Œ^}Œ`‚Ì“Ê’¸“_”‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æ˜Ÿå‹å›³å½¢ã®å‡¸é ‚ç‚¹æ•°ã‚’ç¤ºã—ã¾ã™.*/
     public static int DEFAULT_STAR_VERTEX = 5;
-    /**¯Œ^}Œ`‚Ì“Ê’¸“_‚Æ‰š’¸“_‚Ì”¼Œa‚Ì”ä—¦‚ğ¦‚µ‚Ü‚·.*/
+    /**æ˜Ÿå‹å›³å½¢ã®å‡¸é ‚ç‚¹ã¨å‡¹é ‚ç‚¹ã®åŠå¾„ã®æ¯”ç‡ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_STAR_RADIUS_RATIO = 0.381966011;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌX•ûŒü‚ÌƒXƒP[ƒŠƒ“ƒOŒW”‚ğ¦‚µ‚Ü‚·B*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®Xæ–¹å‘ã®ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ä¿‚æ•°ã‚’ç¤ºã—ã¾ã™ã€‚*/
     public static double DEFAULT_SCALE_X = 1d;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌY•ûŒü‚ÌƒXƒP[ƒŠƒ“ƒOŒW”‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®Yæ–¹å‘ã®ã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°ä¿‚æ•°ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_SCALE_Y = 1d;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌX²•ûŒü‚ÌƒVƒAƒŠƒ“ƒOŒW”‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®Xè»¸æ–¹å‘ã®ã‚·ã‚¢ãƒªãƒ³ã‚°ä¿‚æ•°ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_SHEER_X = 0d;
-    /**ƒfƒtƒHƒ‹ƒg‚ÌY²•ûŒü‚ÌƒVƒAƒŠƒ“ƒOŒW”‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®Yè»¸æ–¹å‘ã®ã‚·ã‚¢ãƒªãƒ³ã‚°ä¿‚æ•°ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_SHEER_Y = 1d;
-    /**ƒfƒtƒHƒ‹ƒg‚Ì‰ñ“]Šp‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å›è»¢è§’ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_THETA = 0d;
-    /**‘ÎÌˆÚ“®²‚ÌŠp“x‚ğ¦‚µ‚Ü‚·*/
+    /**å¯¾ç§°ç§»å‹•è»¸ã®è§’åº¦ã‚’ç¤ºã—ã¾ã™*/
     public static double DEFAULT_REFLECT_AXIS = 0d;
-    /**ŠpŠÛ‚ßEØ‚è—‚µ‘€ì‚ÌƒfƒtƒHƒ‹ƒg‚Ì”¼Œa‚ğ¦‚µ‚Ü‚·.*/
+    /**è§’ä¸¸ã‚ãƒ»åˆ‡ã‚Šè½ã—æ“ä½œæ™‚ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®åŠå¾„ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_CUTCORNER_RADIUS = 12d;
-    /**XÀ•W‚Ì•½sˆÚ“®‹——£‚ğ¦‚µ‚Ü‚·.*/
+    /**Xåº§æ¨™ã®å¹³è¡Œç§»å‹•è·é›¢ã‚’ç¤ºã—ã¾ã™.*/
     public static double DEFAULT_TRANSLATE_X = 0d;
-    /**YÀ•W‚Ì•½sˆÚ“®‹——£‚ğ¦‚µ‚Ü‚·>*/
+    /**Yåº§æ¨™ã®å¹³è¡Œç§»å‹•è·é›¢ã‚’ç¤ºã—ã¾ã™>*/
     public static double DEFAULT_TRANSLATE_Y = 0d;
-    /**’¼‘O‚ÌˆÚ“®‚ğ¦‚·AffineTransform‚Å‚·.*/
+    /**ç›´å‰ã®ç§»å‹•ã‚’ç¤ºã™AffineTransformã§ã™.*/
     public static AffineTransform LAST_TRANSFORM = null;
-    /**’¼‘O‚Ì‰ñ“]Šp‚ğ¦‚µ‚Ü‚·.*/
+    /**ç›´å‰ã®å›è»¢è§’ã‚’ç¤ºã—ã¾ã™.*/
     public static double LAST_ROTATION = 0;
-    /**’¼‘O‚ÌˆÚ“®‚ÌƒRƒs[“®ì‚Ì—L–³‚ğ¦‚µ‚Ü‚·.*/
+    /**ç›´å‰ã®ç§»å‹•ã®ã‚³ãƒ”ãƒ¼å‹•ä½œã®æœ‰ç„¡ã‚’ç¤ºã—ã¾ã™.*/
     public static boolean LAST_COPY = false;
-    /**•\¦”{—¦‚ğ¦‚µ‚Ü‚·.*/
-    private double magnification = 1.0d;//•\¦”{—¦
-    /**À•W’PˆÊ‚ğ¦‚µ‚Ü‚·.*/
-    public static int guageUnit = METRIC_GAUGE;//À•W’P
-    /**ƒy[ƒp[‚Ì¶ã‹÷‚©‚çA–Ú·‚è‚ÌŒ´“_‚Ü‚Å‚ÌXƒIƒtƒZƒbƒg‚ğ¦‚µ‚Ü‚·.*/
+    /**è¡¨ç¤ºå€ç‡ã‚’ç¤ºã—ã¾ã™.*/
+    private double magnification = 1.0d;//è¡¨ç¤ºå€ç‡
+    /**åº§æ¨™å˜ä½ã‚’ç¤ºã—ã¾ã™.*/
+    public static int guageUnit = METRIC_GAUGE;//åº§æ¨™å˜
+    /**ãƒšãƒ¼ãƒ‘ãƒ¼ã®å·¦ä¸Šéš…ã‹ã‚‰ã€ç›®ç››ã‚Šã®åŸç‚¹ã¾ã§ã®Xã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’ç¤ºã—ã¾ã™.*/
     private double gaugeX = 0;
-    /**ƒy[ƒp[¶ã‹÷‚©‚çA–Ú·‚è‚ÌŒ´“_‚Ü‚Å‚ÌYƒIƒtƒZƒbƒg‚ğ¦‚µ‚Ü‚·.*/
+    /**ãƒšãƒ¼ãƒ‘ãƒ¼å·¦ä¸Šéš…ã‹ã‚‰ã€ç›®ç››ã‚Šã®åŸç‚¹ã¾ã§ã®Yã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’ç¤ºã—ã¾ã™.*/
     private double gaugeY = 0;
-    /**ƒOƒŠƒbƒh•\¦‚Ì—L–³‚ğw’è‚·‚éƒtƒ‰ƒO‚Å‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰è¡¨ç¤ºã®æœ‰ç„¡ã‚’æŒ‡å®šã™ã‚‹ãƒ•ãƒ©ã‚°ã§ã™.*/
     private boolean isGridVisible = true;
-    /**ƒOƒŠƒbƒh‹z’…‚Ì—L–³‚ğw’è‚·‚éƒtƒ‰ƒO‚Å‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰å¸ç€ã®æœ‰ç„¡ã‚’æŒ‡å®šã™ã‚‹ãƒ•ãƒ©ã‚°ã§ã™.*/
     private boolean isSnapGrid = false;
-    /**ƒ~ƒŠ’PˆÊ•\¦‚Ìê‡‚ÌƒfƒtƒHƒ‹ƒg‚ÌƒOƒŠƒbƒhŠÔŠu‚Å‚·.*/
+    /**ãƒŸãƒªå˜ä½è¡¨ç¤ºã®å ´åˆã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚°ãƒªãƒƒãƒ‰é–“éš”ã§ã™.*/
     public static final double DEFAULT_GRIDSIZE_BYMIL = 10;
     private double gridSizeByMil = 10;
-    /**ƒ~ƒŠ’PˆÊ•\¦‚Ìê‡‚ÌƒfƒtƒHƒ‹ƒg‚ÌƒOƒŠƒbƒh•ªŠ„”‚Å‚·.*/
+    /**ãƒŸãƒªå˜ä½è¡¨ç¤ºã®å ´åˆã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚°ãƒªãƒƒãƒ‰åˆ†å‰²æ•°ã§ã™.*/
     public static final int DEFAULT_GRIDDIVISION_BYMIL = 10;
     private int gridDivisionByMil = 10;
-    /**ƒ|ƒCƒ“ƒg’PˆÊ•\¦‚Ìê‡‚ÌƒfƒtƒHƒ‹ƒg‚ÌƒOƒŠƒbƒhŠÔŠu‚Å‚·.*/
+    /**ãƒã‚¤ãƒ³ãƒˆå˜ä½è¡¨ç¤ºã®å ´åˆã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚°ãƒªãƒƒãƒ‰é–“éš”ã§ã™.*/
     public static final double DEFAULT_GRIDSIZE_BYPOINT = 36;
     private double gridSizeByPoint = 36;
-    /**ƒ|ƒCƒ“ƒg’PˆÊ•\¦‚Ìê‡‚ÌƒfƒtƒHƒ‹ƒg‚ÌƒOƒŠƒbƒh•ªŠ„”‚Å‚·.*/
+    /**ãƒã‚¤ãƒ³ãƒˆå˜ä½è¡¨ç¤ºã®å ´åˆã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚°ãƒªãƒƒãƒ‰åˆ†å‰²æ•°ã§ã™.*/
     public static final int DEFAULT_GRIDDIVISION_BYPOINT = 6;
-    /**ì¬‚³‚ê‚½ƒpƒ^[ƒ“‚ğˆê“I‚ÉƒZ[ƒu‚µ‚Ü‚·.
+    /**ä½œæˆã•ã‚ŒãŸãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’ä¸€æ™‚çš„ã«ã‚»ãƒ¼ãƒ–ã—ã¾ã™.
      */
     public static JPaint SAVED_PATTERN=null;
     private int gridDivisionByPoint = 6;
-    /**ƒVƒtƒg‰Ÿ‰º‚°‚ÌˆÚ“®§ŒÀŠp‚Å‚·.*/
+    /**ã‚·ãƒ•ãƒˆæŠ¼ä¸‹ã’æ™‚ã®ç§»å‹•åˆ¶é™è§’ã§ã™.*/
     public static final double DEFAULT_UNIT_ANGLE = 45d;
     private double unitAngle = DEFAULT_UNIT_ANGLE;
     private Point paperOffset = new Point();
     private Rectangle2D.Double paperRectangle = new Rectangle2D.Double();
     private Rectangle2D.Double imageRect = new Rectangle2D.Double();
     /**
-     * Œ»İ‚Ì•\¦ƒfƒoƒCƒX‚Ì‰ğ‘œ“x‚Å‚·B
+     * ç¾åœ¨ã®è¡¨ç¤ºãƒ‡ãƒã‚¤ã‚¹ã®è§£åƒåº¦ã§ã™ã€‚
      */
     public static final double screenDPI = Toolkit.getDefaultToolkit().getScreenResolution();
     private transient Rectangle2D clip = null;
     private transient Vector<ChangeListener> listeners = null;
 
-    /** ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ\’z‚µ‚Ü‚·B*/
+    /** ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚*/
     public JEnvironment() {
         currentFill = new JPaint(Color.WHITE);
         currentBorder = new JPaint(Color.BLACK);
         currentStroke = new JStroke(new BasicStroke(1.0f));
     }
-    /**ƒ`ƒFƒ“ƒWƒŠƒXƒi[‚ğ’Ç‰Á‚µ‚Ü‚·*/
+    /**ãƒã‚§ãƒ³ã‚¸ãƒªã‚¹ãƒŠãƒ¼ã‚’è¿½åŠ ã—ã¾ã™*/
     ;
 
     public void addChangeListener(ChangeListener ls) {
@@ -262,7 +262,7 @@ public class JEnvironment implements Serializable, Cloneable {
 
     }
 
-    /**ƒ`ƒFƒ“ƒWƒŠƒXƒi[‚ğíœ‚µ‚Ü‚·.*/
+    /**ãƒã‚§ãƒ³ã‚¸ãƒªã‚¹ãƒŠãƒ¼ã‚’å‰Šé™¤ã—ã¾ã™.*/
     public void removeChangeListener(ChangeListener ls) {
         if (listeners == null) {
             return;
@@ -280,93 +280,93 @@ public class JEnvironment implements Serializable, Cloneable {
         }
     }
 
-    /**•\¦‰æ–Êã‚Ì1ƒsƒNƒZƒ‹‚Ì’·‚³(Point)‚ğ•Ô‚µ‚Ü‚·.*/
+    /**è¡¨ç¤ºç”»é¢ä¸Šã®1ãƒ”ã‚¯ã‚»ãƒ«ã®é•·ã•(Point)ã‚’è¿”ã—ã¾ã™.*/
     public double pixelPerPoint() {
         return 72d / screenDPI;
     }
 
-    /**•\¦‰æ–Ê‚Ì‰ğ‘œ“x‚ğ•Ô‚µ‚Ü‚·.*/
+    /**è¡¨ç¤ºç”»é¢ã®è§£åƒåº¦ã‚’è¿”ã—ã¾ã™.*/
     public double getScreenDPI() {
         return screenDPI;
     }
 
-    /**•\¦”{—¦‚ğİ’è‚µ‚Ü‚·*/
+    /**è¡¨ç¤ºå€ç‡ã‚’è¨­å®šã—ã¾ã™*/
     public void setMagnification(double magnification) {
         this.magnification = magnification;
         fireChangeEvent();
     }
 
-    /**•\¦”{—¦‚ğæ“¾‚µ‚Ü‚·*/
+    /**è¡¨ç¤ºå€ç‡ã‚’å–å¾—ã—ã¾ã™*/
     public double getMagnification() {
         return magnification;
     }
 
-    /**ƒRƒ“ƒ|[ƒlƒ“ƒgŒ´“_‚©‚çDocumentŒ´“_‚Ü‚Å‚Ìoffset‚ğƒXƒNƒŠ[ƒ“À•W‚Åİ’è‚µ‚Ü‚·B*/
+    /**ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆåŸç‚¹ã‹ã‚‰DocumentåŸç‚¹ã¾ã§ã®offsetã‚’ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã§è¨­å®šã—ã¾ã™ã€‚*/
     public void setOffsetByScreen(int x, int y) {
         paperOffset.x = x;
         paperOffset.y = y;
         fireChangeEvent();
     }
 
-    /**ƒRƒ“ƒ|[ƒlƒ“ƒgŒ´“_‚©‚çDocumentŒ´“_‚Ü‚Å‚Ìoffset‚ğâ‘ÎÀ•W‚Åİ’è‚µ‚Ü‚·.*/
+    /**ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆåŸç‚¹ã‹ã‚‰DocumentåŸç‚¹ã¾ã§ã®offsetã‚’çµ¶å¯¾åº§æ¨™ã§è¨­å®šã—ã¾ã™.*/
     public void setOffset(double x, double y) {
         paperOffset.x = (int) (x * getToScreenRatio());
         paperOffset.y = (int) (y * getToScreenRatio());
         fireChangeEvent();
     }
 
-    /**ƒRƒ“ƒ|[ƒlƒ“ƒgŒ´“_‚©‚çDocumentŒ´“_‚Ü‚Å‚Ìoffset‚ğâ‘ÎÀ•W‚Åæ“¾‚µ‚Ü‚·.*/
+    /**ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆåŸç‚¹ã‹ã‚‰DocumentåŸç‚¹ã¾ã§ã®offsetã‚’çµ¶å¯¾åº§æ¨™ã§å–å¾—ã—ã¾ã™.*/
     public Point2D getOffset() {
         return new Point2D.Double(paperOffset.x / getToScreenRatio(), paperOffset.y / getToScreenRatio());
     }
 
-    /**ƒRƒ“ƒ|[ƒlƒ“ƒgŒ´“_‚©‚çDocumentŒ´“_‚Ü‚Å‚Ìoffset‚ğâ‘ÎÀ•W‚Åæ“¾‚µ‚Ü‚·.*/
+    /**ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆåŸç‚¹ã‹ã‚‰DocumentåŸç‚¹ã¾ã§ã®offsetã‚’çµ¶å¯¾åº§æ¨™ã§å–å¾—ã—ã¾ã™.*/
     public Point getOffsetByScreen() {
         return paperOffset;
     }
 
-    /**Document‚ÌŒ´“_‚©‚çƒƒ‚ƒŠÀ•W²Œ´“_‚Ü‚Å‚Ì‘Š‘Î‹——£‚ğİ’è‚µ‚Ü‚·*/
+    /**Documentã®åŸç‚¹ã‹ã‚‰ãƒ¡ãƒ¢ãƒªåº§æ¨™è»¸åŸç‚¹ã¾ã§ã®ç›¸å¯¾è·é›¢ã‚’è¨­å®šã—ã¾ã™*/
     public void setGaugeOffset(double x, double y) {
         gaugeX = x;
         gaugeY = y;
         fireChangeEvent();
     }
 
-    /**Document‚ÌŒ´“_‚©‚ç–Ú·À•W²Œ´“_‚Ü‚Å‚Ì…•½•ûŒü‚ÌƒIƒtƒZƒbƒg‚ğİ’è‚µ‚Ü‚·.*/
+    /**Documentã®åŸç‚¹ã‹ã‚‰ç›®ç››åº§æ¨™è»¸åŸç‚¹ã¾ã§ã®æ°´å¹³æ–¹å‘ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’è¨­å®šã—ã¾ã™.*/
     public void setGaugeOffsetX(double x) {
         this.gaugeX = x;
         fireChangeEvent();
     }
 
-    /**Document‚ÌŒ´“_‚©‚ç–Ú·À•W²Œ´“_‚Ü‚Å‚Ì‚’¼•ûŒü‚ÌƒIƒtƒZƒbƒg‚ğİ’è‚µ‚Ü‚·.*/
+    /**Documentã®åŸç‚¹ã‹ã‚‰ç›®ç››åº§æ¨™è»¸åŸç‚¹ã¾ã§ã®å‚ç›´æ–¹å‘ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’è¨­å®šã—ã¾ã™.*/
     public void setGaougeOffsetY(double y) {
         this.gaugeY = y;
         fireChangeEvent();
     }
 
-    /**ƒOƒŠƒbƒh‹z’…‚Ì—L–³‚ğæ“¾‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰å¸ç€ã®æœ‰ç„¡ã‚’å–å¾—ã—ã¾ã™.*/
     public boolean isSnapGrid() {
         return isSnapGrid;
     }
 
-    /**ƒOƒŠƒbƒh‚Ì‹z’…‚ğİ’è‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰ã®å¸ç€ã‚’è¨­å®šã—ã¾ã™.*/
     public void setSnapGrid(boolean b) {
         isSnapGrid = b;
         fireChangeEvent();
     }
 
-    /**ƒOƒŠƒbƒh•\¦‚Ì—L–³‚ğİ’è‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰è¡¨ç¤ºã®æœ‰ç„¡ã‚’è¨­å®šã—ã¾ã™.*/
     public void setGridVisible(boolean b) {
         isGridVisible = b;
         fireChangeEvent();
     }
 
-    /**ƒOƒŠƒbƒh•\¦‚Ì—L–³‚ğæ“¾‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰è¡¨ç¤ºã®æœ‰ç„¡ã‚’å–å¾—ã—ã¾ã™.*/
     public boolean isGridVisible() {
         return isGridVisible;
     }
 
-    /**ƒOƒŠƒbƒhƒTƒCƒY‚ğİ’è‚µ‚Ü‚·*/
+    /**ã‚°ãƒªãƒƒãƒ‰ã‚µã‚¤ã‚ºã‚’è¨­å®šã—ã¾ã™*/
     public void setGridSize(double grd) {
         if (guageUnit == METRIC_GAUGE) {
             gridSizeByMil = grd;
@@ -376,7 +376,7 @@ public class JEnvironment implements Serializable, Cloneable {
         fireChangeEvent();
     }
 
-    /**ƒOƒŠƒbƒhƒTƒCƒY‚ğpoint’PˆÊ‚Åæ“¾‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰ã‚µã‚¤ã‚ºã‚’pointå˜ä½ã§å–å¾—ã—ã¾ã™.*/
     public double getGridSize() {
         if (guageUnit == METRIC_GAUGE) {
             return gridSizeByMil * 72 / 25.4;
@@ -385,7 +385,7 @@ public class JEnvironment implements Serializable, Cloneable {
         }
     }
 
-    /**ƒOƒŠƒbƒhƒTƒCƒY‚ğmm’PˆÊ‚Åæ“¾‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰ã‚µã‚¤ã‚ºã‚’mmå˜ä½ã§å–å¾—ã—ã¾ã™.*/
     public double getGridSizeForMil() {
         if (guageUnit == METRIC_GAUGE) {
             return gridSizeByMil;
@@ -394,7 +394,7 @@ public class JEnvironment implements Serializable, Cloneable {
         }
     }
 
-    /**ƒOƒŠƒbƒhŠÔŠu‚ğİ’è‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰é–“éš”ã‚’è¨­å®šã—ã¾ã™.*/
     public void setGridDivision(int dv) {
         if (guageUnit == METRIC_GAUGE) {
             gridDivisionByMil = dv;
@@ -404,7 +404,7 @@ public class JEnvironment implements Serializable, Cloneable {
         fireChangeEvent();
     }
 
-    /**ƒOƒŠƒbƒhŠÔŠu‚ğæ“¾‚µ‚Ü‚·.*/
+    /**ã‚°ãƒªãƒƒãƒ‰é–“éš”ã‚’å–å¾—ã—ã¾ã™.*/
     public int getGridDivision() {
         if (guageUnit == METRIC_GAUGE) {
             return gridDivisionByMil;
@@ -413,28 +413,28 @@ public class JEnvironment implements Serializable, Cloneable {
         }
     }
 
-    /**ˆÚ“®§ŒÀŠp‚ğİ’è‚µ‚Ü‚·.*/
+    /**ç§»å‹•åˆ¶é™è§’ã‚’è¨­å®šã—ã¾ã™.*/
     public void setUnitAngle(int ua) {
         unitAngle = ua;
         fireChangeEvent();
     }
 
-    /**ˆÚ“®§ŒÀŠp‚ğæ“¾‚µ‚Ü‚·.*/
+    /**ç§»å‹•åˆ¶é™è§’ã‚’å–å¾—ã—ã¾ã™.*/
     public double getUnitAngle() {
         return unitAngle;
     }
 
-    /**Documento‚ÌŒ´“_‚©‚çƒƒ‚ƒŠÀ•W²Œ´“_‚Ü‚Å‚Ì‘Š‘Î‹——£‚ğæ“¾‚µ‚Ü‚·*/
+    /**Documentoã®åŸç‚¹ã‹ã‚‰ãƒ¡ãƒ¢ãƒªåº§æ¨™è»¸åŸç‚¹ã¾ã§ã®ç›¸å¯¾è·é›¢ã‚’å–å¾—ã—ã¾ã™*/
     public Point2D getGaugeOffset() {
         return new Point2D.Double(gaugeX, gaugeY);
     }
 
-    /**‰æ–Ê•\¦‚Ì‚½‚ß‚ÌScale‚ğæ“¾‚µ‚Ü‚·*/
+    /**ç”»é¢è¡¨ç¤ºã®ãŸã‚ã®Scaleã‚’å–å¾—ã—ã¾ã™*/
     public double getToScreenRatio() {
         return magnification * screenDPI / 72;
     }
 
-    /**â‘ÎÀ•W‚©‚çƒXƒNƒŠ[ƒ“À•W‚É•ÏŠ·‚·‚é‚½‚ß‚Ì•\¦”{—¦‚ğŠÜ‚ŞAffineTransform‚ğ\’z‚µ‚Ü‚·.*/
+    /**çµ¶å¯¾åº§æ¨™ã‹ã‚‰ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã«å¤‰æ›ã™ã‚‹ãŸã‚ã®è¡¨ç¤ºå€ç‡ã‚’å«ã‚€AffineTransformã‚’æ§‹ç¯‰ã—ã¾ã™.*/
     public AffineTransform getToScreenTransform() {
         AffineTransform ret = new AffineTransform();
         Point2D p = getOffset();
@@ -444,7 +444,7 @@ public class JEnvironment implements Serializable, Cloneable {
         return ret;
     }
 
-    /**ƒXƒNƒŠ[ƒ“À•WŒn‚©‚çâ‘ÎÀ•WŒn‚É•ÏŠ·‚·‚é‚½‚ß‚ÌAffineTransform‚ğ\’z‚µ‚Ü‚·.*/
+    /**ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ç³»ã‹ã‚‰çµ¶å¯¾åº§æ¨™ç³»ã«å¤‰æ›ã™ã‚‹ãŸã‚ã®AffineTransformã‚’æ§‹ç¯‰ã—ã¾ã™.*/
     public AffineTransform getToAbsoluteTransform() {
         AffineTransform ret = new AffineTransform();
         double ratio = 1 / getToScreenRatio();
@@ -454,23 +454,23 @@ public class JEnvironment implements Serializable, Cloneable {
         return ret;
     }
 
-    /**—p†—Ìˆæ‚ÌRectangle‚ğ•Ô‚µ‚Ü‚·*/
+    /**ç”¨ç´™é ˜åŸŸã®Rectangleã‚’è¿”ã—ã¾ã™*/
     public Rectangle2D getPaperRect() {
         return paperRectangle;
     }
 
-    /**ˆóü‰Â”\—Ìˆæ‚ÌRectangle‚ğ•Ô‚µ‚Ü‚·*/
+    /**å°åˆ·å¯èƒ½é ˜åŸŸã®Rectangleã‚’è¿”ã—ã¾ã™*/
     public Rectangle2D getImageRect() {
         return imageRect;
     }
 
-    /**PageFormat‚©‚çƒpƒ‰ƒ[ƒ^‚ğİ’è‚µ‚Ü‚·*/
+    /**PageFormatã‹ã‚‰ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’è¨­å®šã—ã¾ã™*/
     public void setPaper(PageFormat p) {
         paperRectangle.setFrame(0, 0, p.getWidth(), p.getHeight());
         imageRect.setFrame(p.getImageableX(), p.getImageableY(), p.getImageableWidth(), p.getImageableHeight());
     }
 
-    /**ƒXƒiƒbƒvƒOƒŠƒbƒhƒtƒ‰ƒO‚ğl—¶‚µ•`‰æÀ•WŒn‚Ìƒ}ƒEƒXƒ|ƒCƒ“ƒg‚ğâ‘ÎÀ•W‚É•ÏŠ·‚µ‚Ü‚·.*/
+    /**ã‚¹ãƒŠãƒƒãƒ—ã‚°ãƒªãƒƒãƒ‰ãƒ•ãƒ©ã‚°ã‚’è€ƒæ…®ã—æç”»åº§æ¨™ç³»ã®ãƒã‚¦ã‚¹ãƒã‚¤ãƒ³ãƒˆã‚’çµ¶å¯¾åº§æ¨™ã«å¤‰æ›ã—ã¾ã™.*/
     public Point2D getAbsoluteMousePoint(Point2D p, JPage page) {
         Point2D.Double ret = new Point2D.Double();
         AffineTransform af = getToAbsoluteTransform();
@@ -544,7 +544,7 @@ public class JEnvironment implements Serializable, Cloneable {
         return ret;
     }
 
-    /**ƒpƒX‚Æƒ|ƒCƒ“ƒg‚ÌŒğ“_‚ğ•Ô‚µ‚Ü‚·.
+    /**ãƒ‘ã‚¹ã¨ãƒã‚¤ãƒ³ãƒˆã®äº¤ç‚¹ã‚’è¿”ã—ã¾ã™.
      * 
      */
     private Point2D getInterSection(JSimplePath pth, Point2D p) {
@@ -565,10 +565,10 @@ public class JEnvironment implements Serializable, Cloneable {
         return null;
     }
 
-    /**ƒVƒtƒgˆÚ“®‚Ìê‡‚Ìƒ|ƒCƒ“ƒgˆÊ’u‚ğæ“¾‚µ‚Ü‚·
-     *@param source Šî€“_
-     *@param current Œ»İ“_
-     *@return •ÏŠ·Œã‚Ì“_
+    /**ã‚·ãƒ•ãƒˆç§»å‹•ã®å ´åˆã®ãƒã‚¤ãƒ³ãƒˆä½ç½®ã‚’å–å¾—ã—ã¾ã™
+     *@param source åŸºæº–ç‚¹
+     *@param current ç¾åœ¨ç‚¹
+     *@return å¤‰æ›å¾Œã®ç‚¹
      */
     public Point2D getShiftedMovePoint(Point2D source, Point2D current) {
         double unitTheta = unitAngle * Math.PI / 180d;
@@ -580,8 +580,8 @@ public class JEnvironment implements Serializable, Cloneable {
         return new Point2D.Double(length * Math.cos(theta) + source.getX(), length * Math.sin(theta) + source.getY());
     }
 
-    /**•\¦‚Ì’PˆÊŒn‚ğİ’è‚µ‚Ü‚·
-     *@param g •\¦‚Ì’PˆÊƒ[ƒgƒ‹’PˆÊŒn:METRIC_GUAGE,ƒCƒ“ƒ`’PˆÊŒn:INCHI_GUAGE;*/
+    /**è¡¨ç¤ºã®å˜ä½ç³»ã‚’è¨­å®šã—ã¾ã™
+     *@param g è¡¨ç¤ºã®å˜ä½ãƒ¡ãƒ¼ãƒˆãƒ«å˜ä½ç³»:METRIC_GUAGE,ã‚¤ãƒ³ãƒå˜ä½ç³»:INCHI_GUAGE;*/
     public void setGuageUnit(int g) {
         if (g != METRIC_GAUGE && g != INCHI_GAUGE) {
             return;
@@ -589,13 +589,13 @@ public class JEnvironment implements Serializable, Cloneable {
         JEnvironment.guageUnit = g;
     }
 
-    /**Œ»İ‚Ì•\¦’PˆÊŒn‚ğ•Ô‚µ‚Ü‚·.
-     *@return  •\¦‚Ì’PˆÊƒ[ƒgƒ‹’PˆÊŒn:METRIC_GUAGE,ƒCƒ“ƒ`’PˆÊŒn:INCHI_GUAGE*/
+    /**ç¾åœ¨ã®è¡¨ç¤ºå˜ä½ç³»ã‚’è¿”ã—ã¾ã™.
+     *@return  è¡¨ç¤ºã®å˜ä½ãƒ¡ãƒ¼ãƒˆãƒ«å˜ä½ç³»:METRIC_GUAGE,ã‚¤ãƒ³ãƒå˜ä½ç³»:INCHI_GUAGE*/
     public int getGuageUnit() {
         return JEnvironment.guageUnit;
     }
 
-    /**ƒf[ƒ^“Ç‚İ‚İ*/
+    /**ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿*/
     private void readObject(java.io.ObjectInputStream in)
             throws IOException, ClassNotFoundException {
         in.defaultReadObject(); 
@@ -603,7 +603,7 @@ public class JEnvironment implements Serializable, Cloneable {
 
     }
 
-    /**ƒNƒŠƒbƒv—Ìˆæ‚Éw’è‚µ‚½Shape‚ğ‰Á‚¦‚Ü‚·.*/
+    /**ã‚¯ãƒªãƒƒãƒ—é ˜åŸŸã«æŒ‡å®šã—ãŸShapeã‚’åŠ ãˆã¾ã™.*/
     public void addClip(Shape s) {
         if (clip == null) {
             clip = s.getBounds2D();
@@ -611,27 +611,27 @@ public class JEnvironment implements Serializable, Cloneable {
         clip.add(s.getBounds2D());
     }
 
-    /**•`‰æÀ•WŒn‚ÌShape‚ğƒNƒŠƒbƒv‚É‰Á‚¦‚Ü‚·.*/
+    /**æç”»åº§æ¨™ç³»ã®Shapeã‚’ã‚¯ãƒªãƒƒãƒ—ã«åŠ ãˆã¾ã™.*/
     public void addDrawClip(Shape s) {
         addClip(getToAbsoluteTransform().createTransformedShape(s));
     }
 
-    /**ƒNƒŠƒbƒv—Ìˆæ‚ğæ“¾‚µ‚Ü‚·.*/
+    /**ã‚¯ãƒªãƒƒãƒ—é ˜åŸŸã‚’å–å¾—ã—ã¾ã™.*/
     public Rectangle2D getClip() {
         return clip;
     }
 
-    /**ƒNƒŠƒbƒv—Ìˆæ‚ğ•`‰æÀ•WŒn‚Åæ“¾‚µ‚Ü‚·*/
+    /**ã‚¯ãƒªãƒƒãƒ—é ˜åŸŸã‚’æç”»åº§æ¨™ç³»ã§å–å¾—ã—ã¾ã™*/
     public Rectangle getScreenClip() {
         return getToScreenTransform().createTransformedShape(clip).getBounds();
     }
 
-    /**ƒNƒŠƒbƒsƒ“ƒO—Ìˆæ‚ğƒNƒŠƒA‚µ‚Ü‚·.*/
+    /**ã‚¯ãƒªãƒƒãƒ”ãƒ³ã‚°é ˜åŸŸã‚’ã‚¯ãƒªã‚¢ã—ã¾ã™.*/
     public void flushClip() {
         clip = null;
     }
     /**
-     * ‚±‚ÌJEnvironment‚Ì•¡»‚ğ•Ô‚µ‚Ü‚·.
+     * ã“ã®JEnvironmentã®è¤‡è£½ã‚’è¿”ã—ã¾ã™.
      * @return
      */
     @Override

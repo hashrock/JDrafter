@@ -46,7 +46,7 @@ public class SheerToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(dialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle("シアリング");
+        dialog.setTitle("繧ｷ繧｢繝ｪ繝ｳ繧ｰ");
         //
         xratio.setValue(JEnvironment.DEFAULT_SHEER_X);
         yratio.setValue(JEnvironment.DEFAULT_SHEER_Y);
@@ -61,7 +61,7 @@ public class SheerToolPanel extends javax.swing.JPanel{
     public SheerToolPanel(JAbstractTool dragger) {
         this(getRootWindow(dragger.getViewer().getRootPane().getParent()));
         this.dragger=dragger;
-        dialog.setTitle(dragger.presentationName() +"オプション");
+        dialog.setTitle(dragger.presentationName() +"繧ｪ繝励す繝ｧ繝ｳ");
     }
     private static Window getRootWindow(Container c){
         if (c instanceof Window) return (Window)c;
@@ -89,7 +89,7 @@ public class SheerToolPanel extends javax.swing.JPanel{
         xratio = new jtools.jcontrol.JDNumericTextField();
         yratio = new jtools.jcontrol.JDNumericTextField();
 
-        copy.setText("コピー");
+        copy.setText("繧ｳ繝斐�ｼ");
         copy.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         copy.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
@@ -100,7 +100,7 @@ public class SheerToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("キャンセル");
+        cancelButton.setText("繧ｭ繝｣繝ｳ繧ｻ繝ｫ");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,9 +108,9 @@ public class SheerToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("X軸方向係数:");
+        jLabel1.setText("X霆ｸ譁ｹ蜷台ｿよ焚:");
 
-        jLabel2.setText("Y軸方向係数:");
+        jLabel2.setText("Y霆ｸ譁ｹ蜷台ｿよ焚:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

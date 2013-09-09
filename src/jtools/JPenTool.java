@@ -73,7 +73,7 @@ public class JPenTool extends JAbstractTool {
     /** Creates a new instance of JPenTool */
     public JPenTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName = "ƒyƒ“ƒc[ƒ‹";
+        presentationName = "ãƒšãƒ³ãƒ„ãƒ¼ãƒ«";
         creatingObject = tObject = null;
         creatingPath = tPath = null;
         creatingSeg = tSeg = null;

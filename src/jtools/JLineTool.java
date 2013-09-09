@@ -24,7 +24,7 @@ public class JLineTool extends JShapeTool{
     /** Creates a new instance of JLineTool */
     public JLineTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ƒ‰ƒCƒ“ƒc[ƒ‹";
+        presentationName="ãƒ©ã‚¤ãƒ³ãƒ„ãƒ¼ãƒ«";
     }
 
     protected Shape createShape(Point2D start, Point2D end, boolean isAltDown,boolean isShiftDown) {

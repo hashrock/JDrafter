@@ -30,9 +30,9 @@ public class SetLockEdit extends JAbstractEdit{
         this.target=target;
         this.locked=lock;
         if (lock){
-            presentationName="ƒIƒuƒWƒFƒN‚ðƒƒbƒN";
+            presentationName="ã‚ªãƒ–ã‚¸ã‚§ã‚¯ã‚’ãƒ­ãƒƒã‚¯";
         }else{
-            presentationName="ƒIƒuƒWƒFƒNƒg‚ÌƒƒbƒN‰ðœ";
+            presentationName="ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ­ãƒƒã‚¯è§£é™¤";
         }
         redo();
     }

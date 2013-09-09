@@ -33,7 +33,7 @@ public class JFontMenu extends AbstractTypeMenuItem{
     ButtonGroup buttonGroup;
     /** Creates a new instance of JFontMenu */
     public JFontMenu() {
-        setText("ƒtƒHƒ“ƒg(F)");
+        setText("ãƒ•ã‚©ãƒ³ãƒˆ(F)");
         setMnemonic(KeyEvent.VK_F);
         String[] fonts=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
         JMenu parent=this;

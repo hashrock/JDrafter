@@ -112,12 +112,12 @@ public class DropShadowPanel extends javax.swing.JDialog{
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("‚Ú‚©‚µ");
+        setTitle("ã¼ã‹ã—");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setResizable(false);
 
-        jLabel1.setText("‚Ú‚©‚µ:");
+        jLabel1.setText("ã¼ã‹ã—:");
 
         jLabel2.setText("point");
 
@@ -136,11 +136,11 @@ public class DropShadowPanel extends javax.swing.JDialog{
             }
         });
 
-        jLabel5.setText("ƒIƒtƒZƒbƒgX:");
+        jLabel5.setText("ã‚ªãƒ•ã‚»ãƒƒãƒˆX:");
 
-        jLabel6.setText("ƒIƒtƒZƒbƒgY:");
+        jLabel6.setText("ã‚ªãƒ•ã‚»ãƒƒãƒˆY:");
 
-        jLabel7.setText("ƒJƒ‰[:");
+        jLabel7.setText("ã‚«ãƒ©ãƒ¼:");
 
         javax.swing.GroupLayout colorLayout = new javax.swing.GroupLayout(color);
         color.setLayout(colorLayout);

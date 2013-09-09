@@ -17,67 +17,67 @@ import jobject.JObject;
 import jobject.JPage;
 
 /**
- *ƒIƒuƒWƒFƒNƒg‚Ì‘I‘ğó‘Ô‚ğ•Û‚·‚éClass‚Å‚·B
+ *ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é¸æŠçŠ¶æ…‹ã‚’ä¿æŒã™ã‚‹Classã§ã™ã€‚
  * 
  * @author i002060
  */
 public class JRequest {
     /**
-     * •`‰æƒIƒuƒWƒFƒNƒg‚Ì‚Ç‚±‚É‚àHit‚µ‚È‚¢ó‘Ô‚Å‚·B
+     * æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã©ã“ã«ã‚‚Hitã—ãªã„çŠ¶æ…‹ã§ã™ã€‚
      */
     public static final int HIT_NON=0;
     /**
-     * •`‰æƒIƒuƒWƒFƒNƒg‘S‘Ì‚ÉHit‚µ‚½ó‘Ô‚Å‚·B
+     * æç”»ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå…¨ä½“ã«Hitã—ãŸçŠ¶æ…‹ã§ã™ã€‚
      */
     public static final int HIT_OBJECT=1;
     /**
-     * ƒIƒuƒWƒFƒNƒg‚ÌƒpƒX‚ÉHit‚µ‚½ó‘Ô‚Å‚·B
+     * ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ‘ã‚¹ã«Hitã—ãŸçŠ¶æ…‹ã§ã™ã€‚
      */
     public static final int HIT_PATH=2;
     /**
-     * ƒAƒ“ƒJ[ƒ|ƒCƒ“ƒg‚ÉHit‚µ‚½ó‘Ô‚Å‚·.
+     * ã‚¢ãƒ³ã‚«ãƒ¼ãƒã‚¤ãƒ³ãƒˆã«Hitã—ãŸçŠ¶æ…‹ã§ã™.
      */
     public static final int HIT_ANCUR=3;
     /**
-     * ¶‘¤‚ÌƒRƒ“ƒgƒ[ƒ‹ƒnƒ“ƒhƒ‹‚ÉHit‚µ‚½ó‘Ô‚Å‚·B
+     * å·¦å´ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒãƒ³ãƒ‰ãƒ«ã«Hitã—ãŸçŠ¶æ…‹ã§ã™ã€‚
      */
     public static final int HIT_L_CONTROL=4;
     /**
-     * ‰E‘¤‚ÌƒRƒ“ƒgƒ[ƒ‹ƒnƒ“ƒhƒ‹‚Éhit‚µ‚½ó‘Ô‚Å‚·B
+     * å³å´ã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒãƒ³ãƒ‰ãƒ«ã«hitã—ãŸçŠ¶æ…‹ã§ã™ã€‚
      */
     public static final int HIT_R_CONTROL=5;
     /**
-     * ƒ_ƒCƒŒƒNƒg‘I‘ğƒ‚[ƒh‚ğ‚ ‚ç‚í‚µ‚Ü‚·.
+     * ãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆé¸æŠãƒ¢ãƒ¼ãƒ‰ã‚’ã‚ã‚‰ã‚ã—ã¾ã™.
      */
     public static final int DIRECT_MODE=1;
     /**
-     * ƒOƒ‹[ƒv‘I‘ğƒ‚[ƒh‚ğ‚ ‚ç‚í‚µ‚Ü‚·B
+     * ã‚°ãƒ«ãƒ¼ãƒ—é¸æŠãƒ¢ãƒ¼ãƒ‰ã‚’ã‚ã‚‰ã‚ã—ã¾ã™ã€‚
      */
     public static final int GROUP_MODE=2;
     /**
-     * ƒqƒbƒgŒŸØŒ‹‰Ê‚ğŠi”[‚µ‚Ü‚·.
+     * ãƒ’ãƒƒãƒˆæ¤œè¨¼çµæœã‚’æ ¼ç´ã—ã¾ã™.
      */
     public int hitResult;
     private int selectionMode;    
     public  Vector hitObjects;
     /**
-     * ƒqƒbƒgŒŸØ‚ÉAltƒL[‚Ì‰Ÿ‰ºó‘Ô‚ğ¦‚µ‚Ü‚·.
+     * ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã«Altã‚­ãƒ¼ã®æŠ¼ä¸‹çŠ¶æ…‹ã‚’ç¤ºã—ã¾ã™.
      */
     public boolean isAltDown;
     /**
-     * ƒqƒbƒgŒŸØ‚ÉCtrlƒL[‚Ì‰Ÿ‰ºó‘Ô‚ğ¦‚µ‚Ü‚·.
+     * ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã«Ctrlã‚­ãƒ¼ã®æŠ¼ä¸‹çŠ¶æ…‹ã‚’ç¤ºã—ã¾ã™.
      */
     public boolean isCtlDown;
     /**
-     * ƒqƒbƒgŒŸØ‚ÌShiftƒL[‚Ì‰Ÿ‰ºó‘Ô‚ğ¦‚µ‚Ü‚·.
+     * ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã®Shiftã‚­ãƒ¼ã®æŠ¼ä¸‹çŠ¶æ…‹ã‚’ç¤ºã—ã¾ã™.
      */
     public boolean isShiftDown;
     private JPage jpage;
     private  Vector selectedObjects;
     private Vector<ItemListener> listener;
     /**
-     * w’è‚·‚éJPgeƒIƒuƒWƒFƒNƒg‚Ì‘I‘ğó‘Ô‚ğ•\‚·JRequest‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ\’z‚µ‚Ü‚·.
-     * @param page w’è‚·‚éJPageƒIƒuƒWƒFƒNƒg
+     * æŒ‡å®šã™ã‚‹JPgeã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®é¸æŠçŠ¶æ…‹ã‚’è¡¨ã™JRequestã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’æ§‹ç¯‰ã—ã¾ã™.
+     * @param page æŒ‡å®šã™ã‚‹JPageã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
      */
     public JRequest(JPage page) {
         hitResult=HIT_NON;
@@ -91,8 +91,8 @@ public class JRequest {
         this.jpage=page;
     }
     /**
-     * ƒqƒbƒgŒŸØ‚Ì‘I‘ğƒ‚[ƒh‚ğİ’è‚µ‚Ü‚·B
-     * @param mode ƒqƒbƒgŒŸØ‚Ì‘I‘ğƒ‚[ƒh(DIRECT_MODE–”‚ÍGROUP_MODE)
+     * ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã®é¸æŠãƒ¢ãƒ¼ãƒ‰ã‚’è¨­å®šã—ã¾ã™ã€‚
+     * @param mode ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã®é¸æŠãƒ¢ãƒ¼ãƒ‰(DIRECT_MODEåˆã¯GROUP_MODE)
      */
     public void setSelectionMode(int mode){
         if (mode != DIRECT_MODE && mode != GROUP_MODE) return;
@@ -126,23 +126,23 @@ public class JRequest {
         selectionMode=mode;
     }
     /**
-     * Œ»İİ’è‚³‚ê‚Ä‚¢‚éƒqƒbƒgŒŸØ‚Ì‘I‘ğƒ‚[ƒh‚ğæ“¾‚µ‚Ü‚·.
-     * @return ƒqƒbƒgŒŸØ‚Ì‘I‘ğƒ‚[ƒh
+     * ç¾åœ¨è¨­å®šã•ã‚Œã¦ã„ã‚‹ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã®é¸æŠãƒ¢ãƒ¼ãƒ‰ã‚’å–å¾—ã—ã¾ã™.
+     * @return ãƒ’ãƒƒãƒˆæ¤œè¨¼æ™‚ã®é¸æŠãƒ¢ãƒ¼ãƒ‰
      */
     public int getSelectionMode(){
         return selectionMode;
     }
     /**
-     * w’è‚·‚éObject‚ª‘I‘ğó‘Ô‚É‚ ‚éê‡‚Étrue‚ğ•Ô‚µ‚Ü‚·.
-     * @param o w’è‚·‚éObject
-     * @return w’è‚·‚éObject‚ª‘I‘ğó‘Ô‚É‚ ‚éê‡‚Étrue‚»‚êˆÈŠO‚Ífalse
+     * æŒ‡å®šã™ã‚‹ObjectãŒé¸æŠçŠ¶æ…‹ã«ã‚ã‚‹å ´åˆã«trueã‚’è¿”ã—ã¾ã™.
+     * @param o æŒ‡å®šã™ã‚‹Object
+     * @return æŒ‡å®šã™ã‚‹ObjectãŒé¸æŠçŠ¶æ…‹ã«ã‚ã‚‹å ´åˆã«trueãã‚Œä»¥å¤–ã¯false
      */
     public boolean contains(Object o){
         return selectedObjects.contains(o);
     }
     /**
-     * w’è‚·‚éObject‚ğ‘I‘ğó‘Ô‚É‚µ‚Ü‚·.
-     * @param o w’è‚·‚éObject
+     * æŒ‡å®šã™ã‚‹Objectã‚’é¸æŠçŠ¶æ…‹ã«ã—ã¾ã™.
+     * @param o æŒ‡å®šã™ã‚‹Object
      */
     public void add(Object o){
         if (o instanceof JLeaf){
@@ -155,9 +155,9 @@ public class JRequest {
         
     }
     /**
-     * w’è‚·‚éJLeaf‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ª‘I‘ğ‰Â”\‚Å‚ ‚éê‡‚Étrue‚ğ•Ô‚µ‚Ü‚·.
-     * @param jl w’è‚·‚éJLeaf‚ÌƒCƒ“ƒXƒ^ƒ“ƒXB
-     * @return w’è‚·‚éJLeaf‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ª‘I‘ğ‰Â”\‚Èê‡true‚»‚êˆÈŠO‚Ífalse
+     * æŒ‡å®šã™ã‚‹JLeafã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒé¸æŠå¯èƒ½ã§ã‚ã‚‹å ´åˆã«trueã‚’è¿”ã—ã¾ã™.
+     * @param jl æŒ‡å®šã™ã‚‹JLeafã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã€‚
+     * @return æŒ‡å®šã™ã‚‹JLeafã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ãŒé¸æŠå¯èƒ½ãªå ´åˆtrueãã‚Œä»¥å¤–ã¯false
      */
     private boolean isSelectable(JLeaf jl){
         if (!jl.isVisible() || jl.isLocked()) return false;
@@ -166,69 +166,69 @@ public class JRequest {
         return isSelectable(parent);
     }
     /**
-     * w’è‚·‚éObject‚Ì‘I‘ğó‘Ô‚ğ‰ğœ‚µ‚Ü‚·.
-     * @param o ‘I‘ğ‚ğ‰ğœ‚·‚éObject
+     * æŒ‡å®šã™ã‚‹Objectã®é¸æŠçŠ¶æ…‹ã‚’è§£é™¤ã—ã¾ã™.
+     * @param o é¸æŠã‚’è§£é™¤ã™ã‚‹Object
      */
     public void remove(Object o){
         selectedObjects.remove(o);
         fireChangeEvent(o,ItemEvent.DESELECTED);
     }
     /**
-     * w’è‚·‚éƒCƒ“ƒfƒbƒNƒX‚ÌObject‚Ì‘I‘ğó‘Ô‚ğ‰ğœ‚¢‚Ü‚·.
-     * @param i ‘I‘ğó‘Ô‚ğ‰ğœ‚·‚éObject‚ÌƒCƒ“ƒfƒbƒNƒX.
-     * @return ‘I‘ğó‘Ô‚ğ‰ğœ‚·‚éObject
+     * æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®Objectã®é¸æŠçŠ¶æ…‹ã‚’è§£é™¤ã„ã¾ã™.
+     * @param i é¸æŠçŠ¶æ…‹ã‚’è§£é™¤ã™ã‚‹Objectã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹.
+     * @return é¸æŠçŠ¶æ…‹ã‚’è§£é™¤ã™ã‚‹Object
      */
     public Object remove(int i){
         return selectedObjects.remove(i);
     }
     /**
-     * ‘S‚Ä‚Ì‘I‘ğObject‚Ì‘I‘ğó‘Ô‚ğ‰ğœ‚µ‚Ü‚·.
+     * å…¨ã¦ã®é¸æŠObjectã®é¸æŠçŠ¶æ…‹ã‚’è§£é™¤ã—ã¾ã™.
      */
     public void clear(){
         selectedObjects.clear();
         fireChangeEvent(null,ItemEvent.DESELECTED);
     }
     /**
-     * ‘I‘ğ‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚Ì”‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‘I‘ğ‚³‚ê‚½ƒIƒuƒWƒFƒNƒg”
+     * é¸æŠã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ•°ã‚’è¿”ã—ã¾ã™.
+     * @return é¸æŠã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæ•°
      */
     public int size(){
         return selectedObjects.size();
     }
     /**
-     * ‰½‚à‘I‘ğ‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Étrue‚ğ•Ô‚µ‚Ü‚·B
-     * @return@‰½‚à‘I‘ğ‚³‚ê‚Ä‚¢‚È‚¢ê‡trueA‚»‚êˆÈŠO‚Ífalse
+     * ä½•ã‚‚é¸æŠã•ã‚Œã¦ã„ãªã„å ´åˆã«trueã‚’è¿”ã—ã¾ã™ã€‚
+     * @returnã€€ä½•ã‚‚é¸æŠã•ã‚Œã¦ã„ãªã„å ´åˆtrueã€ãã‚Œä»¥å¤–ã¯false
      */
     public boolean isEmpty(){
         return selectedObjects.isEmpty();
     }
     /**
-     * w’è‚·‚éƒCƒ“ƒfƒbƒNƒX‚Ì‘I‘ğƒIƒuƒWƒFƒNƒg‚ğ•Ô‚µ‚Ü‚·.
-     * @param i w’è‚·‚éƒCƒ“ƒfƒbƒNƒX.
-     * @return w’è‚µ‚½ƒCƒ“ƒfƒNƒX‚Ì‘I‘ğƒIƒuƒWƒFƒNƒg
+     * æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã®é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã—ã¾ã™.
+     * @param i æŒ‡å®šã™ã‚‹ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹.
+     * @return æŒ‡å®šã—ãŸã‚¤ãƒ³ãƒ‡ã‚¯ã‚¹ã®é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
      */
     public Object get(int i){
         return selectedObjects.get(i);
     }
     /**
-     * ‘I‘ğƒIƒuƒWƒFƒNƒg‚ğ—v‘f‚Æ‚·‚éVector‚ğ•Ô‚µ‚Ü‚·.
-     * @return ‘I‘ğƒIƒuƒWƒFƒNƒg‚ğ—v‘f‚Æ‚·‚éVector
+     * é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¦ç´ ã¨ã™ã‚‹Vectorã‚’è¿”ã—ã¾ã™.
+     * @return é¸æŠã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¦ç´ ã¨ã™ã‚‹Vector
      */
     public Vector getSelectedVector(){
         return selectedObjects;
     }
     /**
-     * w’è‚·‚éVector‚Ì—v‘f‚ÌƒIƒuƒWƒFƒNƒg‚ğ‘I‘ğó‘Ô‚É‚µ‚Ü‚·.
-     * @param v ‘I‘ğó‘Ô‚Æ‚·‚éƒIƒuƒWƒFƒNƒg‚ğ—v‘f‚Æ‚·‚éVector
+     * æŒ‡å®šã™ã‚‹Vectorã®è¦ç´ ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’é¸æŠçŠ¶æ…‹ã«ã—ã¾ã™.
+     * @param v é¸æŠçŠ¶æ…‹ã¨ã™ã‚‹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¦ç´ ã¨ã™ã‚‹Vector
      */
     public void setSelectedVector(Vector v){
         selectedObjects=v;
         fireChangeEvent(v,ItemEvent.SELECTED);
     }
     /**
-     * ‘I‘ğó‘Ô‚ª•ÏX‚³‚ê‚½‚±‚Æ‚ğAJRequest‚ğŠ—L‚·‚éJPaeƒIƒuƒWƒFƒNƒg‚É‘—M‚µ‚Ü‚·.
-     * @param o ‘I‘ğó‘Ô‚ª•ÏX‚³‚ê‚½‘ÎÛƒIƒuƒWƒFƒNƒg
-     * @param stateChange ‘I‘ğó‘Ô.
+     * é¸æŠçŠ¶æ…‹ãŒå¤‰æ›´ã•ã‚ŒãŸã“ã¨ã‚’ã€JRequestã‚’æ‰€æœ‰ã™ã‚‹JPaeã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«é€ä¿¡ã—ã¾ã™.
+     * @param o é¸æŠçŠ¶æ…‹ãŒå¤‰æ›´ã•ã‚ŒãŸå¯¾è±¡ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+     * @param stateChange é¸æŠçŠ¶æ…‹.
      */
     public void fireChangeEvent(Object o,int stateChange){
         jpage.fireChangeEvent(o,stateChange);

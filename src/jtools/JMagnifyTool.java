@@ -37,7 +37,7 @@ public class JMagnifyTool extends JAbstractTool{
     /** Creates a new instance of JMagnifyTool */
     public JMagnifyTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ズームツール";
+        presentationName="繧ｺ繝ｼ繝繝�繝ｼ繝ｫ";
     }
     @Override
     public void wakeup() {

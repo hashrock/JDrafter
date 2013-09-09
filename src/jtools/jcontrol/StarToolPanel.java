@@ -46,7 +46,7 @@ public class StarToolPanel extends javax.swing.JPanel{
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         //
         ratio.setMaxValue(100d);
         ratio.setMinValue(0);
@@ -89,7 +89,7 @@ public class StarToolPanel extends javax.swing.JPanel{
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,11 +97,11 @@ public class StarToolPanel extends javax.swing.JPanel{
             }
         });
 
-        jLabel1.setText("”¼Œa:");
+        jLabel1.setText("åŠå¾„:");
 
-        jLabel2.setText("’¸“_”:");
+        jLabel2.setText("é ‚ç‚¹æ•°:");
 
-        jLabel3.setText("”ä—¦:");
+        jLabel3.setText("æ¯”ç‡:");
 
         jLabel4.setText("%");
 

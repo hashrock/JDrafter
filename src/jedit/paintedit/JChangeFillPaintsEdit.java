@@ -37,7 +37,7 @@ public class JChangeFillPaintsEdit extends JAbstractEdit{
         super(viewer);
         this.targets=(Vector<JLeaf>)targets.clone();
         this.newPaint=newPaint;
-        presentationName="“h‚è";
+        presentationName="å¡—ã‚Š";
         redo();
     }
     public void redo(){

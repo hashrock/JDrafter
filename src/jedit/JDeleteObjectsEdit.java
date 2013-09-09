@@ -28,7 +28,7 @@ public class JDeleteObjectsEdit extends JAbstractEdit{
         super(view);
         savedObject=objs;        
         indexes=new int[objs.size()];
-        presentationName="オブジェクトの削除";
+        presentationName="繧ｪ繝悶ず繧ｧ繧ｯ繝医�ｮ蜑企勁";
         redo();
     }
     @Override

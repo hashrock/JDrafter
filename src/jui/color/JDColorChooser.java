@@ -20,7 +20,7 @@ import javax.swing.event.ChangeListener;
 import jpaint.JDHSV3Paint;
 import jscreen.JEnvironment;
 /**
- *FŒ©–{‚Ì•\¦‹y‚Ñ‘I‘ğ‚ğs‚¤ƒNƒ‰ƒX‚Å‚·.
+ *è‰²è¦‹æœ¬ã®è¡¨ç¤ºåŠã³é¸æŠã‚’è¡Œã†ã‚¯ãƒ©ã‚¹ã§ã™.
  * @author TK
  */
 public class JDColorChooser extends JComponent{

@@ -12,12 +12,12 @@ import javax.swing.AbstractAction;
 import jscreen.JDocumentViewer;
 
 /**
- *JDrafter ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ìƒvƒ‰ƒOƒCƒ“‚ÌŠî’êƒNƒ‰ƒX‚Å‚·B<BR>
- * ƒvƒ‰ƒOƒCƒ“‚ÍA‘S‚Ä‚±‚Ì’ŠÛƒNƒ‰ƒX‚ðŒp³‚µ‚È‚¯‚ê‚Î‚È‚è‚Ü‚¹‚ñB
- * ƒRƒ“ƒpƒCƒ‹‚µ‚½ƒNƒ‰ƒX‚ÍƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Æ“¯‚¶ƒpƒX‚ÌpluginsƒtƒHƒ‹ƒ_‚É
- * ”z’u‚µ‚Ü‚·B‚Ü‚½ApluginsƒtƒHƒ‹ƒ_‚ÉƒTƒuƒtƒHƒ‹ƒ_‚ð”z’u‚·‚é‚ÆƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Í
- * ƒTƒuƒtƒHƒ‹ƒ_–¼‚Æ“¯–¼‚ÌƒTƒuƒƒjƒ…[‚ð\’z‚µ‚Ü‚·BƒTƒuƒƒjƒ…[‚Éƒj[ƒ‚ƒjƒbƒN‚ðŽw’è
- * ‚µ‚½‚¢ê‡‚ÍƒTƒuƒtƒHƒ‹ƒ_–¼––”ö‚É"("+ƒj[ƒ‚ƒjƒbƒN+")"‚ðƒtƒHƒ‹ƒ_–¼‚Æ‚µ‚ÄŽw’è‚µ‚Ü‚·B
+ *JDrafter ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®åŸºåº•ã‚¯ãƒ©ã‚¹ã§ã™ã€‚<BR>
+ * ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã¯ã€å…¨ã¦ã“ã®æŠ½è±¡ã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã—ãªã‘ã‚Œã°ãªã‚Šã¾ã›ã‚“ã€‚
+ * ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã—ãŸã‚¯ãƒ©ã‚¹ã¯ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¨åŒã˜ãƒ‘ã‚¹ã®pluginsãƒ•ã‚©ãƒ«ãƒ€ã«
+ * é…ç½®ã—ã¾ã™ã€‚ã¾ãŸã€pluginsãƒ•ã‚©ãƒ«ãƒ€ã«ã‚µãƒ–ãƒ•ã‚©ãƒ«ãƒ€ã‚’é…ç½®ã™ã‚‹ã¨ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¯
+ * ã‚µãƒ–ãƒ•ã‚©ãƒ«ãƒ€åã¨åŒåã®ã‚µãƒ–ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚ã‚µãƒ–ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ãƒ‹ãƒ¼ãƒ¢ãƒ‹ãƒƒã‚¯ã‚’æŒ‡å®š
+ * ã—ãŸã„å ´åˆã¯ã‚µãƒ–ãƒ•ã‚©ãƒ«ãƒ€åæœ«å°¾ã«"("+ãƒ‹ãƒ¼ãƒ¢ãƒ‹ãƒƒã‚¯+")"ã‚’ãƒ•ã‚©ãƒ«ãƒ€åã¨ã—ã¦æŒ‡å®šã—ã¾ã™ã€‚
  * 
  * @author Ikita 
  */
@@ -27,15 +27,15 @@ public abstract class AbstractPlugin extends AbstractAction {
     private InnerListener innerListener = null;
 
     /**
-     * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^[‚Å‚·B
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ¼ã§ã™ã€‚
      */
     public AbstractPlugin() {
         innerListener = new InnerListener();
     }
 
     /**
-     * ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚É‚æ‚èViewer‚ª•ÏX‚³‚ê‚½‚Æ‚«‚ÉŒÄ‚Î‚ê‚Ü‚·.
-     * @param v ƒAƒNƒeƒBƒu‚ÈJDocumentViewer ƒAƒNƒeƒBƒu‚Èviewer‚ª‚È‚¢ê‡‚Ínull;
+     * ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã«ã‚ˆã‚ŠViewerãŒå¤‰æ›´ã•ã‚ŒãŸã¨ãã«å‘¼ã°ã‚Œã¾ã™.
+     * @param v ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªJDocumentViewer ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªviewerãŒãªã„å ´åˆã¯null;
      */
     public final void setViewer(JDocumentViewer v) {
         if (viewer != v) {
@@ -53,17 +53,17 @@ public abstract class AbstractPlugin extends AbstractAction {
     }
 
     /**
-     * ƒAƒNƒeƒBƒu‚ÈJDocumentViewer‚ðŽæ“¾‚µ‚Ü‚·.
-     * @return ƒAƒNƒeƒBƒu‚ÈViewer.ƒAƒNƒeƒBƒu‚Èƒrƒ…ƒA[‚ª‚È‚¢ê‡‚Ínull
+     * ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªJDocumentViewerã‚’å–å¾—ã—ã¾ã™.
+     * @return ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªViewer.ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªãƒ“ãƒ¥ã‚¢ãƒ¼ãŒãªã„å ´åˆã¯null
      */
     public final JDocumentViewer getViewer() {
         return viewer;
     }
 
     /**
-     * ƒhƒLƒ…ƒƒ“ƒg‚É‰½‚ç‚©‚Ì•ÏX‚ª‰Á‚¦‚ç‚ê‚½ê‡AƒJƒŒƒ“ƒgƒhƒLƒ…ƒƒ“ƒg‚ª•ÏX‚³‚ê‚½ê‡
-     * ‚à‚µ‚­‚Í‘I‘ð‚ª•ÏX‚³‚ê‚½ê‡‚Ìˆ—‚ð‹Lq‚µ‚Ü‚·.
-     * @param viewer ƒAƒNƒeƒBƒu‚ÈDocumentViewerBƒAƒNƒeƒBƒu‚ÈDocumentViewer‚ª‚È‚¢ê‡‚Ínull
+     * ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã«ä½•ã‚‰ã‹ã®å¤‰æ›´ãŒåŠ ãˆã‚‰ã‚ŒãŸå ´åˆã€ã‚«ãƒ¬ãƒ³ãƒˆãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆãŒå¤‰æ›´ã•ã‚ŒãŸå ´åˆ
+     * ã‚‚ã—ãã¯é¸æŠžãŒå¤‰æ›´ã•ã‚ŒãŸå ´åˆã®å‡¦ç†ã‚’è¨˜è¿°ã—ã¾ã™.
+     * @param viewer ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªDocumentViewerã€‚ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªDocumentViewerãŒãªã„å ´åˆã¯null
      */
     public abstract void changeStates();
 

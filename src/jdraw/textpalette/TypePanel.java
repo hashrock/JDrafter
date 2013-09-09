@@ -44,19 +44,19 @@ public class TypePanel extends JPanel implements ActionListener,ItemListener,Com
     public TypePanel() {
         initComponents();
         alignLeft.setAlignment(StyleConstants.ALIGN_LEFT);
-        alignLeft.setToolTipText("¶Šñ‚¹");
+        alignLeft.setToolTipText("å·¦å¯„ã›");
         alignCenter.setAlignment(StyleConstants.ALIGN_CENTER);
-        alignCenter.setToolTipText("ƒZƒ“ƒ^ƒŠƒ“ƒO");
+        alignCenter.setToolTipText("ã‚»ãƒ³ã‚¿ãƒªãƒ³ã‚°");
         alignRight.setAlignment(StyleConstants.ALIGN_RIGHT);
-        alignRight.setToolTipText("‰EŠñ‚¹");
+        alignRight.setToolTipText("å³å¯„ã›");
         bold.setMode(StyleButton.BOLD);
-        bold.setToolTipText("ƒ{[ƒ‹ƒh");
+        bold.setToolTipText("ãƒœãƒ¼ãƒ«ãƒ‰");
         italic.setMode(StyleButton.ITALIC);
-        italic.setToolTipText("Î‘Ì");
+        italic.setToolTipText("æ–œä½“");
         underline.setMode(StyleButton.UNDERLINE);
-        underline.setToolTipText("‰ºü");
+        underline.setToolTipText("ä¸‹ç·š");
         strikethrough.setMode(StyleButton.STRIKETHROUGH);
-        strikethrough.setToolTipText("šÁ‚µ");
+        strikethrough.setToolTipText("å­—æ¶ˆã—");
         fontFamily.addActionListener(this);
         sizeCombo.addActionListener(this);
         alignLeft.addActionListener(this);

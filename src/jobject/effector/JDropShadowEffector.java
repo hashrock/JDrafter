@@ -27,7 +27,7 @@ import jscreen.JEnvironment;
 import jpaint.JStroke;
 
 /**
- *ƒIƒuƒWƒFƒNƒg‚É‰e‚ğ‚Â‚¯‚éƒGƒtƒFƒNƒg‚Ìˆ—‚ğˆ—‚µ‚Ü‚·B
+ *ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å½±ã‚’ã¤ã‘ã‚‹ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã®å‡¦ç†ã‚’å‡¦ç†ã—ã¾ã™ã€‚
  * @author takashi
  */
 public class JDropShadowEffector implements JEffector {
@@ -43,11 +43,11 @@ public class JDropShadowEffector implements JEffector {
     private static final long serialVersionUID = 110l;
 
     /**
-     * w’è‚·‚éƒpƒ‰ƒ[ƒ^‚ÅJDropShadowEffecter‚ğ\’z‚µ‚Ü‚·.
-     * @param radius ‰e‚ğ‚Ú‚©‚·”¼Œa.
-     * @param ofsX ‰e‚ÌƒIƒtƒZƒbƒgˆÊ’u‚ÌXÀ•W
-     * @param ofsY ‰e‚ÌƒIƒtƒZƒbƒgˆÊ’u‚ÌYÀ•W
-     * @param color ‰e‚ÌF
+     * æŒ‡å®šã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã§JDropShadowEffecterã‚’æ§‹ç¯‰ã—ã¾ã™.
+     * @param radius å½±ã‚’ã¼ã‹ã™åŠå¾„.
+     * @param ofsX å½±ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆä½ç½®ã®Xåº§æ¨™
+     * @param ofsY å½±ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆä½ç½®ã®Yåº§æ¨™
+     * @param color å½±ã®è‰²
      */
     public JDropShadowEffector(float radius, double ofsX, double ofsY, Color color) {
         this.radius = radius;
@@ -57,12 +57,12 @@ public class JDropShadowEffector implements JEffector {
     }
 
     /**
-     * ƒGƒtƒFƒNƒg‚ğ•`‰æ‚µA•`‰æŒ‹‰Ê‚ğƒCƒ[ƒW‚É•Û‚µ‚Ü‚·.
-     * @param g •`‰æ‘ÎÛ‚Æ‚È‚éƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
-     * @param s •`‰æ‚·‚éShape
-     * @param fillPaint “h‚è‚Â‚Ô‚µ‚ÌPaint
-     * @param border ‹«ŠE‚ÌPaint
-     * @param stroke ‹«ŠE‚Ìüí
+     * ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’æç”»ã—ã€æç”»çµæœã‚’ã‚¤ãƒ¡ãƒ¼ã‚¸ã«ä¿æŒã—ã¾ã™.
+     * @param g æç”»å¯¾è±¡ã¨ãªã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
+     * @param s æç”»ã™ã‚‹Shape
+     * @param fillPaint å¡—ã‚Šã¤ã¶ã—ã®Paint
+     * @param border å¢ƒç•Œã®Paint
+     * @param stroke å¢ƒç•Œã®ç·šç¨®
      */
     private void paintEffect(Graphics2D g, Shape s, JPaint fillPaint, JPaint border, JStroke stroke) {
         if (fillPaint != null || border != null) {
@@ -103,12 +103,12 @@ public class JDropShadowEffector implements JEffector {
     }
 
     /**
-     * ƒGƒtƒFƒNƒg‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param g •`‰æ‘ÎÛ‚Æ‚È‚éƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
-     * @param s •`‰æ‚·‚éShape
-     * @param fillPaint “h‚è‚Â‚Ô‚µ‚ÌPaint
-     * @param border ‹«ŠE‚ÌPaint
-     * @param stroke ‹«ŠE‚Ìüí
+     * ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’æç”»ã—ã¾ã™.
+     * @param g æç”»å¯¾è±¡ã¨ãªã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
+     * @param s æç”»ã™ã‚‹Shape
+     * @param fillPaint å¡—ã‚Šã¤ã¶ã—ã®Paint
+     * @param border å¢ƒç•Œã®Paint
+     * @param stroke å¢ƒç•Œã®ç·šç¨®
      */
     @Override
     public void paint(Graphics2D g, Shape s, JPaint fillPaint, JPaint border, JStroke stroke) {
@@ -157,9 +157,9 @@ public class JDropShadowEffector implements JEffector {
         return 0;
     }
     /**
-     * w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ‚ğŠg’£‚µA‚±‚ÌJEffector‚Ì•`‰æ—Ìˆæ‚Ü‚ÅŠg’£‚µ‚Ü‚·B
-     * @param r w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ
-     * @return ‚±‚ÌJEffector‚É‚æ‚èŠg’£‚³‚ê‚½•`‰æ—Ìˆæ
+     * æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸã‚’æ‹¡å¼µã—ã€ã“ã®JEffectorã®æç”»é ˜åŸŸã¾ã§æ‹¡å¼µã—ã¾ã™ã€‚
+     * @param r æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸ
+     * @return ã“ã®JEffectorã«ã‚ˆã‚Šæ‹¡å¼µã•ã‚ŒãŸæç”»é ˜åŸŸ
      */
     @Override
     public void paintText(Graphics2D g, TextLocater locater, AffineTransform tx, JPaint fillPaint, JPaint border, JStroke stroke) {
@@ -209,7 +209,7 @@ public class JDropShadowEffector implements JEffector {
     }
 
     /**
-     * ‚±‚ÌJEffector‚Ì•¡»‚ğì¬‚µ‚Ü‚·.
+     * ã“ã®JEffectorã®è¤‡è£½ã‚’ä½œæˆã—ã¾ã™.
      * @return
      */
     @Override

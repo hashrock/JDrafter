@@ -38,7 +38,7 @@ import jui.layer.JPageTreeModel;
 
 /**
  *
- *JDocumentã‚Ìƒy[ƒWB
+ *JDocumentä¸Šã®ãƒšãƒ¼ã‚¸ã€‚
  * @author i002060
  */
 public class JPage extends JObject<JDocument, JLayer> implements Printable {

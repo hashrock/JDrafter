@@ -41,7 +41,7 @@ public class JCutCornerTool extends JAbstractTool{
      */
     public JCutCornerTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ŠpØ‚è—‚µƒc[ƒ‹";
+        presentationName="è§’åˆ‡ã‚Šè½ã—ãƒ„ãƒ¼ãƒ«";
         wakeup();
     }
     @Override

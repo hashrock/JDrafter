@@ -24,7 +24,7 @@ public class JCAGMultEdit extends JCAGAddEdit{
     /** Creates a new instance of JCAGMultEdit */
     public JCAGMultEdit(JDocumentViewer viewer,Vector<JPathObject> targets) {
         super(viewer,targets);
-        presentationName="êœ";
+        presentationName="Á©ç";
     }
     protected JPathObject createObject(Vector<JPathObject>objs){
         JPathObject ret=objs.get(0).clone();

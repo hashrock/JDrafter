@@ -38,7 +38,7 @@ public class JTransformPathEdit extends JAbstractEdit{
         this.paths =(Vector<JSimplePath>)paths.clone();
         this.target=target;
         this.af=(AffineTransform)af.clone();
-            presentationName="ƒpƒX‚ÌˆÚ“®";
+            presentationName="ãƒ‘ã‚¹ã®ç§»å‹•";
         redo();
     }
     public void redo() throws CannotRedoException{

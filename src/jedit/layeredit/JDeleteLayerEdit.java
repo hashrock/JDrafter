@@ -33,7 +33,7 @@ public class JDeleteLayerEdit extends JAbstractEdit{
         this.target=target;
         this.parent=target.getParent();
         idx=parent.indexOf(target);
-        presentationName="ƒŒƒCƒ„[íœ";
+        presentationName="ãƒ¬ã‚¤ãƒ¤ãƒ¼å‰Šé™¤";
         redo();
     }
     public void redo(){

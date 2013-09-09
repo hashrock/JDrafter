@@ -30,7 +30,7 @@ public class JRotateTool extends JScaleTool{
     /** Creates a new instance of JRotateTool */
     public JRotateTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="‰ñ“]ƒc[ƒ‹";
+        presentationName="å›è»¢ãƒ„ãƒ¼ãƒ«";
     }
     protected AffineTransform createTransform(Point2D center,Point2D start ,Point2D end,boolean isShiftDown){
         JEnvironment env=getEnvironment();

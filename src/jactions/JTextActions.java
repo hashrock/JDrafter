@@ -188,7 +188,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class UndoAction extends AbstractAction{
         public UndoAction(){
-            putValue(Action.NAME,"å≥Ç…ñﬂÇ∑(U)");
+            putValue(Action.NAME,"ÂÖÉ„Å´Êàª„Åô(U)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_U);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_Z,ActionEvent.CTRL_MASK));
         }
@@ -202,7 +202,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class RedoAction extends AbstractAction{
         public RedoAction(){
-            putValue(Action.NAME,"çƒé¿çs(R)");
+            putValue(Action.NAME,"ÂÜçÂÆüË°å(R)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_R);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_Y,ActionEvent.CTRL_MASK));
         }
@@ -216,7 +216,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class CutAction extends AbstractAction{
         protected CutAction(){
-            putValue(NAME,"ÉJÉbÉg(T)");
+            putValue(NAME,"„Ç´„ÉÉ„Éà(T)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_T);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_X,ActionEvent.CTRL_MASK));
         }
@@ -228,7 +228,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class CopyAction extends AbstractAction{
         protected CopyAction(){
-            putValue(NAME,"ÉRÉsÅ[(C)");
+            putValue(NAME,"„Ç≥„Éî„Éº(C)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_C);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_C,ActionEvent.CTRL_MASK));
         }
@@ -241,7 +241,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class PasteAction extends AbstractAction{
         public PasteAction(){
-            putValue(NAME,"ÉyÅ[ÉXÉg(P)");
+            putValue(NAME,"„Éö„Éº„Çπ„Éà(P)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_P);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_V,ActionEvent.CTRL_MASK));
         }
@@ -253,7 +253,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class DeleteAction extends AbstractAction{
         public DeleteAction(){
-            putValue(NAME,"çÌèú(D)");
+            putValue(NAME,"ÂâäÈô§(D)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_D);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_DELETE,0));
         }
@@ -265,7 +265,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class SelectAllAction extends AbstractAction{
         public SelectAllAction(){
-            putValue(NAME,"ëSÇƒÇëIëÅiA)");
+            putValue(NAME,"ÂÖ®„Å¶„ÇíÈÅ∏ÊäûÔºàA)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_A);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_A,ActionEvent.CTRL_MASK));
         }
@@ -277,7 +277,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class BoldAction extends AbstractAction{
         public BoldAction(){
-            putValue(Action.SHORT_DESCRIPTION,"É{Å[ÉãÉh");
+            putValue(Action.SHORT_DESCRIPTION,"„Éú„Éº„É´„Éâ");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.BOLD);
         }
         @Override
@@ -290,7 +290,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class ItalicAction extends AbstractAction{
         public ItalicAction(){
-            putValue(Action.SHORT_DESCRIPTION,"ÉCÉ^ÉäÉbÉN");
+            putValue(Action.SHORT_DESCRIPTION,"„Ç§„Çø„É™„ÉÉ„ÇØ");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.ITALIC);
         }
         @Override
@@ -303,7 +303,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class UnderlineAction extends AbstractAction{
         public UnderlineAction(){
-            putValue(Action.SHORT_DESCRIPTION,"ÉAÉìÉ_Å[ÉâÉCÉì");
+            putValue(Action.SHORT_DESCRIPTION,"„Ç¢„É≥„ÉÄ„Éº„É©„Ç§„É≥");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.UNDERLINE);
         }
         @Override
@@ -316,7 +316,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class StrikeThroughAction extends AbstractAction{
         public StrikeThroughAction(){
-            putValue(Action.SHORT_DESCRIPTION,"éöè¡ê¸");
+            putValue(Action.SHORT_DESCRIPTION,"Â≠óÊ∂àÁ∑ö");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.STRIKETHROUGH);
         }
         @Override
@@ -331,7 +331,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class AlignLeftAction extends AbstractAction{
         public AlignLeftAction(){
-            putValue(Action.SHORT_DESCRIPTION,"ç∂äÒÇπ");
+            putValue(Action.SHORT_DESCRIPTION,"Â∑¶ÂØÑ„Åõ");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.ALIGNLEFT);
         }
         @Override
@@ -343,7 +343,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class AlignCenterAction extends AbstractAction{
         public AlignCenterAction(){
-            putValue(Action.SHORT_DESCRIPTION,"ÉZÉìÉ^ÉäÉìÉO");
+            putValue(Action.SHORT_DESCRIPTION,"„Çª„É≥„Çø„É™„É≥„Ç∞");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.ALIGNCENTER);
         }
         @Override
@@ -354,7 +354,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class AlignRightAction extends AbstractAction{
         public AlignRightAction(){
-            putValue(Action.SHORT_DESCRIPTION,"âEäÒÇπ");
+            putValue(Action.SHORT_DESCRIPTION,"Âè≥ÂØÑ„Åõ");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.ALIGNRIGHT);
         }
         @Override
@@ -365,7 +365,7 @@ public class JTextActions implements CaretListener,UndoableEditListener{
     }
     protected class AlignJustifyAction extends AbstractAction{
         public AlignJustifyAction(){
-            putValue(Action.SHORT_DESCRIPTION,"ãœìôäÑÇËïtÇØ");
+            putValue(Action.SHORT_DESCRIPTION,"ÂùáÁ≠âÂâ≤„Çä‰ªò„Åë");
             putValue(Action.LARGE_ICON_KEY,JTextIcons.KINTO);
         }
         @Override

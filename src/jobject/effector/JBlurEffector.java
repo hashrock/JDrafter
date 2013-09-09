@@ -33,7 +33,7 @@ import jscreen.JEnvironment;
 import jpaint.JStroke;
 
 /**
- *ƒIƒuƒWƒFƒNƒg‚Ì‹«ŠE‚ğ‚Ú‚©‚·Effector‚Å‚·B
+ *ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å¢ƒç•Œã‚’ã¼ã‹ã™Effectorã§ã™ã€‚
  * @author takashi
  */
 public class JBlurEffector implements JEffector, Serializable {
@@ -47,21 +47,21 @@ public class JBlurEffector implements JEffector, Serializable {
 
     /** Creates a new instance of JBlurEffector */
     /**
-     * ƒfƒtƒHƒ‹ƒg‚Ì‘®«‚ÅAJBlurEffector‚ğ\’z‚µ‚Ü‚·.
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å±æ€§ã§ã€JBlurEffectorã‚’æ§‹ç¯‰ã—ã¾ã™.
      */
     public JBlurEffector() {
     }
 
     /**
-     * w’è‚·‚é‚Ú‚©‚µ”¼Œa‚Ì‘®«‚ğ‚ÂJBlurEffector‚ğ\’z‚µ‚Ü‚·.
-     * @param radius ‚Ú‚©‚µ‚Ì”¼Œa
+     * æŒ‡å®šã™ã‚‹ã¼ã‹ã—åŠå¾„ã®å±æ€§ã‚’æŒã¤JBlurEffectorã‚’æ§‹ç¯‰ã—ã¾ã™.
+     * @param radius ã¼ã‹ã—ã®åŠå¾„
      */
     public JBlurEffector(float radius) {
         this.radius = radius;
     }
 
     /**
-     * ‚Ú‚©‚µ‚Ì”¼Œa‚ğæ“¾‚µ‚Ü‚·.
+     * ã¼ã‹ã—ã®åŠå¾„ã‚’å–å¾—ã—ã¾ã™.
      * @return
      */
     public float getRadius() {
@@ -87,12 +87,12 @@ public class JBlurEffector implements JEffector, Serializable {
     }
 
     /**
-     * ƒGƒtƒFƒNƒg‚ğ•`‰æ‚µ‚Ü‚·.
-     * @param g •`‰æ‘ÎÛ‚Æ‚È‚éƒOƒ‰ƒtƒBƒbƒNƒXƒRƒ“ƒeƒLƒXƒg
-     * @param s •`‰æ‚·‚éShape
-     * @param fillPaint “h‚è‚Â‚Ô‚µ‚ÌPaint
-     * @param border ‹«ŠE‚ÌPaint
-     * @param stroke ‹«ŠE‚Ìüí
+     * ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’æç”»ã—ã¾ã™.
+     * @param g æç”»å¯¾è±¡ã¨ãªã‚‹ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã‚³ãƒ³ãƒ†ã‚­ã‚¹ãƒˆ
+     * @param s æç”»ã™ã‚‹Shape
+     * @param fillPaint å¡—ã‚Šã¤ã¶ã—ã®Paint
+     * @param border å¢ƒç•Œã®Paint
+     * @param stroke å¢ƒç•Œã®ç·šç¨®
      */
     @Override
     public void paint(Graphics2D g, Shape s, JPaint fillPaint, JPaint border, JStroke stroke) {
@@ -241,9 +241,9 @@ public class JBlurEffector implements JEffector, Serializable {
     }
 
     /**
-     * w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ‚ğŠg’£‚µA‚±‚ÌJEffector‚Ì•`‰æ—Ìˆæ‚Ü‚ÅŠg’£‚µ‚Ü‚·B
-     * @param r w’è‚·‚éƒfƒtƒHƒ‹ƒg‚Ì•`‰æ—Ìˆæ
-     * @return ‚±‚ÌJEffector‚É‚æ‚èŠg’£‚³‚ê‚½•`‰æ—Ìˆæ
+     * æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸã‚’æ‹¡å¼µã—ã€ã“ã®JEffectorã®æç”»é ˜åŸŸã¾ã§æ‹¡å¼µã—ã¾ã™ã€‚
+     * @param r æŒ‡å®šã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®æç”»é ˜åŸŸ
+     * @return ã“ã®JEffectorã«ã‚ˆã‚Šæ‹¡å¼µã•ã‚ŒãŸæç”»é ˜åŸŸ
      */
     @Override
     public Rectangle2D culcBounds(Rectangle2D r,JLeaf jl) {
@@ -252,7 +252,7 @@ public class JBlurEffector implements JEffector, Serializable {
     }
 
     /**
-     * ‚±‚ÌJEffector‚Ì•¡»‚ğì¬‚µ‚Ü‚·.
+     * ã“ã®JEffectorã®è¤‡è£½ã‚’ä½œæˆã—ã¾ã™.
      * @return
      */
     @Override

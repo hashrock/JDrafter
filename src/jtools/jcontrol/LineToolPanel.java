@@ -53,7 +53,7 @@ public class LineToolPanel extends javax.swing.JPanel  implements ChangeListener
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle(dragger.presentationName() +"ÉIÉvÉVÉáÉì");
+        dialog.setTitle(dragger.presentationName() +"„Ç™„Éó„Ç∑„Éß„É≥");
         //
         angle.addChangeListener(this);
         angleSlider.addChangeListener(this);
@@ -95,9 +95,9 @@ public class LineToolPanel extends javax.swing.JPanel  implements ChangeListener
         angleSlider = new jtools.jcontrol.AngleSlider();
         angle = new jtools.jcontrol.JDAngleTextField();
 
-        jLabel1.setText("í∑Ç≥:");
+        jLabel1.setText("Èï∑„Åï:");
 
-        jLabel2.setText("äpìx:");
+        jLabel2.setText("ËßíÂ∫¶:");
 
         okButton.setText("OK");
         okButton.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class LineToolPanel extends javax.swing.JPanel  implements ChangeListener
             }
         });
 
-        cancelButton.setText("ÉLÉÉÉìÉZÉã");
+        cancelButton.setText("„Ç≠„É£„É≥„Çª„É´");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -42,7 +42,7 @@ public class ArrowPanel extends javax.swing.JPanel {
     public static JArrowEffect showAsDialog(Component cmp,JArrowEffect effect){
         Frame owner=null;
         if (cmp !=null) owner=getRootFrame(cmp);
-        JDialog jd=new JDialog(owner,"–îˆó‚ðì¬",true);
+        JDialog jd=new JDialog(owner,"çŸ¢å°ã‚’ä½œæˆ",true);
         jd.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         ArrowPanel panel=new ArrowPanel();
         jd.getContentPane().add(panel);
@@ -139,7 +139,7 @@ public class ArrowPanel extends javax.swing.JPanel {
         arrowPreviewer1 = new jui.color.arrow.ArrowPreviewer();
         jButton1 = new javax.swing.JButton();
 
-        jButton4.setText("ƒLƒƒƒ“ƒZƒ‹");
+        jButton4.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -150,9 +150,9 @@ public class ArrowPanel extends javax.swing.JPanel {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setText("Žn“_:");
+        jLabel1.setText("å§‹ç‚¹:");
 
-        jLabel2.setText("ƒTƒCƒY:");
+        jLabel2.setText("ã‚µã‚¤ã‚º:");
 
         jSpinner1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -160,7 +160,7 @@ public class ArrowPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel3.setText("I“_:");
+        jLabel3.setText("çµ‚ç‚¹:");
 
         arrowCombo2.setMaximumRowCount(12);
         arrowCombo2.setDoubleBuffered(true);
@@ -171,7 +171,7 @@ public class ArrowPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel4.setText("ƒTƒCƒY:");
+        jLabel4.setText("ã‚µã‚¤ã‚º:");
 
         jSpinner2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -250,7 +250,7 @@ public class ArrowPanel extends javax.swing.JPanel {
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("ƒvƒŒƒrƒ…["));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼"));
 
         jSpinner3.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -258,7 +258,7 @@ public class ArrowPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setText("ü•:");
+        jLabel5.setText("ç·šå¹…:");
 
         jLabel6.setText("Point");
 
@@ -299,7 +299,7 @@ public class ArrowPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jButton1.setText("ƒLƒƒƒ“ƒZƒ‹");
+        jButton1.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 canceled(evt);

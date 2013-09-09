@@ -15,10 +15,10 @@ import java.util.regex.*;
 import java.util.*;
 import jscreen.JEnvironment;
 /**
- *‹——£“ü—Í‚Ì‚½‚ß‚ÌFormattedTextField‚ÌƒTƒuƒNƒ‰ƒX‚Å‚·.
- *“ü—Í‚³‚ê‚½”’l‹y‚Ñ’PˆÊ‚ÌƒyƒA‚ğƒ|ƒCƒ“ƒg’PˆÊ‚É•ÏŠ·‚µAValue‚É
- *Ši”[‚µ‚Ü‚·B•\¦‚ÍAw’è‚³‚ê‚½’PˆÊ(mm–”‚Ípoint)‚É•ÏŠ·‚µ•\¦
- *‚µ‚Ü‚·.
+ *è·é›¢å…¥åŠ›ã®ãŸã‚ã®FormattedTextFieldã®ã‚µãƒ–ã‚¯ãƒ©ã‚¹ã§ã™.
+ *å…¥åŠ›ã•ã‚ŒãŸæ•°å€¤åŠã³å˜ä½ã®ãƒšã‚¢ã‚’ãƒã‚¤ãƒ³ãƒˆå˜ä½ã«å¤‰æ›ã—ã€Valueã«
+ *æ ¼ç´ã—ã¾ã™ã€‚è¡¨ç¤ºã¯ã€æŒ‡å®šã•ã‚ŒãŸå˜ä½(mmåˆã¯point)ã«å¤‰æ›ã—è¡¨ç¤º
+ *ã—ã¾ã™.
  * @author i002060
  */
 public class JDLengthTextField extends JFormattedTextField{
@@ -76,7 +76,7 @@ public class JDLengthTextField extends JFormattedTextField{
             String c=text.trim();
             Number returnValue=null;
             if (c.equals("")) c="0";
-            //ƒ~ƒŠ’PˆÊ“ü—Í
+            //ãƒŸãƒªå˜ä½å…¥åŠ›
             if ((ret=getDouble(c,"mm"))!=null){
                 return new Double(ret.doubleValue()/JEnvironment.MIL_PER_INCH*72);
             }

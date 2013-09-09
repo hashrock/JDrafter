@@ -47,7 +47,7 @@ public class JBasicTool extends JAbstractTool {
 
     public JBasicTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName = "ƒ_ƒCƒŒƒNƒg‘I‘ğƒc[ƒ‹";
+        presentationName = "ãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆé¸æŠãƒ„ãƒ¼ãƒ«";
         wakeup();
     }
 
@@ -97,7 +97,7 @@ public class JBasicTool extends JAbstractTool {
             req.hitResult = JRequest.HIT_NON;
         }
 
-        //‘I‘ğ’†‚ÌƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚È‚©‚Á‚½ê‡
+        //é¸æŠä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ãªã‹ã£ãŸå ´åˆ
         if (req.hitResult == JRequest.HIT_NON) {
             getViewer().getCurrentPage().hitByPoint(env, req, p);
             if (req.hitResult != JRequest.HIT_NON) {
@@ -293,7 +293,7 @@ public class JBasicTool extends JAbstractTool {
         isPressing = true;
         dragPane.repaint();
     }
-    //ƒ|ƒCƒ“ƒg‚Ì‰„’·üã‚Ì“_‚ğæ“¾
+    //ãƒã‚¤ãƒ³ãƒˆã®å»¶é•·ç·šä¸Šã®ç‚¹ã‚’å–å¾—
     private Point2D getLinePoint(Point2D cp) {
         JRequest req = getRequest();
         JSimplePath spath = null;
@@ -347,7 +347,7 @@ public class JBasicTool extends JAbstractTool {
         JEnvironment env = getEnvironment();
         Point2D cp = env.getAbsoluteMousePoint(p,getViewer().getCurrentPage());
         Point2D sp = dragPane.getStartPoint();
-        //ƒAƒ“ƒJ[‚ª’[“_‚Å‚©‚ÂƒRƒ“ƒgƒ[ƒ‹ƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚éê‡’¼‘O‚Ì“_‚©‚ç‚Ì‰„’·üã‚ÖŒÅ’è
+        //ã‚¢ãƒ³ã‚«ãƒ¼ãŒç«¯ç‚¹ã§ã‹ã¤ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ã‚‹å ´åˆç›´å‰ã®ç‚¹ã‹ã‚‰ã®å»¶é•·ç·šä¸Šã¸å›ºå®š
         if (req.hitResult == JRequest.HIT_ANCUR && isControlDown) {
             cp=getLinePoint(cp);
         }
@@ -367,7 +367,7 @@ public class JBasicTool extends JAbstractTool {
         }
         transform = new AffineTransform();
         transform.setToTranslation(cp.getX() - sp.getX(), cp.getY() - sp.getY());
-        //‘I‘ğObject‚Ì‚Ó‚é‚¢—‚Æ‚µ
+        //é¸æŠObjectã®ãµã‚‹ã„è½ã¨ã—
         if (dragPane.isFirstDragEvent() && !isShiftDown && req.hitResult != JRequest.HIT_L_CONTROL && req.hitResult != JRequest.HIT_R_CONTROL) {
             boolean contain = false;
             for (int i = 0; i < req.hitObjects.size(); i++) {
@@ -397,7 +397,7 @@ public class JBasicTool extends JAbstractTool {
                 Object o = req.hitObjects.get(i);
                 if (o instanceof JPathObject.Handle) {
                     JPathObject.Handle hn = (JPathObject.Handle) o;
-                    //CTLƒL[ƒ_ƒEƒ“‚Ìê‡
+                    //CTLã‚­ãƒ¼ãƒ€ã‚¦ãƒ³ã®å ´åˆ
                     if (isControlDown) {
                         Point2D dp = new Point2D.Double(), p0, p1, p2;
                         env.getToAbsoluteTransform().transform(p, dp);
@@ -451,7 +451,7 @@ public class JBasicTool extends JAbstractTool {
         }
         JRequest req = getRequest();
         JEnvironment env = getEnvironment();
-        //ˆÚ“®—L
+        //ç§»å‹•æœ‰
         if (transform != null) {
             CompoundEdit cEdit = null;
             if (req.hitResult == JRequest.HIT_L_CONTROL || req.hitResult == JRequest.HIT_R_CONTROL) {
@@ -489,7 +489,7 @@ public class JBasicTool extends JAbstractTool {
 
 
             }
-        } //ˆÚ“®‚È‚µ
+        } //ç§»å‹•ãªã—
         else if (req.hitResult != JRequest.HIT_L_CONTROL && req.hitResult != JRequest.HIT_R_CONTROL) {
             if (dragPane.getDragRect() != null) {
                 req.hitObjects.clear();

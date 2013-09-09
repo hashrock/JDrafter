@@ -25,7 +25,7 @@ public class JReleaseTrimingEdit extends JAbstractEdit {
         super(viewer);
         clipObject = img;
         imageObject = clipObject.createImageObject();
-        presentationName="ƒgƒŠƒ~ƒ“ƒO‰ğœ";
+        presentationName="ãƒˆãƒªãƒŸãƒ³ã‚°è§£é™¤";
         redo();
     }
 

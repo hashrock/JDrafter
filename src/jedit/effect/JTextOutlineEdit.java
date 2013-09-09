@@ -29,7 +29,7 @@ public class JTextOutlineEdit extends JAbstractEdit{
     /** Creates a new instance of JTextOutlineEdit */
     public JTextOutlineEdit(JDocumentViewer viewer,JText target) {
         super(viewer);
-        presentationName="テキストアウトライン";
+        presentationName="繝�繧ｭ繧ｹ繝医い繧ｦ繝医Λ繧､繝ｳ";
         this.target=target;
         JLeaf tg=(JLeaf)target;
         createdObject=new JPathObject(tg.getShape());

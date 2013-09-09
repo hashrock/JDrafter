@@ -34,7 +34,7 @@ public class JChangeStrokesEdit extends JAbstractEdit{
         super(viewer);
         this.targets=targets;
         this.newStroke=newStroke;
-        presentationName="üí";
+        presentationName="ç·šç¨®";
         redo();
     }
     public void redo(){

@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.Vector;
 
 /**
- *  ’PˆêƒpƒXƒIƒuƒWƒFƒNƒg‚ğ•\‚µ‚Ü‚·.
+ *  å˜ä¸€ãƒ‘ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¡¨ã—ã¾ã™.
  * @author TI
  */
 public class JSimplePath implements Serializable,Cloneable{

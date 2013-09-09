@@ -31,7 +31,7 @@ public class JPathTextTool extends JLayoutTextTool {
     /** Creates a new instance of JPathTextTool */
     public JPathTextTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName = "ƒpƒXƒeƒLƒXƒg";
+        presentationName = "ãƒ‘ã‚¹ãƒ†ã‚­ã‚¹ãƒˆ";
     }
 
     @Override
@@ -104,7 +104,7 @@ public class JPathTextTool extends JLayoutTextTool {
             req.hitObjects.clear();
             req.hitResult = req.HIT_NON;
         }
-        //‘I‘ğ’†‚ÌƒIƒuƒWƒFƒNƒg‚Éƒqƒbƒg‚µ‚È‚©‚Á‚½ê‡
+        //é¸æŠä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒ’ãƒƒãƒˆã—ãªã‹ã£ãŸå ´åˆ
         if (req.hitResult == req.HIT_NON) {
             getViewer().getCurrentPage().hitByPoint(env, req, p);
         }
@@ -142,7 +142,7 @@ public class JPathTextTool extends JLayoutTextTool {
                 (float) p.getX(), (float) p.getY(), 0.01f));
         DefaultStyledDocument doc = creatingObject.getStyledDocument();
         //replaceObject
-        getViewer().getDocument().fireUndoEvent(new JReplaceObjectEdit(getViewer(), creatingObject, jp, "ƒŒƒCƒAƒEƒgƒeƒLƒXƒg"));
+        getViewer().getDocument().fireUndoEvent(new JReplaceObjectEdit(getViewer(), creatingObject, jp, "ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆãƒ†ã‚­ã‚¹ãƒˆ"));
         //        
         InlineTextPane tPane = getViewer().getTextPane();
         AffineTransform tx = getEnvironment().getToScreenTransform();
@@ -161,7 +161,7 @@ public class JPathTextTool extends JLayoutTextTool {
     JPathTextObject target=new JPathTextObject();
     target.setPath(jp.getPath().clone());
     //
-    getViewer().getDocument().fireUndoEvent(new JReplaceObjectEdit(getViewer(),target,jp,"ƒpƒXƒeƒLƒXƒg"));
+    getViewer().getDocument().fireUndoEvent(new JReplaceObjectEdit(getViewer(),target,jp,"ãƒ‘ã‚¹ãƒ†ã‚­ã‚¹ãƒˆ"));
     //
     DefaultStyledDocument doc=target.getStyledDocument();
     target.setStartPosition(target.dividePathPt(target.getPath().get(0),

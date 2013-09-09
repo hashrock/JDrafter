@@ -126,7 +126,7 @@ public class JLayerBrowser extends JToolWindow implements ItemListener,JUndoRedo
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jMenu1.setText("レイヤー");
+        jMenu1.setText("繝ｬ繧､繝､繝ｼ");
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -179,7 +179,7 @@ private void jScrollPane1ComponentResized(java.awt.event.ComponentEvent evt) {//
         }
         private class NewLayerAction extends AbstractAction{
             public NewLayerAction(){
-                putValue(NAME,"新規レイヤー");
+                putValue(NAME,"譁ｰ隕上Ξ繧､繝､繝ｼ");
                 setEnabled(false);
             }
             public void actionPerformed(ActionEvent e) {
@@ -190,7 +190,7 @@ private void jScrollPane1ComponentResized(java.awt.event.ComponentEvent evt) {//
                 dlg.setLocation(x,y);
                 dlg.showDialog(null,currentPage);
                 if (dlg.getLayer() !=null){
-                    UndoableEdit anEdit=new NewLayerEdit(doc.getViewer(),dlg.getLayer(),currentPage,"新規レイヤー");
+                    UndoableEdit anEdit=new NewLayerEdit(doc.getViewer(),dlg.getLayer(),currentPage,"譁ｰ隕上Ξ繧､繝､繝ｼ");
                     doc.fireUndoEvent(anEdit);
                     currentPage.setCurrentLayer(dlg.getLayer());
                     jTreeView1.clearSelection();
@@ -201,7 +201,7 @@ private void jScrollPane1ComponentResized(java.awt.event.ComponentEvent evt) {//
         }
         private class DuplicatesLayerAction extends AbstractAction{
             public DuplicatesLayerAction(){
-                putValue(NAME,"レイヤー複製");
+                putValue(NAME,"繝ｬ繧､繝､繝ｼ隍�陬ｽ");
                 setEnabled(false);
             }
             
@@ -229,7 +229,7 @@ private void jScrollPane1ComponentResized(java.awt.event.ComponentEvent evt) {//
                 String name=layer.getName()+"copy";
                 name=currentPage.getProperName(name);
                 dLayer.setName(name);
-                UndoableEdit anEdit=new NewLayerEdit(doc.getViewer(),dLayer,currentPage,"レイヤー複製");
+                UndoableEdit anEdit=new NewLayerEdit(doc.getViewer(),dLayer,currentPage,"繝ｬ繧､繝､繝ｼ隍�陬ｽ");
                 doc.fireUndoEvent(anEdit);
                 currentPage.setCurrentLayer(dLayer);
                 jTreeView1.clearSelection();
@@ -239,7 +239,7 @@ private void jScrollPane1ComponentResized(java.awt.event.ComponentEvent evt) {//
         }
         private class DeleteLayerAction extends AbstractAction{
             public DeleteLayerAction(){
-                putValue(NAME,"レイヤー削除");
+                putValue(NAME,"繝ｬ繧､繝､繝ｼ蜑企勁");
                 setEnabled(false);
             }
             

@@ -27,13 +27,13 @@ import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.rtf.RTFEditorKit;
 
 /**
- * RTF ‚Ì“üo—Í‚ÉŠÖ‚·‚éƒNƒ‰ƒX
+ * RTF ã®å…¥å‡ºåŠ›ã«é–¢ã™ã‚‹ã‚¯ãƒ©ã‚¹
  */
 public class JRTFIO {
     
     static CFontSet myFonts = new CFontSet();
     
-    /** RTFƒtƒHƒ“ƒgî•ñ **/
+    /** RTFãƒ•ã‚©ãƒ³ãƒˆæƒ…å ± **/
     private static class CFontSet {
         ArrayList fontNum,fontEnc;
         final String[] rtfFontset = new String[1500];
@@ -137,7 +137,7 @@ public class JRTFIO {
         }
     }
     
-    /** ƒtƒ@ƒCƒ‹“à—e‚ğƒeƒLƒXƒg‚Æ‚µ‚Äæ“¾ **/
+    /** ãƒ•ã‚¡ã‚¤ãƒ«å†…å®¹ã‚’ãƒ†ã‚­ã‚¹ãƒˆã¨ã—ã¦å–å¾— **/
     private static StringBuffer readString(InputStream stream) {
         StringBuffer inb = new StringBuffer();
         try {
@@ -154,7 +154,7 @@ public class JRTFIO {
         return inb;
     }
     
-    /** ƒtƒHƒ“ƒgî•ñ‚Ì“Ç‚İæ‚è **/
+    /** ãƒ•ã‚©ãƒ³ãƒˆæƒ…å ±ã®èª­ã¿å–ã‚Š **/
     private static void getRTFfontset(StringBuffer inb) {
         boolean ffont = false;
         int n_font = -1;
@@ -208,7 +208,7 @@ public class JRTFIO {
         }
     }
     
-    /** RTF•¶š—ñ•¶š‚Ì•ÏŠ·(SJIS to UTF8) **/
+    /** RTFæ–‡å­—åˆ—æ–‡å­—ã®å¤‰æ›(SJIS to UTF8) **/
     private static InputStream ConvertJapanese(InputStream stream) {
         ByteArrayOutputStream oStream=new ByteArrayOutputStream();
         try {
@@ -371,7 +371,7 @@ public class JRTFIO {
         return rt;
     }
     
-    /** RTF unicode •¶š—ñ‚©‚Ç‚¤‚© **/
+    /** RTF unicode æ–‡å­—åˆ—ã‹ã©ã†ã‹ **/
     private static boolean isRtfChar(char c) {
         if(c == '\r' || c == '\n') return false;
         if(c == '\\' || c == '{' || c == '}' || c == ' ') return false;
@@ -435,7 +435,7 @@ public class JRTFIO {
         return new String(sb);
     }
     
-    /** •¶š—ñ‚©‚ç‚Ps‚¸‚Â’Šo **/
+    /** æ–‡å­—åˆ—ã‹ã‚‰ï¼‘è¡Œãšã¤æŠ½å‡º **/
     private static ArrayList splitLine(String s) {
         String body = s;
         body = body.replaceAll("\\Q\r\n","\n");
@@ -446,7 +446,7 @@ public class JRTFIO {
         return v;
     }
     
-    /** RTFƒtƒ@ƒCƒ‹‚©‚ç‚Ps‚¸‚Â’Šo **/
+    /** RTFãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰ï¼‘è¡Œãšã¤æŠ½å‡º **/
     public static DefaultStyledDocument readRTF(InputStream stream) {
         StringBuffer sb = new StringBuffer();
         

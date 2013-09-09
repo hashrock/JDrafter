@@ -35,7 +35,7 @@ public class JCAGSubEdit extends JAbstractEdit{
         for (int i=0;i<targets.size()-1;i++){
             savedPath.add(targets.get(i).getPath());
         }
-        presentationName="·(Œ^”²‚«)";
+        presentationName="å·®(åž‹æŠœã)";
         Area a=new Area(targets.get(targets.size()-1).getPath().getShape());
         createdPath=new Vector<JComplexPath>();
         for (int i=0;i<savedPath.size();i++){

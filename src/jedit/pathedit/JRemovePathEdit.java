@@ -34,7 +34,7 @@ public class JRemovePathEdit extends JAbstractEdit {
         parent=target.getParent();
         parentIndex=parent.indexOf(target);
         pathIndex=target.getPath().indexOf(removePath);
-        presentationName="ƒpƒXíœ";
+        presentationName="ãƒ‘ã‚¹å‰Šé™¤";
         redo();
     }
     public void redo(){

@@ -18,7 +18,7 @@ public class JNewPage extends javax.swing.JDialog {
     int pageWidth = 0;
 
     /**
-     * Šù‘¶‚Ìƒy[ƒW‚ğˆø‚«Œp‚¢‚ÅNew
+     * æ—¢å­˜ã®ãƒšãƒ¼ã‚¸ã‚’å¼•ãç¶™ã„ã§New
      *
      * @param parent
      * @param modal
@@ -28,7 +28,7 @@ public class JNewPage extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
 
-        //ˆø‚«Œp‚¬
+        //å¼•ãç¶™ã
         this.pageFormat = (PageFormat) pageFormat.clone();
         pageHeight = (int) pageFormat.getImageableHeight();
         pageWidth = (int) pageFormat.getImageableWidth();
@@ -75,11 +75,11 @@ public class JNewPage extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("‰æ‘œƒTƒCƒY‚ğw’è"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("ç”»åƒã‚µã‚¤ã‚ºã‚’æŒ‡å®š"));
 
-        jLabel1.setText("•");
+        jLabel1.setText("å¹…");
 
-        jLabel2.setText("‚‚³");
+        jLabel2.setText("é«˜ã•");
 
         jLabel3.setText("pixel");
 
@@ -89,7 +89,7 @@ public class JNewPage extends javax.swing.JDialog {
 
         jSpinnerWidth.setModel(new javax.swing.SpinnerNumberModel(400, 50, 100000, 1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ƒŠƒXƒg‚©‚ç‘I‘ğ", "ƒAƒCƒRƒ“ƒTƒCƒY‚È‚Ç", "32 x 32", "64 x 64", "128 x 128", "256 x 256", "512 x 512", "‰æ–ÊƒTƒCƒY‚È‚Ç", "320 x 200", "320 x 240", "360 x 480", "640 x 400", "640 x 480", "720 x 540", "720 x 480", "800 x 480", "768 x 576", "800 x 600", "1024 x 768", "1280 x 720", "1280 x 960", "1280 x 1024", "1400 x 1050", "1680 x 1050", "1600 x 1200", "1920 x 1080", "1920 x 1200", "2048 x 1080", "2048 x 1536", "2560 x 1600", "2560 x 2048", "3200 x 2400", "4096 x 2160", "3840 x 2400" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ãƒªã‚¹ãƒˆã‹ã‚‰é¸æŠ", "ã‚¢ã‚¤ã‚³ãƒ³ã‚µã‚¤ã‚ºãªã©", "32 x 32", "64 x 64", "128 x 128", "256 x 256", "512 x 512", "ç”»é¢ã‚µã‚¤ã‚ºãªã©", "320 x 200", "320 x 240", "360 x 480", "640 x 400", "640 x 480", "720 x 540", "720 x 480", "800 x 480", "768 x 576", "800 x 600", "1024 x 768", "1280 x 720", "1280 x 960", "1280 x 1024", "1400 x 1050", "1680 x 1050", "1600 x 1200", "1920 x 1080", "1920 x 1200", "2048 x 1080", "2048 x 1536", "2560 x 1600", "2560 x 2048", "3200 x 2400", "4096 x 2160", "3840 x 2400" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -136,21 +136,21 @@ public class JNewPage extends javax.swing.JDialog {
                 .addGap(48, 48, 48))
         );
 
-        jButtonNew.setText("ì¬");
+        jButtonNew.setText("ä½œæˆ");
         jButtonNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNewActionPerformed(evt);
             }
         });
 
-        jButtonCancel.setText("ƒLƒƒƒ“ƒZƒ‹");
+        jButtonCancel.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelActionPerformed(evt);
             }
         });
 
-        jButtonNewFromPrinter.setText("—p†ƒTƒCƒY‚©‚çì¬");
+        jButtonNewFromPrinter.setText("ç”¨ç´™ã‚µã‚¤ã‚ºã‹ã‚‰ä½œæˆ");
         jButtonNewFromPrinter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonNewFromPrinterActionPerformed(evt);

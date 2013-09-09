@@ -29,7 +29,7 @@ public class JTextModifyEdit extends JAbstractEdit{
         this.target=target;
         this.newDoc=newDoc;
         this.savedDoc=savedDoc;
-        presentationName="テキスト編集";
+        presentationName="繝�繧ｭ繧ｹ繝育ｷｨ髮�";
         redo();
     }
     public void redo(){

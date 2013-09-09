@@ -33,7 +33,7 @@ public class JStrokeOutlineEdit extends JAbstractEdit{
         this.savedPath=target.getPath();
         Shape s=target.getStroke().createStrokedShape(savedPath.getShape());
         newPath=(new JPathIterator(s.getPathIterator(null))).getJPath();
-        presentationName="ストロークアウトライン";
+        presentationName="繧ｹ繝医Ο繝ｼ繧ｯ繧｢繧ｦ繝医Λ繧､繝ｳ";
         redo();
     }
     public void redo(){

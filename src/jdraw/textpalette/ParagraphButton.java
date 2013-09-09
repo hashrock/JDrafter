@@ -27,7 +27,7 @@ public class ParagraphButton extends StylePushButton implements JTypeMenuItem{
         if (JTextIcons.PARAGRAPH==null)
             new JTextIcons();
         setIcon(JTextIcons.PARAGRAPH);
-        setToolTipText("段落オプション");
+        setToolTipText("谿ｵ關ｽ繧ｪ繝励す繝ｧ繝ｳ");
         this.addActionListener(this);
     }
     

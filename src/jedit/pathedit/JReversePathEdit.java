@@ -29,7 +29,7 @@ public class JReversePathEdit extends JAbstractEdit{
         super(view);
         this.target=target;
         this.targetPath=targetPath;
-        presentationName="ƒpƒX‹t“]";
+        presentationName="ãƒ‘ã‚¹é€†è»¢";
         redo();
     }
     public void redo(){

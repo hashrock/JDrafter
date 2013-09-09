@@ -50,7 +50,7 @@ public class RotateToolPanel extends javax.swing.JPanel implements ChangeListene
         dialog.getRootPane().setDefaultButton(okButton);
         dialog.setDefaultCloseOperation(dialog.DISPOSE_ON_CLOSE);
         dialog.setModal(true);
-        dialog.setTitle("‰ñ“]");
+        dialog.setTitle("å›è»¢");
         //
         angle.addChangeListener(this);
         angleSlider.addChangeListener(this);
@@ -68,7 +68,7 @@ public class RotateToolPanel extends javax.swing.JPanel implements ChangeListene
     public RotateToolPanel(JAbstractTool dragger) {
         this(getRootWindow(dragger.getViewer().getRootPane().getParent()));
         this.dragger=dragger;
-        dialog.setTitle(dragger.presentationName() +"ƒIƒvƒVƒ‡ƒ“");
+        dialog.setTitle(dragger.presentationName() +"ã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         //
     }
     public boolean isCanceled(){
@@ -92,7 +92,7 @@ public class RotateToolPanel extends javax.swing.JPanel implements ChangeListene
         angleSlider = new jtools.jcontrol.AngleSlider();
         angle = new jtools.jcontrol.JDAngleTextField();
 
-        copy.setText("ƒRƒs[");
+        copy.setText("ã‚³ãƒ”ãƒ¼");
         copy.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         copy.setMargin(new java.awt.Insets(0, 0, 0, 0));
 
@@ -103,7 +103,7 @@ public class RotateToolPanel extends javax.swing.JPanel implements ChangeListene
             }
         });
 
-        cancelButton.setText("ƒLƒƒƒ“ƒZƒ‹");
+        cancelButton.setText("ã‚­ãƒ£ãƒ³ã‚»ãƒ«");
         cancelButton.setDefaultCapable(false);
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,7 +111,7 @@ public class RotateToolPanel extends javax.swing.JPanel implements ChangeListene
             }
         });
 
-        jLabel1.setText("‰ñ“]Šp");
+        jLabel1.setText("å›è»¢è§’");
 
         javax.swing.GroupLayout angleSliderLayout = new javax.swing.GroupLayout(angleSlider);
         angleSlider.setLayout(angleSliderLayout);

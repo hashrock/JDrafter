@@ -46,10 +46,10 @@ public class JParagraphIterator {
         currentIndex=0;
     }
     //
-    /**w’è‚·‚éƒeƒLƒXƒg‚Ì”ÍˆÍˆÓ‚ğ•ïŠÜ‚·‚é’i—‚ğŠÜ‚ŞJParagraphIterator‚ğ\’z‚µ‚Ü‚·.
-     *@param doc w’è‚·‚éƒhƒLƒ…ƒƒ“ƒg
-     *@param st w’è‚·‚éƒeƒLƒXƒg‚ÌŠJnˆÊ’u
-     *@param en w’è‚·‚éƒeƒLƒXƒg‚ÌI—¹ˆÊ’u
+    /**æŒ‡å®šã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã®ç¯„å›²æ„ã‚’åŒ…å«ã™ã‚‹æ®µè½ã‚’å«ã‚€JParagraphIteratorã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param doc æŒ‡å®šã™ã‚‹ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ
+     *@param st æŒ‡å®šã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã®é–‹å§‹ä½ç½®
+     *@param en æŒ‡å®šã™ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã®çµ‚äº†ä½ç½®
      */
     public JParagraphIterator(StyledDocument doc,int st,int en){
         document=doc;

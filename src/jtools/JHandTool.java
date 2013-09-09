@@ -26,7 +26,7 @@ public class JHandTool extends JAbstractTool{
     /** Creates a new instance of JHandTool */
     public JHandTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="ハンドツール";
+        presentationName="繝上Φ繝峨ヤ繝ｼ繝ｫ";
     }
     
     public void changeCursor() {

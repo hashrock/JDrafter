@@ -79,46 +79,46 @@ import plugins.AbstractPlugin;
  */
 public class JDrawApplication extends javax.swing.JFrame implements JFrameStateListener {
 
-    //PDFƒhƒLƒ…ƒƒ“ƒg
+    //PDFãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆ
     public static com.lowagie.text.pdf.PdfContentByte pdfContentByte = null;
     public static JFileChooser fileChooser = null;
-    //ƒEƒBƒ“ƒhƒE‚Ìƒ}[ƒWƒ“
+    //ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ãƒãƒ¼ã‚¸ãƒ³
     private static final int MARGIN = 4;
-    //ƒCƒ“ƒ^[ƒiƒ‹ƒtƒŒ[ƒ€‚Ìƒ}[ƒWƒ“
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ãƒŠãƒ«ãƒ•ãƒ¬ãƒ¼ãƒ ã®ãƒãƒ¼ã‚¸ãƒ³
     private static final int FRAME_MERGIN_X = 4;
-    //ƒtƒŒ[ƒ€ƒ}[ƒWƒ“
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒãƒ¼ã‚¸ãƒ³
     private static final int FRAME_MERGIN_Y = 2;
-    //ƒAƒ“ƒhƒD[ƒAƒNƒVƒ‡ƒ“;
+    //ã‚¢ãƒ³ãƒ‰ã‚¥ãƒ¼ã‚¢ã‚¯ã‚·ãƒ§ãƒ³;
     private JUndoRedoAction undoRedoAction;
-    //ƒGƒfƒBƒbƒgƒAƒNƒVƒ‡ƒ“
+    //ã‚¨ãƒ‡ã‚£ãƒƒãƒˆã‚¢ã‚¯ã‚·ãƒ§ãƒ³
     private JEditActions editActions;
-    //ƒIƒuƒWƒFƒNƒgƒAƒNƒVƒ‡ƒ“
+    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¢ã‚¯ã‚·ãƒ§ãƒ³
     private JObjectActions objectAction;
-    //CAG‰‰ZƒAƒNƒVƒ‡ƒ“
+    //CAGæ¼”ç®—ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
     private JCAGCulcActions cagActions;
-    //Viewƒƒjƒ…[ƒAƒNƒVƒ‡ƒ“
+    //Viewãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
     private ViewMenus viewMenus;
     //ToolWindow;
     private JToolPanel toolPanel;
-    //ƒy[ƒWƒiƒrƒQ[ƒ^;
+    //ãƒšãƒ¼ã‚¸ãƒŠãƒ“ã‚²ãƒ¼ã‚¿;
     public JPageNavigator pageNavigator;
-    //ƒŒƒCƒ„[ƒuƒ‰ƒEƒU
+    //ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ–ãƒ©ã‚¦ã‚¶
     public JLayerBrowser layerBrowser;
-    //ƒCƒ“ƒ^[ƒiƒ‹ƒtƒŒ[ƒ€ƒAƒ_ƒvƒ^
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ãƒŠãƒ«ãƒ•ãƒ¬ãƒ¼ãƒ ã‚¢ãƒ€ãƒ—ã‚¿
     private InternalFrameAdapter ifAdapter;
-    //ƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[
+    //ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼
     private JPopupMenu popup;
     //
     private FileMenus fileMenus;
-    //ƒtƒ@ƒCƒ‹ƒƒjƒ…[
+    //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼
     private JMenu fileMenu;
     private JMenu editMenu;
     private JMenu objectMenu;
     private JTypeMenu typeMenu;
     public JMenu viewMenu;
-    //ƒCƒ[ƒWƒAƒCƒRƒ“
+    //ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚¢ã‚¤ã‚³ãƒ³
     private ImageIcon appIcon = null;
-    //ƒvƒ‰ƒOƒCƒ“
+    //ãƒ—ãƒ©ã‚°ã‚¤ãƒ³
     private Vector<AbstractPlugin> plugins = new Vector<AbstractPlugin>();
 
     /**
@@ -148,7 +148,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 d.width - insets.left - insets.right - 2 * MARGIN, d.height - insets.top - insets.bottom - 2 * MARGIN);
         //
         this.setTitle(java.util.ResourceBundle.getBundle("main").getString("title_JDrafter_version"));
-        //ƒƒjƒ…[\’z
+        //ãƒ¡ãƒ‹ãƒ¥ãƒ¼æ§‹ç¯‰
         fileMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_file"));
         editMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_edit"));
         objectMenu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("menu_object"));
@@ -173,7 +173,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
 
         typeMenu.addSeparator();
         typeMenu.add(cagActions.outlineTextAction);
-        //ƒCƒ“ƒ^[ƒiƒ‹ƒtƒŒ[ƒ€ƒAƒ_ƒvƒ^
+        //ã‚¤ãƒ³ã‚¿ãƒ¼ãƒŠãƒ«ãƒ•ãƒ¬ãƒ¼ãƒ ã‚¢ãƒ€ãƒ—ã‚¿
         ifAdapter = new InternalFrameAdapter() {
             @Override
             public void internalFrameActivated(InternalFrameEvent e) {
@@ -185,7 +185,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 frameClosing(e);
             }
         };
-        //ƒNƒ[ƒYˆ—
+        //ã‚¯ãƒ­ãƒ¼ã‚ºå‡¦ç†
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -230,7 +230,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             jDesktopPane1.setSelectedFrame(frame);
         }
     }
-    //‚±‚ÌƒEƒCƒ“ƒhƒE‚ª•Â‚¶‚é‚Æ‚«‚Ìˆ—
+    //ã“ã®ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ãŒé–‰ã˜ã‚‹ã¨ãã®å‡¦ç†
 
     private void thisWindowClosing(WindowEvent e) {
         JInternalFrame[] frames = jDesktopPane1.getAllFrames();
@@ -242,14 +242,14 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
         this.dispose();
     }
-    //ƒtƒŒ[ƒ€‚ªƒAƒNƒeƒBƒu‚É‚È‚é‚Æ‚«‚Ìˆ—.
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ãŒã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã‚‹ã¨ãã®å‡¦ç†.
 
     private void frameActivated(InternalFrameEvent e) {
         JDocumentFrame source = (JDocumentFrame) e.getSource();
         setDocumentState(source.getViewer());
         source.getViewer().getDragPane().setComponentPopupMenu(popup);
     }
-    //ƒRƒ“ƒgƒ[ƒ‹‚ÌƒhƒLƒ…ƒƒ“ƒgİ’è
+    //ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆè¨­å®š
 
     private void setDocumentState(JDocumentViewer viewer) {
         editActions.setViewer(viewer);
@@ -284,13 +284,13 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
         viewMenus.changeStetes();
     }
-    //ƒtƒŒ[ƒ€‚ğ•Â‚¶‚é
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’é–‰ã˜ã‚‹
 
     private void frameClosing(InternalFrameEvent e) {
         JDocumentFrame f = (JDocumentFrame) e.getInternalFrame();
         frameClose(f);
     }
-    //ƒtƒŒ[ƒ€ƒNƒ[ƒYˆ—
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ã‚¯ãƒ­ãƒ¼ã‚ºå‡¦ç†
 
     private boolean frameClose(JDocumentFrame frame) {
         boolean ret = true;
@@ -325,7 +325,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         frame.dispose();
         return true;
     }
-    //ƒtƒ@ƒCƒ‹ƒƒjƒ…[\’z
+    //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼æ§‹ç¯‰
 
     private void setUpFileMenus() {
         fileMenu.setMnemonic(KeyEvent.VK_F);
@@ -345,7 +345,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         fileMenu.addSeparator();
         fileMenu.add(fileMenus.quit);
     }
-    //ƒGƒfƒBƒbƒgƒƒjƒ…[\’z
+    //ã‚¨ãƒ‡ã‚£ãƒƒãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼æ§‹ç¯‰
 
     private void setUpEditMenu() {
         editMenu.setMnemonic(KeyEvent.VK_E);
@@ -361,7 +361,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         editMenu.addSeparator();
         editMenu.add(editActions.selectAllAction);
     }
-    //ƒIƒuƒWƒFƒNƒgƒƒjƒ…[\’z
+    //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼æ§‹ç¯‰
 
     @SuppressWarnings({"static-access", "static-access"})
     private void setUpObjectMenu() {
@@ -442,14 +442,14 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         trimingMenu.add(objectAction.releaseTriming);
         objectMenu.add(trimingMenu);
         /*
-         JMenu patternMenu=new JMenu("ƒpƒ^[ƒ“ì¬(P)");
+         JMenu patternMenu=new JMenu("ãƒ‘ã‚¿ãƒ¼ãƒ³ä½œæˆ(P)");
          patternMenu.setMnemonic(KeyEvent.VK_P);
          patternMenu.add(objectAction.makePattern);
          patternMenu.add(objectAction.makeClipedPattern);
          objectMenu.add(patternMenu);
          */
     }
-    //•\¦ƒƒjƒ…[\’z
+    //è¡¨ç¤ºãƒ¡ãƒ‹ãƒ¥ãƒ¼æ§‹ç¯‰
 
     private void setUpViewMenu() {
         viewMenu.setMnemonic(KeyEvent.VK_V);
@@ -477,7 +477,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         viewMenu.addSeparator();
         jDesktopPane1.addContainerListener(viewMenus);
     }
-    //ƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[\’z
+    //ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼æ§‹ç¯‰
 
     @SuppressWarnings("static-access")
     private void setUpPopupMenu() {
@@ -521,7 +521,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
 
 
     }
-    //ƒc[ƒ‹ƒEƒCƒ“ƒhƒE¶¬
+    //ãƒ„ãƒ¼ãƒ«ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦ç”Ÿæˆ
 
     private void setUpToolPanel() {
         toolPanel = new JToolPanel(this);
@@ -530,7 +530,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         int y = getY() + inset.top + (getHeight() - inset.top - inset.bottom - f.getHeight()) / 2;
         f.setLocation(this.getX() + inset.left, y);
     }
-    //ƒy[ƒWƒiƒrƒQ[ƒ^¶¬
+    //ãƒšãƒ¼ã‚¸ãƒŠãƒ“ã‚²ãƒ¼ã‚¿ç”Ÿæˆ
 
     private void setUpPageNavigator() {
         pageNavigator = new JPageNavigator(this, false);
@@ -539,7 +539,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         f.setLocation(this.getX() + this.getWidth() - inset.right - f.getWidth(), this.getY() + this.getHeight() - inset.bottom - f.getHeight());
         pageNavigator.setVisible(true);
     }
-    //ƒŒƒCƒ„[ƒuƒ‰ƒEƒU¶¬
+    //ãƒ¬ã‚¤ãƒ¤ãƒ¼ãƒ–ãƒ©ã‚¦ã‚¶ç”Ÿæˆ
 
     private void setUpLayerBrowser() {
         layerBrowser = new JLayerBrowser(this, false);
@@ -551,14 +551,14 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         layerBrowser.setVisible(true);
 
     }
-    //ƒCƒ“ƒ^[ƒiƒ‹ƒtƒŒ[ƒ€‚ÌV‹KƒTƒCƒYæ“¾
+    //ã‚¤ãƒ³ã‚¿ãƒ¼ãƒŠãƒ«ãƒ•ãƒ¬ãƒ¼ãƒ ã®æ–°è¦ã‚µã‚¤ã‚ºå–å¾—
 
     private Rectangle defaultWindowBounds() {
         int width = Math.max(jDesktopPane1.getWidth() - FRAME_MERGIN_X * 2, 800);
         int height = Math.max(jDesktopPane1.getHeight() - FRAME_MERGIN_Y * 2, 600);
         return new Rectangle(FRAME_MERGIN_X, FRAME_MERGIN_Y, width, height);
     }
-    //ƒhƒLƒ…ƒƒ“ƒg‚É–¼‘O‚ğ‚Â‚¯‚Ä•Û‘¶
+    //ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã«åå‰ã‚’ã¤ã‘ã¦ä¿å­˜
 
     private boolean saveDocumentAs() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
@@ -586,7 +586,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         }
         return saveDocument();
     }
-    //ƒhƒLƒ…ƒƒ“ƒg‚ğ•Û‘¶
+    //ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’ä¿å­˜
 
     private boolean saveDocument() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
@@ -605,7 +605,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         fileMenus.updateStates();
         return true;
     }
-    //ƒhƒLƒ…ƒƒ“ƒg‚ğŠJ‚­
+    //ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’é–‹ã
 
     private boolean openDocument() {
         fileChooser.setDialogTitle(java.util.ResourceBundle.getBundle("main").getString("msg_open_document"));
@@ -622,7 +622,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             }
             stream.close();
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this, e.getMessage(), "ƒtƒ@ƒCƒ‹ƒGƒ‰[", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showConfirmDialog(this, e.getMessage(), "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
             return false;
         }
         JDocumentFrame frame = new JDocumentFrame();
@@ -640,7 +640,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         //
         return true;
     }
-    //PDF‚Éo—Í
+    //PDFã«å‡ºåŠ›
 
     private void saveAsPDF() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
@@ -697,12 +697,12 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             }
             pDoc.close();
         } catch (Exception e) {
-            JOptionPane.showConfirmDialog(this, e.getMessage(), "ƒtƒ@ƒCƒ‹ƒGƒ‰[", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showConfirmDialog(this, e.getMessage(), "ãƒ•ã‚¡ã‚¤ãƒ«ã‚¨ãƒ©ãƒ¼", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE);
         }
         frame.getViewer().setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 
     }
-    //ƒCƒ[ƒW‚ğ”z’u
+    //ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’é…ç½®
 
     private void diployImage() {
         JDocumentFrame frame = (JDocumentFrame) jDesktopPane1.getSelectedFrame();
@@ -733,12 +733,12 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         frame.getViewer().getDocument().fireUndoEvent(edt);
         frame.getViewer().repaint();
     }
-    //ƒAƒvƒŠƒP[ƒVƒ‡ƒ“æ“¾
+    //ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³å–å¾—
 
     private JDrawApplication getApplication() {
         return this;
     }
-    //ƒtƒ@ƒCƒ‹ƒƒjƒ…[ƒAƒNƒVƒ‡ƒ“
+    //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
 
     private class FileMenus {
 
@@ -805,7 +805,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
                 getApplication().setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
                 PageFormat pageFormat = doc.getCurrentPage().getPageFormat();
                 
-                //ƒvƒŠƒ“ƒ^‚Æ‰æ‘œƒTƒCƒY‘I‘ğ‚Å‚«‚é
+                //ãƒ—ãƒªãƒ³ã‚¿ã¨ç”»åƒã‚µã‚¤ã‚ºé¸æŠã§ãã‚‹
                 PageFormat np = null;
                 final JNewPage pd = new JNewPage(JDrawApplication.this, true, pageFormat);
                 pd.setVisible(true);
@@ -1022,7 +1022,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             }
         }
     }
-    //ƒ‰ƒCƒZƒ“ƒX•\¦
+    //ãƒ©ã‚¤ã‚»ãƒ³ã‚¹è¡¨ç¤º
 
     private class LicenceAction extends AbstractAction {
 
@@ -1036,7 +1036,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             Licence.showAsDialog(getApplication());
         }
     }
-    //ƒAƒoƒEƒg•\¦
+    //ã‚¢ãƒã‚¦ãƒˆè¡¨ç¤º
 
     private class AboutAction extends AbstractAction {
 
@@ -1050,7 +1050,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             AboutDialog.showAbout(getApplication());
         }
     }
-    //ƒwƒ‹ƒv
+    //ãƒ˜ãƒ«ãƒ—
 
     private class HelpAction extends AbstractAction {
 
@@ -1073,7 +1073,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             }
         }
     }
-    //V‹KƒhƒLƒ…ƒƒ“ƒg–¼Ìæ“¾
+    //æ–°è¦ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆåç§°å–å¾—
 
     private String getProperName(String prefixer) {
         int index = 0;
@@ -1088,7 +1088,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
         index++;
         return prefixer + String.valueOf(index).trim();
     }
-    //ƒtƒŒ[ƒ€‚Ì•ÏX
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ã®å¤‰æ›´
 
     @Override
     public void frameStateChanged(JDocumentFrame f) {
@@ -1096,12 +1096,12 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             fileMenus.updateStates();
         }
     }
-    //Å‹ßg‚Á‚½ƒtƒHƒ“ƒg‚Ì“o˜^
+    //æœ€è¿‘ä½¿ã£ãŸãƒ•ã‚©ãƒ³ãƒˆã®ç™»éŒ²
 
     public void addResentFont(AttributeSet attr) {
         typeMenu.getResetnFonts().addItem(attr);
     }
-    //ƒvƒ‰ƒOƒCƒ“‚Ì“Ç‚İo
+    //ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã®èª­ã¿å‡º
     URLClassLoader classLoader = null;
 
     private void readPlugins() {
@@ -1150,7 +1150,7 @@ public class JDrawApplication extends javax.swing.JFrame implements JFrameStateL
             }
         }
     }
-    //ƒAƒoƒEƒgƒƒjƒ…[
+    //ã‚¢ãƒã‚¦ãƒˆãƒ¡ãƒ‹ãƒ¥ãƒ¼
 
     private void setUpAbout() {
         JMenu menu = new JMenu(java.util.ResourceBundle.getBundle("main").getString("item_about"));

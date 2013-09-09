@@ -77,9 +77,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
                 closing();
             }
         });
-        jTabbedPane1.setTitleAt(0, "•\¦");
-        jTabbedPane1.setTitleAt(1, "ƒOƒŠƒbƒh");
-        jTabbedPane1.setTitleAt(2, "ƒKƒCƒhƒ‰ƒCƒ“");
+        jTabbedPane1.setTitleAt(0, "è¡¨ç¤º");
+        jTabbedPane1.setTitleAt(1, "ã‚°ãƒªãƒƒãƒ‰");
+        jTabbedPane1.setTitleAt(2, "ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³");
         ok.requestFocus();
     }
 
@@ -173,7 +173,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
         backToGuid = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("•\¦ƒIƒvƒVƒ‡ƒ“");
+        setTitle("è¡¨ç¤ºã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         setLocationByPlatform(true);
         setResizable(false);
 
@@ -192,7 +192,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        resetDefault.setText("ƒfƒtƒHƒ‹ƒg");
+        resetDefault.setText("ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ");
         resetDefault.setDefaultCapable(false);
         resetDefault.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,25 +202,25 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jTabbedPane1.setFocusable(false);
 
-        paintAntiareas.setText("ƒIƒuƒWƒFƒNƒg‚ğƒAƒ“ƒ`ƒGƒŠƒAƒX");
+        paintAntiareas.setText("ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚¢ãƒ³ãƒã‚¨ãƒªã‚¢ã‚¹");
 
-        previewAntiareas.setText("ƒvƒŒƒrƒ…[‚ğƒAƒ“ƒ`ƒGƒŠƒAƒX");
+        previewAntiareas.setText("ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚’ã‚¢ãƒ³ãƒã‚¨ãƒªã‚¢ã‚¹");
 
-        jLabel6.setText("ƒAƒ“ƒJ[ƒ|ƒCƒ“ƒg‚ÌƒTƒCƒY:");
+        jLabel6.setText("ã‚¢ãƒ³ã‚«ãƒ¼ãƒã‚¤ãƒ³ãƒˆã®ã‚µã‚¤ã‚º:");
 
-        jLabel7.setText("ƒpƒX‘I‘ğ‚Ì‹–—e”ÍˆÍ:");
+        jLabel7.setText("ãƒ‘ã‚¹é¸æŠã®è¨±å®¹ç¯„å›²:");
 
-        jLabel8.setText("ƒVƒtƒgƒL[‚ÌŠp“x§ŒÀ:");
+        jLabel8.setText("ã‚·ãƒ•ãƒˆã‚­ãƒ¼ã®è§’åº¦åˆ¶é™:");
 
         jLabel9.setText("pix");
 
         jLabel10.setText("pix");
 
-        jLabel11.setText("‹");
+        jLabel11.setText("Â°");
 
-        jLabel12.setText("ƒnƒCƒ‰ƒCƒgƒAƒ“ƒJ[ƒTƒCƒY”ä:");
+        jLabel12.setText("ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚¢ãƒ³ã‚«ãƒ¼ã‚µã‚¤ã‚ºæ¯”:");
 
-        jLabel13.setText("”{");
+        jLabel13.setText("å€");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -298,21 +298,21 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jTabbedPane1.addTab("tab2", jPanel2);
 
-        jLabel1.setText("’PˆÊ:");
+        jLabel1.setText("å˜ä½:");
 
         unitCombo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "mm", "point" }));
 
-        jLabel2.setText("ŠÔŠu:");
+        jLabel2.setText("é–“éš”:");
 
         unit.setText("mm");
 
-        jLabel3.setText("•ªŠ„”:");
+        jLabel3.setText("åˆ†å‰²æ•°:");
 
-        jLabel4.setText("ƒOƒŠƒbƒh‚ÌF:");
+        jLabel4.setText("ã‚°ãƒªãƒƒãƒ‰ã®è‰²:");
 
-        jLabel5.setText("•ªŠ„ü‚ÌF:");
+        jLabel5.setText("åˆ†å‰²ç·šã®è‰²:");
 
-        glidColor.setText("@@@");
+        glidColor.setText("ã€€ã€€ã€€");
         glidColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         glidColor.setOpaque(true);
         glidColor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -321,7 +321,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        divColor.setText("@@@");
+        divColor.setText("ã€€ã€€ã€€");
         divColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         divColor.setOpaque(true);
         divColor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -330,7 +330,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        gridForeground.setText("ƒOƒŠƒbƒh‚ğ‘O–Ê‚É•\¦");
+        gridForeground.setText("ã‚°ãƒªãƒƒãƒ‰ã‚’å‰é¢ã«è¡¨ç¤º");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -397,9 +397,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jTabbedPane1.addTab("tab1", jPanel1);
 
-        jLabel14.setText("•\¦F:");
+        jLabel14.setText("è¡¨ç¤ºè‰²:");
 
-        jLabel15.setText("ƒnƒCƒ‰ƒCƒg•\¦F:");
+        jLabel15.setText("ãƒã‚¤ãƒ©ã‚¤ãƒˆè¡¨ç¤ºè‰²:");
 
         gColor.setFont(new java.awt.Font("MS UI Gothic", 0, 14)); // NOI18N
         gColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -419,11 +419,11 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        jLabel18.setText("ƒXƒ^ƒCƒ‹:");
+        jLabel18.setText("ã‚¹ã‚¿ã‚¤ãƒ«:");
 
-        lineStyle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Àü", "“_ü" }));
+        lineStyle.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "å®Ÿç·š", "ç‚¹ç·š" }));
 
-        backToGuid.setText("ƒKƒCƒh‚ğ”w–Ê‚É•\¦");
+        backToGuid.setText("ã‚¬ã‚¤ãƒ‰ã‚’èƒŒé¢ã«è¡¨ç¤º");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -500,9 +500,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
     private void glidColorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_glidColorMouseClicked
 // TODO add your handling code here:
         JLabel source = (JLabel) evt.getSource();
-        String title = "ƒOƒŠƒbƒhƒJƒ‰[";
+        String title = "ã‚°ãƒªãƒƒãƒ‰ã‚«ãƒ©ãƒ¼";
         if (source == divColor) {
-            title = "•ªŠ„ƒOƒŠƒbƒhƒJƒ‰[";
+            title = "åˆ†å‰²ã‚°ãƒªãƒƒãƒ‰ã‚«ãƒ©ãƒ¼";
         }
         Color c = source.getBackground();
         Color nc = JColorChooser.showDialog(this, title, c);
@@ -578,9 +578,9 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 private void guidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_guidMouseClicked
 // TODO add your handling code here:
     JLabel source = (JLabel) evt.getSource();
-    String title = "ƒKƒCƒhƒJƒ‰[";
+    String title = "ã‚¬ã‚¤ãƒ‰ã‚«ãƒ©ãƒ¼";
     if (source == gHilight) {
-        title = "ƒKƒCƒhƒnƒCƒ‰ƒCƒgƒJƒ‰[";
+        title = "ã‚¬ã‚¤ãƒ‰ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚«ãƒ©ãƒ¼";
     }
     Color c = source.getBackground();
     Color nc = JColorChooser.showDialog(this, title, c);

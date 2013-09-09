@@ -25,7 +25,7 @@ public class JRectangleTool extends JShapeTool {
     /** Creates a new instance of JRectangleTool */
     public JRectangleTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="‹éŒ`ƒc[ƒ‹";
+        presentationName="çŸ©å½¢ãƒ„ãƒ¼ãƒ«";
     }
     protected Shape createShape(Point2D start, Point2D end, boolean isAltDown,boolean isShiftDown) {
         Rectangle2D ret=new Rectangle2D.Double();

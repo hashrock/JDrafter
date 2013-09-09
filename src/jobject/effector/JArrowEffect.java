@@ -170,12 +170,12 @@ public class JArrowEffect implements JEffector {
     }
 
     /***
-     * —^‚¦‚ç‚ê‚½ƒOƒ‹[ƒvƒIƒuƒWƒFƒNƒg‚©‚çA³‹K‰»‚³‚ê‚½–îˆó‚ÌŒ`ó‚ğ•Ô‚·B
-     * @param gs –îˆó‚Æ‚µ‚Ä—^‚¦‚ç‚ê‚½Œ`ó
-     * @return@³‹K‰»‚³‚ê‚½Œ`ó
+     * ä¸ãˆã‚‰ã‚ŒãŸã‚°ãƒ«ãƒ¼ãƒ—ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã€æ­£è¦åŒ–ã•ã‚ŒãŸçŸ¢å°ã®å½¢çŠ¶ã‚’è¿”ã™ã€‚
+     * @param gs çŸ¢å°ã¨ã—ã¦ä¸ãˆã‚‰ã‚ŒãŸå½¢çŠ¶
+     * @returnã€€æ­£è¦åŒ–ã•ã‚ŒãŸå½¢çŠ¶
      */
     public static Shape createNormalShape(JGroupObject gs, double ratio) {
-        //Šî€“_‚ğ’T‚·.
+        //åŸºæº–ç‚¹ã‚’æ¢ã™.
         Point2D cp = null;
         outer:
         for (JLeaf jl : gs.getLeafs()) {
@@ -191,7 +191,7 @@ public class JArrowEffect implements JEffector {
                 }
             }
         }
-        //³‹K‰»
+        //æ­£è¦åŒ–
         GeneralPath gp = new GeneralPath();
         createGroupShape(gp, gs);
         //

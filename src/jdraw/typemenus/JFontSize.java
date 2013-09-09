@@ -33,9 +33,9 @@ public class JFontSize extends AbstractTypeMenuItem{
     private JCheckBoxMenuItem otherSize;
     /** Creates a new instance of JFontSize */
     public JFontSize() {
-        setText("ÉTÉCÉY(S)");
+        setText("„Çµ„Ç§„Ç∫(S)");
         buttonGroup=new ButtonGroup();
-        otherSize=new JCheckBoxMenuItem("ÇªÇÃëº");
+        otherSize=new JCheckBoxMenuItem("„Åù„ÅÆ‰ªñ");
         add(otherSize);
         buttonGroup.add(otherSize);
         otherSize.addActionListener(new ActionListener(){

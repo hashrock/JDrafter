@@ -25,7 +25,7 @@ public class JBevelTool extends JShapeTool{
     /** Creates a new instance of JBevelTool */
     public JBevelTool(JDragPane dragPane) {
         super(dragPane);
-        presentationName="べベル矩形ツール";
+        presentationName="縺ｹ繝吶Ν遏ｩ蠖｢繝�繝ｼ繝ｫ";
     }
     
     protected Shape createShape(Point2D start, Point2D end, boolean isAltDown, boolean isShiftDown) {

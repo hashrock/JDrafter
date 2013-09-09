@@ -276,7 +276,7 @@ public class JDStrokePanel extends javax.swing.JPanel implements ChangeListener 
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jRadioButton1.setText("”jüŠÔŠu");
+        jRadioButton1.setText("ç ´ç·šé–“éš”");
         jRadioButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         jRadioButton1.setFocusable(false);
         jRadioButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
@@ -351,20 +351,20 @@ public class JDStrokePanel extends javax.swing.JPanel implements ChangeListener 
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        jLabel1.setText("’[‚ÌŒ`ó:");
+        jLabel1.setText("ç«¯ã®å½¢çŠ¶:");
 
-        jLabel2.setText("Šp‚ÌŒ`ó:");
+        jLabel2.setText("è§’ã®å½¢çŠ¶:");
 
-        jLabel3.setText("ü•:");
+        jLabel3.setText("ç·šå¹…:");
 
-        jLabel4.setText("ƒgƒŠƒ~ƒ“ƒO:");
+        jLabel4.setText("ãƒˆãƒªãƒŸãƒ³ã‚°:");
 
         jLabel5.setText("pt");
 
         lineWidth.setFormat("%.2f");
 
         strokePreview.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        strokePreview.setToolTipText("ü‚ÌƒvƒŒƒrƒ…[ƒNƒŠƒbƒN‚µ‚ÄŒˆ’è");
+        strokePreview.setToolTipText("ç·šã®ãƒ—ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¯ãƒªãƒƒã‚¯ã—ã¦æ±ºå®š");
         strokePreview.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 strokePreviewMousePressed(evt);

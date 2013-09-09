@@ -55,7 +55,7 @@ public class JStrokeChanger extends JComponent implements ChangeListener,ItemLis
     private static Rectangle bounds=new Rectangle(1,1,47,15);
     /** Creates a new instance of JStrokeChanger */
     public JStrokeChanger() {
-        setToolTipText("ü‚Ìí—Ş(ƒNƒŠƒbƒN‚µ‚Ä•ÒW)");
+        setToolTipText("ç·šã®ç¨®é¡(ã‚¯ãƒªãƒƒã‚¯ã—ã¦ç·¨é›†)");
         panel=new JDStrokePanel();
         panel.addChangeListener(this);
         MouseAdapter madp=new MouseAdapter(){

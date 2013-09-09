@@ -36,7 +36,7 @@ public class JObjectOption extends javax.swing.JDialog {
     public void showDialog(JLeaf lf,JPage parent){
         this.parent=parent;
         this.leaf=lf;
-        this.setTitle("ƒIƒuƒWƒFƒNƒgƒIƒvƒVƒ‡ƒ“");
+        this.setTitle("ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚ªãƒ—ã‚·ãƒ§ãƒ³");
         text.setText(leaf.getName());
         locked.setSelected(leaf.isLocked());
         visible.setSelected(leaf.isVisible());
@@ -138,7 +138,7 @@ public class JObjectOption extends javax.swing.JDialog {
         if (!text.getText().equals(leaf.getName())){
             SortedMap map=leaf.getPage().getNameTable();
             if (map.containsKey(text.getText())){
-                JOptionPane.showMessageDialog(this,"“ü—Í‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚Ì–¼Ì‚ÍA‘¼‚Åg—p‚³‚ê‚Ä‚¢‚Ü‚·.");
+                JOptionPane.showMessageDialog(this,"å…¥åŠ›ã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åç§°ã¯ã€ä»–ã§ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã™.");
                 text.setText(leaf.getName());
                 text.requestFocus();
                 return;

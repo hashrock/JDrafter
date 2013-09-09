@@ -23,7 +23,7 @@ public class ParagraphOptionMenu extends JMenuItem implements JTypeMenuItem{
     AttributeSet attr;
     /** Creates a new instance of ParagrahOptionMenu */
     public ParagraphOptionMenu() {
-        setText("段落オプション");
+        setText("谿ｵ關ｽ繧ｪ繝励す繝ｧ繝ｳ");
         setMnemonic(KeyEvent.VK_O);
         this.addActionListener(this);
     }

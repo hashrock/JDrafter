@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- *’¼—ñ‰»‰Â”\‚Èstroke‚Å‚·
+ *ç›´åˆ—åŒ–å¯èƒ½ãªstrokeã§ã™
  * @author TI
  */
 public class JStroke implements Stroke,Serializable{
@@ -28,9 +28,9 @@ public class JStroke implements Stroke,Serializable{
     private float dash_phase=0;
     private transient BasicStroke stroke=null;
     private static final long serialVersionUID=110l;
-    /**‚·‚×‚Ä‚Ì‘®«‚ÉƒfƒtƒHƒ‹ƒg’l‚ğg‚Á‚ÄV‚µ‚¢ JStroke ‚ğ\’z‚µ‚Ü‚·B
-     * ƒfƒtƒHƒ‹ƒg‚Ì‘®«‚ÍAÀü‚Ì• 1.0ACAP_SQUAREAJOIN_MITERA
-     * ƒgƒŠƒ~ƒ“ƒO§ŒÀ’l 10.0 ‚Å‚·B 
+    /**ã™ã¹ã¦ã®å±æ€§ã«ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã‚’ä½¿ã£ã¦æ–°ã—ã„ JStroke ã‚’æ§‹ç¯‰ã—ã¾ã™ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®å±æ€§ã¯ã€å®Ÿç·šã®å¹… 1.0ã€CAP_SQUAREã€JOIN_MITERã€
+     * ãƒˆãƒªãƒŸãƒ³ã‚°åˆ¶é™å€¤ 10.0 ã§ã™ã€‚ 
      */
     public JStroke() {
         width=1;
@@ -41,13 +41,13 @@ public class JStroke implements Stroke,Serializable{
         dash_phase=0;
         stroke=new BasicStroke(width,cap,join,miterLimit,dash,dash_phase);
     }
-    /**w’è‚³‚ê‚½‘®«‚ğ‚ÂV‚µ‚¢ BasicStroke ‚ğ\’z‚µ‚Ü‚·]
-     *@param w ‚±‚Ì BasicStroke ‚Ì•B’l‚Í 0.0f ˆÈã‚Å‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B•‚ª 0.0f ‚Éİ’è‚³‚ê‚Ä‚¢‚éê‡A ƒXƒgƒ[ƒN‚Í‘ÎÛ‚ÌƒfƒoƒCƒXã‚Ì‚à‚Á‚Æ‚à×‚¢ƒ‰ƒCƒ“‚Æ‚µ‚Ä•`‰æ‚³‚ê‚éB ‚Ü‚½A‚±‚Ì‚Æ‚«ƒAƒ“ƒ`ƒGƒCƒŠƒAƒXİ’è‚ªg—p‚³‚ê‚é
-     *@param cp - BasicStroke ‚Ì—¼’[‚Ì‘•ü
-     *@param jn - —ÖŠsüƒZƒOƒƒ“ƒg‚ÌÚ‡•”‚Ì‘•ü
-     *@param mLimit - Ú‡ƒgƒŠƒ~ƒ“ƒO‚Ì§ŒÀ’lBmiterlimit ‚Í 1.0f ˆÈã‚Å‚È‚¯‚ê‚Î‚È‚ç‚È‚¢
-     *@param dsh - ”jüƒpƒ^[ƒ“‚ğ•\‚·”z—ñ
-     *@param dphase - ”jüƒpƒ^[ƒ“ŠJnˆÊ’u‚ÌƒIƒtƒZƒbƒg 
+    /**æŒ‡å®šã•ã‚ŒãŸå±æ€§ã‚’æŒã¤æ–°ã—ã„ BasicStroke ã‚’æ§‹ç¯‰ã—ã¾ã™]
+     *@param w ã“ã® BasicStroke ã®å¹…ã€‚å€¤ã¯ 0.0f ä»¥ä¸Šã§ãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚å¹…ãŒ 0.0f ã«è¨­å®šã•ã‚Œã¦ã„ã‚‹å ´åˆã€ ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã¯å¯¾è±¡ã®ãƒ‡ãƒã‚¤ã‚¹ä¸Šã®ã‚‚ã£ã¨ã‚‚ç´°ã„ãƒ©ã‚¤ãƒ³ã¨ã—ã¦æç”»ã•ã‚Œã‚‹ã€‚ ã¾ãŸã€ã“ã®ã¨ãã‚¢ãƒ³ãƒã‚¨ã‚¤ãƒªã‚¢ã‚¹è¨­å®šãŒä½¿ç”¨ã•ã‚Œã‚‹
+     *@param cp - BasicStroke ã®ä¸¡ç«¯ã®è£…é£¾
+     *@param jn - è¼ªéƒ­ç·šã‚»ã‚°ãƒ¡ãƒ³ãƒˆã®æ¥åˆéƒ¨ã®è£…é£¾
+     *@param mLimit - æ¥åˆãƒˆãƒªãƒŸãƒ³ã‚°ã®åˆ¶é™å€¤ã€‚miterlimit ã¯ 1.0f ä»¥ä¸Šã§ãªã‘ã‚Œã°ãªã‚‰ãªã„
+     *@param dsh - ç ´ç·šãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’è¡¨ã™é…åˆ—
+     *@param dphase - ç ´ç·šãƒ‘ã‚¿ãƒ¼ãƒ³é–‹å§‹ä½ç½®ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ 
      */
     public JStroke(float w,int cp,int jn,float mLimit,float[] dsh,float dphase){
         width=w;
@@ -58,45 +58,45 @@ public class JStroke implements Stroke,Serializable{
         dash_phase=dphase;
         stroke=new BasicStroke(width,cap,join,miterLimit,dash,dash_phase);
     }
-    /**w’è‚³‚ê‚½BasicStroke‚Ì‘®«‚ğƒRƒs[‚µ‚½JStroke‚ğ\’z‚µ‚Ü‚·*/
+    /**æŒ‡å®šã•ã‚ŒãŸBasicStrokeã®å±æ€§ã‚’ã‚³ãƒ”ãƒ¼ã—ãŸJStrokeã‚’æ§‹ç¯‰ã—ã¾ã™*/
     public JStroke(BasicStroke stroke){
         this(stroke.getLineWidth(),stroke.getEndCap(),stroke.getLineJoin(),
                 stroke.getMiterLimit(),stroke.getDashArray(),stroke.getDashPhase());
     }
-    /**ü•‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ç·šå¹…ã‚’è¿”ã—ã¾ã™.*/
     public float getWidth(){
         return width;
     }
-    /**ü‚Ì—¼’[‚Ì‘•ü‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ç·šã®ä¸¡ç«¯ã®è£…é£¾ã‚’è¿”ã—ã¾ã™.*/
     public int getEndCap(){
         return cap;
     }
-    /**—ÖŠsüƒZƒOƒƒ“ƒg‚ÌÚ‡•”‚Ì‘•ü‚ğ•Ô‚µ‚Ü‚·.*/
+    /**è¼ªéƒ­ç·šã‚»ã‚°ãƒ¡ãƒ³ãƒˆã®æ¥åˆéƒ¨ã®è£…é£¾ã‚’è¿”ã—ã¾ã™.*/
     public int getLineJoin(){
         return join;
     }
-    /**Ú‡ƒgƒŠƒ~ƒ“ƒO‚Ì§ŒÀ’l‚ğ•Ô‚µ‚Ü‚·.*/
+    /**æ¥åˆãƒˆãƒªãƒŸãƒ³ã‚°ã®åˆ¶é™å€¤ã‚’è¿”ã—ã¾ã™.*/
     public float getMiterLimit(){
         return miterLimit;
     }
-    /**”jüƒpƒ^[ƒ“‚ğ•\‚·”z—ñ‚ÌƒRƒs[‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ç ´ç·šãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’è¡¨ã™é…åˆ—ã®ã‚³ãƒ”ãƒ¼ã‚’è¿”ã—ã¾ã™.*/
     public float[] getDashArray(){
         if (dash==null)
             return null;
         return dash.clone();
     }
-    /**”jüƒpƒ^[ƒ“ŠJnˆÊ’u‚ÌƒIƒtƒZƒbƒg‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ç ´ç·šãƒ‘ã‚¿ãƒ¼ãƒ³é–‹å§‹ä½ç½®ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆã‚’è¿”ã—ã¾ã™.*/
     public float getDashPhase(){
         return dash_phase;
     }
     /**
-     *w’è‚³‚ê‚½ Shape ‚ğƒXƒgƒ[ƒN‚Å•`‰æ‚µ‚½—ÖŠs‚ğ•\‚·“à•”‚ğ‚Â Shape ‚ğ•Ô‚µ‚Ü‚·.
-     * @param p  ƒXƒgƒ[ƒN‚Å•`‰æ‚³‚ê‚é Shape ‚Ì‹«ŠE 
+     *æŒ‡å®šã•ã‚ŒãŸ Shape ã‚’ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã§æç”»ã—ãŸè¼ªéƒ­ã‚’è¡¨ã™å†…éƒ¨ã‚’æŒã¤ Shape ã‚’è¿”ã—ã¾ã™.
+     * @param p  ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã§æç”»ã•ã‚Œã‚‹ Shape ã®å¢ƒç•Œ 
      */
     public Shape createStrokedShape(Shape p) {
         return stroke.createStrokedShape(p);
     }
-    /**Œ»İ‚ÌƒXƒgƒ[ƒN‚ğ•Ô‚µ‚Ü‚·.*/
+    /**ç¾åœ¨ã®ã‚¹ãƒˆãƒ­ãƒ¼ã‚¯ã‚’è¿”ã—ã¾ã™.*/
     public BasicStroke getStroke(){
         return stroke;
     }

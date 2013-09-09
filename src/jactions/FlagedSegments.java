@@ -26,7 +26,7 @@ public class FlagedSegments {
             isSelected[i]=false;
         }
     }
-//***ƒpƒX‚ª“r’†‚©‚çØ’f‚³‚ê‚Ä‚¢‚éê‡‚É’T¸‚·‚×‚«Å‰‚ÌIndex‚ğæ“¾
+//***ãƒ‘ã‚¹ãŒé€”ä¸­ã‹ã‚‰åˆ‡æ–­ã•ã‚Œã¦ã„ã‚‹å ´åˆã«æ¢æŸ»ã™ã¹ãæœ€åˆã®Indexã‚’å–å¾—
     public int getFirstIndex(){
         if (!hasSelected() || !isNotSelectedAll()) return 0;
         int ret=0;

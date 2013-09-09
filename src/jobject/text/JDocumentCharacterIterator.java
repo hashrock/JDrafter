@@ -25,7 +25,7 @@ public class JDocumentCharacterIterator implements AttributedCharacterIterator {
     private JParagraphIterator it;
     private String text;
     private int startIndex;
-    private int endIndex;//—LŒø•¶Žš+1;
+    private int endIndex;//æœ‰åŠ¹æ–‡å­—+1;
     private int currentIndex;
     private Set<Attribute> allSet;
 

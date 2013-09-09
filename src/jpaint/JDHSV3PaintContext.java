@@ -26,8 +26,8 @@ public class JDHSV3PaintContext implements PaintContext{
     ColorModel cm;
     static WritableRaster rs=null;
     static int[][] svPixels=null;
-    double dx,dy;//ƒfƒoƒCƒXÀ•W‚ª‚P“®‚­Û‚Ìƒ†[ƒU[À•Wã‚ÌˆÚ“®‹——£
-    double x1,y1;//ŠJn“_‚ÌƒfƒoƒCƒXÀ•W‚Å‚ÌˆÊ’nG
+    double dx,dy;//ãƒ‡ãƒã‚¤ã‚¹åº§æ¨™ãŒï¼‘å‹•ãéš›ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼åº§æ¨™ä¸Šã®ç§»å‹•è·é›¢
+    double x1,y1;//é–‹å§‹ç‚¹ã®ãƒ‡ãƒã‚¤ã‚¹åº§æ¨™ã§ã®ä½åœ°ï¼›
     /**
      * Creates a new instance of JDHSV1PaintContext
      */

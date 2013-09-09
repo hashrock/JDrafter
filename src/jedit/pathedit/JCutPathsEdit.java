@@ -59,9 +59,9 @@ public class JCutPathsEdit extends JAbstractEdit{
             JComplexPath cPath=target.getPath();        
             env.addClip(target.getBounds());
             int index=indexes[i];
-            //ƒpƒX‘?
+            //ãƒ‘ã‚¹å¢—?
             if (newPath.size()>1){
-                //•¡‡ƒpƒX?
+                //è¤‡åˆãƒ‘ã‚¹?
                 if (cPath.size()>1){
                     cPath.remove(targetPath);
                     int idx=index;
@@ -70,7 +70,7 @@ public class JCutPathsEdit extends JAbstractEdit{
                     }
                     req.add(target);
                 }
-                //’PˆêƒpƒX;
+                //å˜ä¸€ãƒ‘ã‚¹;
                 else{
                     JObject parent=target.getParent();
                     cPath.remove(targetPath);

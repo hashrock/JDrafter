@@ -28,7 +28,7 @@ public class JPathTextPositionChangeEdit extends JAbstractEdit{
         oldPosition=target.getStartPosition();
         this.newPosition=newPosition;
         this.target=target;
-        presentationName="ƒpƒXƒeƒLƒXƒgŠJŽn“_ˆÚ“®";
+        presentationName="ãƒ‘ã‚¹ãƒ†ã‚­ã‚¹ãƒˆé–‹å§‹ç‚¹ç§»å‹•";
         redo();
         
     }

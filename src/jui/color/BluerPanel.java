@@ -72,12 +72,12 @@ public class BluerPanel extends javax.swing.JDialog implements ChangeListener{
         slider = new jui.color.JDSlider();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Ç⁄Ç©Çµ");
+        setTitle("„Åº„Åã„Åó");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setResizable(false);
 
-        jLabel1.setText("îºåa");
+        jLabel1.setText("ÂçäÂæÑ");
 
         jLabel2.setText("point");
 

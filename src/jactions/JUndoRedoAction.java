@@ -54,14 +54,14 @@ public class JUndoRedoAction implements UndoableEditListener{
            undoAction.putValue(undoAction.NAME,m.getUndoPresentationName()+"(U)");
            undoAction.setEnabled(true);
        }else{
-           undoAction.putValue(undoAction.NAME,"å≥Ç…ñﬂÇ∑(U)");
+           undoAction.putValue(undoAction.NAME,"ÂÖÉ„Å´Êàª„Åô(U)");
            undoAction.setEnabled(false);
        }
        if (m.canRedo()){
            redoAction.putValue(redoAction.NAME,m.getRedoPresentationName()+"(R)");
            redoAction.setEnabled(true);
        }else{
-           redoAction.putValue(redoAction.NAME,"çƒé¿çs(R)");
+           redoAction.putValue(redoAction.NAME,"ÂÜçÂÆüË°å(R)");
            redoAction.setEnabled(false);
            
        }
@@ -71,7 +71,7 @@ public class JUndoRedoAction implements UndoableEditListener{
     }
     public class Undo extends AbstractAction{
         public Undo(){
-            putValue(NAME,"å≥Ç…ñﬂÇ∑(U)");
+            putValue(NAME,"ÂÖÉ„Å´Êàª„Åô(U)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_U);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_Z,ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -91,7 +91,7 @@ public class JUndoRedoAction implements UndoableEditListener{
     }
     public class Redo extends AbstractAction{
         public Redo(){
-            putValue(NAME,"çƒé¿çs(R)");
+            putValue(NAME,"ÂÜçÂÆüË°å(R)");
             putValue(MNEMONIC_KEY,KeyEvent.VK_R);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_Y,ActionEvent.CTRL_MASK));
             setEnabled(false);

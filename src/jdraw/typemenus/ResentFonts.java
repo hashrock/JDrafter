@@ -30,13 +30,13 @@ import javax.swing.text.StyleConstants;
  * @author takashi
  */
 public class ResentFonts extends AbstractTypeMenuItem{
-    private static JMenuItem EMPTY=new JMenuItem("‚È‚µ");
+    private static JMenuItem EMPTY=new JMenuItem("ãªã—");
     private static final int MAX_ROW=20;
     private LinkedHashMap<String,FontSubMenu> itemMap=new LinkedHashMap<String,FontSubMenu>();
     private ButtonGroup buttonGroup=new ButtonGroup();
     /** Creates a new instance of ResetFonts */
     public ResentFonts() {
-        setText("Å‹ßg‚Á‚½ƒtƒHƒ“ƒg(R)");
+        setText("æœ€è¿‘ä½¿ã£ãŸãƒ•ã‚©ãƒ³ãƒˆ(R)");
         EMPTY.setEnabled(false);
         setMnemonic(KeyEvent.VK_R);
         this.add(EMPTY);

@@ -28,7 +28,7 @@ public class JDuplicateObjectEdit extends JAbstractEdit{
         super(view);
         this.target=target;
         duplicateObject=null;
-        presentationName="オブジェクトの複製";
+        presentationName="繧ｪ繝悶ず繧ｧ繧ｯ繝医�ｮ隍�陬ｽ";
         try{
             duplicateObject=(JLeaf)target.clone();
         }catch(CloneNotSupportedException e){

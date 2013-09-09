@@ -26,9 +26,9 @@ public class Licence extends javax.swing.JDialog {
     }
 
     public static void showAsDialog(JDrawApplication parent) {
-        //default size 400Å~180
+        //default size 400√ó180
         Licence licence = new Licence(parent, true);
-        licence.setTitle("ÉâÉCÉZÉìÉX");
+        licence.setTitle("„É©„Ç§„Çª„É≥„Çπ");
         Dimension psize = new Dimension(400, 180);
         int x = (parent.getWidth() - psize.width) / 2;
         int y = (parent.getHeight() - psize.height) / 2;

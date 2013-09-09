@@ -13,13 +13,13 @@ import java.awt.geom.*;
 import java.awt.image.*;
 
 /**
- *JDGradientPaint‚ÍAƒJƒ‰[‚ÌüŒ`‹y‚Ñ•úËóƒOƒ‰ƒf[ƒVƒ‡ƒ“ƒpƒ^[ƒ“‚ÅShape‚ğ“h‚è‚Â‚Ô‚·è’i‚ğ’ñ‹Ÿ‚µ‚Ü‚·.
+ *JDGradientPaintã¯ã€ã‚«ãƒ©ãƒ¼ã®ç·šå½¢åŠã³æ”¾å°„çŠ¶ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³ã§Shapeã‚’å¡—ã‚Šã¤ã¶ã™æ‰‹æ®µã‚’æä¾›ã—ã¾ã™.
  * @author TK
  */
 public class JDGradientPaint implements Paint,Transparency,Cloneable{
-    /**üŒ`‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“ƒpƒ^[ƒ“‚ğ•\Œ»‚µ‚Ü‚·.*/
+    /**ç·šå½¢ã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’è¡¨ç¾ã—ã¾ã™.*/
     public static final int LINEAR=0;
-    /**•úËó‚ÌƒOƒ‰ƒf[ƒVƒ‡ƒ“ƒpƒ^[ƒ“‚ğ•\Œ»‚µ‚Ü‚·.*/
+    /**æ”¾å°„çŠ¶ã®ã‚°ãƒ©ãƒ‡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’è¡¨ç¾ã—ã¾ã™.*/
     public static final int RADIAL=1;
     Point2D p1,p2;
     Color c1,c2;
@@ -34,14 +34,14 @@ public class JDGradientPaint implements Paint,Transparency,Cloneable{
     float[] endC=new float[4];
  
     
-    /** w’è‚µ‚½‘®«‚ÅJDGradientPaint‚ğ\’z‚µ‚Ü‚·.
-     *@param p1 ƒ†[ƒU[‹óŠÔ‚ÅÅ‰‚Éw’è‚³‚ê‚½Point<br>
-     *p2 ƒ†[ƒU[‹óŠÔ‚Å2”Ô–Ú‚Éw’è‚³‚ê‚½Point<br>;
-     *c1 ƒ|ƒCƒ“ƒgp1‚ÌƒJƒ‰[<br>
-     *c2 ƒ|ƒCƒ“ƒgp2‚ÌƒJƒ‰[<br>
-     *cp p1‚©‚çp2ŠÔ‚Ì§Œä“_
-     *cols §Œä“_‚ÌƒJƒ‰[
-     *gTyp “h‚è‚Ìƒ^ƒCƒv
+    /** æŒ‡å®šã—ãŸå±æ€§ã§JDGradientPaintã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param p1 ãƒ¦ãƒ¼ã‚¶ãƒ¼ç©ºé–“ã§æœ€åˆã«æŒ‡å®šã•ã‚ŒãŸPoint<br>
+     *p2 ãƒ¦ãƒ¼ã‚¶ãƒ¼ç©ºé–“ã§2ç•ªç›®ã«æŒ‡å®šã•ã‚ŒãŸPoint<br>;
+     *c1 ãƒã‚¤ãƒ³ãƒˆp1ã®ã‚«ãƒ©ãƒ¼<br>
+     *c2 ãƒã‚¤ãƒ³ãƒˆp2ã®ã‚«ãƒ©ãƒ¼<br>
+     *cp p1ã‹ã‚‰p2é–“ã®åˆ¶å¾¡ç‚¹
+     *cols åˆ¶å¾¡ç‚¹ã®ã‚«ãƒ©ãƒ¼
+     *gTyp å¡—ã‚Šã®ã‚¿ã‚¤ãƒ—
      */
     public JDGradientPaint(Point2D p1,Point2D p2,Color c1,Color c2,float[] cp,Color[] cols,int gType) {
         this.p1=p1;
@@ -59,17 +59,17 @@ public class JDGradientPaint implements Paint,Transparency,Cloneable{
         startC=c1.getComponents(startC);
         endC=c2.getComponents(endC);
     }
-    /** w’è‚µ‚½‘®«‚ÅJDGradientPaint‚ğ\’z‚µ‚Ü‚·.
-     *@param p1 ƒ†[ƒU[‹óŠÔ‚ÅÅ‰‚Éw’è‚³‚ê‚½Point<br>
-     *p2 ƒ†[ƒU[‹óŠÔ‚Å2”Ô–Ú‚Éw’è‚³‚ê‚½Point<br>;
-     *c1 ƒ|ƒCƒ“ƒgp1‚ÌƒJƒ‰[<br>
-     *c2 ƒ|ƒCƒ“ƒgp2‚ÌƒJƒ‰[<br>
-     *gTyp “h‚è‚Ìƒ^ƒCƒv
+    /** æŒ‡å®šã—ãŸå±æ€§ã§JDGradientPaintã‚’æ§‹ç¯‰ã—ã¾ã™.
+     *@param p1 ãƒ¦ãƒ¼ã‚¶ãƒ¼ç©ºé–“ã§æœ€åˆã«æŒ‡å®šã•ã‚ŒãŸPoint<br>
+     *p2 ãƒ¦ãƒ¼ã‚¶ãƒ¼ç©ºé–“ã§2ç•ªç›®ã«æŒ‡å®šã•ã‚ŒãŸPoint<br>;
+     *c1 ãƒã‚¤ãƒ³ãƒˆp1ã®ã‚«ãƒ©ãƒ¼<br>
+     *c2 ãƒã‚¤ãƒ³ãƒˆp2ã®ã‚«ãƒ©ãƒ¼<br>
+     *gTyp å¡—ã‚Šã®ã‚¿ã‚¤ãƒ—
      */
     public JDGradientPaint(Point2D p1,Point2D p2,Color c1,Color c2,int gType){
         this(p1,p2,c1,c2,null,null,gType);
     }
-    /**w’è‚µ‚½‘®«‚ÅJDGradientPaint‚ğ\’z‚µ‚Ü‚·.
+    /**æŒ‡å®šã—ãŸå±æ€§ã§JDGradientPaintã‚’æ§‹ç¯‰ã—ã¾ã™.
      */
     public JDGradientPaint(float x1,float y1,float x2,float y2,Color c1,Color c2,int gType){
         this(x1,y1,x2,y2,c1,c2,null,null,gType);
@@ -107,9 +107,9 @@ public class JDGradientPaint implements Paint,Transparency,Cloneable{
 	int a2 = c2.getAlpha();
 	return (((a1 & a2) == 0xff) ? OPAQUE : TRANSLUCENT);
     }
-    /**‚±‚ÌJDGradientPaint‚Æ‘ÎÌ‚ğ”äŠr‚µ‚Ü‚·.
-     *@ƒRƒ“ƒgƒ[ƒ‹ƒ|ƒCƒ“ƒg‚É‚Â‚¢‚Ä‚ÍADragger‚É‚æ‚èTransform‚³‚ê‚Ä‚¢‚é‰Â”\«‚ª‚ ‚é‚½‚ßA”äŠr‘ÎÌ‚É‚ÍŠÜ‚ß‚Ü‚¹‚ñ.
-     *@return ”äŠrŒ‹‰Ê
+    /**ã“ã®JDGradientPaintã¨å¯¾ç§°ã‚’æ¯”è¼ƒã—ã¾ã™.
+     *ã€€ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ãƒã‚¤ãƒ³ãƒˆã«ã¤ã„ã¦ã¯ã€Draggerã«ã‚ˆã‚ŠTransformã•ã‚Œã¦ã„ã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ãŸã‚ã€æ¯”è¼ƒå¯¾ç§°ã«ã¯å«ã‚ã¾ã›ã‚“.
+     *@return æ¯”è¼ƒçµæœ
      */
     public boolean equals(Object o){
         if (!(o instanceof JDGradientPaint)) return false;
@@ -139,7 +139,7 @@ public class JDGradientPaint implements Paint,Transparency,Cloneable{
         }
         return true;
     }
-    /**JDGradientPaint‚Ì•¡»‚ğì¬‚µ‚Ü‚·.*/
+    /**JDGradientPaintã®è¤‡è£½ã‚’ä½œæˆã—ã¾ã™.*/
     public JDGradientPaint clone(){
         return new JDGradientPaint((Point2D)p1.clone(),(Point2D)p2.clone(),
                 c1,c2,controlPoints.clone(),colors.clone(),gType);

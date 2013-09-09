@@ -18,7 +18,7 @@ import java.util.*;
 import javax.swing.*;
 import javax.swing.event.*;
 /**
- *•¡”‚Ìƒc[ƒ‹‚ğŠi”[‚·‚éƒgƒOƒ‹ƒ{ƒ^ƒ“‚Å‚·.
+ *è¤‡æ•°ã®ãƒ„ãƒ¼ãƒ«ã‚’æ ¼ç´ã™ã‚‹ãƒˆã‚°ãƒ«ãƒœã‚¿ãƒ³ã§ã™.
  * @author TK
  */
 public class JSelectToggle extends JToggle{
