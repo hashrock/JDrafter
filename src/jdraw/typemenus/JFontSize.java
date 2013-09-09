@@ -33,9 +33,9 @@ public class JFontSize extends AbstractTypeMenuItem{
     private JCheckBoxMenuItem otherSize;
     /** Creates a new instance of JFontSize */
     public JFontSize() {
-        setText("サイズ(S)");
+        setText(java.util.ResourceBundle.getBundle("main").getString("fs_size_mne"));
         buttonGroup=new ButtonGroup();
-        otherSize=new JCheckBoxMenuItem("その他");
+        otherSize=new JCheckBoxMenuItem(java.util.ResourceBundle.getBundle("main").getString("fs_other"));
         add(otherSize);
         buttonGroup.add(otherSize);
         otherSize.addActionListener(new ActionListener(){
@@ -58,7 +58,7 @@ public class JFontSize extends AbstractTypeMenuItem{
         StyleConstants.setFontSize(attr,s);
         setAttributes(attr);
         if (FontSizeOption.getResult())
-            fireActionEvents("Size");
+            fireActionEvents("Size"); //NOI18N
     }
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof SizeSubMenu){
@@ -66,7 +66,7 @@ public class JFontSize extends AbstractTypeMenuItem{
             MutableAttributeSet attr=new SimpleAttributeSet();
             StyleConstants.setFontSize(attr,sb.getFontSize());
             setAttributes(attr);
-            fireActionEvents("Size");
+            fireActionEvents("Size"); //NOI18N
         }
     }
     public void setAttributes(AttributeSet attr) {

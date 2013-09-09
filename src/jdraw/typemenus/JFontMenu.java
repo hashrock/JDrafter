@@ -33,7 +33,7 @@ public class JFontMenu extends AbstractTypeMenuItem{
     ButtonGroup buttonGroup;
     /** Creates a new instance of JFontMenu */
     public JFontMenu() {
-        setText("フォント(F)");
+        setText(java.util.ResourceBundle.getBundle("main").getString("fm_font_mne"));
         setMnemonic(KeyEvent.VK_F);
         String[] fonts=GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
         JMenu parent=this;
@@ -62,7 +62,7 @@ public class JFontMenu extends AbstractTypeMenuItem{
         return null;
     }
     public void actionPerformed(ActionEvent e) {
-        fireActionEvents("FontFamily");
+        fireActionEvents("FontFamily"); //NOI18N
     }
 
     public void setAttributes(AttributeSet attr) {
