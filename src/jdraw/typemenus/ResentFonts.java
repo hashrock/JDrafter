@@ -10,15 +10,10 @@
 package jdraw.typemenus;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
-import java.util.Vector;
-import java.util.concurrent.ConcurrentSkipListMap;
 import javax.swing.ButtonGroup;
-import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.MutableAttributeSet;
@@ -30,20 +25,20 @@ import javax.swing.text.StyleConstants;
  * @author takashi
  */
 public class ResentFonts extends AbstractTypeMenuItem{
-    private static JMenuItem EMPTY=new JMenuItem("なし");
+    private static JMenuItem EMPTY=new JMenuItem(java.util.ResourceBundle.getBundle("main").getString("rf_font_none"));
     private static final int MAX_ROW=20;
     private LinkedHashMap<String,FontSubMenu> itemMap=new LinkedHashMap<String,FontSubMenu>();
     private ButtonGroup buttonGroup=new ButtonGroup();
     /** Creates a new instance of ResetFonts */
     public ResentFonts() {
-        setText("最近使ったフォント(R)");
+        setText(java.util.ResourceBundle.getBundle("main").getString("rf_recent_used_font"));
         EMPTY.setEnabled(false);
         setMnemonic(KeyEvent.VK_R);
         this.add(EMPTY);
     }
     public  void addItem(AttributeSet attr){
         String s=StyleConstants.getFontFamily(attr);
-        if (s.equals("") || s==null|| itemMap.containsKey(s)) return;
+        if (s.equals("") || s==null|| itemMap.containsKey(s)) return; //NOI18N
         remove(EMPTY);
         FontSubMenu sm=new FontSubMenu(s);
         buttonGroup.add(sm);
@@ -63,7 +58,7 @@ public class ResentFonts extends AbstractTypeMenuItem{
         return;
     }
     public void actionPerformed(ActionEvent e) {
-        fireActionEvents("font");
+        fireActionEvents(java.util.ResourceBundle.getBundle("main").getString("rf_font"));
     }
     private String getSelectedFont(){
         Iterator<FontSubMenu> it=itemMap.values().iterator();

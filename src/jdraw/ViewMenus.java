@@ -83,7 +83,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
         showGuidAction = new ShowGuidAction();
         clearGuidAction=new ClearGuidAction();
         snapAncurMenu=new SnapAncurMenu();
-        gridGauge = new JMenu("グリッドの単位(U)");
+        gridGauge = new JMenu(java.util.ResourceBundle.getBundle("main").getString("vm_glid_unit"));
         gridGauge.setMnemonic(KeyEvent.VK_U);
         milGrid = new JRadioButtonMenuItem(new MilGridAction());
         inchGrid = new JRadioButtonMenuItem(new InchGridAction());
@@ -226,7 +226,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         private LayerVisibleAction() {
             super();
-            putValue(NAME, "レイヤーブラウザ(L)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_layer_browser"));
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             putValue(MNEMONIC_KEY, KeyEvent.VK_L);
 
@@ -244,7 +244,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         private PageVisibleAction() {
             super();
-            putValue(NAME, "ページブラウザ(B)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_page_browser"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_B);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_B, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             setEnabled(true);
@@ -261,7 +261,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public GridVisibleAction() {
             super();
-            putValue(NAME, "グリッド表示(G)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_display_glid"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_G);
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_G,ActionEvent.CTRL_MASK|ActionEvent.ALT_MASK));
             setEnabled(false);
@@ -283,7 +283,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public MilGridAction() {
             super();
-            putValue(NAME, "ミリメートル(M)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_millimeter"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
 
@@ -309,7 +309,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public InchGridAction() {
             super();
-            putValue(NAME, "ポイント(P)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_point"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_P);
             putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             setEnabled(true);
@@ -331,7 +331,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     }
     private class SnapAncurMenu extends JCheckBoxMenuItem implements ActionListener{
         public SnapAncurMenu(){
-            this.setText("アンカーに吸着(A)");
+            this.setText(java.util.ResourceBundle.getBundle("main").getString("vm_fit_anchor"));
             this.setMnemonic(KeyEvent.VK_A);
             this.setSelected(JEnvironment.SNAP_TO_ANCUR);
             this.setEnabled(false);
@@ -346,7 +346,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public SnapGridAction() {
             super();
-            putValue(NAME, "グリッド吸着（S)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_fit_grid"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_S);
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_S,ActionEvent.CTRL_MASK|ActionEvent.ALT_MASK));
             setEnabled(false);
@@ -364,8 +364,8 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
     private class GridForeAction extends AbstractAction {
 
-        private String gridFore = "グリッドを前面に(F)";
-        private String gridBack = "グリッドを背面に(F)";
+        private String gridFore = java.util.ResourceBundle.getBundle("main").getString("vm_grid_on_top");
+        private String gridBack = java.util.ResourceBundle.getBundle("main").getString("vm_grid_on_bottom");
 
         public GridForeAction() {
             super();
@@ -399,7 +399,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
 
         public GridOptionAction() {
             super();
-            putValue(NAME, "オプション(O)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_option"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_O);
             //putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_O,ActionEvent.CTRL_MASK|ActionEvent.ALT_MASK));
             setEnabled(false);
@@ -422,7 +422,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class SendGuidAction extends AbstractAction {
 
         public SendGuidAction() {
-            putValue(NAME, "ガイドライン作成(M)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_new_guideline"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_M);
             //putValue(ACCELERATOR_KEY, KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK | ActionEvent.ALT_MASK));
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
@@ -465,10 +465,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
                 for (int i = 0; i < leafs.size(); i++) {
                     JLeaf jl = leafs.get(i);
                     if (cEdit == null) {
-                        cEdit = new NamableCompoundEdit("ガイドライン作成");
+                        cEdit = new NamableCompoundEdit(java.util.ResourceBundle.getBundle("main").getString("vm_leaf_new_guideline"));
                     }
-                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, "ガイドライン作成"));
-                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getGuidLayer(), "ガイドライン作成"));
+                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, java.util.ResourceBundle.getBundle("main").getString("vm_del_new_guideline")));
+                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getGuidLayer(), java.util.ResourceBundle.getBundle("main").getString("vm_insert_new_guideline")));
                 }
                 if (cEdit != null) {
                     cEdit.end();
@@ -481,7 +481,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class ReleaseGuidAction extends AbstractAction {
 
         public ReleaseGuidAction() {
-            putValue(NAME, "ガイドライン解除(R)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_remove_guideline"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_R);
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
         }
@@ -527,10 +527,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
                 for (int i = 0; i < leafs.size(); i++) {
                     JLeaf jl = leafs.get(i);
                     if (cEdit == null) {
-                        cEdit = new NamableCompoundEdit("ガイドライン解除");
+                        cEdit = new NamableCompoundEdit(java.util.ResourceBundle.getBundle("main").getString("vm_remove_guideline_leaf"));
                     }
-                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, "ガイドライン解除"));
-                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getCurrentLayer(), "ガイドライン解除"));
+                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(), jl, java.util.ResourceBundle.getBundle("main").getString("vm_remove_guideline_leaf")));
+                    cEdit.addEdit(new JInsertObjectEdit(frame.getViewer(), jl, frame.getViewer().getCurrentPage().getCurrentLayer(), java.util.ResourceBundle.getBundle("main").getString("vm_remove_guideline_leaf")));
                 }
                 if (cEdit != null) {
                     cEdit.end();
@@ -546,7 +546,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class LockGuidAction extends AbstractAction {
 
         public LockGuidAction() {
-            putValue(NAME, "ガイドラインのロック解除(N)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_unlock_guideline"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_N);
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
         }
@@ -559,10 +559,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
             this.setEnabled(true);
             JPage pg = frame.getViewer().getCurrentPage();
             if (!pg.getGuidLayer().isLocked()) {
-                putValue(NAME, "ガイドラインをロック(O)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_lock_guideline"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_O);
             } else {
-                putValue(NAME, "ガイドラインのロック解除(N)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_unlock_guideline"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_N);
             }
 
@@ -599,7 +599,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     private class ShowGuidAction extends AbstractAction {
 
         public ShowGuidAction() {
-            putValue(NAME, "ガイドラインを隠す(H)");
+            putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_hide_guideline"));
             putValue(MNEMONIC_KEY, KeyEvent.VK_H);
         }
 
@@ -611,10 +611,10 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
             this.setEnabled(true);
             JPage pg = frame.getViewer().getCurrentPage();
             if (pg.getGuidLayer().isVisible()) {
-                putValue(NAME, "ガイドラインを隠す(H)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_hide_guideline"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_H);
             } else {
-                putValue(NAME, "ガイドラインを表示(V)");
+                putValue(NAME, java.util.ResourceBundle.getBundle("main").getString("vm_show_guideline"));
                 putValue(MNEMONIC_KEY, KeyEvent.VK_V);
             }
         }
@@ -642,7 +642,7 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
     }
     private class ClearGuidAction extends AbstractAction{
         public ClearGuidAction(){
-            putValue(NAME,"ガイドラインをクリア(C)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("vm_clear_guidelines"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_C);
             stateChanged((JDocumentFrame) outer.jDesktopPane1.getSelectedFrame());
         }
@@ -663,9 +663,9 @@ class ViewMenus extends ComponentAdapter implements ChangeListener, ItemListener
                 for (int i=0;i<layer.size();i++){
                     JLeaf jl=layer.get(i--);
                     if (cEdit==null){
-                        cEdit=new NamableCompoundEdit("ガイドラインをクリア");
+                        cEdit=new NamableCompoundEdit(java.util.ResourceBundle.getBundle("main").getString("vm_clear_guidelines_leaf"));
                     }
-                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(),jl,"ガイドラインをクリア"));
+                    cEdit.addEdit(new JDeleteObjectEdit(frame.getViewer(),jl,java.util.ResourceBundle.getBundle("main").getString("vm_clear_guidelines_leaf")));
                 }
                 if (cEdit !=null){
                     cEdit.end();

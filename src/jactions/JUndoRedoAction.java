@@ -51,17 +51,17 @@ public class JUndoRedoAction implements UndoableEditListener{
        UndoManager m=document.getCurrentPage().getUndoManager();
        if (m==null) return;
        if (m.canUndo()){
-           undoAction.putValue(undoAction.NAME,m.getUndoPresentationName()+"(U)");
+           undoAction.putValue(undoAction.NAME,m.getUndoPresentationName()+"(U)"); //NOI18N
            undoAction.setEnabled(true);
        }else{
-           undoAction.putValue(undoAction.NAME,"元に戻す(U)");
+           undoAction.putValue(undoAction.NAME,java.util.ResourceBundle.getBundle("main").getString("ura_undo"));
            undoAction.setEnabled(false);
        }
        if (m.canRedo()){
-           redoAction.putValue(redoAction.NAME,m.getRedoPresentationName()+"(R)");
+           redoAction.putValue(redoAction.NAME,m.getRedoPresentationName()+"(R)"); //NOI18N
            redoAction.setEnabled(true);
        }else{
-           redoAction.putValue(redoAction.NAME,"再実行(R)");
+           redoAction.putValue(redoAction.NAME,java.util.ResourceBundle.getBundle("main").getString("ura_redo"));
            redoAction.setEnabled(false);
            
        }
@@ -71,7 +71,7 @@ public class JUndoRedoAction implements UndoableEditListener{
     }
     public class Undo extends AbstractAction{
         public Undo(){
-            putValue(NAME,"元に戻す(U)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("ura_undo_mne"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_U);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_Z,ActionEvent.CTRL_MASK));
             setEnabled(false);
@@ -91,7 +91,7 @@ public class JUndoRedoAction implements UndoableEditListener{
     }
     public class Redo extends AbstractAction{
         public Redo(){
-            putValue(NAME,"再実行(R)");
+            putValue(NAME,java.util.ResourceBundle.getBundle("main").getString("ura_redo_mne"));
             putValue(MNEMONIC_KEY,KeyEvent.VK_R);
             putValue(ACCELERATOR_KEY,KeyStroke.getKeyStroke(KeyEvent.VK_Y,ActionEvent.CTRL_MASK));
             setEnabled(false);

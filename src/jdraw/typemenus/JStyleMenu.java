@@ -31,28 +31,28 @@ public class JStyleMenu extends AbstractTypeMenuItem{
     private JCheckBoxMenuItem strikeThrough;
     /** Creates a new instance of JStyleMenu */
     public JStyleMenu() {
-        setText("スタイル(T)");
+        setText(java.util.ResourceBundle.getBundle("main").getString("sm_style"));
         setMnemonic(KeyEvent.VK_T);
         //
-        italic=new JCheckBoxMenuItem("イタリック(I)");
+        italic=new JCheckBoxMenuItem(java.util.ResourceBundle.getBundle("main").getString("sm_italic"));
         italic.setMnemonic(KeyEvent.VK_I);
         italic.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I,ActionEvent.CTRL_MASK));
         italic .addActionListener(this);
         add(italic);
         //
-        bold=new JCheckBoxMenuItem("ボールド(B)");
+        bold=new JCheckBoxMenuItem(java.util.ResourceBundle.getBundle("main").getString("sm_bold"));
         bold.setMnemonic(KeyEvent.VK_B);
         bold.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_B,ActionEvent.CTRL_MASK));
         bold .addActionListener(this);
         add(bold);
         //
-        underLine=new JCheckBoxMenuItem("アンダーライン(U)");
+        underLine=new JCheckBoxMenuItem(java.util.ResourceBundle.getBundle("main").getString("sm_underline"));
         underLine.setMnemonic(KeyEvent.VK_U);
         underLine.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_U,ActionEvent.CTRL_MASK));
         underLine .addActionListener(this);
         add(underLine);
         //
-        strikeThrough=new JCheckBoxMenuItem("字消し線(T)");
+        strikeThrough=new JCheckBoxMenuItem(java.util.ResourceBundle.getBundle("main").getString("sm_line_through"));
         strikeThrough.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_T,ActionEvent.CTRL_MASK));
         strikeThrough.setMnemonic(KeyEvent.VK_T);
         strikeThrough.addActionListener(this);
@@ -60,7 +60,7 @@ public class JStyleMenu extends AbstractTypeMenuItem{
         //
     }
     public void actionPerformed(ActionEvent e) {
-        fireActionEvents("Style");
+        fireActionEvents(java.util.ResourceBundle.getBundle("main").getString("sm_style"));
     }
     
     public void setAttributes(AttributeSet attr) {

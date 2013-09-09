@@ -23,7 +23,7 @@ public class ParagraphOptionMenu extends JMenuItem implements JTypeMenuItem{
     AttributeSet attr;
     /** Creates a new instance of ParagrahOptionMenu */
     public ParagraphOptionMenu() {
-        setText("段落オプション");
+        setText(java.util.ResourceBundle.getBundle("main").getString("pom_paragraph_option"));
         setMnemonic(KeyEvent.VK_O);
         this.addActionListener(this);
     }
@@ -40,7 +40,7 @@ public class ParagraphOptionMenu extends JMenuItem implements JTypeMenuItem{
         AttributeSet rAttr=ParagraphOption.showAsDialog(this,attr);
         if (rAttr != attr){
             attr=rAttr;
-            this.fireActionEvents("Paragraph");
+            this.fireActionEvents(java.util.ResourceBundle.getBundle("main").getString("pom_paragraph"));
         }
     }
     protected void fireActionPerformed(ActionEvent e){

@@ -32,9 +32,9 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
     private HashMap<Integer, AlignmentMenu> itemMap=new HashMap<Integer, AlignmentMenu>();
     /** Creates a new instance of JStyleMenu */
     public JAlignmentMenu() {
-        setText("行揃え(A)");
+        setText(java.util.ResourceBundle.getBundle("main").getString("am_align_row_mne"));
         setMnemonic(KeyEvent.VK_S);
-        AlignmentMenu sb=new AlignmentMenu(StyleConstants.ALIGN_LEFT,"左寄せ(L)");
+        AlignmentMenu sb=new AlignmentMenu(StyleConstants.ALIGN_LEFT,java.util.ResourceBundle.getBundle("main").getString("am_align_left_mne"));
         sb.setMnemonic(KeyEvent.VK_L);
         sb.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L,ActionEvent.CTRL_MASK | ActionEvent.SHIFT_MASK));
         add(sb);
@@ -42,7 +42,7 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
         sb.addActionListener(this);
         itemMap.put(StyleConstants.ALIGN_LEFT,sb);
         //
-        sb=new AlignmentMenu(StyleConstants.ALIGN_CENTER,"センタリング(C)");
+        sb=new AlignmentMenu(StyleConstants.ALIGN_CENTER,java.util.ResourceBundle.getBundle("main").getString("am_align_center_mne"));
         sb.setMnemonic(KeyEvent.VK_C);
         sb.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,ActionEvent.CTRL_MASK|ActionEvent.SHIFT_MASK));
         add(sb);
@@ -50,7 +50,7 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
         sb.addActionListener(this);
         itemMap.put(StyleConstants.ALIGN_CENTER,sb);
         //
-        sb=new AlignmentMenu(StyleConstants.ALIGN_RIGHT,"右寄せ(R)");
+        sb=new AlignmentMenu(StyleConstants.ALIGN_RIGHT,java.util.ResourceBundle.getBundle("main").getString("am_align_right_mne"));
         sb.setMnemonic(KeyEvent.VK_R);
         sb.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R,ActionEvent.CTRL_MASK|ActionEvent.SHIFT_MASK));
         add(sb);
@@ -64,7 +64,7 @@ public class JAlignmentMenu extends AbstractTypeMenuItem{
     public void actionPerformed(ActionEvent e) {
         AlignmentMenu s=(AlignmentMenu)e.getSource();
         style=s.getStyle();
-        fireActionEvents("Alignment");
+        fireActionEvents("Alignment"); //NOI18N
     }
     
     public void setAttributes(AttributeSet attr) {

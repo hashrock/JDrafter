@@ -312,7 +312,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
 
         jLabel5.setText(bundle.getString("grid_parting_line_color")); // NOI18N
 
-        glidColor.setText("　　");
+        glidColor.setText("　　  ");
         glidColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         glidColor.setOpaque(true);
         glidColor.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -321,7 +321,7 @@ public class JGridOption extends javax.swing.JDialog implements ActionListener {
             }
         });
 
-        divColor.setText("　　");
+        divColor.setText("　　  ");
         divColor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         divColor.setOpaque(true);
         divColor.addMouseListener(new java.awt.event.MouseAdapter() {
