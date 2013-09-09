@@ -65,14 +65,14 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="jdragger.JControls.JDIntegerTextField" name="fontSize">
+    <Component class="jtools.jcontrol.JDIntegerTextField" name="fontSize">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x30d5;&#x30a9;&#x30f3;&#x30c8;&#x30b5;&#x30a4;&#x30ba;"/>
       </Properties>
     </Component>
-    <Component class="jpaint.components.JDSlider" name="fontSlider">
+    <Component class="jui.color.JDSlider" name="fontSlider">
       <Properties>
         <Property name="maxValue" type="int" value="100"/>
       </Properties>
