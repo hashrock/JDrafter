@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/181dev/JDrafter.png?label=ready)](https://waffle.io/181dev/JDrafter)  
 JDrafter
 ========
 
