@@ -1,8 +1,8 @@
-[![Stories in Ready](https://badge.waffle.io/181dev/JDrafter.png?label=ready)](https://waffle.io/181dev/JDrafter)  
 JDrafter
 ========
 
 Illustrator like drawing tool
+
 
 What's this
 -----------
@@ -13,6 +13,8 @@ Original code written by 2008-2009 Takashi Ikita, Yukiko Ikita. Apache License V
 
 TODO
 -------
+
+https://huboard.com/181dev/JDrafter/
 
 This project is for maintenance, I will not add any big features. I'll do that:
 
